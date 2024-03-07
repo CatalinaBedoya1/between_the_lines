@@ -13,11 +13,11 @@
 .dashboard,
 .aboutus {
   display: flex;
-  height: 90vh;
+  min-height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  background-color: #000;
+  background-color: rgb(230, 181, 181);
   color: #fff;
 }
 
@@ -97,12 +97,57 @@ span {
   margin-left: 16px;
 }
 
-/* Mission Section */
+.welcome-section {
+  padding: 10px; /* Adjust the padding as needed */
+  margin: 10px; /* Adjust the margin as needed */
+  max-width: 400px; /* Adjust the maximum width as needed */
+}
+
+.welcome-section h2 {
+  font-size: 36px; /* Adjust the font size as needed */
+}
+
+.welcome-section p {
+  font-size: 16px; /* Adjust the font size as needed */
+  line-height: 1.2; /* Adjust the line height as needed */
+}
+.btn-box {
+  display: inline-block; /* Adjust border properties as needed */
+  padding: 10px; /* Adjust padding as needed */
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border:2px solid #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+
+/* Mission Section 
 .mission-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap; /* Allows items to wrap to next line if necessary */
+  flex-wrap: wrap; /* Allows items to wrap to next line if necessary 
   margin-top: 50px;
 }
 
@@ -128,7 +173,7 @@ span {
   margin-bottom: 10px;
 }
 
-/* Mission Container */
+/* Mission Container 
 .mission-container {
   background-color: #f8f9fa;
   padding: 40px;
@@ -139,3 +184,4 @@ span {
   text-align: center;
   margin-bottom: 20px;
 }
+*/

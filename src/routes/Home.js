@@ -7,11 +7,11 @@ function Home() {
         <div className="welcome-section">
             <h2> Welcome to Between the Lines</h2>
             <p>A hub for all book lover!</p>
-            <Link to="/discover" className="btn">Take Quiz</Link>
+            <div className="btn-box">
+              <Link to="/discover" className="btn">Take Quiz</Link>
+            </div>
         </div>
-      
     </div>
   );
 }
-
 export default Home;
