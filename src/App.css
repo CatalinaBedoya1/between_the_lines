@@ -97,4 +97,45 @@ span {
   margin-left: 16px;
 }
 
+/* Mission Section */
+.mission-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to wrap to next line if necessary */
+  margin-top: 50px;
+}
 
+.mission {
+  text-align: center;
+  width: 200px;
+  margin: 20px;
+}
+
+.mission h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.mission p {
+  font-size: 16px;
+  color: #666;
+}
+
+.mission-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+/* Mission Container */
+.mission-container {
+  background-color: #f8f9fa;
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.mission-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
