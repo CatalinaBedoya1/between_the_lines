@@ -12,18 +12,24 @@
 .discover,
 .dashboard,
 .aboutus {
+  width: 100%;
   display: flex;
-  min-height: 90vh;
+  height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  background-color: rgb(230, 181, 181);
+  background-color: rgb(255, 255, 255);
   color: #fff;
+
+  
 }
+
 
 /* Navbar CSS */
 .navbar {
-  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+  background-color: #918273;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -47,6 +53,7 @@
   top: 0;
   left: -100%;
   transition: 850ms;
+  z-index: 2;
 }
 
 .nav-menu.active {
@@ -92,6 +99,7 @@
   justify-content: flex-start;
   align-items: center;
 }
+
 
 span {
   margin-left: 16px;
@@ -151,49 +159,8 @@ span {
   background-color: #333;
   color: #fff;
   text-align: center;
+  z-index: 1;
 }
 
 
-/* Mission Section 
-.mission-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap; /* Allows items to wrap to next line if necessary 
-  margin-top: 50px;
-}
 
-.mission {
-  text-align: center;
-  width: 200px;
-  margin: 20px;
-}
-
-.mission h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.mission p {
-  font-size: 16px;
-  color: #666;
-}
-
-.mission-icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-/* Mission Container 
-.mission-container {
-  background-color: #f8f9fa;
-  padding: 40px;
-  margin-top: 20px;
-}
-
-.mission-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-*/
