@@ -8,23 +8,14 @@ import {
   Outlet,
   createRoutesFromElements,
 } from "react-router-dom";
+import AppLayout from "./App";
 import Discover from "./routes/Discover";
 import Home from "./routes/Home";
 import Community from "./routes/Community";
 import Dashboard from "./routes/Dashboard";
 import AboutUs from "./routes/AboutUs";
-import Navbar from "./components/Navbar";
-import Footer from './components/Footer'; 
 import "./App.css";
 
-const AppLayout = () => (
-    <>
-        <Navbar />
-        <Outlet />
-        <Footer />
-    </>
-
-);
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route element={<AppLayout />}>
@@ -36,26 +27,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     </Route>
 ))
 
-//const router = createBrowserRouter([
-    //{
-//element: <AppLayout/>,
-//children: [
-   // {
-      //  path: "/",
-       // element: <Home />
-     // },
-   //   {
-      //  path: "products",
-     //   element: <Products />,
-     // },
-     // {
-     //   path: "reports",
-    //    element: <Reports />,
-    //  },
-   // ]
-   // },
-  
-//]);
+
 
 createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
