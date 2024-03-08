@@ -1,0 +1,11 @@
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    justify-content: center;
+  }
