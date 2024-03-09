@@ -16,6 +16,7 @@ export const SidebarData = [
         path: "/discover",
         icons: <FaIcons.FaCartPlus />,
         cName: "nav-text",
+       
 
     },
     {

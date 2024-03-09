@@ -105,20 +105,7 @@ span {
   margin-left: 16px;
 }
 
-.welcome-section {
-  padding: 10px; /* Adjust the padding as needed */
-  margin: 10px; /* Adjust the margin as needed */
-  max-width: 400px; /* Adjust the maximum width as needed */
-}
 
-.welcome-section h2 {
-  font-size: 36px; /* Adjust the font size as needed */
-}
-
-.welcome-section p {
-  font-size: 16px; /* Adjust the font size as needed */
-  line-height: 1.2; /* Adjust the line height as needed */
-}
 .btn-box {
   display: inline-block; /* Adjust border properties as needed */
   padding: 10px; /* Adjust padding as needed */
