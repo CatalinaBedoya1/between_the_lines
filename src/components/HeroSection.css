@@ -2,15 +2,17 @@
 
 .hero-container {
   position: relative; /* Make the container relative to position absolute */
-  width: 100%;
-  padding: 100px;
+  width: 100vw;
+  z-index: 1;
+
 }
 
 img {
   width: 100%;
   height: auto;
   display: block;
-  z-index: 1;
+  z-index: -1;
+  opacity: 80%;
 }
 .hero-content {
   position: absolute;
@@ -18,12 +20,12 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: rgb(172, 124, 124);
+  color: rgb(0, 0, 0);
   width: 100%;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .hero-content p {

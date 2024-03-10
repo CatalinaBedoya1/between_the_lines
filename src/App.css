@@ -14,7 +14,7 @@
 .aboutus {
   width: 100%;
   display: flex;
-  height: 90vh;
+  /*height: 90vh; */
   align-items: center;
   justify-content: center;
   font-size: 3rem;
@@ -30,7 +30,7 @@
   position: relative;
   z-index: 1;
   background-color: #918273;
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
