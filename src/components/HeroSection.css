@@ -46,3 +46,7 @@ img {
 .btn:hover {
   background-color: #0056b3;
 }
+
+.hero-section {
+  margin-bottom: 80px;
+}
