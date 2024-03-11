@@ -1,4 +1,5 @@
-/* HeroSection.css */
+
+  /* HeroSection.css */
 
 .hero-container {
   position: relative; /* Make the container relative to position absolute */
@@ -12,7 +13,7 @@ img {
   height: auto;
   display: block;
   z-index: -1;
-  opacity: 80%;
+  opacity: 0.4;
 }
 .hero-content {
   position: absolute;
