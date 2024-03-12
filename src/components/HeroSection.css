@@ -50,3 +50,32 @@ img {
 .hero-section {
   margin-bottom: 80px;
 }
+
+/* Mission section */
+.row{
+  padding: 5%;
+
+}
+
+.text-center {
+  padding: 20%px;
+  float: left;
+  text-align: center;
+  width: 24.99999%;
+
+
+}
+
+.missionText {
+  padding: 10px;
+  float: center;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.msimg {  
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-bottom: 10%;
+
+}
