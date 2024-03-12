@@ -1,10 +1,12 @@
-import React, {useState} from "react"
-import * as FaIcons from "react-icons/fa"
-import * as AiIcons from "react-icons/ai"
-import {Link} from "react-router-dom"
-import {SidebarData} from "./SidebarData"
-import "../App.css"
-import { IconContext } from "react-icons"
+import React, {useState} from "react";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import {Link} from "react-router-dom";
+import {SidebarData} from "./SidebarData";
+
+import "./Navbar.css"
+import { IconContext } from "react-icons";
+import logo from "../assets/BTLLogo.png";
 
 
 
@@ -21,7 +23,7 @@ function Navbar() {
                         <FaIcons.FaBars onClick={showSidebar} />
                     </Link>
                 </div>
-            </div>
+                <img src={logo} alt="Logo" className="navbar-logo" />
 
             <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
                 <ul className="nav-menu-items" onClick={showSidebar}>
@@ -43,6 +45,7 @@ function Navbar() {
                     })}
                 </ul>
             </nav>
+            </div>
         </IconContext.Provider>
         </>
     )
