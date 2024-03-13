@@ -14,6 +14,7 @@ import Home from "./routes/Home";
 import Discover from "./routes/Discover";
 import WhatsTrending from "./routes/WhatsTrending";
 import Genres from "./routes/Genres";
+import TakeOurQuiz from "./routes/TakeOurQuiz";
 import Community from "./routes/Community";
 import Dashboard from "./routes/Dashboard";
 import AboutUs from "./routes/AboutUs";
@@ -26,6 +27,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/discover" element={<Discover />}  />
         <Route path="/discover/whatsTrending" element={<WhatsTrending />} />
         <Route path="/discover/genres" element={<Genres />} /> 
+        <Route path="/discover/takeOurQuiz" element={<TakeOurQuiz />} /> 
         <Route path="/community" element={<Community />}  />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/aboutus" element={<AboutUs />} />

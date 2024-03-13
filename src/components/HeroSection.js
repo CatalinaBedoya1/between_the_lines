@@ -18,7 +18,7 @@ function HeroSection() {
       <div className="hero-content">
         <h1>Welcome to Between the Lines</h1>
         <p> A hub for all book lovers!</p>
-        <Link to="/discover" className="btn">Take Quiz</Link>
+        <Link to="/discover/takeOurQuiz" className="btn">Take Quiz</Link>
       </div>
     </div>
     
