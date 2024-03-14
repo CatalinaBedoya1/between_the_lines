@@ -43,7 +43,29 @@ export const SidebarData = [
   {
     title: 'Community',
     path: '/community',
-    icon: <FaIcons.FaCartPlus />
+    icon: <IoIcons.IoIosPaper />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+
+    subNav: [
+      {
+        title: 'Book Clubs',
+        path: '/community/bookClubs',
+        icon: <IoIcons.IoIosPaper />,
+        cName: 'sub-nav'
+      },
+      {
+        title: 'Discussions',
+        path: '/community/discussions',
+        icon: <IoIcons.IoIosPaper />,
+        cName: 'sub-nav'
+      },
+      {
+        title: 'Book Voting',
+        path: '/community/bookVoting',
+        icon: <IoIcons.IoIosPaper />
+      }
+    ]
   },
   {
     title: 'Dashboard',

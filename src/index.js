@@ -15,10 +15,14 @@ import Discover from "./routes/Discover";
 import WhatsTrending from "./routes/WhatsTrending";
 import Genres from "./routes/Genres";
 import TakeOurQuiz from "./routes/TakeOurQuiz";
-import Community from "./routes/Community";
+import Community, { BookClubs, BookVoting, Discussions } from "./routes/Community";
+
 import Dashboard from "./routes/Dashboard";
 import AboutUs from "./routes/AboutUs";
+import Login from "./routes/Login";
+import SignUpPage from "./routes/SignUpPage";
 import "./App.css";
+
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -29,8 +33,13 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/discover/genres" element={<Genres />} /> 
         <Route path="/discover/takeOurQuiz" element={<TakeOurQuiz />} /> 
         <Route path="/community" element={<Community />}  />
+        <Route path="/community/bookClubs" element={<BookClubs />}  />
+        <Route path="/community/discussions" element={<Discussions />}  />
+        <Route path="/community/bookVoting" element={<BookVoting />}  />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signUp" element={<SignUpPage />} />
     </Route>
 ))
 

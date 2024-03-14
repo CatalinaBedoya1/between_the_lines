@@ -13,7 +13,10 @@
 .discover,
 .whatsTrending,
 .genres,
-.takeOurQuiz
+.takeOurQuiz,
+.bookClubs,
+.discussions,
+.bookVoting,
 .dashboard,
 .aboutus {
   width: 100%;

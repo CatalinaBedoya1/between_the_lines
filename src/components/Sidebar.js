@@ -7,6 +7,7 @@ import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 
+
 import './Navbar.css';
 
 
@@ -28,6 +29,8 @@ const NavIcon = styled(Link)`
 `;
 
 
+
+
 const SidebarNav = styled.nav`
     background: #A08786;
     width: 250px;
@@ -40,6 +43,25 @@ const SidebarNav = styled.nav`
     transition: 350ms;
     z-index: 10;
   `;
+
+  const LoginButton = styled(Link)`
+  margin-left: auto;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px; /* Add padding to create a box around the text */
+  border: 2px solid transparent; /* Add border to create a box */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  transition: all 0.3s ease; /* Add transition for smooth hover effect */
+
+  &:hover {
+    background-color: #fff; /* Change background color on hover */
+    color: #A08786; /* Change text color on hover */
+    border-color: #A08786; /* Change border color on hover */
+  }
+`;
+
 
 const SidebarWrap = styled.div`
   width: 100%;
@@ -58,7 +80,7 @@ const Sidebar = () => {
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
-
+          <LoginButton to="/login">Login</LoginButton>
         </Nav>
 
         <SidebarNav sidebar={sidebar}>
