@@ -59,6 +59,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
 `;
 
 const FormContainer = styled.div`

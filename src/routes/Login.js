@@ -70,7 +70,7 @@ const FormContainer = styled.div`
 const BottomImage = styled.img`
   position: absolute;
   bottom: 0;
-  left: 200px;
+  left: 170px;
   width: auto;
   height: 50%;
   z-index: 6;
