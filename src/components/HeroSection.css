@@ -13,7 +13,7 @@ img {
   height: auto;
   display: block;
   z-index: -1;
-  opacity: 0.4;
+
 }
 .hero-content {
   position: absolute;
@@ -79,4 +79,8 @@ img {
   padding-right: 30%;
   padding-bottom: 10%;
 
+}
+html, body {
+  height: 100vh;
+  width: 100vw;
 }

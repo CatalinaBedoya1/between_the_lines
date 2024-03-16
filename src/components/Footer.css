@@ -1,6 +1,6 @@
 .footer1 {
-  width: 1440px;
-  height: 248px;
+  width: 100%;
+  height: 100%;
   position: relative;
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -40,7 +40,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: var(--padding-9xs) 0 0;
+
 }
 .between-the-lines1 {
   margin: 0;
@@ -109,5 +109,10 @@
   .between-the-lines-container {
     font-size: var(--font-size-base);
   }
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
 }
 

@@ -3,26 +3,41 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import loginImage from '../assets/loginImage.png';
+import { Link } from 'react-router-dom';
+
 
 const Login = () => {
+
+
+  const handleLogin = () => {
+
+  };
+
     return (
       <Container>
         <FormContainer>
           <Title>Login</Title>
           <Form>
+            <Label>Username</Label>
             <InputContainer>
               <Icon>
                 <FontAwesomeIcon icon={faUser} />
               </Icon>
               <Input type="text" placeholder="Type your username" />
             </InputContainer>
+            <Line />
+            <Label>Password</Label>
             <InputContainer>
               <Icon>
                 <FontAwesomeIcon icon={faLock} />
               </Icon>
               <Input type="password" placeholder="Type your password" />
             </InputContainer>
-            <Button type="submit">Login</Button>
+            <Line />
+            <ForgotPasswordLink>Forgot password?</ForgotPasswordLink>
+            <Link to="/home">
+            <Button type="button" onClick={handleLogin}>Login</Button>
+            </Link>
           </Form>
           <SignupLink>Don't have an account? <a href="/signup">Sign Up</a></SignupLink>
         </FormContainer>
@@ -34,15 +49,18 @@ const Login = () => {
 
 
 
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+
 `;
 
 const FormContainer = styled.div`
-  background-color: #f4f4f4;
+  background-color: #f3f3f3;
   padding: 70px;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -52,9 +70,11 @@ const FormContainer = styled.div`
 const BottomImage = styled.img`
   position: absolute;
   bottom: 0;
-  left: 120px;
+  left: 200px;
   width: auto;
   height: 50%;
+  z-index: 6;
+  object-fit: cover;
 
 `;
 
@@ -69,6 +89,13 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const Label = styled.b`
+  margin-bottom: 10px;
+  text-align: left;
+  margin-right: 110px;
+
 `;
 
 const InputContainer = styled.div`
@@ -86,24 +113,23 @@ const Input = styled.input`
   font-size: 1.1rem;
   flex: 1;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none;
   outline: none;
-
-  &:focus {
-    border-color: #007bff;
-  }
 `;
-
+const Line = styled.hr`
+  border: 0.5px solid #ccc;
+  margin: 10px 0;
+`;
 
 const Button = styled.button`
   padding: 10px;
-  background-color: #007bff;
+  width: 200px;
+  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 
   &:hover {
     background-color: #0056b3;
@@ -113,7 +139,24 @@ const Button = styled.button`
 const SignupLink = styled.p`
   text-align: center;
   margin-top: 25px;
-`;
 
+  a {
+    color: #007bff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+const ForgotPasswordLink = styled.b`
+  text-align: left;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 export default Login;

@@ -23,10 +23,10 @@ function HeroSection() {
     </div>
     
     
-
-        <div className="row">
+    <div className="row">
           <div className="text-center">
             <img src={msFirst} alt="card1" className="msimg" />
+
             <h3 className='missionText'>Private & Public Book Clubs</h3>
             <p className='missionText'>
               Join a huge community of book clubs OR make your own with your friends
@@ -34,6 +34,7 @@ function HeroSection() {
           </div>
           <div className="text-center">
             <img src={msSecond} alt="card2" className="msimg" />
+
             <h3 className='missionText'>Forum Discussion</h3>
             <p className='missionText'>
               Public discussion board to share experiences, questions, and any fun topics
@@ -46,10 +47,14 @@ function HeroSection() {
           </div>
           <div className="text-center">
             <img src={msFourth} alt="card4" className="msimg" />
+
             <h3 className='missionText'>Events</h3>
             <p className='missionText'>Register for a variety of online and in-person monthly events</p>
           </div>
         </div>
+
+
+
 
       
       </>

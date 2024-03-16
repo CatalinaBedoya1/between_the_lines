@@ -1,38 +1,55 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-import loginImage from '../assets/loginImage.png';
+
+import SignUpImage from '../assets/SignUpImage.png';
+
+
 
 const SignUpPage = () => {
+  // Function to handle sign up
+  const handleSignUp = () => {
+    // Perform sign up logic
+    // If sign up is successful, navigate to another page or display a success message
+  };
+
   return (
     <Container>
       <FormContainer>
         <Title>Sign Up</Title>
         <Form>
+          <Row>
           <InputContainer>
-            <Icon>
-              <FontAwesomeIcon icon={faUser} />
-            </Icon>
-            <Input type="text" placeholder="Type your username" />
+            
+            <Input type="text" placeholder="First Name" />
           </InputContainer>
           <InputContainer>
-            <Icon>
-              <FontAwesomeIcon icon={faEnvelope} />
-            </Icon>
-            <Input type="email" placeholder="Type your email" />
+            
+            <Input type="text" placeholder="Last Name" />
+          </InputContainer>
+          </Row>
+          <InputContainer>
+            
+            <Input type="email" placeholder="Email" />
+          </InputContainer>
+          <Row>
+          <InputContainer>
+            
+            <Input type="text" placeholder="Username" />
           </InputContainer>
           <InputContainer>
-            <Icon>
-              <FontAwesomeIcon icon={faLock} />
-            </Icon>
-            <Input type="password" placeholder="Type your password" />
+            
+            <Input type="password" placeholder="Password" />
           </InputContainer>
-          <Button type="submit">Sign Up</Button>
+          <InputContainer>
+            
+            <Input type="password" placeholder="Confirm Password" />
+          </InputContainer>
+          </Row>
+          <Button type="button" onClick={handleSignUp}>Sign Up</Button>
         </Form>
         <LoginLink>Already have an account? <a href="/login">Login</a></LoginLink>
       </FormContainer>
-      <BottomImage src={loginImage} alt="LoginImage" />
+      <BottomImage src={SignUpImage} alt="SignUpImage" />
     </Container>
   );
 };
@@ -52,11 +69,12 @@ const FormContainer = styled.div`
 `;
 const BottomImage = styled.img`
   position: absolute;
-  bottom: 0;
-  left: 120px;
+  right: 120px;
+  bottom: 320px; /* Adjust the distance from the bottom */
   width: auto;
   height: 50%;
-
+  margin-top: 0;
+  z-index: 1;
 `;
 
 const Title = styled.h2`
@@ -72,15 +90,22 @@ const Form = styled.form`
   align-items: center;
 `;
 
+const Row = styled.div`
+  display: flex;
+  gap: 20px; /* Adjust the gap between inputs */
+  margin-bottom: 10px; /* Add margin between rows */
+  width:100%;
+`;
+
 const InputContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 25px;
-`;
-
-const Icon = styled.span`
+  width: 100%;
+  flex: 1;
   margin-right: 10px;
 `;
+
 
 const Input = styled.input`
   width: 100%;
@@ -90,6 +115,7 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
+  margin-right: 10px;
 `;
 
 const Button = styled.button`
