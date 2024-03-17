@@ -39,7 +39,7 @@ const SidebarNav = styled.nav`
     justify-content: center;
     position: fixed;
     top: 0;
-    left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
+    left: 0;
     transition: 350ms;
     z-index: 10;
   `;
@@ -68,34 +68,40 @@ const SidebarWrap = styled.div`
 `;
 
 const Sidebar = () => {
-  const [sidebar, setSidebar] = useState(false);
+  const [isOpen, setIsOpen] = useState(true); // Set the sidebar to be open by default
 
-  const showSidebar = () => setSidebar(!sidebar);
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsOpen(false);
+  };
 
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
-
         <Nav>
           <NavIcon to='#'>
-            <FaIcons.FaBars onClick={showSidebar} />
+            <FaIcons.FaBars onClick={toggleSidebar} />
           </NavIcon>
           <LoginButton to="/login">Login</LoginButton>
         </Nav>
-
-        <SidebarNav sidebar={sidebar}>
-          <SidebarWrap>
-            <NavIcon to='#'>
-              <AiIcons.AiOutlineClose onClick={showSidebar} />
-            </NavIcon>
-            {SidebarData.map((item, index) => {
-              return <SubMenu item={item} key={index} />;
-            })}
-          </SidebarWrap>
-        </SidebarNav>
+        {isOpen && (
+          <SidebarNav>
+            <SidebarWrap>
+              <NavIcon to='#'>
+                <AiIcons.AiOutlineClose onClick={closeSidebar} />
+              </NavIcon>
+              {SidebarData.map((item, index) => {
+                return <SubMenu item={item} key={index} />;
+              })}
+            </SidebarWrap>
+          </SidebarNav>
+        )}
       </IconContext.Provider>
     </>
   );
 };
 
-export default Sidebar;
+export default Sidebar

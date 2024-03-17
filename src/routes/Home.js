@@ -1,4 +1,5 @@
 import React from 'react';
+
 import HeroSection from '../components/HeroSection';
 
 
@@ -7,9 +8,10 @@ import HeroSection from '../components/HeroSection';
 function Home() {
   return (
     <div className="home">
-      <div className="hero-section">
         <HeroSection />
-      </div>
+
+
+
     </div>
   );
 }
