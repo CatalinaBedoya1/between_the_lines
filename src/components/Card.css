@@ -1,0 +1,21 @@
+.card {
+    border: 1px solid white;
+    width: 300px;
+    height: 250px;
+    margin: 25px;
+  }
+  .card-image {
+    border: 1px solid white;
+    width: 300px;
+    height: 175px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }  
+  .card-description {
+    font-size: 5px;
+    /* color: #777777; */
+  }
+  
