@@ -1,0 +1,23 @@
+
+
+
+  
+  /* dropdown menu styles */
+  .sub-menu {
+    list-style: none;
+    padding-left: 20px; /* Indent sub-menu items */
+  }
+  
+  .sub-menu li {
+    padding: 10px;
+  }
+  
+  .sub-menu li:hover {
+    background-color: #666; /* Background color when hovering over sub-menu item */
+  }
+  
+  
+  
+  
+ 
+ 

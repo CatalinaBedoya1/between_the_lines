@@ -11,16 +11,24 @@
 .home,
 .community,
 .discover,
+.whatsTrending,
+.genres,
+.takeOurQuiz,
+.bookClubs,
+.discussions,
+.bookVoting,
 .dashboard,
 .aboutus {
   width: 100%;
   display: flex;
-  /*height: 90vh; */
+  height:100%;
+
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2rem;
   background-color: rgb(255, 255, 255);
-  color: #fff;
+  color: rgb(0, 0, 0);
+
 
   
 }

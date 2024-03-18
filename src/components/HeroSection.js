@@ -7,23 +7,23 @@ import msFirst from '../assets/card1.png';
 import msSecond from '../assets/card2.png';
 import msThird from '../assets/card3.png';
 import msFourth from '../assets/card4.png';
+import myImage3 from '../assets/ifyoucouldseethesunzoom.png';
+import myImage2 from '../assets/ifyoucouldseethesun.png';
+
+
 
 
 function HeroSection() {
-  return (
-    <>
-    
-    <div className="hero-container">
-      <img src={myImage} alt="Hero section background" className="hero-image" />
-      <div className="hero-content">
-        <h1>Welcome to Between the Lines</h1>
-        <p> A hub for all book lovers!</p>
-        <Link to="/discover" className="btn">Take Quiz</Link>
-      </div>
-    </div>
-    
-    
-
+    return (
+      <div>
+        <div className="hero-container">
+          <img src={myImage} alt="Hero section background" className="hero-image" />
+          <div className="hero-content">
+            <h1>Welcome to Between the Lines</h1>
+            <p>A hub for all book lovers!</p>
+            <Link to="/discover/takeOurQuiz" className="btn">Take Quiz</Link>
+          </div>
+        </div>
         <div className="row">
           <div className="text-center">
             <img src={msFirst} alt="card1" className="msimg" />
@@ -51,9 +51,32 @@ function HeroSection() {
           </div>
         </div>
 
-      
-      </>
+        <div className="row">
+
+        <div className="BOTM-container">
+        <img src={myImage3} alt="Book of the month cover" className="BOTM-imageZoom" />
+        <div className="BOTM-content">
+          <h1>BOOK OF THE MONTH</h1>
+          <h2>If You Could See the Sun</h2>
+          <h3>Ann Liang</h3>
+          <p>In this genre-bending, speculative YA debut, </p>
+           <p> a Chinese American girl monetizes her strange new invisibility powers </p>
+           <p>by discovering and selling her wealthy classmates' most scandalous secrets.</p>
+  
+          
+          <div className="buttons">
+            <Link to="/discover/fantasy" className="BOTM-btn">Fantasy</Link>
+            <Link to="/discover/fiction" className="BOTM-btn">Fiction</Link>
+          </div>
+          <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
+        </div>
+      </div>
+      </div>
+
+  </div>
   );
 }
+
+  
 
 export default HeroSection
