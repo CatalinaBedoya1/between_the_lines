@@ -34,5 +34,106 @@
 }
 
 
+/* Navbar CSS */
+.navbar {
+  position: relative;
+  z-index: 1;
+  background-color: #918273;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu-bars {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+  color: #000;
+}
+
+.nav-menu {
+  background-color: #ffffff;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  z-index: 2;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 450ms;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 0px 8px 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: #151414;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.nav-text a:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: #ffffff;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+span {
+  margin-left: 16px;
+}
+
+
+.btn-box {
+  display: inline-block; /* Adjust border properties as needed */
+  padding: 10px; /* Adjust padding as needed */
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border:2px solid #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+}
 
 

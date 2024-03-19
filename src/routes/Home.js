@@ -1,4 +1,5 @@
 import React from 'react';
+
 import HeroSection from '../components/HeroSection';
 import Events from '../components/Events';
 
@@ -8,12 +9,14 @@ import Events from '../components/Events';
 function Home() {
   return (
     <div className="home">
-      <div className="hero-section">
         <HeroSection />
         <Events />
       </div>
+<<<<<<< HEAD
        
     </div>
+=======
+>>>>>>> 49d4b2f58dec4161dd5d5384058875c452e265c6
   );
 }
 export default Home;
