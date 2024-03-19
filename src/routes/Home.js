@@ -12,6 +12,7 @@ function Home() {
         <HeroSection />
         <Events />
       </div>
+       
     </div>
   );
 }

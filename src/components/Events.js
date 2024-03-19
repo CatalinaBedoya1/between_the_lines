@@ -7,8 +7,8 @@ import event3 from "../assets/event3.png";
 
 
 
-const ArtSection = () => {
-  const cats = [
+const EventsData = () => {
+  const event = [
     {
       imageUrl: event1,
       description: "Webinar with Author Stephan King",
@@ -25,15 +25,17 @@ const ArtSection = () => {
 
   return (
     <>
-      <h4 className="art-text" id="Art">
-        Events
-      </h4>
-      <div className="artsection">
-        {cats.map((cat, index) => (
+
+      <div className="event-header">
+        <h4>Events</h4>
+      </div>
+
+
+      <div className="event-carousel">
+        {event.map((event, index) => (
           <Card
-            key={index}
-            imageUrl={cat.imageUrl}
-            description={cat.description}
+            imageUrl={event.imageUrl}
+            description={event.description}
           />
         ))}
       </div>
@@ -42,4 +44,4 @@ const ArtSection = () => {
 };
 
 
-export default ArtSection;
+export default EventsData;

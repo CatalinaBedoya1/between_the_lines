@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Card.css";
+import { Link } from "react-router-dom";
 
 const Card = ({ imageUrl, description }) => {
   return (
@@ -7,6 +8,7 @@ const Card = ({ imageUrl, description }) => {
       <img src={imageUrl} alt={'Image of {description}'} className="card-image" />
       <div className="card-content">
       <p className="card-descripton">{description}</p>
+      {/* <Link to="/discover" className="btn"></Link> */}
       </div>
     </div>
   );
