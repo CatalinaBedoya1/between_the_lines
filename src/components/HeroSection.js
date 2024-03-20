@@ -7,7 +7,7 @@ import msFirst from '../assets/card1.png';
 import msSecond from '../assets/card2.png';
 import msThird from '../assets/card3.png';
 import msFourth from '../assets/card4.png';
-import myImage3 from '../assets/ifyoucouldseethesunzoom.png';
+import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
 
 
@@ -55,7 +55,7 @@ function HeroSection() {
         </div>
         
         <div className="BOTM-container">
-        <img src={myImage2} alt="Book of the month cover" className="BOTM-imageZoom" />
+        <img src={myImage3} alt="Book of the month cover" className="BOTM-imageZoom" />
         <div className="BOTM-content">
           <h1>BOOK OF THE MONTH</h1>
           <h2>If You Could See the Sun</h2>
@@ -71,7 +71,7 @@ function HeroSection() {
           <Link to="/discover/fantasy" className="btn-2">fantasy</Link>
             <Link to="/discover/fiction" className="btn-3">fiction</Link>
           </div>
-          <img src={myImage3} alt="BOTM cover" className="BOTM-image"/>
+          <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
         </div>
       </div>
      
