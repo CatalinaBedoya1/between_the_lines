@@ -12,11 +12,7 @@ function Home() {
         <HeroSection />
         <Events />
       </div>
-<<<<<<< HEAD
        
-    </div>
-=======
->>>>>>> 49d4b2f58dec4161dd5d5384058875c452e265c6
   );
 }
 export default Home;

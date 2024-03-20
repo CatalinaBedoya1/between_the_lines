@@ -129,6 +129,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #DCE9EF
 `;
 
 const QuizContent = styled.div`
@@ -137,7 +138,7 @@ const QuizContent = styled.div`
 
 const QuestionBubble = styled.div`
   display: inline-block;
-  background-color: #f0f0f0;
+  background-color: #FFFFFF;
   border-radius: 20px;
   padding: 60px;
   margin-bottom: 60px;

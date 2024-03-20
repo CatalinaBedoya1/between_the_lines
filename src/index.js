@@ -28,7 +28,7 @@ import Quiz from "./routes/Quiz";
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route element={<AppLayout />}>
-        <Route path="/home" element={<Home />}  />
+        <Route path="/" element={<Home />}  />
         <Route path="/discover" element={<Discover />}  />
         <Route path="/discover/whatsTrending" element={<WhatsTrending />} />
         <Route path="/discover/genres" element={<Genres />} /> 

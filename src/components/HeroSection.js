@@ -11,7 +11,7 @@ import myImage3 from '../assets/ifyoucouldseethesunzoom.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
 
 
-
+//Herosection has header, mission statements, Book of the month, events, and book forums.
 
 function HeroSection() {
     return (
