@@ -1,0 +1,213 @@
+.discover{
+    display: flex;
+    flex-direction: column;
+}
+
+.btns-genre {
+    display: flex;
+}
+.discover h2{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: -700px;
+}
+.btn-classic{
+    display: inline-block;
+      padding: 10px 50px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #5397AC; /* blue */
+      color: #fff; /* white */
+      margin-right: 20px;
+      margin-top: 20px;
+  }
+  
+  .btn-fantasy{
+    display: inline-block;
+      padding: 10px 50px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #95B9B4; /* green */
+      color: #fff; /* white */
+      margin-left: 5px;
+      margin-top: 20px;
+  }
+
+  .btn-fiction{
+    display: inline-block;
+      padding: 10px 50px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #DBD1AB; /* yellow */
+      color: #fff; /* white */
+      margin-left: 5px;
+      margin-top: 20px;
+  }
+
+  .btn-histfiction{
+    display: inline-block;
+      padding: 10px 70px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #D6B2A6; /* pink */
+      color: #fff; /* white */
+      margin-left: 5px;
+      margin-top: 20px;
+  }
+
+  .btn-horror{
+    display: inline-block;
+      padding: 10px 60px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #D6B2A6; /* pink */
+      color: #fff; /* white */
+      margin-left: 5px;
+      margin-top: 20px;
+  }
+
+  .btn-memoir{
+    display: inline-block;
+      padding: 10px 50px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #5397AC; /* blue */
+      color: #fff; /* white */
+      margin-right: 5px;
+      margin-top: 20px;
+  }
+
+  .btn-mystery{
+    display: inline-block;
+      padding: 10px 50px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #95B9B4; /* green */
+      color: #fff; /* white */
+      margin-left: 5px;
+      margin-top: 20px;
+  }
+
+  .btn-nonfiction{
+    display: inline-block;
+      padding: 10px 70px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #5397AC; /* blue */
+      color: #fff; /* white */
+      margin-right: 5px;
+      margin-top: 20px;
+  }
+
+  .btn-poetry{
+    display: inline-block;
+      padding: 10px 50px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #95B9B4; /* green */
+      color: #fff; /* white */
+      margin-left: 5px;
+      margin-top: 20px;
+  }
+
+  .btn-romance{
+    display: inline-block;
+      padding: 10px 70px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #D6B2A6; /* pink */
+      color: #fff; /* white */
+      margin-left: 5px;
+      margin-top: 20px;
+  }
+
+  .btn-selfhelp{
+    display: inline-block;
+      padding: 10px 50px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #DBD1AB; /* yellow */
+      color: #fff; /* white */
+      margin-left: 5px;
+      margin-top: 20px;
+  }
+
+  .genre-row4{
+    margin-bottom: 80px;
+  }
+
+  .btn-thriller{
+    display: inline-block;
+      padding: 10px 60px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #D6B2A6; /* pink */
+      color: #fff; /* white */
+      margin-left: 5px;
+      margin-top: 20px;
+  }
+
+  .btn-truecrime{
+    display: inline-block;
+      padding: 10px 50px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #95B9B4; /* green */
+      color: #fff; /* white */
+      margin-left: 30px;
+      margin-top: 20px;
+  }
+
+  .btn-youngadult{
+    display: inline-block;
+      padding: 10px 70px;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 50px;
+      background-color: #5397AC; /* blue */
+      color: #fff; /* white */
+      margin-right: 5px;
+      margin-top: 20px;
+      margin-left: 30px;
+  }

@@ -5,6 +5,8 @@ import Events from '../components/Events';
 import Forums from '../components/Forums';
 
 
+import './home.css';
+import CommunityPicks from '../components/CommunityPicks';
 
 // import { Link } from 'react-router-dom';
 
@@ -14,7 +16,9 @@ function Home() {
         <HeroSection />
         <Events />
         <Forums />
-      </div>
+        <CommunityPicks/>
+      </div>     
   );
 }
 export default Home;
+
