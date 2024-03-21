@@ -8,7 +8,7 @@ import forum3 from "../assets/forum3.png";
 
 
 const ForumArtSection = () => {
-  const cats = [
+  const forums = [
     {
       imageUrl: forum1,
       description: "Book of the Month: If You Could See the Sun By Ann Liang",
@@ -29,11 +29,11 @@ const ForumArtSection = () => {
         Forums
       </h4>
       <div className="artsection">
-        {cats.map((cat, index) => (
+        {forums.map((forum, index) => (
           <Card
             key={index}
-            imageUrl={cat.imageUrl}
-            description={cat.description}
+            imageUrl={forum.imageUrl}
+            description={forum.description}
           />
         ))}
       </div>
