@@ -15,7 +15,8 @@ function Home() {
     <div className="home">
         <HeroSection />
         <Events />
-        <CommunityPicks/>
+        <Forums />
+
       </div>     
   );
 }
