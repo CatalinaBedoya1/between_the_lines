@@ -7,7 +7,7 @@ import msFirst from '../assets/card1.png';
 import msSecond from '../assets/card2.png';
 import msThird from '../assets/card3.png';
 import msFourth from '../assets/card4.png';
-import myImage3 from '../assets/ifyoucouldseethesunzoom.png';
+import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
 
 
@@ -52,28 +52,31 @@ function HeroSection() {
         </div>
 
         <div className="row">
-
+        </div>
+        
         <div className="BOTM-container">
         <img src={myImage3} alt="Book of the month cover" className="BOTM-imageZoom" />
         <div className="BOTM-content">
           <h1>BOOK OF THE MONTH</h1>
           <h2>If You Could See the Sun</h2>
           <h3>Ann Liang</h3>
-          <p>In this genre-bending, speculative YA debut, </p>
-           <p> a Chinese American girl monetizes her strange new invisibility powers </p>
-           <p>by discovering and selling her wealthy classmates' most scandalous secrets.</p>
+          <hr className="BOTM-divider"/>
+          <p>In this genre-bending, speculative YA debut, a </p>
+            <p> Chinese American girl monetizes her strange </p>
+            <p>new invisibility powers by discovering and </p>
+            <p> selling her wealthy classmates' most </p> 
+            <p>scandalous secrets.</p>
   
-          
-          <div className="buttons">
-            <Link to="/discover/fantasy" className="BOTM-btn">Fantasy</Link>
-            <Link to="/discover/fiction" className="BOTM-btn">Fiction</Link>
+          <div className="BOTM-buttons">
+          <Link to="/discover/fantasy" className="btn-2">fantasy</Link>
+            <Link to="/discover/fiction" className="btn-3">fiction</Link>
           </div>
           <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
         </div>
       </div>
-      </div>
+     
 
-  </div>
+      </div>
   );
 }
 
