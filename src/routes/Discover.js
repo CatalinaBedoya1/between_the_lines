@@ -33,6 +33,7 @@ export const Discover = () => {
       </div>
 
       <CommunityPicks />
+      <CommunityPicks />
 
 
     </div>
