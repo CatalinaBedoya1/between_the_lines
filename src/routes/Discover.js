@@ -1,9 +1,14 @@
 import React from 'react';
+import CommunityPicks from '../components/CommunityPicks';
+import './Discover.css';
 
 export const Discover = () => {
   return (
     <div className='discover'>
       <h1>Discover</h1>
+      <CommunityPicks />
+
+
     </div>
   );
 };

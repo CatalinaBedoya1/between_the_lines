@@ -1,190 +1,114 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import styled from 'styled-components';
 
 const Quiz = () => {
-  const [genre, setGenre] = useState('');
-  const [length, setLength] = useState('');
-  const [recommendations, setRecommendations] = useState([]);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOption, setSelectedOption] = useState('');
-  const [showRecommendations, setShowRecommendations] = useState(false);
+  const [preferences, setPreferences] = useState({
+    genre: '',
+    bookLength: '',
+    readingSpeed: '',
+    writingStyle: '',
+    characters: '',
+    plotType: '',
+    settings: ''
+    // Add more preferences as needed
+  });
 
-  const quizQuestions = [
-    {
-      id: 1,
-      question: "What genre of books do you prefer?",
-      options: ["Mystery/Thriller", "Romance", "Science Fiction/Fantasy", "Historical Fiction", "Non-fiction", "Biography/Memoir", "Horror", "Contemporary Fiction", "Classic Literature"]
-    },
-    {
-      id: 2,
-      question: "How long do you prefer your books to be?",
-      options: ["Short (less than 300 pages)", "Medium (300-500 pages)", "Long (more than 500 pages)"]
-    },
-    {
-      id: 3,
-      question: "How fast do you typically read?",
-      options: ["Slow (1-2 weeks per book)", "Moderate (3-4 days per book)", "Fast (1-2 days per book)"]
-    },
-    {
-      id: 4,
-      question: "What type of writing style do you enjoy?",
-      options: ["Descriptive and lyrical", "Concise and to the point", "Dialogue-heavy and conversational"]
-    },
-    {
-      id: 5,
-      question: "What kind of characters do you prefer?",
-      options: ["Comples and morally ambiguous", "Relatable and everyday people", "Larger-than-life and heroic"]
-    },
-    {
-      id: 6,
-      question: "What type of plot do you find most engaging?",
-      options: ["Twisty and full of surprise", "Slow-burn and character-driven", "Fast-paced and action-packed"]
-    },
-    {
-      id: 7,
-      question: "What settings do you prefer in books?",
-      options: ["Urban and modern cities","Rural and countryside","Historical periods and settings"]
-    }
-  ];
-
-  const handleGenreChange = (option) => {
-    setGenre(option);
-    setSelectedOption(option);
-  };
-
-  const handleLengthChange = (option) => {
-    setLength(option);
-    setSelectedOption(option);
+  const handlePreferenceChange = (preferenceType, value) => {
+    setPreferences({ ...preferences, [preferenceType]: value });
   };
 
   const handleQuizSubmit = async () => {
     try {
-      // Fetch book recommendations from Google Books API based on user preferences
-      const response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=${genre}+${length}&key=${process.env.REACT_APP_GOOGLE_BOOKS_API_KEY}`
-      );
-      setRecommendations(response.data.items);
-      setShowRecommendations(true); // Show recommendations after submitting quiz
+      // Send preferences to the server using fetch
+      const response = await fetch('/api/preferences', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(preferences)
+      });
+      const data = await response.json();
+      // Handle response from the server (recommendations)
+      console.log(data);
     } catch (error) {
-      console.error('Error fetching recommendations:', error);
+      console.error('Error submitting preferences:', error);
     }
   };
 
-  const handleNextQuestion = () => {
-    setCurrentQuestion(currentQuestion + 1);
-    setSelectedOption('');
-  };
-
   return (
-    <Container>
-      <QuizContent>
-        {currentQuestion < quizQuestions.length ? (
-          <>
-            <QuestionBubble>
-              <h3>{quizQuestions[currentQuestion].question}</h3>
-            </QuestionBubble>
-            <OptionsContainer>
-              {quizQuestions[currentQuestion].options.map((option, index) => (
-                <OptionBubble
-                  key={index}
-                  onClick={() => {
-                    if (currentQuestion === 0) handleGenreChange(option);
-                    else handleLengthChange(option);
-                  }}
-                  selected={selectedOption === option}
-                >
-                  {option}
-                </OptionBubble>
-              ))}
-            </OptionsContainer>
-            <NextButton onClick={handleNextQuestion}>Next</NextButton>
-          </>
-        ) : (
-          <SubmitButton onClick={handleQuizSubmit}>Submit</SubmitButton>
-        )}
-      </QuizContent>
-
-      {/* Display recommendations only after submitting quiz */}
-      {showRecommendations && (
-        <Recommendations>
-          <h3>Recommendations</h3>
-          <ul>
-            {recommendations.map((book) => (
-              <li key={book.id}>
-                <strong>Title:</strong> {book.volumeInfo.title}<br />
-                <strong>Author:</strong> {book.volumeInfo.authors.join(', ')}<br />
-                {/* Add more book details */}
-              </li>
-            ))}
-          </ul>
-        </Recommendations>
-      )}
-    </Container>
+    <div>
+      <h2>Book Recommendation Quiz</h2>
+      <div>
+        <h3>What genre of books do you prefer?</h3>
+        <select value={preferences.genre} onChange={e => handlePreferenceChange('genre', e.target.value)}>
+          <option value="">Select genre</option>
+          <option value="Mystery/Thriller">Mystery/Thriller</option>
+          <option value="Romance">Romance</option>
+          <option value="Science Fiction/Fantasy">Science Fiction/Fantasy</option>
+          <option value="Historical Fiction">Historical Fiction</option>
+          <option value="Non-fiction">Non-fiction</option>
+          <option value="Biography/Memoir">Biography/Memoir</option>
+          <option value="Horror">Horror</option>
+          <option value="Contemporary Fiction">Contemporary Fiction</option>
+          <option value="Classic Literature">Classic Literature</option>
+        </select>
+      </div>
+      <div>
+        <h3>How long do you prefer your books to be?</h3>
+        <select value={preferences.bookLength} onChange={e => handlePreferenceChange('bookLength', e.target.value)}>
+          <option value="">Select book length</option>
+          <option value="Short (less than 300 pages)">Short (less than 300 pages)</option>
+          <option value="Medium (300-500 pages)">Medium (300-500 pages)</option>
+          <option value="Long (more than 500 pages)">Long (more than 500 pages)</option>
+        </select>
+      </div>
+      <div>
+        <h3>How fast do you typically read?</h3>
+        <select value={preferences.readingSpeed} onChange={e => handlePreferenceChange('readingSpeed', e.target.value)}>
+          <option value="">Select reading speed</option>
+          <option value="Slow (1-2 weeks per book)">Slow (1-2 weeks per book)</option>
+          <option value="Moderate (3-4 days per book)">Moderate (3-4 days per book)</option>
+          <option value="Fast (1-2 days per book)">Fast (1-2 days per book)</option>
+        </select>
+      </div>
+      <div>
+        <h3>What type of writing style do you enjoy?</h3>
+        <select value={preferences.writingStyle} onChange={e => handlePreferenceChange('writingStyle', e.target.value)}>
+          <option value="">Select writing style</option>
+          <option value="Descriptive and lyrical">Descriptive and lyrical</option>
+          <option value="Concise and to the point">Concise and to the point</option>
+          <option value="Dialogue-heavy and conversational">Dialogue-heavy and conversational</option>
+        </select>
+      </div>
+      <div>
+        <h3>What kind of characters do you prefer?</h3>
+        <select value={preferences.characters} onChange={e => handlePreferenceChange('characters', e.target.value)}>
+          <option value="">Select character type</option>
+          <option value="Complex and morally ambiguous">Complex and morally ambiguous</option>
+          <option value="Relatable and everyday people">Relatable and everyday people</option>
+          <option value="Larger-than-life and heroic">Larger-than-life and heroic</option>
+        </select>
+      </div>
+      <div>
+        <h3>What type of plot do you find most engaging?</h3>
+        <select value={preferences.plotType} onChange={e => handlePreferenceChange('plotType', e.target.value)}>
+          <option value="">Select plot type</option>
+          <option value="Twisty and full of surprise">Twisty and full of surprise</option>
+          <option value="Slow-burn and character-driven">Slow-burn and character-driven</option>
+          <option value="Fast-paced and action-packed">Fast-paced and action-packed</option>
+        </select>
+      </div>
+      <div>
+        <h3>What settings do you prefer in books?</h3>
+        <select value={preferences.settings} onChange={e => handlePreferenceChange('settings', e.target.value)}>
+          <option value="">Select setting</option>
+          <option value="Urban and modern cities">Urban and modern cities</option>
+          <option value="Rural and countryside">Rural and countryside</option>
+          <option value="Historical periods and settings">Historical periods and settings</option>
+        </select>
+      </div>
+      <button onClick={handleQuizSubmit}>Submit</button>
+    </div>
   );
 };
 
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #DCE9EF
-`;
-
-const QuizContent = styled.div`
-  text-align: center;
-`;
-
-const QuestionBubble = styled.div`
-  display: inline-block;
-  background-color: #FFFFFF;
-  border-radius: 20px;
-  padding: 60px;
-  margin-bottom: 60px;
-`;
-
-const OptionsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 40px;
-`;
-
-const OptionBubble = styled.div`
-  display: inline-block;
-  background-color: ${({ selected }) => (selected ? '#007bff' : '#c0c0c0')};
-  color: ${({ selected }) => (selected ? '#ffffff' : '#000000')};
-  border-radius: 20px;
-  padding: 10px 20px;
-  margin: 0 10px 10px 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  &:hover {
-    background-color: ${({ selected }) => (selected ? '#007bff' : '#a0a0a0')};
-  }
-`;
-
-const NextButton = styled.button`
-  margin-top: 20px;
-  padding: 10px 40px;
-  border-radius: 20px;
-  font-size: 20px;
-  transition: background-color 0.3s ease; /* Add transition for smooth effect */
-
-  &:hover {
-    background-color: #0056b3; /* Change background color on hover */
-  }
-`;
-
-const SubmitButton = styled.button`
-  margin-top: 20px;
-`;
-
-const Recommendations = styled.div`
-  margin-top: 40px;
-`;
-
 export default Quiz;
-

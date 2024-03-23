@@ -1,12 +1,13 @@
-/* .event-header{
+.event-header{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     text-align: center;
-    padding-top: 300px;
-} */
+    padding-top: 20px;
+}
 
 .event-carousel{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     /*flex-wrap: wrap; */
     color: black;
@@ -16,5 +17,9 @@
     margin: 0 auto;
 }
 
+.seemore-btn{
+    font-size: medium;
+    color: navy;
+}
 
 
