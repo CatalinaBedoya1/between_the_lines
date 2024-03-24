@@ -1,0 +1,4 @@
+.aboutus{
+    display: flex;
+    flex-direction: column;
+}
