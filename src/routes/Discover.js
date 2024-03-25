@@ -2,7 +2,6 @@ import React from 'react';
 import CommunityPicks from '../components/CommunityPicks';
 import './Discover.css';
 import { Link } from 'react-router-dom';
-import myImage4 from '../assets/discoverlines1.png';
 
 export const Discover = () => {
   return (
@@ -35,6 +34,7 @@ export const Discover = () => {
         </div>
       </div>
 
+      <CommunityPicks />
       <CommunityPicks />
 
 

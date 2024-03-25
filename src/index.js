@@ -21,7 +21,11 @@ import Dashboard from "./routes/Dashboard";
 import AboutUs from "./routes/AboutUs";
 import Login from "./routes/Login";
 import SignUpPage from "./routes/SignUpPage";
+import Quiz from "./routes/Quiz";
 import "./App.css";
+import SearchResultsPage from "./routes/SearchResultsPage";
+
+
 
 
 
@@ -40,6 +44,11 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUpPage />} />
+        <Route path="/searchResultsPage" element={<SearchResultsPage />} />
+        <Route path="/quiz" element={<Quiz />} />
+
+        
+
     </Route>
 ))
 

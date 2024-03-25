@@ -7,6 +7,7 @@ const ITEM_WIDTH = 216;
 
 
 const CPPicks = () => {
+
     const [scrollPosition, setScrollPosition] = useState(0);
     const containerRef = useRef();
 
@@ -28,7 +29,8 @@ const CPPicks = () => {
         <div 
             ref={containerRef}
             style={{
-                width:"900px",
+                // width:"900px",
+                width: "1150px", 
                 overflowX:"scroll",
                 scrollBehavior:"smooth",
             }}
