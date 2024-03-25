@@ -126,7 +126,7 @@ const SearchResultsPage = () => {
       <SearchBar>
         <SearchInput
           type="text"
-          placeholder="Enter a genre..."
+          placeholder="Search..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
