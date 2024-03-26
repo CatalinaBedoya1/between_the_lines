@@ -7,10 +7,9 @@ export const Community = () => {
     return (
       <div className='community'>
         <h1>Community</h1>
-
-
+        
         <Events />        
-      
+    
         <div className="leaderboard-container">
             <img src={Leaderboard} alt="leaderboard" className="leaderboard-static" />
         </div>
