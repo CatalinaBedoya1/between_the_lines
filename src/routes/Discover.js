@@ -3,6 +3,9 @@ import QuizResults from '../components/QuizResults';
 import CommunityPicks from '../components/CommunityPicks';
 import './Discover.css';
 import { Link } from 'react-router-dom';
+import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
+import myImage2 from '../assets/ifyoucouldseethesun.png';
+
 
 
 
@@ -41,6 +44,26 @@ export const Discover = () => {
       <QuizResults />
 
       {/* insert book of the month*/}
+        <div className="BOTM-container">
+        <img src={myImage3} alt="Book of the month cover" className="BOTM-imageZoom" />
+        <div className="BOTM-content">
+          <h1>BOOK OF THE MONTH</h1>
+          <h2>If You Could See the Sun</h2>
+          <h3>Ann Liang</h3>
+          <hr className="BOTM-divider"/>
+          <p>In this genre-bending, speculative YA debut, a </p>
+            <p> Chinese American girl monetizes her strange </p>
+            <p>new invisibility powers by discovering and </p>
+            <p> selling her wealthy classmates' most </p> 
+            <p>scandalous secrets.</p>
+  
+          <div className="BOTM-summary">
+          <p>"It makes me almost dizzy, thinking about the stark differences in realities,</p>
+            <p>what will be and what could've been." </p>
+          </div>
+          <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
+        </div>
+      </div>
 
       <CommunityPicks/>
 

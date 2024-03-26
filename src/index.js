@@ -21,6 +21,7 @@ import Dashboard from "./routes/Dashboard";
 import AboutUs from "./routes/AboutUs";
 import Login from "./routes/Login";
 import SignUpPage from "./routes/SignUpPage";
+import Quiz from "./routes/Quiz";
 import "./App.css";
 
 

@@ -145,30 +145,21 @@
   z-index: 1;
 }
 
-.btn-2{
+.btn-2,
+.btn-3{
   display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 23px;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     border-radius: 50px;
     background-color: #D6B2A6; /* pink */
     color: #fff; /* white */
-    margin-right: 5px;
+    margin-right: 15px;
     margin-top: 20px;
 }
 
 .btn-3{
-  display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 50px;
     background-color: #95B9B4; /* green */
-    color: #fff; /* white */
-    margin-left: 5px;
-    margin-top: 20px;
 }
