@@ -28,8 +28,8 @@ export const SidebarData = [
         cName: 'sub-nav'
       },
       {
-        title: 'Genres',
-        path: '/discover/genres',
+        title: 'Search',
+        path: '/discover/searchResultsPage',
         icon: <IoIcons.IoIosPaper />,
         cName: 'sub-nav'
       },

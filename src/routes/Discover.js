@@ -36,7 +36,7 @@ export const Discover = () => {
         <Link to="/discover/thriller" className="btn-thriller">thriller</Link>
         <Link to="/discover/truecrime" className="btn-truecrime">true crime</Link>
         <Link to="/discover/youngadult" className="btn-youngadult">young adult</Link>
-        <Link to="/discover/search" className="btn-search">+</Link>
+        <Link to="/discover/searchResultsPage" className="btn-search">+</Link>
         </div>
         </div>
 
