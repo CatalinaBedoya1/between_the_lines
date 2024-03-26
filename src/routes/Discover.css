@@ -99,3 +99,13 @@
       padding: 10px 40px;
       background-color: #D6B2A6; /* pink */
   }
+
+  .BOTM-content h2{
+    margin:0;
+  }
+  
+  .BOTM-summary{
+    margin-top: 30px;
+    
+  }
+

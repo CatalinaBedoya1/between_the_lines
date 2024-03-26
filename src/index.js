@@ -21,14 +21,10 @@ import Dashboard from "./routes/Dashboard";
 import AboutUs from "./routes/AboutUs";
 import Login from "./routes/Login";
 import SignUpPage from "./routes/SignUpPage";
-<<<<<<< HEAD
-import "./App.css";
-=======
 import Quiz from "./routes/Quiz";
 import "./App.css";
 import SearchResultsPage from "./routes/SearchResultsPage";
 
->>>>>>> cf0eef41a58ee79705d6868347b8a85a19a980af
 
 
 
@@ -48,14 +44,11 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUpPage />} />
-<<<<<<< HEAD
-=======
         <Route path="/searchResultsPage" element={<SearchResultsPage />} />
         <Route path="/quiz" element={<Quiz />} />
 
         
 
->>>>>>> cf0eef41a58ee79705d6868347b8a85a19a980af
     </Route>
 ))
 
