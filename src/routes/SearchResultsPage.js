@@ -68,12 +68,13 @@ const ButtonContainer = styled.div`
 `;
 
 const FilterButton = styled.button`
-  padding: 5px 20px;
+  padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 20px;
+  margin-right: 10px;
 `;
 
 const SearchResultsPage = () => {
