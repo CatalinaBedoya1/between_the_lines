@@ -12,12 +12,13 @@ export const Discover = () => {
       <h2>Welcome, <br></br> Discover What's Trending...</h2>
       <div className='btns-genres'>
         <div className='genre-row1'>
+        <Link to="/discover/adventure" className="btn-adventure">adventure</Link>
         <Link to="/discover/classic" className="btn-classic">classic</Link>
         <Link to="/discover/fantasy" className="btn-fantasy">fantasy</Link>
         <Link to="/discover/fiction" className="btn-fiction">fiction</Link>
-        <Link to="/discover/historicalfiction" className="btn-histfiction">historical fiction</Link>
         </div> 
         <div className='genre-row2' >
+        <Link to="/discover/historicalfiction" className="btn-histfiction">historical fiction</Link>
         <Link to="/discover/horror" className="btn-horror">horror</Link>
         <Link to="/discover/memoir" className="btn-memoir">memoir</Link>
         <Link to="/discover/mystery" className="btn-mystery">mystery</Link>
@@ -32,6 +33,7 @@ export const Discover = () => {
         <Link to="/discover/thriller" className="btn-thriller">thriller</Link>
         <Link to="/discover/truecrime" className="btn-truecrime">true crime</Link>
         <Link to="/discover/youngadult" className="btn-youngadult">young adult</Link>
+        <Link to="/discover/search" className="btn-search">+</Link>
         </div>
         </div>
 
