@@ -1,0 +1,16 @@
+.community{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.leaderboard-container {
+    position: relative;
+    width: 100vw;
+  }
+  
+.leaderboard-static {
+    width: 100%;
+    height: auto;
+    display: block; 
+  }

@@ -1,7 +1,10 @@
 import React from 'react';
+import QuizResults from '../components/QuizResults';
 import CommunityPicks from '../components/CommunityPicks';
 import './Discover.css';
 import { Link } from 'react-router-dom';
+
+
 
 export const Discover = () => {
   return (
@@ -30,10 +33,18 @@ export const Discover = () => {
         <Link to="/discover/truecrime" className="btn-truecrime">true crime</Link>
         <Link to="/discover/youngadult" className="btn-youngadult">young adult</Link>
         </div>
-      </div>
+        </div>
 
-      <CommunityPicks />
-      <CommunityPicks />
+
+      <QuizResults />
+
+      {/* insert book of the month*/}
+
+      <CommunityPicks/>
+
+      
+
+
 
 
     </div>
