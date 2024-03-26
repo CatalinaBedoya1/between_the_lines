@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { IoSearchOutline } from 'react-icons/io5';
+import SearchRPPicks from '../components/SearchRPPicks';
 
 const Container = styled.div`
   display: flex;
@@ -67,16 +68,42 @@ const ButtonContainer = styled.div`
   margin-top: 20px;
 `;
 
-const FilterButton = styled.button`
+const FilterButtonAll = styled.button`
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #CCB7B6;
+  color: #FFF;
   border: none;
   cursor: pointer;
   border-radius: 20px;
   margin-right: 10px;
 `;
-
+const FilterButtonRomance = styled.button`
+  padding: 10px 20px;
+  background-color: #93C8C2;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-right: 10px;
+`;
+const FilterButtonSciFi = styled.button`
+  padding: 10px 20px;
+  background-color: #679DAE;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-right: 10px;
+`;
+const FilterButtonMore = styled.button`
+  padding: 10px 20px;
+  background-color: #E1DDDD;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-right: 10px;
+`;
 const SearchResultsPage = () => {
   const [books, setBooks] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -87,11 +114,13 @@ const SearchResultsPage = () => {
     // Function to fetch books based on the user's search query and pagination
     const fetchBooks = async () => {
       try {
-        // Make API request with the user's search query and pagination parameters
+        
         const response = await fetch(
           `https://www.googleapis.com/books/v1/volumes?q=genre:${searchQuery}&startIndex=${startIndex}&maxResults=${maxResults}`
         );
         const data = await response.json();
+
+
         // Process API response and update state with book data
         if (data.items) {
           const booksData = data.items.map(item => ({
@@ -136,13 +165,16 @@ const SearchResultsPage = () => {
         </SearchIconContainer>
       </SearchBar>
       <ButtonContainer>
-        <FilterButton onClick={() => setSearchQuery('all')}>All</FilterButton>
-        <FilterButton onClick={() => setSearchQuery('romance')}>Romance</FilterButton>
-        <FilterButton onClick={() => setSearchQuery('sci-fi')}>Sci-Fi</FilterButton>
-        <FilterButton onClick={() => setSearchQuery('more')}>More</FilterButton>
+        <FilterButtonAll onClick={() => setSearchQuery('all')}>All</FilterButtonAll>
+        <FilterButtonRomance onClick={() => setSearchQuery('romance')}>Romance</FilterButtonRomance>
+        <FilterButtonSciFi onClick={() => setSearchQuery('sci-fi')}>Sci-Fi</FilterButtonSciFi>
+        <FilterButtonMore onClick={() => setSearchQuery('more')}>+</FilterButtonMore>
         
         {/* Add more filter buttons as needed */}
       </ButtonContainer>
+
+      <SearchRPPicks />
+
       <BooksGrid>
         {books.map(book => (
           <Book key={book.id}>
