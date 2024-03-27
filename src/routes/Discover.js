@@ -40,7 +40,9 @@ export const Discover = () => {
         </div>
         </div>
 
-
+        
+      <p>Based on your quiz result, we recommend ...</p>
+            
       <QuizResults />
 
       {/* insert book of the month*/}
