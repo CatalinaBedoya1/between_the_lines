@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCallback } from "react";
 import "./Footer.css";
+import logo from "../assets/BTLLogo.png";
 
 const Footer = () => {
   const onAboutUsTermsClick = useCallback(() => {
@@ -31,6 +32,7 @@ const Footer = () => {
             <div className="between-the-lines-container">
               <p className="between-the-lines1">2024 Between the Lines</p>
               <p className="blank-line7">&nbsp;</p>
+              <p className="blank-line12">Where your next adventure awaits</p>
             </div>
           </div>
         </div>
