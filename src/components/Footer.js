@@ -13,6 +13,7 @@ const Footer = () => {
       <div className="footer1" />
       <div className="about-us-terms-container" onClick={onAboutUsTermsClick}>
         <p className="about-us">{`About Us `}</p>
+        <img src={logo} alt="Logo" className="footer-logo" />
         <p className="blank-line4">&nbsp;</p>
         <p className="blank-line5">&nbsp;</p>
         <p className="terms-of-use">Terms of Use           Privacy Policy</p>

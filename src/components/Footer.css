@@ -79,7 +79,7 @@
   width: 593px;
   justify-content: center;
   max-width: 100%;
-  color: rgb(0, 0, 0);
+  color: #ffffff;
 }
 .footer {
   align-self: stretch;
@@ -111,10 +111,11 @@
     font-size: var(--font-size-base);
   }
 }
-.footer-logo {
-  background-color: #c3adac;
-  height: fit-content;
-  border-width: 100px;
+
+ .footer-logo {
+  background-color: #A08786;
+  height: 50px;
+  border-width: 80px;
 
 }
 html, body {

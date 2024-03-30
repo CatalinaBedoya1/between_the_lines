@@ -1,13 +1,13 @@
 import React from 'react';
 import './Community.css';
+import herosectionimage from '../assets/herosectionimage.png';
 import Events from '../components/Events';
 import Leaderboard from '../assets/Leaderboard.png';
 
 export const Community = () => {
     return (
       <div className='community'>
-        <h1>Community</h1>
-        
+        <img src={herosectionimage} alt="HeroSection" />
         <Events />        
     
         <div className="leaderboard-container">
