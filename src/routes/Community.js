@@ -2,14 +2,43 @@ import React from 'react';
 import './Community.css';
 import Events from '../components/Events';
 import Leaderboard from '../assets/Leaderboard.png';
+import Voting from '../assets/Voting.png';
+import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
+import myImage2 from '../assets/ifyoucouldseethesun.png';
 
 export const Community = () => {
     return (
       <div className='community'>
         <h1>Community</h1>
         
-        <Events />        
-    
+        <Events />
+        <div className="BOTM-container">
+        <img src={myImage3} alt="Book of the month cover" className="BOTM-imageZoom" />
+        <div className="BOTM-content">
+          <h1>BOOK OF THE MONTH</h1>
+          <h2>If You Could See the Sun</h2>
+          <h3>Ann Liang</h3>
+          <hr className="BOTM-divider"/>
+          <p>In this genre-bending, speculative YA debut, a </p>
+            <p> Chinese American girl monetizes her strange </p>
+            <p>new invisibility powers by discovering and </p>
+            <p> selling her wealthy classmates' most </p> 
+            <p>scandalous secrets.</p>
+  
+          <div className="BOTM-summary">
+          <p>"It makes me almost dizzy, thinking about the stark differences in realities,</p>
+            <p>what will be and what could've been." </p>
+          </div>
+          <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
+        </div>
+      </div>
+              
+        <div className = "voting-container">
+          <img src={Voting} alt = "voting" className ='voting-static' />
+        </div>
+        <div className = "voting-button">
+          <div className = "vote-btn">Vote</div>
+        </div>
         <div className="leaderboard-container">
             <img src={Leaderboard} alt="leaderboard" className="leaderboard-static" />
         </div>

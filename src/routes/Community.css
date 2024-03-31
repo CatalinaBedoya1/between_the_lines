@@ -3,6 +3,34 @@
     flex-direction: column;
 }
 
+.voting-container {
+  position: relative;
+  width: 100vw;
+}
+
+.vote-btn{
+  position: absolute;
+  display: inline-block;
+  padding: 10px 60px;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50px;
+  outline: 5px solid #ffffff;
+  background-color: #5397AC; /* blue */
+  color: #ffffff; /* white */
+  margin-top: -110px;
+  margin-left: -100px;
+  z-index: 2;
+}
+
+.voting-static {
+  width: 100%;
+  height: auto;
+  display: block; 
+  z-index: 1;
+}
 
 .leaderboard-container {
     position: relative;

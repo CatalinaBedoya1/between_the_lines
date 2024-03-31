@@ -1,4 +1,43 @@
 .dashboard{
     display: flex;
-    flex-direction: column;
+   flex-direction: column; 
+}
+.dashboard p {
+    text-align: left;
+}
+.topgenre1,
+.topgenre2,
+.topgenre3,
+.topgenre4,
+.topgenre5{
+    display: inline-block;
+    padding: 10px 60px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+    color: #fff; /* white */
+    margin-right: 40px;
+    margin-top: 40px;
+}
+
+.topgenre1 {
+    background-color: #95B9B4; /*green */
+}
+
+.topgenre2 {
+    background-color: #5397AC; /*blue */
+}
+
+.topgenre3 {
+    background-color: #D6B2A6; /*pink */
+}
+
+.topgenre4{
+    background-color: #DBD1AB; /*yellow */
+}
+
+.topgenre5{
+    background-color: #5397AC; /*blue */
 }
