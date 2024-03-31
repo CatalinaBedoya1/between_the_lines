@@ -52,7 +52,7 @@ export const Community = () => {
           <img src={herosectionimage} alt="HeroSection" />
           
           </div>
-        <Events />  
+        
         <Forum2ArtSection/>
 
     
