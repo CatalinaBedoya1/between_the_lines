@@ -2,6 +2,11 @@
     display: flex;
    flex-direction: column; 
 }
+.Dashboard-Icon{
+    margin-top: 25px;
+    margin-left: -1500px;
+}
+
 .dashboard p {
     text-align: left;
 }
