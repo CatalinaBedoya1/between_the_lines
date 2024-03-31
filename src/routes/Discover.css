@@ -16,8 +16,6 @@
 }
 
 
-.quizresultheader{
-}
 
 .btn-adventure,
 .btn-classic,
@@ -112,4 +110,10 @@
     margin-top: 30px;
     
   }
+
+
+ .qResultHeader{
+    text-align: left;
+    padding-left: 60px;
+ }
 
