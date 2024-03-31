@@ -1,5 +1,6 @@
 import React from 'react';
 import './Community.css';
+import herosectionimage from '../assets/herosectionimage.png';
 import Events from '../components/Events';
 import Leaderboard from '../assets/Leaderboard.png';
 import Voting from '../assets/Voting.png';
@@ -39,6 +40,15 @@ export const Community = () => {
         <div className = "voting-button">
           <div className = "vote-btn">Vote</div>
         </div>
+        <div classname= 'communityheader'>
+          <img src={herosectionimage} alt="HeroSection" />
+          <div className='hero-community-content'>
+            <h1>Welcome Jane Doe,</h1>
+            <h1>Let's see what's new in the Community ...</h1>
+          </div>
+          </div>
+        <Events />        
+    
         <div className="leaderboard-container">
             <img src={Leaderboard} alt="leaderboard" className="leaderboard-static" />
         </div>

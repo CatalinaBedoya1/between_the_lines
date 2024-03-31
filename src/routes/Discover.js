@@ -40,8 +40,17 @@ export const Discover = () => {
         </div>
         </div>
 
+        <div className="quizResult">
+          <div className="quizresultheader">
+            <p>Based on your quiz result, we recommend ...</p>
+            
+          </div> 
 
-      <QuizResults />
+          <QuizResults />  
+        </div> 
+      
+      
+      
 
       {/* insert book of the month*/}
         <div className="BOTM-container">

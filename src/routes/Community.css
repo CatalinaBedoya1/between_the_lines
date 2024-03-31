@@ -42,3 +42,16 @@
     height: auto;
     display: block; 
   }
+
+.hero-community-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.157);
+  background-size: contain;
+  background-position: left;
+  color: rgb(41, 0, 106);
+  width: 50%
+}

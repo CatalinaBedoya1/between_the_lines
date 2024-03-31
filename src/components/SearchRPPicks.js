@@ -128,7 +128,7 @@ const ActionButtons = styled.div`
 const Button = styled.button`
     width: 25px;
     height: 50px;
-    font-size: 25px;
+    font-size:
     background-color: transparent;
     border: none;
     cursor: pointer;

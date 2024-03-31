@@ -40,4 +40,10 @@
 
 .topgenre5{
     background-color: #5397AC; /*blue */
+    flex-direction: column;
+}
+
+.quizresultheader{
+    text-align: left;
+    padding-left: 60px;
 }

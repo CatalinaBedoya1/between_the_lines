@@ -47,10 +47,6 @@ const CPPicks = () => {
 
     return (
         <Container>
-            <QuizResult>
-                <p>Based on your quiz result, we recommend ...</p>
-            </QuizResult>
-
             <div
                 ref={containerRef}
                 style={{
@@ -92,16 +88,9 @@ const CPPicks = () => {
 export default CPPicks;
 
 // Styled components
-const QuizResult = styled.div`
-    margin-bottom: 20px;
-    text-align: left;
-    margin-left: 130px;
-    width: 100%;
-`;
-
 const Container = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,13 +106,14 @@ const ContentBox = styled.div`
 `;
 
 const CPcard = styled.div`
-    width: 214px;
-    height: 314px;
+    width: 155px;
+    height: 205px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     background-image: ${(props) => `url(${props.image})`};
+    background-size: cover;
 `;
 
 // const CardText = styled.p`
