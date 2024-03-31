@@ -12,6 +12,7 @@ function AboutUsHero() {
           <h3>We are a team of avid readers hoping to create a safe space to join communities, find recommendations, and meet other book enthusiasts. </h3>
         </div>
         <div class="image">
+          <img src={AboutUsImage} alt="AboutUsPic" className="hero-image" />
           <img src={AboutUsImage} alt="Hero section art" className="aboutus-hero-image" />
         </div>
       </div>
