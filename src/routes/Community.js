@@ -41,6 +41,8 @@ export const Community = () => {
         </div>
       </div>
               
+      <Forum2ArtSection/>
+
         <div className = "voting-container">
           <img src={Voting} alt = "voting" className ='voting-static' />
         </div>
