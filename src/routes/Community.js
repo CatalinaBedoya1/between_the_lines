@@ -43,16 +43,14 @@ export const Community = () => {
       </div>
               
       <Forum2ArtSection/>
+
         <div className = "voting-container">
           <img src={Voting} alt = "voting" className ='voting-static' />
         </div>
         <div className = "voting-button">
           <div className = "vote-btn">Vote</div>
         </div>
-       
-  
-
-    
+            
         <div className="leaderboard-container">
             <img src={Leaderboard} alt="leaderboard" className="leaderboard-static" />
         </div>
