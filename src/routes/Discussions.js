@@ -114,7 +114,7 @@ const Discussions = () => {
                             <RightImage src={DiscussionsImg3} alt="Discussions-img3" />
                         </RightImageContainer>
                     </DiscussionTopContent>
-                    <PopularTopicsText>Popular Topics: Adventure, Fantasy, Romance</PopularTopicsText>
+                    <PopularTopicsText>Popular Topics:  Adventure,   Fantasy,   Romance </PopularTopicsText>
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
             {/* Other content of your discussions */}

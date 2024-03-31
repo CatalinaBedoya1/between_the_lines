@@ -6,17 +6,22 @@ import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
-
+import BTLLogo from '../assets/BTLLogo.png'; // Import your logo image file
 
 import './Navbar.css';
-
 
 const Nav = styled.div`
   background: #A08786;
   height: 80px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between; /* Align items evenly */
   align-items: center;
+  padding: 0 20px;
+`;
+
+const Logo = styled.img`
+  height: 60px; /* Set the height of your logo */
+  margin-left: 610px;
 `;
 
 const NavIcon = styled(Link)`
@@ -27,9 +32,6 @@ const NavIcon = styled(Link)`
   justify-content: flex-start;
   align-items: center;
 `;
-
-
-
 
 const SidebarNav = styled.nav`
     background: #A08786;
@@ -44,31 +46,30 @@ const SidebarNav = styled.nav`
     z-index: 10;
   `;
 
-  const LoginButton = styled(Link)`
+const LoginButton = styled(Link)`
   margin-left: auto;
   margin-right: 2rem;
   font-size: 1.2rem;
   color: #fff;
   text-decoration: none;
-  padding: 10px 20px; /* Add padding to create a box around the text */
-  border: 2px solid transparent; /* Add border to create a box */
-  border-radius: 5px; /* Add border radius for rounded corners */
-  transition: all 0.3s ease; /* Add transition for smooth hover effect */
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 
   &:hover {
-    background-color: #fff; /* Change background color on hover */
-    color: #A08786; /* Change text color on hover */
-    border-color: #A08786; /* Change border color on hover */
+    background-color: #fff;
+    color: #A08786;
+    border-color: #A08786;
   }
 `;
-
 
 const SidebarWrap = styled.div`
   width: 100%;
 `;
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true); // Set the sidebar to be open by default
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -85,6 +86,7 @@ const Sidebar = () => {
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={toggleSidebar} />
           </NavIcon>
+          <Logo src={BTLLogo} alt="BTL Logo" /> {/* Add your logo here */}
           <LoginButton to="/login">Login</LoginButton>
         </Nav>
         {isOpen && (
@@ -104,4 +106,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar
+export default Sidebar;
