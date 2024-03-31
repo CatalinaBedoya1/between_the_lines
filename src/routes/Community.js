@@ -6,6 +6,7 @@ import Leaderboard from '../assets/Leaderboard.png';
 import Voting from '../assets/Voting.png';
 import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
+import Forum2ArtSection from '../components//Forums2';
 
 export const Community = () => {
     return (
@@ -47,7 +48,9 @@ export const Community = () => {
             <h1>Let's see what's new in the Community ...</h1>
           </div>
           </div>
-        <Events />        
+        <Events />  
+        <Forum2ArtSection/>
+
     
         <div className="leaderboard-container">
             <img src={Leaderboard} alt="leaderboard" className="leaderboard-static" />
