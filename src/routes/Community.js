@@ -11,7 +11,6 @@ import Forum2ArtSection from '../components//Forums2';
 export const Community = () => {
     return (
       <div className='community'>
-        <h1>Community</h1>
         <div classname= 'communityheader'>
           <img src={herosectionimage} alt="HeroSection" />
           <div className='hero-community-content'>
@@ -49,7 +48,7 @@ export const Community = () => {
           <div className = "vote-btn">Vote</div>
         </div>
        
-        <Events />  
+        
         <Forum2ArtSection/>
 
     

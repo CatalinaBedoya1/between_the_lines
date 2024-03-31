@@ -21,7 +21,7 @@ const Nav = styled.div`
 
 const Logo = styled.img`
   height: 60px; /* Set the height of your logo */
-  margin-left: 610px;
+  margin-left: 620px;
 `;
 
 const NavIcon = styled(Link)`

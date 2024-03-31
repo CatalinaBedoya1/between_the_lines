@@ -81,6 +81,12 @@ const QuizResult = styled.div`
     text-align: left;
     margin-left: 130px;
     width: 100%;
+    font-family: Roboto;
+  font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.08px;
 `;
 
 const Container = styled.div`

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { IoSearchOutline } from 'react-icons/io5';
 import SearchRPPicks from '../components/SearchRPPicks';
+import gridIcon from '../assets/gridIcon.png';
 
 const Container = styled.div`
   display: flex;
@@ -104,6 +105,28 @@ const FilterButtonMore = styled.button`
   border-radius: 20px;
   margin-right: 10px;
 `;
+const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 10px; /* Adjust the margin as needed */
+`;
+
+const Title = styled.h2`
+  margin-bottom: 10px;
+  text-align: left;
+  font-family: Roboto;
+  font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.08px;
+`;
+const Icon = styled.img`
+  width: 20px; /* Adjust the size as needed */
+  height: auto;
+  margin-right: 10px; /* Adjust the margin as needed */
+`;
+
 const SearchResultsPage = () => {
   const [books, setBooks] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -120,7 +143,7 @@ const SearchResultsPage = () => {
         );
         const data = await response.json();
 
-
+            //use get request, and post request to submit data 
         // Process API response and update state with book data
         if (data.items) {
           const booksData = data.items.map(item => ({
@@ -174,6 +197,11 @@ const SearchResultsPage = () => {
       </ButtonContainer>
 
       <SearchRPPicks />
+      <TitleContainer>
+        <Title>All...</Title>
+        <Icon src={gridIcon} alt="Grid Icon" />
+        <span>Sort by: Most Popular</span>
+      </TitleContainer>
 
       <BooksGrid>
         {books.map(book => (
