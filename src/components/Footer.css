@@ -40,6 +40,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  padding: var(--padding-9xs) 0 0;
 
 }
 .between-the-lines1 {
@@ -78,7 +79,7 @@
   width: 593px;
   justify-content: center;
   max-width: 100%;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
 }
 .footer {
   align-self: stretch;
@@ -111,6 +112,12 @@
   }
 }
 
+ .footer-logo {
+  background-color: #A08786;
+  height: 50px;
+  border-width: 80px;
+
+}
 html, body {
   height: 100vh;
   width: 100vw;
