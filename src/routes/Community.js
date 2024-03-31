@@ -12,6 +12,13 @@ export const Community = () => {
     return (
       <div className='community'>
         <h1>Community</h1>
+        <div classname= 'communityheader'>
+          <img src={herosectionimage} alt="HeroSection" />
+          <div className='hero-community-content'>
+            <h1>Welcome Jane Doe,</h1>
+            <h1>Let's see what's new in the Community ...</h1>
+          </div>
+          </div>
         
         <Events />
         <div className="BOTM-container">
@@ -43,10 +50,7 @@ export const Community = () => {
         </div>
         <div classname= 'communityheader'>
           <img src={herosectionimage} alt="HeroSection" />
-          <div className='hero-community-content'>
-            <h1>Welcome Jane Doe,</h1>
-            <h1>Let's see what's new in the Community ...</h1>
-          </div>
+          
           </div>
         <Events />  
         <Forum2ArtSection/>
