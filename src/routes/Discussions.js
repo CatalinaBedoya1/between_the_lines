@@ -25,7 +25,7 @@ const DiscussionBackgroundImage = styled.div`
     background-image: url(${props => props.backgroundImage});
     background-size: cover;
     background-position: center;
-    opacity: 0.3;
+    opacity: 0.2;
 `;
 
 const DiscussionContentContainer = styled.div`
@@ -34,7 +34,6 @@ const DiscussionContentContainer = styled.div`
     align-items: center;
     max-width: 600px; /* Adjust as needed */
     text-align: center;
-
 `;
 
 const DiscussionTopContent = styled.div`
@@ -53,13 +52,19 @@ const RightImageContainer = styled.div`
     z-index: 2;
 `;
 
-const DiscussionSmallImage = styled.img`
-    width: 250px;
+const LeftImage = styled.img`
+    width: 220px;
+    height: auto;
+    margin-top: 100px;
+    margin-right: 40px;
+`;
+
+const RightImage = styled.img`
+    width: 300px; /* Adjust size as needed */
     height: auto;
 `;
 
 const DiscussionSearchBarContainer = styled.div`
-    flex: 2;
     display: flex;
     align-items: center;
     position: relative;
@@ -69,8 +74,8 @@ const DiscussionSearchBarContainer = styled.div`
 
 const DiscussionInput = styled.input`
     width: 450px;
-    padding: 8px 30px 8px 50px;
     border: 1px solid #ccc;
+    padding: 8px 30px 8px 50px;
     border-radius: 30px;
     height: 50px;
 `;
@@ -84,7 +89,9 @@ const SearchIcon = styled.div`
 const PopularTopicsText = styled.div`
     font-size: 16px;
     color: #3F3C3C;
-    z-index: 2;
+    z-index: 1;
+    margin-top: -90px;
+    margin-right: 100px;
 `;
 
 const Discussions = () => {
@@ -95,16 +102,16 @@ const Discussions = () => {
                 <DiscussionContentContainer>
                     <DiscussionTopContent>
                         <LeftImageContainer>
-                            <DiscussionSmallImage src={DiscussionsImg2} alt="Discussions-img2" />
+                            <LeftImage src={DiscussionsImg2} alt="Discussions-img2" />
                         </LeftImageContainer>
                         <DiscussionSearchBarContainer>
-                            <DiscussionInput type="text" id="searchInput" placeholder="Search..." />
+                            <DiscussionInput type="text" id="searchInput" placeholder="Search for topics..." />
                             <SearchIcon>
                                 <FontAwesomeIcon icon={faSearch} />
                             </SearchIcon>
                         </DiscussionSearchBarContainer>
                         <RightImageContainer>
-                            <DiscussionSmallImage src={DiscussionsImg3} alt="Discussions-img3" />
+                            <RightImage src={DiscussionsImg3} alt="Discussions-img3" />
                         </RightImageContainer>
                     </DiscussionTopContent>
                     <PopularTopicsText>Popular Topics: Adventure, Fantasy, Romance</PopularTopicsText>
