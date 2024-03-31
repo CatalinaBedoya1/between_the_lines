@@ -42,6 +42,7 @@ export const Community = () => {
         </div>
       </div>
               
+      <Forum2ArtSection/>
         <div className = "voting-container">
           <img src={Voting} alt = "voting" className ='voting-static' />
         </div>
@@ -49,8 +50,7 @@ export const Community = () => {
           <div className = "vote-btn">Vote</div>
         </div>
        
-        <Events />  
-        <Forum2ArtSection/>
+  
 
     
         <div className="leaderboard-container">
