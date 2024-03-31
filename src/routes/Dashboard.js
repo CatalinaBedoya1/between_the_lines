@@ -9,6 +9,9 @@ function Dashboard() {
     return (
         <div className="dashboard">
             <h2>Dashboard</h2>
+
+            <DashboardRecs/>
+            
             <div className = "topgenres">
                 <p>My Top Genres:</p>
                 <div className = "topgenre1">Fiction</div>
@@ -17,25 +20,8 @@ function Dashboard() {
                 <div className = "topgenre4">Historical Fiction</div>
                 <div className = "topgenre5">Fantasy</div>
             </div>
-            <QuizRecs />
-            <h1>Dashboard</h1>
-
-            {/*insert profile*/}
-
-            <div className="dashcards">
-                <div className="current">
-
-                </div>
-
-                <div className="bookforums">
-
-                </div>
-            </div>
 
 
-            <DashboardRecs />
-
-            {/*insert top genres*/}
             <div className="quizResult">
                 <div className="quizresultheader">
                     <p>My recommened Books ...</p>
