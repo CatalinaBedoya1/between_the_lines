@@ -17,6 +17,7 @@ function Dashboard() {
                 <h2>Joined March 2024</h2>
                 <p> 24 | Constantly lost in fictional worlds | Avid Romance Reader </p>
             </div>
+            <div className="editbutton">Edit Profile</div>
 
 
             {/*current reading and book clubs static*/}
@@ -30,6 +31,7 @@ function Dashboard() {
 
         
             <DashboardRecs/>
+            
             
             <div className = "topgenres">
                 <p>My Top Genres:</p>
