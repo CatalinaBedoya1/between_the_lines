@@ -83,3 +83,9 @@
     text-align: left;
     padding-left: 60px;
 }
+
+.currentreading{
+    width: 100%;
+    height: auto;
+    display: block; 
+}

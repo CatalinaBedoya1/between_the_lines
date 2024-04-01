@@ -1,8 +1,10 @@
 import React from 'react';
 import './Dashboard.css';
+// import DashCards from "../components/CurrentReadingandBCF";
 import DashboardRecs from "../components/DashboardRecs";
 import QuizRecs from "../components/QuizResults";
 import DashIcon from "../assets/dashboardicon.png";
+import CurrentReading from "../assets/dashboard.png";
 
 
 
@@ -17,6 +19,17 @@ function Dashboard() {
             </div>
             <div className="editbutton">Edit Profile</div>
 
+
+            {/*current reading and book clubs static*/}
+            <div className="currentreading">
+            <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
+            </div>
+
+            {/*ignore my wip XD*/}
+            {/* <DashCards/> */}
+
+
+        
             <DashboardRecs/>
             
             
@@ -31,6 +44,7 @@ function Dashboard() {
 
 
             <div className="quizResult">
+                <br></br>
                 <div className="quizresultheader">
                     <p>My recommened Books ...</p>
                 </div> 
