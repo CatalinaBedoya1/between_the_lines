@@ -82,7 +82,7 @@ const QuizResult = styled.div`
     margin-left: 130px;
     width: 100%;
     font-family: Roboto;
-  font-size: 26px;
+    font-size: 26px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -95,7 +95,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    
 `;
 
 const ContentBox = styled.div`
