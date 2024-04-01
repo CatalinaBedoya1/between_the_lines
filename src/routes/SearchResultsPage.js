@@ -196,6 +196,10 @@ border: none;
   border-radius: 20px;
   margin-right: 10px;
   margin-bottom: 20px;
+  animation: ${bounce} 1s infinite;
+  
+  &:hover {
+    animation-play-state: paused;
 `;
 
 
