@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { IoSearchOutline } from 'react-icons/io5';
 import SearchRPPicks from '../components/SearchRPPicks';
 import gridIcon from '../assets/gridIcon.png';
@@ -109,10 +109,11 @@ const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 10px; /* Adjust the margin as needed */
+  margin-bottom: 25px;
 `;
 
 const Title = styled.h2`
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   text-align: left;
   font-family: Roboto;
   font-size: 26px;
@@ -121,11 +122,41 @@ const Title = styled.h2`
     line-height: normal;
     letter-spacing: 1.08px;
 `;
-const Icon = styled.img`
+const GridIcon = styled.img`
   width: 20px; /* Adjust the size as needed */
   height: auto;
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-left: 1200px; /* Adjust the margin as needed */
+  
 `;
+
+const bounce = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
+
+
+const AnimatedButton = styled.button`
+  padding: 10px 20px;
+  background-color: #CCB7B6;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-right: 10px;
+  animation: ${bounce} 1s infinite;
+  
+  &:hover {
+    animation-play-state: paused;
+  }
+`;
+
 
 const SearchResultsPage = () => {
   const [books, setBooks] = useState([]);
@@ -199,7 +230,8 @@ const SearchResultsPage = () => {
       <SearchRPPicks />
       <TitleContainer>
         <Title>All...</Title>
-        <Icon src={gridIcon} alt="Grid Icon" />
+        
+        <GridIcon src={gridIcon} alt="Grid Icon" />
         <span>Sort by: Most Popular</span>
       </TitleContainer>
 
@@ -213,9 +245,10 @@ const SearchResultsPage = () => {
         ))}
       </BooksGrid>
       <ButtonContainer>
-        <button onClick={handlePreviousPage}>Previous</button>
-        <button onClick={handleNextPage}>Next</button>
+        <AnimatedButton onClick={handlePreviousPage}>Previous</AnimatedButton>
+        <AnimatedButton onClick={handleNextPage}>Next</AnimatedButton>
       </ButtonContainer>
+
     </Container>
   );
 };
