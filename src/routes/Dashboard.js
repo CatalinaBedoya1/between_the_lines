@@ -19,6 +19,7 @@ function Dashboard() {
 
             <DashboardRecs/>
             
+            
             <div className = "topgenres">
                 <p>My Top Genres:</p>
                 <div className = "topgenre1">Fiction</div>
