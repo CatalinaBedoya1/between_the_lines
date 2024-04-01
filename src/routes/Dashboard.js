@@ -17,10 +17,6 @@ function Dashboard() {
                 <h2>Joined March 2024</h2>
                 <p> 24 | Constantly lost in fictional worlds | Avid Romance Reader </p>
             </div>
-<<<<<<< HEAD
-=======
-            <div className="editbutton">Edit Profile</div>
->>>>>>> f4049f22c3242d644fbb038704ded23ac0b5caa1
 
 
             {/*current reading and book clubs static*/}
