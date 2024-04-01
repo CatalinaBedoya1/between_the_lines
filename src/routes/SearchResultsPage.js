@@ -3,12 +3,30 @@ import styled, { keyframes } from 'styled-components';
 import { IoSearchOutline } from 'react-icons/io5';
 import SearchRPPicks from '../components/SearchRPPicks';
 import gridIcon from '../assets/gridIcon.png';
+import GroupImage from '../assets/Group.png';
+import { Link } from 'react-router-dom';
+import Card from "../components/Card";
+
+// Import forum images
+import forumSquare1 from '../assets/forumSquare1.png';
+import forumSquare2 from '../assets/forumSquare2.png';
+import forumSquare3 from '../assets/forumSquare3.png';
+import forumSquare4 from '../assets/forumSquare4.png';
+import forumSquare5 from '../assets/forumSquare5.png';
+import forumSquare6 from '../assets/forumSquare6.png';
+import forumSquare7 from '../assets/forumSquare7.png';
+import forumSquare8 from '../assets/forumSquare8.png';
+
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  min-height: 100vh; 
+  background-image: url(${GroupImage});
+  background-size: cover;
+  background-attachment: fixed;
 `;
 
 const BooksGrid = styled.div`
@@ -52,7 +70,7 @@ const SearchIcon = styled(IoSearchOutline)`
 const SearchBar = styled.div`
   display: flex;
   align-items: center;
-  padding: 5px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
 `;
@@ -108,7 +126,7 @@ const FilterButtonMore = styled.button`
 const TitleContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 10px; /* Adjust the margin as needed */
+  margin-left: 32px; /* Adjust the margin as needed */
   margin-bottom: 25px;
 `;
 
@@ -125,7 +143,7 @@ const Title = styled.h2`
 const GridIcon = styled.img`
   width: 20px; /* Adjust the size as needed */
   height: auto;
-  margin-left: 1200px; /* Adjust the margin as needed */
+  margin-left: 1100px; /* Adjust the margin as needed */
   
 `;
 
@@ -144,7 +162,7 @@ const bounce = keyframes`
 
 const AnimatedButton = styled.button`
   padding: 10px 20px;
-  background-color: #CCB7B6;
+  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
   color: #FFF;
   border: none;
   cursor: pointer;
@@ -156,6 +174,105 @@ const AnimatedButton = styled.button`
     animation-play-state: paused;
   }
 `;
+const SectionTitle = styled.h4`
+  font-weight: bold;
+  color: #333;
+  margin-left: -1180px;
+  text-align: left;
+  font-family: Roboto;
+  font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.08px;
+`;
+
+const SeeMoreButton = styled.button`
+padding: 10px 20px;
+background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+color: #FFF;
+border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  animation: ${bounce} 1s infinite;
+  
+  &:hover {
+    animation-play-state: paused;
+`;
+
+
+
+
+const Forum2ArtSection = () => {
+    const forums = [
+      {
+        imageUrl: forumSquare1,
+        description: "Book of the Month: If You Could See the Sun By Ann Liang",
+      },
+      {
+        imageUrl: forumSquare2,
+        description: "A Darker Shade of Magic by V.E. Schwab",
+      },
+      {
+        imageUrl: forumSquare3,
+        description: "Do I Know You by Emily Wibberley & Austin Seigmud- Broka",
+      },
+      {
+        imageUrl: forumSquare4,
+        description: "Verity By Colleen Hoover",
+      }
+    ];
+    const forums2ndrow = [
+      {
+        imageUrl: forumSquare5,
+        description: "Rebecca By Daphne Du Maurier",
+      },
+      {
+        imageUrl: forumSquare6,
+        description: "Where the Crawdads Sing By Delia Owens",
+      },
+      {
+        imageUrl: forumSquare7,
+        description: "All the Light We Cannot See By Anthony Doerr",
+      },
+      {
+        imageUrl: forumSquare8,
+        description: "The Gilded Ones By Namina Forna",
+      }
+    ];
+  
+    return (
+      <>
+        <SectionTitle className="forums2art-text" id="Art">
+          Book Club...
+        </SectionTitle>
+        <div className="forums2artsection">
+          {forums.map((forum, index) => (
+            <Card
+              key={index}
+              imageUrl={forum.imageUrl}
+              description={forum.description}
+            />
+          ))}
+        </div>
+        <div className="forums2artsection">
+          {forums2ndrow.map((forum, index) => (
+            <Card
+              key={index}
+              imageUrl={forum.imageUrl}
+              description={forum.description}
+            />
+          ))}
+        </div>
+        <SeeMoreButton to="/community">See More</SeeMoreButton>
+        
+      </>
+    );
+  };
+
+
 
 
 const SearchResultsPage = () => {
@@ -248,6 +365,9 @@ const SearchResultsPage = () => {
         <AnimatedButton onClick={handlePreviousPage}>Previous</AnimatedButton>
         <AnimatedButton onClick={handleNextPage}>Next</AnimatedButton>
       </ButtonContainer>
+
+      <Forum2ArtSection />
+
 
     </Container>
   );

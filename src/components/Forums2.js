@@ -54,7 +54,7 @@ const Forum2ArtSection = () => {
   return (
     <>
       <h4 className="forums2art-text" id="Art">
-        Forums
+        Popular Book Club Forums
       </h4>
       <div className="forums2artsection">
         {forums.map((forum, index) => (
