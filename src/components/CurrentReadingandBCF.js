@@ -1,5 +1,5 @@
 import React from "react";
-import "./Events.css";
+import "./CurrentReadingandBCF.css";
 import event1 from "../assets/event1.png";
 import event2 from "../assets/event2.png";
 import event3 from "../assets/event3.png";
@@ -34,7 +34,7 @@ const DashboardData = () => {
   return (
     <>
       <div className="BCF-header">
-        <h4>Book Club Forums</h4>
+        <h4>Book Clubs: </h4>
       </div>
 
       <div className="dash-carousel">
