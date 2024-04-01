@@ -3,13 +3,44 @@
    flex-direction: column; 
 }
 .Dashboard-Icon{
-    margin-top: 25px;
+    margin-top: 50px;
     margin-left: -1500px;
+}
+.bio{
+    color: #8B7574;
+}
+
+.bio h1{
+    margin-left: -350px;
+    margin-top: -165px;
+    margin-bottom: 10px;
+}
+
+.bio h2{
+    margin-left: -350px;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+.bio p{
+    text-align: left;
+    margin-left: -350px;
+    margin-bottom: 80px; 
 }
 
 .dashboard p {
     text-align: left;
 }
+
+.editbutton {
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #ffffff;
+    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    margin-top: -40px;
+    margin-bottom: 50px;
+    margin-left: 1300px;
+}
+
 .topgenre1,
 .topgenre2,
 .topgenre3,

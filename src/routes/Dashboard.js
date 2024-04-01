@@ -15,7 +15,7 @@ function Dashboard() {
                 <h2>Joined March 2024</h2>
                 <p> 24 | Constantly lost in fictional worlds | Avid Romance Reader </p>
             </div>
-            <h2>Dashboard</h2>
+            <div className="editbutton">Edit Profile</div>
 
             <DashboardRecs/>
             
