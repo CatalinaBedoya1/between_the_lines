@@ -1,5 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
+import DashCards from "../components/CurrentReadingandBCF";
 import DashboardRecs from "../components/DashboardRecs";
 import QuizRecs from "../components/QuizResults";
 import DashIcon from "../assets/dashboardicon.png";
@@ -15,7 +16,8 @@ function Dashboard() {
                 <h2>Joined March 2024</h2>
                 <p> 24 | Constantly lost in fictional worlds | Avid Romance Reader </p>
             </div>
-            <h2>Dashboard</h2>
+
+            <DashCards/>
 
             <DashboardRecs/>
             
