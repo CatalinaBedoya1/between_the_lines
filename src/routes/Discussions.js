@@ -7,6 +7,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import DiscussionsImg from '../assets/DiscussionsImg.png';
 import DiscussionsImg2 from '../assets/DiscussionsImg2.png';
 import DiscussionsImg3 from '../assets/DiscussionsImg3.png';
+import { Link } from 'react-router-dom';
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -118,10 +119,45 @@ const Discussions = () => {
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
             {/* Other content of your discussions */}
+        <div> 
+            <h1>Tags</h1>
+            <div className='btns-genres'>
+                <div className='genre-row1'>
+                    <Link to="/discover/thriller" className="btn-thriller">Thriller</Link>
+                    <Link to="/discover/romance" className="btn-romance">Romance</Link>
+                </div> 
+                <div className='genre-row2' >
+                    <Link to="/discover/booktok" className="btn-booktok">Booktok</Link>
+                    <Link to="/discover/horror" className="btn-horror">Horror</Link>
+                </div>
+                <div className='genre-row3'>
+                    <Link to="/discover/dark" className="btn-dark">Dark</Link>
+                    <Link to="/discover/cliff-hanger" className="btn-cliff-hanger">Cliff-hanger</Link>
+                </div>
+                <div className='genre-row4'>
+                    <Link to="/discover/fantasy" className="btn-fantasy">Fantasy</Link>
+                    <Link to="/discover/historical" className="btn-historical">Historical</Link>
+                </div>
+                <div className='genre-row5'>
+                    <Link to="/discover/recommended" className="btn-recommended">Recommended</Link>
+                    <Link to="/discover/series" className="btn-series">Series</Link>
+                </div>
+                <div className='genre-row6'>
+                    <Link to="/discover/humor" className="btn-humor">Humor</Link>
+                    <Link to="/discover/spanish" className="btn-spanish">Spanish</Link>
+                </div>
+                <div className='genre-row7'>
+                    <Link to="/discover/educational" className="btn-educational">Educational</Link>
+                    <Link to="/discover/enemies" className="btn-enemies">Enemies</Link>
+                </div>
+                <div className='genre-row8'>
+                    <Link to="/discover/comedy" className="btn-comedy">Comedy</Link>
+                    <Link to="/discover/friendstolovers" className="btn-friendstolovers">Friends to lovers</Link>
+                </div>
+            </div>
         </div>
+     </div>
     );
 };
 
 export default Discussions;
-
-
