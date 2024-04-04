@@ -89,16 +89,7 @@ const NewSection = ({ category }) => {
                 </NewContentBox>
             </div>
 
-            <NewActionButtons>
-                <NewButton
-                    style={{ backgroundImage: `url(${newLeftArrow})` }}
-                    onClick={() => { handleNewScroll(-NEW_ITEM_WIDTH) }}
-                />
-                <NewButton
-                    style={{ backgroundImage: `url(${newRightArrow})` }}
-                    onClick={() => { handleNewScroll(NEW_ITEM_WIDTH) }}
-                />
-            </NewActionButtons>
+
         </>
     );
 };
@@ -148,25 +139,3 @@ const BookTitle = styled.p`
     font-size: 16px;
     margin-top: 10px;
 `;
-
-const NewActionButtons = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 1100px;
-    margin-top: 20px;
-`;
-
-const NewButton = styled.button`
-    width: 25px;
-    height: 50px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: all 0.5s ease;
-
-    &:hover {
-        //add later
-    }
-`; 
