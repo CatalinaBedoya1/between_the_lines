@@ -7,6 +7,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import DiscussionsImg from '../assets/DiscussionsImg.png';
 import DiscussionsImg2 from '../assets/DiscussionsImg2.png';
 import DiscussionsImg3 from '../assets/DiscussionsImg3.png';
+import CreatePost from '../components/CreatePost';
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -96,7 +97,7 @@ const PopularTopicsText = styled.div`
 
 const Discussions = () => {
     return (
-        <div>
+        <><div>
             <DiscussionHeaderContainer>
                 <DiscussionBackgroundImage backgroundImage={DiscussionsImg} />
                 <DiscussionContentContainer>
@@ -118,7 +119,7 @@ const Discussions = () => {
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
             {/* Other content of your discussions */}
-        </div>
+        </div><CreatePost /></>
     );
 };
 
