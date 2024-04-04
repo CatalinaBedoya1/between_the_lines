@@ -4,7 +4,7 @@ import { IoSearchOutline } from 'react-icons/io5';
 import SearchRPPicks from '../components/SearchRPPicks';
 import gridIcon from '../assets/gridIcon.png';
 import GroupImage from '../assets/Group.png';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import Card from "../components/Card";
 
 // Import forum images
