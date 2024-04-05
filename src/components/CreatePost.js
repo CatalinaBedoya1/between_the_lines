@@ -16,10 +16,9 @@ const CreatePost = () => {
       <option value="feedback">Feedback</option>
       </select>
       <br></br>
-      <input  className="createPostText"  placeholder="Type catchy Title"/>
+      <input  className="createPostText"  placeholder="Title"/>
       <br></br>
-      <input  className="createPostBodyText"  placeholder="Begin Typing"/>
-
+      <input  className="createPostBodyText"  placeholder="Begin typing . . ."/>
   </div>
 </div>
   );

@@ -26,10 +26,11 @@
 
 
 .createPostBodyText{  
-    justify-content: top;
     width: 750px;
-    border: 1px solid #ccc;
-    padding: 8px 30px 8px 20px;
     height: 300px;
+    border: 1px solid #ccc;
+    padding: 0px 30px 180px 20px;
   
 }
+
+
