@@ -21,7 +21,7 @@ const EventsPage = () => {
 const EventsHeroContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 320px;
   background-color: #F0F6F9;
 `;
 
@@ -50,7 +50,7 @@ const EHTitle = styled.h1`
 `;
 
 const EHDescription = styled.p`
-  margin-top: 20px; /* Add margin top to create spacing */
+  margin-top: 60px; /* Add margin top to create spacing */
   font-size: 20px;
   font-family: Kaisei Opti;
   font-weight: lighter;
@@ -73,6 +73,7 @@ const EventsButton = styled.button`
   border: none;
   border-radius: 50px;
   font-size: 18px;
+  font-family: Kaisei Opti;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
