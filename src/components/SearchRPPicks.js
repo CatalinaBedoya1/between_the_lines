@@ -12,7 +12,7 @@ const SearchRPPicks = () => {
         const fetchTrendingBooks = async () => {
             try {
                 const response = await fetch(
-                    'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=EhyMWDy9K5iT2H5QRhcpOrSaBGlBtm1G' // Example endpoint for fetching trending books from New York Times
+                    `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_NYT_API_KEY}`
                 );
                 const data = await response.json();
                 if (data.results && data.results.books) {
@@ -22,6 +22,7 @@ const SearchRPPicks = () => {
                 console.error('Error fetching trending books:', error);
             }
         };
+        
 
         fetchTrendingBooks();
     }, []); // Empty dependency array ensures the effect runs only once when the component mounts
