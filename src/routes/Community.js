@@ -80,10 +80,10 @@ export const BookClubs = () => {
     );
   };
   
-  export const BookVoting= () => {
+  export const EventsPage= () => {
     return (
-      <div className='bookVoting'>
-        <h1>BookVoting</h1>
+      <div className='eventsPage'>
+        <h1>EventsPage</h1>
       </div>
     );
   };
