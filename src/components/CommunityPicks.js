@@ -110,7 +110,7 @@ const NewContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    // background-color: white;
 `;
 
 const NewContentBox = styled.div`
