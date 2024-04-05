@@ -61,8 +61,8 @@ export const SidebarData = [
         cName: 'sub-nav'
       },
       {
-        title: 'Book Voting',
-        path: '/community/bookVoting',
+        title: 'Events',
+        path: '/community/eventsPage',
         icon: <IoIcons.IoIosPaper />
       }
     ]
