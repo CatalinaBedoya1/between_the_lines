@@ -1,7 +1,10 @@
-.discover{
+.discover {
     display: flex;
     flex-direction: column;
-}
+    background-image: url('../assets/AbstractImg.png');
+    background-size: cover;
+    background-attachment: fixed;
+  }
 
 .btns-genre {
     display: flex;

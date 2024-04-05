@@ -14,14 +14,15 @@ const Nav = styled.div`
   background: #A08786;
   height: 80px;
   display: flex;
-  justify-content: space-between; /* Align items evenly */
+  justify-content: center; /* Align items evenly */
   align-items: center;
   padding: 0 20px;
 `;
 
 const Logo = styled.img`
-  height: 60px; 
-  margin-left: 580px;
+  height: 60px;
+  margin-left: 550px;
+  
 `;
 
 const NavIcon = styled(Link)`
