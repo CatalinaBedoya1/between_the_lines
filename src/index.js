@@ -14,8 +14,9 @@ import Home from "./routes/Home";
 import Discover from "./routes/Discover";
 import WhatsTrending from "./routes/WhatsTrending";
 import TakeOurQuiz from "./routes/TakeOurQuiz";
-import Community, { BookClubs, EventsPage} from "./routes/Community";
+import Community, { BookClubs} from "./routes/Community";
 import Discussions from "./routes/Discussions";
+import EventsPage from "./routes/EventsPage";
 
 import Dashboard from "./routes/Dashboard";
 import AboutUs from "./routes/AboutUs";
