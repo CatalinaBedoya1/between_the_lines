@@ -5,6 +5,13 @@ import './Discover.css';
 import { Link } from 'react-router-dom';
 import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
+import { IoSearchOutline } from 'react-icons/io5';
+import styled from 'styled-components';
+
+const SearchIcon = styled(IoSearchOutline)`
+  flex-shrink: 0;
+`;
+
 
 
 
@@ -36,7 +43,7 @@ export const Discover = () => {
         <Link to="/discover/thriller" className="btn-thriller">thriller</Link>
         <Link to="/discover/truecrime" className="btn-truecrime">true crime</Link>
         <Link to="/discover/youngadult" className="btn-youngadult">young adult</Link>
-        <Link to="/discover/searchResultsPage" className="btn-search">+</Link>
+        <Link to="/discover/searchResultsPage" className="btn-search"><SearchIcon /></Link>
         </div>
         </div>
 
