@@ -19,6 +19,10 @@ const CreatePost = () => {
       <input  className="createPostText"  placeholder="Title"/>
       <br></br>
       <input  className="createPostBodyText"  placeholder="Begin typing . . ."/>
+      <br></br>
+      <div className="addImageBtn">Add image</div>
+      <div className="publishBtn">Publish</div>
+
   </div>
 </div>
   );

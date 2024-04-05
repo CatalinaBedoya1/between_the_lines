@@ -4,7 +4,7 @@
 .createPostContainerInside{
     background-color: #E6F4F9;
     width: 800px;
-    height: 400px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -29,8 +29,35 @@
     width: 750px;
     height: 300px;
     border: 1px solid #ccc;
-    padding: 0px 30px 180px 20px;
+    padding: 10px 30px 175px 20px;
   
 }
 
+.addImageBtn{
+    width: 200px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #8a8265;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
 
+}
+
+.publishBtn{
+    width: 200px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+    position: absolute;
+    display: inline-block;
+    margin-left: 545px;
+    margin-top: 370px;
+}
