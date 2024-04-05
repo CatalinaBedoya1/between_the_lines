@@ -3,8 +3,8 @@ import styled, { keyframes } from 'styled-components';
 import { IoSearchOutline } from 'react-icons/io5';
 import SearchRPPicks from '../components/SearchRPPicks';
 import gridIcon from '../assets/gridIcon.png';
-import GroupImage from '../assets/Group.png';
-//import { Link } from 'react-router-dom';
+import AbstractImg from '../assets/AbstractImg.png';
+import { Link } from 'react-router-dom';
 import Card from "../components/Card";
 
 // Import forum images
@@ -18,13 +18,15 @@ import forumSquare7 from '../assets/forumSquare7.png';
 import forumSquare8 from '../assets/forumSquare8.png';
 
 
+
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
   min-height: 100vh; 
-  background-image: url(${GroupImage});
+  background-image: url(${AbstractImg});
   background-size: cover;
   background-attachment: fixed;
 `;
@@ -174,6 +176,7 @@ const AnimatedButton = styled.button`
     animation-play-state: paused;
   }
 `;
+
 const SectionTitle = styled.h4`
   font-weight: bold;
   color: #333;
