@@ -24,6 +24,8 @@ function HeroSection() {
             <Link to="/discover/takeOurQuiz" className="btn">Take Quiz</Link>
           </div>
         </div>
+
+        
         <div className="row">
           <div className="text-center">
             <img src={msFirst} alt="card1" className="msimg" />

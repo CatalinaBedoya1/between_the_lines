@@ -20,12 +20,12 @@ const Nav = styled.div`
 `;
 
 const Logo = styled.img`
-  height: 60px; /* Set the height of your logo */
-  margin-left: 560px;
+  height: 60px; 
+  margin-left: 580px;
 `;
 
 const NavIcon = styled(Link)`
-  margin-left: 2rem;
+  margin-left: 2rem;‹›
   font-size: 2rem;
   height: 80px;
   display: flex;
@@ -86,7 +86,7 @@ const Sidebar = () => {
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={toggleSidebar} />
           </NavIcon>
-          <Logo src={BTLLogo} alt="BTL Logo" /> {/* Add your logo here */}
+          <Logo src={BTLLogo} alt="BTL Logo" /> 
           <LoginButton to="/login">Login</LoginButton>
         </Nav>
         {isOpen && (
