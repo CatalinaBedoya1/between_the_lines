@@ -49,9 +49,6 @@ export const Community = () => {
         <div className = "voting-button">
           <div className = "vote-btn">Vote</div>
         </div>
-       
-        
-        <Forum2ArtSection/>
 
     
         <div className="leaderboard-container">
