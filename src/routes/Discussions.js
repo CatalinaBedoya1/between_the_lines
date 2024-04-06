@@ -45,24 +45,24 @@ const DiscussionTopContent = styled.div`
     margin-bottom: 0px;
 `;
 
-const LeftImageContainer = styled.div`
+const DisLeftImageContainer = styled.div`
     padding-bottom: 20px;
     z-index:2;
 `;
 
-const RightImageContainer = styled.div`
+const DisRightImageContainer = styled.div`
     padding-bottom: 20px;
     z-index: 2;
 `;
 
-const LeftImage = styled.img`
+const DisLeftImage = styled.img`
     width: 220px;
     height: auto;
     margin-top: 100px;
     margin-right: 40px;
 `;
 
-const RightImage = styled.img`
+const DisRightImage = styled.img`
     width: 300px; /* Adjust size as needed */
     height: auto;
 `;
@@ -108,7 +108,7 @@ const DiscussionTitle = styled.h1`
   align-items: center; /* Align items vertically */
 `;
 
-const Text = styled.span`
+const disText = styled.span`
   margin-right: 10px; /* Adjust the spacing between the text and the animation */
   font-size: 40px;
 `;
@@ -119,21 +119,21 @@ const Discussions = () => {
             <DiscussionHeaderContainer>
             <DiscussionBackgroundImage src={DiscussionsImg} alt="Discussions-img2" />
                 <DiscussionContentContainer>
-                <DiscussionTitle><Text>Find what you're looking for: </Text> <WordLoopAnimation /></DiscussionTitle>
+                <DiscussionTitle><disText>Find what you're looking for: </disText> <WordLoopAnimation /></DiscussionTitle>
                 
                     <DiscussionTopContent>
-                        <LeftImageContainer>
-                            <LeftImage src={DiscussionsImg2} alt="Discussions-img2" />
-                        </LeftImageContainer>
+                        <DisLeftImageContainer>
+                            <DisLeftImage src={DiscussionsImg2} alt="Discussions-img2" />
+                        </DisLeftImageContainer>
                         <DiscussionSearchBarContainer>
                             <DiscussionInput type="text" id="searchInput" placeholder="Search for topics..." />
                             <SearchIcon>
                                 <FontAwesomeIcon icon={faSearch} />
                             </SearchIcon>
                         </DiscussionSearchBarContainer>
-                        <RightImageContainer>
-                            <RightImage src={DiscussionsImg3} alt="Discussions-img3" />
-                        </RightImageContainer>
+                        <DisRightImageContainer>
+                            <DisRightImage src={DiscussionsImg3} alt="Discussions-img3" />
+                        </DisRightImageContainer>
                     </DiscussionTopContent>
                     <PopularTopicsText>Popular Topics:  Adventure,   Fantasy,   Romance </PopularTopicsText>
                 </DiscussionContentContainer>

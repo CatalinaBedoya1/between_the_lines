@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const DiscussionTitle = styled.h1`
+const wordDiscussionTitle = styled.h1`
   font-size: 35px;
   font-weight: bold;
   color: white;
@@ -24,9 +24,9 @@ const Discussions = () => {
   }, [currentIndex, words]);
 
   return (
-    <DiscussionTitle>
+    <wordDiscussionTitle>
       {displayedWord}
-    </DiscussionTitle>
+    </wordDiscussionTitle>
   );
 };
 
