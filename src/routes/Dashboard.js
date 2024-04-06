@@ -1,6 +1,5 @@
 import React from 'react';
 import './Dashboard.css';
-// import DashCards from "../components/CurrentReadingandBCF";
 import DashboardRecs from "../components/DashboardRecs";
 import QuizRecs from "../components/QuizResults";
 import DashIcon from "../assets/dashboardicon.png";
@@ -19,8 +18,6 @@ function Dashboard() {
             </div>
             <div className="editbutton">Edit Profile</div>
 
-
-            {/*current reading and book clubs static*/}
             <div className="currentreading">
             <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
                 <div className ="updateprogressbtn">Update Progress</div>
@@ -29,11 +26,7 @@ function Dashboard() {
                 <div className="chat3">Chat</div>
             </div>
 
-            {/*ignore my wip XD*/}
-            {/* <DashCards/> */}
 
-
-        
             <DashboardRecs/>
             
             

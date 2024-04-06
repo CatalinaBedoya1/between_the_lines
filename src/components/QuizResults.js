@@ -21,16 +21,16 @@ const CPPicks = () => {
 
     // Data array
     const QUIZ_DATA = [
-        { id: "01", image: quizRec01, details: "title1" },
-        { id: "02", image: quizRec02 },
-        { id: "03", image: quizRec03 },
-        { id: "04", image: quizRec04 },
-        { id: "05", image: quizRec05 },
-        { id: "06", image: quizRec06 },
-        { id: "07", image: quizRec07 },
-        { id: "08", image: quizRec08 },
-        { id: "09", image: quizRec09 },
-        { id: "10", image: quizRec10 },
+        { id: "01", image: quizRec01, details: "Tess of the Road by Rachel Hartman" },
+        { id: "02", image: quizRec02, details: "The First Bright Thing by J.R. Dawson" },
+        { id: "03", image: quizRec03, details: "A Tempest of Tea by Hafsah Faizal"},
+        { id: "04", image: quizRec04, details: "Sword Catcher by Cassandra Clare" },
+        { id: "05", image: quizRec05, details: "Supernova by Marissa Meyer" },
+        { id: "06", image: quizRec06, details: "Immortal Longings by Chloe Gong" },
+        { id: "07", image: quizRec07, details: "Stone Blind by Natalie Haynes" },
+        { id: "08", image: quizRec08, details: "Percy Jackson by Rick Riordan" },
+        { id: "09", image: quizRec09, details: "Harry Potter and the Goblet of Fire by J.K. Rowling" },
+        { id: "10", image: quizRec10, details: "The Martian by Andy Weir" },
     ];
 
     // Function to handle scroll when button clicked
@@ -98,6 +98,8 @@ const ScrollContainer = styled.div`
     overflow-x: scroll;
     scroll-behavior: smooth;
     padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 
     &::-webkit-scrollbar {
         width: 10px;
@@ -125,7 +127,7 @@ const ContentBox = styled.div`
     width: 2250px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 `;
 
 const BookCard = ({ image, details }) => {
@@ -137,19 +139,25 @@ const BookCard = ({ image, details }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {isHovered && <Details>{details}</Details>}
+            {isHovered && 
+                <DetailsContainer>
+                    <Details>{details}</Details>
+                </DetailsContainer>  
+            }
+
         </StyledBookCard>
     );
 };
 
 const StyledBookCard = styled.div`
-    width: 155px;
-    height: 205px;
+    width: 145px; //214
+    height: 214px;  //314
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: ${(props) => `url(${props.image})`};
-    background-size: cover;
+    background-size: contain;
+
 
     transition: transform 0.2s ease;
     &:hover {
@@ -157,24 +165,26 @@ const StyledBookCard = styled.div`
     }
 `;
 
-const Details = styled.p`
+const DetailsContainer = styled.div`
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding-top: 10px;
-    //border-radius: 5px;
-    width: 90%;
-    height: 90%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    
     display: flex;
     justify-content: center;
     align-items: center;
 `;
+
+const Details = styled.p`
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+`;
+
 
 
 // const ActionButtons = styled.div`
