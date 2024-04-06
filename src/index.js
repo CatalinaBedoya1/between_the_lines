@@ -18,7 +18,6 @@ import Community, { BookClubs} from "./routes/Community";
 import Discussions from "./routes/Discussions";
 import EventsPage from "./routes/EventsPage";
 import EventsComplete from "./routes/EventsComplete";
-
 import Dashboard from "./routes/Dashboard";
 import AboutUs from "./routes/AboutUs";
 import Login from "./routes/Login";
@@ -42,7 +41,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/community/bookClubs" element={<BookClubs />}  />
         <Route path="/community/discussions" element={<Discussions />}  />
         <Route path="/community/EventsPage" element={<EventsPage />}  />
-        <Route path= "/community/EventsComplete" element={<EventsComplete />} />
+        <Route path="/community/eventsComplete" element={<EventsComplete />} /> 
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />
