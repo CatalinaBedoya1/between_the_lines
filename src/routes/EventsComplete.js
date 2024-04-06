@@ -1,5 +1,5 @@
 import React from 'react';
-import EventTicket from '../assets/eventticket/png';
+import EventTicket from '../assets/eventticket.png';
 
 function EventsComplete() {
     return(

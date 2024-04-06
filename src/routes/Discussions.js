@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import DiscussionsImg from '../assets/DiscussionsImg.png';
+
 import DiscussionsImg2 from '../assets/DiscussionsImg2.png';
 import DiscussionsImg3 from '../assets/DiscussionsImg3.png';
 import CreatePost from '../components/CreatePost';
@@ -24,9 +24,10 @@ const DiscussionBackgroundImage = styled.div`
     width: 100%;
     height: 100%;
     background-image: url(${props => props.backgroundImage});
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props => props.backgroundImage});
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+
 `;
 
 const DiscussionContentContainer = styled.div`
@@ -99,7 +100,7 @@ const Discussions = () => {
     return (
         <><div>
             <DiscussionHeaderContainer>
-                <DiscussionBackgroundImage backgroundImage={DiscussionsImg} />
+            <DiscussionBackgroundImage backgroundImage="../assets/DiscussionsImg.png" />
                 <DiscussionContentContainer>
                     <DiscussionTopContent>
                         <LeftImageContainer>
