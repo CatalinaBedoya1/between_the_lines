@@ -4,10 +4,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import DiscussionsImg from '../assets/DiscussionsImg.png';
 import DiscussionsImg2 from '../assets/DiscussionsImg2.png';
 import DiscussionsImg3 from '../assets/DiscussionsImg3.png';
 import CreatePost from '../components/CreatePost';
+import WordLoopAnimation from '../components/WordLoopAnimation';
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -23,10 +24,10 @@ const DiscussionBackgroundImage = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(${props => props.backgroundImage});
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props => props.backgroundImage});
+    background-image: url(${DiscussionsImg});
     background-size: cover;
     background-position: center;
+    opacity: 0.6;
 
 `;
 
@@ -34,7 +35,7 @@ const DiscussionContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px; /* Adjust as needed */
+    max-width: 800px; /* Adjust as needed */
     text-align: center;
 `;
 
@@ -90,18 +91,36 @@ const SearchIcon = styled.div`
 
 const PopularTopicsText = styled.div`
     font-size: 16px;
-    color: #3F3C3C;
+    color: white;
     z-index: 1;
     margin-top: -90px;
     margin-right: 100px;
+`;
+const DiscussionTitle = styled.h1`
+  font-size: 40px;
+  font-weight: bold;
+  color: white; 
+  z-index: 2;
+  margin-top: 50px;
+  position: relative; 
+  overflow: hidden;
+  display: flex; /* Add this to make items align horizontally */
+  align-items: center; /* Align items vertically */
+`;
+
+const Text = styled.span`
+  margin-right: 10px; /* Adjust the spacing between the text and the animation */
+  font-size: 40px;
 `;
 
 const Discussions = () => {
     return (
         <><div>
             <DiscussionHeaderContainer>
-            <DiscussionBackgroundImage backgroundImage="../assets/DiscussionsImg.png" />
+            <DiscussionBackgroundImage src={DiscussionsImg} alt="Discussions-img2" />
                 <DiscussionContentContainer>
+                <DiscussionTitle><Text>Find what you're looking for: </Text> <WordLoopAnimation /></DiscussionTitle>
+                
                     <DiscussionTopContent>
                         <LeftImageContainer>
                             <LeftImage src={DiscussionsImg2} alt="Discussions-img2" />
