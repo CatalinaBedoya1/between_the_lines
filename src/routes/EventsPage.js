@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
 import EventsHeroImg2 from '../assets/EventsHeroImg2.png';
+import {Link} from 'react-router-dom';
 
 const EventsPage = () => {
   return (
@@ -11,7 +12,8 @@ const EventsPage = () => {
       <EventsContent>
             <EHTitle>Want to be involved in the world of literature? Join one of our events today!</EHTitle>
             <EHDescription>Join our Newsletter</EHDescription>
-          <EventsButton> Sign Up</EventsButton>
+          <Link to= '/EventsComplete.js' ><EventsButton> Sign Up</EventsButton>
+          </Link>
       </EventsContent>
     </EventsHeroContainer>
   )
