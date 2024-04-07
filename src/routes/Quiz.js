@@ -271,15 +271,6 @@ const SeeResultsButton = styled.button`
   cursor: pointer;
   border-radius: 20px;
 `;
-const Button = styled.button`
-  padding: 10px 20px;
-  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
-  color: #FFF;
-  border: none;
-  cursor: pointer;
-  border-radius: 20px;
-  margin-right: 10px;
-`;
 
 // State to store user answers
 // Function to handle user's answer selection
