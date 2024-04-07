@@ -96,6 +96,7 @@ const BottomImage = styled.img`
 
 const Title = styled.h2`
   font-size: 45px;
+  font-family: Roboto;
   text-align: center;
   margin-bottom: 30px;
   margin-top: 0px;
@@ -127,6 +128,7 @@ const Icon = styled.span`
 const Input = styled.input`
   width: 280px;
   font-size: 1.1rem;
+  font-family: Roboto;
   border: none;
   outline: none;
   margin-right: 80px;
@@ -141,13 +143,14 @@ const Line = styled.hr`
 
 const Button = styled.button`
   padding: 10px;
-  width: 200px;
+  width: 250px;
   background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 25px;
+  font-family: Roboto;
 
   &:hover {
     background-color: #0056b3;

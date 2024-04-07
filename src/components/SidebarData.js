@@ -3,6 +3,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
+import { faComments } from '@fortawesome/free-solid-svg-icons';
 
 export const SidebarData = [
   {
@@ -43,7 +44,7 @@ export const SidebarData = [
   {
     title: 'Community',
     path: '/community',
-    icon: <IoIcons.IoIosPaper />,
+    icon: < IoIcons.IoMdPeople />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -70,7 +71,7 @@ export const SidebarData = [
   {
     title: 'Dashboard',
     path: '/dashboard',
-    icon: <IoIcons.IoMdPeople />
+    icon: <IoIcons.IoIosPaper />
   },
   {
     title: 'About Us',
