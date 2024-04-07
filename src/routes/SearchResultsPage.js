@@ -20,7 +20,7 @@ import forumSquare8 from '../assets/forumSquare8.png';
 
 
 
-const Container = styled.div`
+const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,11 +137,12 @@ const TitleContainer = styled.div`
   margin-bottom: 25px;
 `;
 
-const Title = styled.h2`
+const SearchTitle = styled.h2`
   margin-bottom: 25px;
   text-align: left;
   font-family: Roboto;
   font-size: 26px;
+  font-color: black;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -185,7 +186,7 @@ const AnimatedButton = styled.button`
 
 const SectionTitle = styled.h4`
   font-weight: bold;
-  color: #333;
+  color: black;
   margin-left: -1190px;
   text-align: left;
   font-family: Roboto;
@@ -333,7 +334,7 @@ const SearchResultsPage = () => {
 
 
   return (
-    <Container>
+    <SearchContainer>
       <SearchBar>
         <SearchInput
           type="text"
@@ -355,7 +356,7 @@ const SearchResultsPage = () => {
 
       <SearchRPPicks />
       <TitleContainer>
-        <Title>All...</Title>
+        <SearchTitle>All...</SearchTitle>
         
         <GridIcon src={gridIcon} alt="Grid Icon" />
         <span>Sort by: Most Popular</span>
@@ -379,7 +380,7 @@ const SearchResultsPage = () => {
       <Forum2ArtSection />
 
 
-    </Container>
+    </SearchContainer>
   );
 };
 

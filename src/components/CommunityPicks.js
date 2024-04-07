@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import seeMore from "../assets/seemorebtn.png";
 import styled from 'styled-components';
 
-const NYT_API_KEY = 'EhyMWDy9K5iT2H5QRhcpOrSaBGlBtm1G';
+const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
 
 const NewCPPicks = () => {
     return (

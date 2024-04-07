@@ -28,6 +28,7 @@ export const EventsComplete = () => {
     );
   };
 
+  
 
 const EventsHeroContainer = styled.div`
   position: relative;

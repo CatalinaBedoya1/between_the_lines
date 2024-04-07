@@ -11,10 +11,7 @@ const AppLayout = () => (
   <>
  
     <Sidebar />
-    <div className="content">
-
       <Outlet />
-    </div>
     <Footer />
   </>
 );

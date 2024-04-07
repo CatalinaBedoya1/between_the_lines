@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import loginImage from '../assets/loginImage.png';
 import { Link } from 'react-router-dom';
+import VectorLinesImg from '../assets/VectorLinesImg.png';
 
 
 const Login = () => {
@@ -15,6 +16,8 @@ const Login = () => {
 
     return (
       <Container>
+        <BackgroundImage src={VectorLinesImg} alt="VectorLinesImg" />
+
         <FormContainer>
           <Title>Login</Title>
           <Form>
@@ -42,7 +45,6 @@ const Login = () => {
           <SignupLink>Don't have an account? <a href="/signup">Sign Up</a></SignupLink>
         </FormContainer>
         <BottomImage src={loginImage} alt="LoginImage" />
-
       </Container>
     );
   };
@@ -51,26 +53,40 @@ const Login = () => {
 
 
 const Container = styled.div`
+
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+  z-index: -2;
+ 
 
 `;
+const BackgroundImage = styled.img`
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0; /* Set z-index to 0 */
+`;
+
+
 
 const FormContainer = styled.div`
   background-color: #f3f3f3;
-  padding: 70px;
+  padding: 40px;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+  z-index: 1;
+  text-align: left;
 `;
 
 const BottomImage = styled.img`
   position: absolute;
   bottom: 0;
-  left: 170px;
+  left: 140px;
   width: auto;
   height: 50%;
   z-index: 6;
@@ -93,8 +109,7 @@ const Form = styled.form`
 
 const Label = styled.b`
   margin-bottom: 10px;
-  text-align: left;
-  margin-right: 110px;
+  margin-right: 230px;
 
 `;
 
@@ -102,19 +117,22 @@ const InputContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 25px;
+  
 `;
 
 const Icon = styled.span`
-  margin-right: 10px;
+  margin-right: 30px;
 `;
 
 const Input = styled.input`
-  width: 100%;
+  width: 280px;
   font-size: 1.1rem;
-  flex: 1;
-  padding: 10px;
   border: none;
   outline: none;
+  margin-right: 80px;
+  height: 50px;
+  border-radius: 10px;
+  padding: 5px 10px;
 `;
 const Line = styled.hr`
   border: 0.5px solid #ccc;
