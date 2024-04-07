@@ -7,7 +7,7 @@ import msFirst from '../assets/card1.png';
 import msSecond from '../assets/card2.png';
 import msThird from '../assets/card3.png';
 import msFourth from '../assets/card4.png';
-import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
+import myImage3 from '../assets/BOTM_GROUP2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
 
 
