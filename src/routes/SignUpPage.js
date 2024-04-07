@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import VectorLinesImg from '../assets/VectorLinesImg.png';
 import SignUpImage from '../assets/SignUpImage.png';
 
 
@@ -14,6 +14,7 @@ const SignUpPage = () => {
 
   return (
     <Container>
+      <BackgroundImage src={VectorLinesImg} alt="VectorLinesImg" />
       <FormContainer>
         <Title>Sign Up</Title>
         <Form>
@@ -61,12 +62,21 @@ const Container = styled.div`
   height: 100vh;
   background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
 `;
+const BackgroundImage = styled.img`
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0; /* Set z-index to 0 */
+`;
 
 const FormContainer = styled.div`
   background-color: #f4f4f4;
   padding: 70px;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 `;
 const BottomImage = styled.img`
   position: absolute;
@@ -80,6 +90,7 @@ const BottomImage = styled.img`
 
 const Title = styled.h2`
   font-size: 45px;
+  font-family: Roboto;
   text-align: center;
   margin-bottom: 30px;
   margin-top: 0px;
@@ -88,7 +99,7 @@ const Title = styled.h2`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 `;
 
 const Row = styled.div`
@@ -109,24 +120,29 @@ const InputContainer = styled.div`
 
 
 const Input = styled.input`
-  width: 100%;
+  width: 280px;
   font-size: 1.1rem;
+  font-family: Roboto;
   flex: 1;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
   margin-right: 10px;
 `;
 
 const Button = styled.button`
+margin-left: 360px;
 padding: 10px;
-background-color: #007bff;
-color: #fff;
+width: 210px;
+border-radius: 60px;
+background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+  color: #fff;
 border: none;
-border-radius: 5px;
+border-radius: 30px;
 cursor: pointer;
-font-size: 1.1rem;
+font-size: 22px;
+font-family: Roboto;
 
 &:hover {
   background-color: #0056b3;

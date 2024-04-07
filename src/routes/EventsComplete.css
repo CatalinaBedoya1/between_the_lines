@@ -1,0 +1,62 @@
+.thankyoutext {
+    text-align: center;
+}
+
+.thankyoutext h1{
+    font-size: 25px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.thankyoutext h2{
+    font-size: 50px;
+    color: #9F7B7B;
+    margin-bottom: 20px;
+}
+
+.thankyoutext h3{
+    font-size: 25px;
+    margin-bottom: 100px;
+}
+
+.EventTicket{
+    margin-left: 80px
+}
+
+.Eventbtnsrow1{
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    margin-top: 100px;
+}
+
+.downloadticket{
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #ffffff;
+    background: #A08786;
+    width: 250px;
+    margin-left: 420px;
+}
+
+.shareticket{
+    padding: 10px 30px;
+    border-radius: 50px;
+    color: #ffffff;
+    background: #A08786;
+    width: 200px;
+    margin-left: 100px;
+}
+
+.donebtn{
+    padding: 10px 30px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 50px;
+    color: #ffffff;
+    background: #95B9B4;
+    width: 150px;
+    margin-top: 80px;
+    margin-left: 650px;
+    margin-bottom: 300px;
+}

@@ -1,5 +1,3 @@
-// discussions.js
-
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +6,7 @@ import DiscussionsImg from '../assets/DiscussionsImg.png';
 import DiscussionsImg2 from '../assets/DiscussionsImg2.png';
 import DiscussionsImg3 from '../assets/DiscussionsImg3.png';
 import CreatePost from '../components/CreatePost';
+import WordLoopAnimation from '../components/WordLoopAnimation';
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -23,17 +22,18 @@ const DiscussionBackgroundImage = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(${props => props.backgroundImage});
+    background-image: url(${DiscussionsImg});
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.6;
+
 `;
 
 const DiscussionContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px; /* Adjust as needed */
+    max-width: 800px; /* Adjust as needed */
     text-align: center;
 `;
 
@@ -43,26 +43,26 @@ const DiscussionTopContent = styled.div`
     margin-bottom: 0px;
 `;
 
-const LeftImageContainer = styled.div`
+const DisLeftImageContainer = styled.div`
     padding-bottom: 20px;
     z-index:2;
 `;
 
-const RightImageContainer = styled.div`
+const DisRightImageContainer = styled.div`
     padding-bottom: 20px;
     z-index: 2;
 `;
 
-const LeftImage = styled.img`
-    width: 220px;
+const DisLeftImage = styled.img`
+    width: 270px;
     height: auto;
     margin-top: 100px;
-    margin-right: 40px;
+    margin-left: 100px;
 `;
 
-const RightImage = styled.img`
-    width: 300px; /* Adjust size as needed */
-    height: auto;
+const DisRightImage = styled.img`
+    width: auto; /* Adjust size as needed */
+    height: 260px;
 `;
 
 const DiscussionSearchBarContainer = styled.div`
@@ -70,15 +70,18 @@ const DiscussionSearchBarContainer = styled.div`
     align-items: center;
     position: relative;
     z-index: 2;
-    width: 450px;
+    width: 500px;
+    margin-left: 100px;
 `;
 
 const DiscussionInput = styled.input`
-    width: 450px;
+    width: 500px;
     border: 1px solid #ccc;
-    padding: 8px 30px 8px 50px;
+    padding: 10px 50px ;
     border-radius: 30px;
     height: 50px;
+    font-color: #3F3C3C;
+    font-family: Inter;
 `;
 
 const SearchIcon = styled.div`
@@ -89,33 +92,55 @@ const SearchIcon = styled.div`
 
 const PopularTopicsText = styled.div`
     font-size: 16px;
-    color: #3F3C3C;
+    font-family: Roboto;
+    color: white;
     z-index: 1;
-    margin-top: -90px;
-    margin-right: 100px;
+    margin-top: -100px;
+    margin-right: 30px;
+`;
+const DiscussionTitle = styled.h1`
+  font-size: 40px;
+  font-family: Roboto;
+  font-weight: bold;
+  color: white; 
+  z-index: 2;
+  margin-top: 50px;
+  position: relative; 
+  overflow: hidden;
+  display: flex; /* Add this to make items align horizontally */
+  align-items: center; /* Align items vertically */
+`;
+
+const Text = styled.span`
+  margin-right: 10px; /* Adjust the spacing between the text and the animation */
+  font-size: 40px;
+  font-family: Roboto;
+  
 `;
 
 const Discussions = () => {
     return (
         <><div>
             <DiscussionHeaderContainer>
-                <DiscussionBackgroundImage backgroundImage={DiscussionsImg} />
+            <DiscussionBackgroundImage src={DiscussionsImg} alt="Discussions-img2" />
                 <DiscussionContentContainer>
+                <DiscussionTitle><Text>Find what you're looking for: </Text> <WordLoopAnimation /></DiscussionTitle>
+                
                     <DiscussionTopContent>
-                        <LeftImageContainer>
-                            <LeftImage src={DiscussionsImg2} alt="Discussions-img2" />
-                        </LeftImageContainer>
+                        <DisLeftImageContainer>
+                            <DisLeftImage src={DiscussionsImg2} alt="Discussions-img2" />
+                        </DisLeftImageContainer>
                         <DiscussionSearchBarContainer>
                             <DiscussionInput type="text" id="searchInput" placeholder="Search for topics..." />
                             <SearchIcon>
                                 <FontAwesomeIcon icon={faSearch} />
                             </SearchIcon>
                         </DiscussionSearchBarContainer>
-                        <RightImageContainer>
-                            <RightImage src={DiscussionsImg3} alt="Discussions-img3" />
-                        </RightImageContainer>
+                        <DisRightImageContainer>
+                            <DisRightImage src={DiscussionsImg3} alt="Discussions-img3" />
+                        </DisRightImageContainer>
                     </DiscussionTopContent>
-                    <PopularTopicsText>Popular Topics:  Adventure,   Fantasy,   Romance </PopularTopicsText>
+                    <PopularTopicsText>Popular Topics:  Adventure, Fantasy, Romance, Memoirs</PopularTopicsText>
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
             {/* Other content of your discussions */}

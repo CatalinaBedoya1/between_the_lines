@@ -6,7 +6,7 @@ import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
-import BTLLogo from '../assets/BTLLogo.png'; // Import your logo image file
+import BTLLogo from '../assets/BTLLogo.png'; 
 
 import './Navbar.css';
 
@@ -14,20 +14,20 @@ const Nav = styled.div`
   background: #A08786;
   height: 80px;
   display: flex;
-  justify-content: center; /* Align items evenly */
+  justify-content: space-between; 
   align-items: center;
-  padding: 0 20px;
+  
 `;
 
 const Logo = styled.img`
   height: 60px;
-  margin-left: 550px;
+  margin-left: 79px;
   
 `;
 
 const NavIcon = styled(Link)`
-  margin-left: 2rem;
-  font-size: 2rem;
+  margin-left: 20px;
+  font-size: 30px;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -35,7 +35,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-    background: #A08786;
+    background: #25444D; /* dark teal blue */
     width: 250px;
     height: 100vh;
     display: flex;
@@ -48,8 +48,8 @@ const SidebarNav = styled.nav`
   `;
 
 const LoginButton = styled(Link)`
-  margin-left: auto;
-  margin-right: 2rem;
+  
+  margin-right: 20px;
   font-size: 1.2rem;
   color: #fff;
   text-decoration: none;

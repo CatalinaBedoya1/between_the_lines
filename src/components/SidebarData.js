@@ -3,6 +3,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
+import { faComments } from '@fortawesome/free-solid-svg-icons';
 
 export const SidebarData = [
   {
@@ -16,7 +17,7 @@ export const SidebarData = [
   {
     title: 'Discover',
     path: '/discover',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <IoIcons.IoIosSearch />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -24,26 +25,26 @@ export const SidebarData = [
       {
         title: 'Whats Trending',
         path: '/discover/whatsTrending',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Search',
         path: '/discover/searchResultsPage',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Take Our Quiz',
         path: '/discover/takeOurQuiz',
-        icon: <IoIcons.IoIosPaper />
+        
       }
     ]
   },
   {
     title: 'Community',
     path: '/community',
-    icon: <IoIcons.IoIosPaper />,
+    icon: < IoIcons.IoMdPeople />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -51,26 +52,26 @@ export const SidebarData = [
       {
         title: 'Book Clubs',
         path: '/community/bookClubs',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Discussions',
         path: '/community/discussions',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Events',
         path: '/community/eventsPage',
-        icon: <IoIcons.IoIosPaper />
+        
       }
     ]
   },
   {
     title: 'Dashboard',
     path: '/dashboard',
-    icon: <IoIcons.IoMdPeople />
+    icon: <IoIcons.IoIosPaper />
   },
   {
     title: 'About Us',

@@ -11,7 +11,7 @@
   height: auto;
   display: block;
   z-index: -1;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .hero-content {
@@ -20,7 +20,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   width: 100%;
 }
 
@@ -32,20 +32,23 @@
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
-
-.btn {
-  padding: 10px 20px;
+.HomeQuizbtn {
+  padding: 10px 30px;
   font-size: 1.2rem;
-  background-color: #007bff;
+  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background-color 0.3s;
+  border: 2px solid white;
+  outline: none;
 }
 
-.btn:hover {
+.HomeQuizbtn:hover {
   background-color: #0056b3;
 }
+
+
 
 .hero-section {
   margin-bottom: 80px;
@@ -78,7 +81,6 @@
 
 .BOTM-container {
   position:relative;
-  align-items: center;
   margin-top: 30px; /* Adjust as needed */
   width: 100vw;
   z-index: 0;
@@ -90,9 +92,6 @@
   position: absolute;
   width: 100%;
   color: rgb(255, 255, 255);
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -108,26 +107,36 @@
   margin-top: 15px;
   margin-bottom: 20px;
 }
+
 .BOTM-content h1 {
   font-size: 3rem;
   right: 50px;
   margin-bottom: 35px;
+  margin-left: 150px;
 }
 
 .BOTM-content h2{
   font-size: 2.75rem;
   margin-bottom: 5px;
+  text-align: left;
+  padding-left: 170px;
 }
 
 .BOTM-content h3{
   font-size: 2rem;
+  margin-left: 350px;
 }
 
 .BOTM-content p {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom:5px;
+  margin-left: -570px;
+  text-align: center;
 }
 
+.BOTM-divider{
+  margin-left: 300px;
+}
 .BOTM-imageZoom {
   width: 100vw; /* Adjust as needed */
   height:auto;
@@ -139,7 +148,7 @@
 .BOTM-image {
   position:absolute;
   top: 20px;
-  right: 50px;
+  right: 130px;
   width: 300px; /* Adjust width as needed */
   height: auto; /* Maintain aspect ratio */
   z-index: 1;
@@ -156,10 +165,12 @@
     border-radius: 50px;
     background-color: #D6B2A6; /* pink */
     color: #fff; /* white */
-    margin-right: 15px;
+    margin-right: 10px;
     margin-top: 20px;
+    margin-left: 280px;
 }
 
 .btn-3{
     background-color: #95B9B4; /* green */
+    margin-left: 30px;
 }

@@ -22,6 +22,9 @@
 
 .btn-adventure,
 .btn-classic,
+.btn-cookbooks,
+.btn-contemporaryfiction,
+.btn-dystopian,
 .btn-fantasy,
 .btn-fiction,
 .btn-histfiction,
@@ -31,6 +34,7 @@
 .btn-nonfiction, 
 .btn-poetry,
 .btn-romance,
+.btn-sciencefiction,
 .btn-selfhelp,
 .btn-thriller,
 .btn-truecrime,
@@ -46,49 +50,59 @@
     background-color: #DBD1AB; /* yellow */
     color: #fff; /* white */
     margin-top: 20px;
-    margin-right: 40px;
+    margin-right: 30px;
 }
 
+.btn-adventure{
+    margin-left: 40px;
+}
 .btn-classic, .btn-memoir{
       padding: 10px 60px;
       background-color: #5397AC; /* blue */
   }
   
-  .btn-fantasy{
+.btn-contemporaryfiction, .btn-romance, .btn-truecrime{
       padding: 10px 60px;
       background-color: #95B9B4; /* green */
+  }
+
+.btn-fiction{
+    background-color: #D6B2A6;
+  }
+  
+.btn-fantasy{
+    margin-left: 90px;
+    background-color: #95B9B4; /* green */
+  }
+
+.btn-cookbooks,.btn-poetry, .btn-sciencefiction{
+      padding: 10px 60px;
+      background-color: #D6B2A6; /* pink */
+  }
+
+  .btn-mystery{
+      padding: 10px 60px;
+      background-color: #5397AC; /* blue */
+      margin-left: 70px;
   }
 
   .btn-histfiction{
-      padding: 10px 80px;
-      background-color: #95B9B4; /* green */
-      margin-left: -60px;
-  }
-
-  .btn-horror{
-      padding: 10px 60px;
-      background-color: #D6B2A6; /* pink */
-  }
-
-  .btn-mystery, .btn-poetry{
-      padding: 10px 50px;
-      background-color: #95B9B4; /* green */
-  }
-
-  .btn-nonfiction{
-      padding: 10px 70px;
-      background-color: #5397AC; /* blue */
-      margin-left: -30px;
-  }
-
-  .btn-romance, .btn-thriller{
+    padding: 10px 70px;
+    background-color: #5397AC; /* blue */
+}
+.btn-thriller{
       padding: 10px 70px;
       background-color: #D6B2A6; /* pink */
   }
 
-  .btn-selfhelp, .btn-truecrime{
+  .btn-dystopian{
       padding: 10px 50px;
       background-color: #DBD1AB; /* yellow */
+  }
+  .btn-selfhelp{
+    padding: 10px 50px;
+    background-color: #DBD1AB; /* yellow */
+    margin-left: 130px;
   }
 
   .genre-row4{
@@ -105,15 +119,27 @@
       background-color: #D6B2A6; /* pink */
   }
 
+  .BOTM-content{
+    padding-left: 80px;
+  }
+
   .BOTM-content h2{
     margin:0;
   }
-  
-  .BOTM-summary{
-    margin-top: 30px;
-    
+
+  .BOTM-content p{
+    padding-left: 30px;
   }
 
+  .BOTM-summary{
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+
+  .BOTM-image{
+    height: 500px;
+    width: auto;
+  }
 
  .qResultHeader{
     text-align: left;

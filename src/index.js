@@ -17,7 +17,7 @@ import TakeOurQuiz from "./routes/TakeOurQuiz";
 import Community, { BookClubs} from "./routes/Community";
 import Discussions from "./routes/Discussions";
 import EventsPage from "./routes/EventsPage";
-
+import EventsComplete from "./routes/EventsComplete";
 import Dashboard from "./routes/Dashboard";
 import AboutUs from "./routes/AboutUs";
 import Login from "./routes/Login";
@@ -32,6 +32,7 @@ import SearchResultsPage from "./routes/SearchResultsPage";
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route element={<AppLayout />}>
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />}  />
         <Route path="/discover" element={<Discover />}  />
         <Route path="/discover/whatsTrending" element={<WhatsTrending />} />
@@ -41,6 +42,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path="/community/bookClubs" element={<BookClubs />}  />
         <Route path="/community/discussions" element={<Discussions />}  />
         <Route path="/community/EventsPage" element={<EventsPage />}  />
+        <Route path="/community/eventsComplete" element={<EventsComplete />} /> 
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/login" element={<Login />} />

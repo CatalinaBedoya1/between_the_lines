@@ -11,7 +11,7 @@ import Forum2ArtSection from '../components//Forums2';
 export const Community = () => {
     return (
       <div className='community'>
-        <div classname= 'communityheader'>
+        <div className= 'communityheader'>
           <img src={herosectionimage} alt="HeroSection" />
           <div className='hero-community-content'>
             <h1>Welcome Jane Doe,</h1>
