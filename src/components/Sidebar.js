@@ -26,7 +26,7 @@ const Logo = styled.img`
 `;
 
 const NavIcon = styled(Link)`
-  margin-left: 15px;
+  margin-left: 20px;
   font-size: 30px;
   height: 80px;
   display: flex;

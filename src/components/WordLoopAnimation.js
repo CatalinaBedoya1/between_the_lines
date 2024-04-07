@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const wordDiscussionTitle = styled.h1`
-  font-size: 35px;
-  font-weight: bold;
+const WordDiscussionTitle = styled.h1`
+  font-size: 40px;
+  font-family: Roboto;
   color: white;
   align-items: center;
 `;
 
 const Discussions = () => {
-  const words = ['groups', 'author', 'title', 'genre', 'topics'];
+  const words = ['Groups', 'Author', 'Title', 'Genre', 'Topics'];
   const [displayedWord, setDisplayedWord] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -24,9 +24,9 @@ const Discussions = () => {
   }, [currentIndex, words]);
 
   return (
-    <wordDiscussionTitle>
+    <WordDiscussionTitle>
       {displayedWord}
-    </wordDiscussionTitle>
+    </WordDiscussionTitle>
   );
 };
 

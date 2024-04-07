@@ -54,15 +54,15 @@ const DisRightImageContainer = styled.div`
 `;
 
 const DisLeftImage = styled.img`
-    width: 220px;
+    width: 270px;
     height: auto;
     margin-top: 100px;
-    margin-right: 40px;
+    margin-left: 100px;
 `;
 
 const DisRightImage = styled.img`
-    width: 300px; /* Adjust size as needed */
-    height: auto;
+    width: auto; /* Adjust size as needed */
+    height: 260px;
 `;
 
 const DiscussionSearchBarContainer = styled.div`
@@ -70,15 +70,18 @@ const DiscussionSearchBarContainer = styled.div`
     align-items: center;
     position: relative;
     z-index: 2;
-    width: 450px;
+    width: 500px;
+    margin-left: 100px;
 `;
 
 const DiscussionInput = styled.input`
-    width: 450px;
+    width: 500px;
     border: 1px solid #ccc;
-    padding: 8px 30px 8px 50px;
+    padding: 10px 50px ;
     border-radius: 30px;
     height: 50px;
+    font-color: #3F3C3C;
+    font-family: Inter;
 `;
 
 const SearchIcon = styled.div`
@@ -89,13 +92,15 @@ const SearchIcon = styled.div`
 
 const PopularTopicsText = styled.div`
     font-size: 16px;
+    font-family: Roboto;
     color: white;
     z-index: 1;
-    margin-top: -90px;
-    margin-right: 100px;
+    margin-top: -100px;
+    margin-right: 30px;
 `;
 const DiscussionTitle = styled.h1`
   font-size: 40px;
+  font-family: Roboto;
   font-weight: bold;
   color: white; 
   z-index: 2;
@@ -106,9 +111,11 @@ const DiscussionTitle = styled.h1`
   align-items: center; /* Align items vertically */
 `;
 
-const disText = styled.span`
+const Text = styled.span`
   margin-right: 10px; /* Adjust the spacing between the text and the animation */
   font-size: 40px;
+  font-family: Roboto;
+  
 `;
 
 const Discussions = () => {
@@ -117,7 +124,7 @@ const Discussions = () => {
             <DiscussionHeaderContainer>
             <DiscussionBackgroundImage src={DiscussionsImg} alt="Discussions-img2" />
                 <DiscussionContentContainer>
-                <DiscussionTitle><disText>Find what you're looking for: </disText> <WordLoopAnimation /></DiscussionTitle>
+                <DiscussionTitle><Text>Find what you're looking for: </Text> <WordLoopAnimation /></DiscussionTitle>
                 
                     <DiscussionTopContent>
                         <DisLeftImageContainer>
@@ -133,7 +140,7 @@ const Discussions = () => {
                             <DisRightImage src={DiscussionsImg3} alt="Discussions-img3" />
                         </DisRightImageContainer>
                     </DiscussionTopContent>
-                    <PopularTopicsText>Popular Topics:  Adventure,   Fantasy,   Romance </PopularTopicsText>
+                    <PopularTopicsText>Popular Topics:  Adventure, Fantasy, Romance, Memoirs</PopularTopicsText>
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
             {/* Other content of your discussions */}
