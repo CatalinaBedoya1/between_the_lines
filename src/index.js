@@ -32,6 +32,7 @@ import SearchResultsPage from "./routes/SearchResultsPage";
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route element={<AppLayout />}>
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />}  />
         <Route path="/discover" element={<Discover />}  />
         <Route path="/discover/whatsTrending" element={<WhatsTrending />} />

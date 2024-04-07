@@ -17,7 +17,7 @@ export const SidebarData = [
   {
     title: 'Discover',
     path: '/discover',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <IoIcons.IoIosSearch />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -25,19 +25,19 @@ export const SidebarData = [
       {
         title: 'Whats Trending',
         path: '/discover/whatsTrending',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Search',
         path: '/discover/searchResultsPage',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Take Our Quiz',
         path: '/discover/takeOurQuiz',
-        icon: <IoIcons.IoIosPaper />
+        
       }
     ]
   },
@@ -52,19 +52,19 @@ export const SidebarData = [
       {
         title: 'Book Clubs',
         path: '/community/bookClubs',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Discussions',
         path: '/community/discussions',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Events',
         path: '/community/eventsPage',
-        icon: <IoIcons.IoIosPaper />
+        
       }
     ]
   },
