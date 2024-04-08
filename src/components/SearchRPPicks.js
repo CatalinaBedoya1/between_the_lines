@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const NEW_ITEM_WIDTH = 200;
+const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
 
 const SearchRPPicks = () => {
     const [newScrollPosition, setNewScrollPosition] = useState(0);
@@ -12,7 +13,7 @@ const SearchRPPicks = () => {
         const fetchTrendingBooks = async () => {
             try {
                 const response = await fetch(
-                    `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_NYT_API_KEY}`
+                    `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${NYT_API_KEY}`
                 );
                 const data = await response.json();
                 if (data.results && data.results.books) {

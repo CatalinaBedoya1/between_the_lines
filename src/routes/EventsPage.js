@@ -15,6 +15,8 @@ import heart from '../assets/redhearticon.png';
 
 
 
+
+
 const EventsPage = () => {
   return ( 
   <div>
@@ -24,8 +26,7 @@ const EventsPage = () => {
       <EventsContent>
             <EHTitle>Want to be involved in the world of literature? Join one of our events today!</EHTitle>
             <EHDescription>Join our Newsletter</EHDescription>
-            <Link to= '/EventsComplete.js' ><EventsButton> Sign Up</EventsButton>
-            </Link>
+            <Link to="/community/eventsComplete">Sign Up</Link>
       </EventsContent>
     </EventsHeroContainer>
 
@@ -217,7 +218,7 @@ const EventsPage = () => {
 
 export const EventsComplete = () => {
     return (
-      <div className='eventComplete'>
+      <div className='EventsComplete'>
         <h1>EventComplete</h1>
       </div>
     );
