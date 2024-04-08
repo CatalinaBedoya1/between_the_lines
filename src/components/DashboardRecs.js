@@ -125,6 +125,8 @@ const ScrollContainer = styled.div`
     overflow-x: scroll;
     scroll-behavior: smooth;
     padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 
     &::-webkit-scrollbar {
         width: 10px;
@@ -153,7 +155,7 @@ const ContentBox = styled.div`
     width: 2250px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 `;
 
 
@@ -172,13 +174,13 @@ const BookCard = ({ image, details }) => {
 };
 
 const StyledBookCard = styled.div`
-    width: 155px;
-    height: 205px;
+    width: 145px;
+    height: 214px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-image: ${(props) => `url(${props.image})`};
-    background-size: cover;
+    background-size: contain;
 
     transition: transform 0.2s ease;
     &:hover {
