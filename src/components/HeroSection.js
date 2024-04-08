@@ -27,6 +27,7 @@ function HeroSection() {
 
           </div>
         </div>
+        
 
         
         <div className="row">
@@ -55,7 +56,7 @@ function HeroSection() {
             <p className='missionText'>Register for a variety of online and in-person monthly events</p>
           </div>
         </div>
-
+        
         <div className="row">
         </div>
         
@@ -79,7 +80,7 @@ function HeroSection() {
           <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
         </div>
       </div>
-     
+      
 
       </div>
   );
