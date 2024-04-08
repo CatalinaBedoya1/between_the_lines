@@ -1,125 +1,133 @@
-.footer1 {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  max-width: 100%;
-}
-.about-us,
-.blank-line4,
-.blank-line5 {
-  margin: 0;
-}
-.terms-of-use {
-  margin: 0;
-  white-space: pre-wrap;
-}
-.blank-line6 {
-  margin: 10px 0;
-}
-.about-us-terms-container {
-  width: 598px;
-  height: 90px;
-  position: relative;
-  display: inline-block;
-  flex-shrink: 0;
-  max-width: 100%;
-  cursor: pointer;
-  z-index: 2;
-  margin: 0;
-}
-.copyright-icon {
-  width: 16px;
-  height: 15.7px;
-  position: relative;
-  z-index: 1;
-}
-.footer-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-9xs) 0 0;
-
-}
-.between-the-lines1 {
-  margin: 0;
-}
-.blank-line7 {
-  margin: 0;
-  color: rgb(255, 255, 255);
-}
-.between-the-lines-container {
-  width: 252px;
-  height: 29px;
-  position: relative;
-  display: inline-block;
-  flex-shrink: 0;
-  z-index: 1;
-}
-.about-us-frame,
-.copyright-icon-frame1,
-.copyright-icon1 {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.copyright-icon1 {
-  flex: 1;
-  flex-direction: column;
-  padding: 0;
-}
-.about-us-frame,
-.copyright-icon-frame1 {
-  width: 257px;
-  flex-direction: row;
-}
-.copyright-icon-frame1 {
-  width: 593px;
-  justify-content: center;
-  max-width: 100%;
-  color: #ffffff;
-}
+/* Footer Container */
 .footer {
-  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #A08786;
+
+  height: 240px;
+}
+
+/* Footer Left Section */
+.footer-left {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  
+ 
+}
+
+.footer-left p {
+  margin: 4px;
+  font-size: 16px;
+  color: #FFFFFF;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; 
+  
+}
+.Left-footer-column {
   display: flex;
   flex-direction: column;
+  margin-top: 0;
+  
+}
+
+/* Footer Middle Section */
+.footer-middle {
+  display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: var(--padding-47xl) var(--padding-xl) var(--padding-23xl)
-    var(--padding-27xl);
-  box-sizing: border-box;
-  gap: var(--gap-11xl);
-  max-width: 100%;
-  text-align: center;
-  font-size: var(--font-size-xl);
-  color: rgb(255, 255, 255);
-  font-family: var(--font-roboto);
-}
-@media screen and (max-width: 750px) {
-  .footer {
-    gap: var(--gap-mini);
-    padding-left: var(--padding-4xl);
-    box-sizing: border-box;
-  }
-}
-@media screen and (max-width: 450px) {
-  .about-us-terms-container,
-  .between-the-lines-container {
-    font-size: var(--font-size-base);
-  }
+  color: #FFFFFF;
 }
 
- .footer-logo {
-  background-color: #A08786;
-  height: 50px;
-  border-width: 80px;
 
-}
-html, body {
-  height: 100vh;
-  width: 100vw;
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  
 }
 
+.social-icon1 {
+  margin-right: 10px; /* Adjust spacing between icons */
+  
+}
+.social-icon2 {
+  margin-right: 10px; /* Adjust spacing between icons */
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.Left-vertical-line {
+  height: 200px; /* Adjust height as needed */
+  width: 1px;
+  background-color: #806766;
+  margin: 0 20px;
+  margin-left: 180px;
+}
+
+.get-updates {
+
+  text-align: center; /* Align text center */
+  margin-left: 100px;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-top: 0;
+  display: flex; /* Add this line */
+  flex-direction: column; 
+}
+.get-updates h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.get-updates p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.get-updates input {
+  margin: 5px;
+  padding: 10px 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.Right-vertical-line {
+  height: 200px; /* Adjust height as needed */
+  width: 1px;
+  background-color: #806766;
+  margin: 0 20px;
+  margin-left: 100px;
+
+  
+}
+/* Footer Right Section */
+.footer-right {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  margin-right: 40px;
+}
+
+.footer-logo {
+  width: 280px; /* Adjust size as needed */
+  height: 90px;
+  margin-bottom: 20px;
+}
+
+.quote {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+
+.quoteAuthor {
+  font-style: italic;
+  margin-bottom: 50px;
+  margin-left: 160px;
+  color: #FFFFFF;
+}
