@@ -62,7 +62,7 @@ const EventsPage = () => {
 
           <Register>
             <p>2,375 Views</p>
-            <Link to= '/community/eventsSignup' ><ERegisterButton>Register</ERegisterButton></Link>
+            <Link to= '/community/EventsSignup' ><ERegisterButton>Register</ERegisterButton></Link>
             <HeartIcon>
               <p>2,119</p>
               <img src= {heart} alt="red heart icon" />
@@ -92,7 +92,7 @@ const EventsPage = () => {
 
           <Register>
             <p>1,875 Views</p>
-            <Link to= '/community/eventsSignup' ><ERegisterButton>Register</ERegisterButton></Link>
+            <Link to= '/community/EventsSignup' ><ERegisterButton>Register</ERegisterButton></Link>
             <HeartIcon>
               <p>1,784</p>
               <img src= {heart} alt="red heart icon" />
