@@ -26,7 +26,11 @@ const EventsPage = () => {
       <EventsContent>
             <EHTitle>Want to be involved in the world of literature? Join one of our events today!</EHTitle>
             <EHDescription>Join our Newsletter</EHDescription>
-            <Link to="/community/eventsComplete">Sign Up</Link>
+            <Link to="/community/eventsComplete">
+              <EventsButton>
+              Sign Up
+              </EventsButton>
+              </Link>
       </EventsContent>
     </EventsHeroContainer>
 
