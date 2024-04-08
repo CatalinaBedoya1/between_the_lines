@@ -11,7 +11,7 @@ import BTLLogo from '../assets/BTLLogo.png';
 import './Navbar.css';
 
 const Nav = styled.div`
-  background: #A08786;
+  background: #407D8F;
   height: 80px;
   display: flex;
   justify-content: space-between; 
@@ -35,7 +35,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-    background: #A08786; /* dark teal blue */
+    background: #407D8F; /* dark teal blue */
     width: 250px;
     height: 100vh;
     display: flex;
@@ -70,7 +70,7 @@ const SidebarWrap = styled.div`
 `;
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
