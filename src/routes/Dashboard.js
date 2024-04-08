@@ -23,6 +23,10 @@ function Dashboard() {
             {/*current reading and book clubs static*/}
             <div className="currentreading">
             <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
+                <div className ="updateprogressbtn">Update Progress</div>
+                <div className="chat1">Chat</div>
+                <div className="chat2">Chat</div>
+                <div className="chat3">Chat</div>
             </div>
 
             {/*ignore my wip XD*/}
@@ -46,7 +50,7 @@ function Dashboard() {
             <div className="quizResult">
                 <br></br>
                 <div className="quizresultheader">
-                    <p>My recommened Books ...</p>
+                    <p>My Recommended Books:</p>
                 </div> 
                 <QuizRecs />
             </div>

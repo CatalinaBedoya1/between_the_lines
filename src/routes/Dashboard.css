@@ -27,6 +27,14 @@
     margin-bottom: 80px; 
 }
 
+.currentreading{
+    width: 1000px;
+    height: auto;;
+    display: block; 
+    margin-bottom: 50px;
+    margin-left: -300px;
+}
+
 .dashboard p {
     text-align: left;
 }
@@ -39,6 +47,76 @@
     margin-top: -40px;
     margin-bottom: 50px;
     margin-left: 1300px;
+}
+
+.updateprogressbtn{
+    position: absolute;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+    margin-top: -110px;
+    margin-left: 25px;
+}
+
+.chat1{
+    position: absolute;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+    margin-left: 810px;
+    margin-top: -60px;
+
+}
+
+.chat2{
+    position: absolute;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+    margin-left: 560px;
+    margin-top: -60px;
+}
+
+.chat3{
+    position: absolute;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+    margin-left: 1070px;
+    margin-top: -60px;
+}
+
+.topgenres p{
+    margin-top: 30px;
+    color: #A08786;
 }
 
 .topgenre1,
@@ -55,7 +133,7 @@
     border-radius: 50px;
     color: #fff; /* white */
     margin-right: 40px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .topgenre1 {
@@ -79,13 +157,13 @@
     flex-direction: column;
 }
 
+.quizResult p{
+    color: #A08786;
+    padding-left: 120px;
+}
+
 .quizresultheader{
     text-align: left;
     padding-left: 60px;
 }
 
-.currentreading{
-    width: 100%;
-    height: auto;
-    display: block; 
-}
