@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import QuizBackgroundImg from '../assets/QuizBgImg.png';
-
+import { Link } from 'react-router-dom';
 
 
 // Define your book data
@@ -297,20 +297,66 @@ const BookImage = styled.img`
   animation: ${fadeIn} 1s ease forwards;
 `;
 
-const SeeResultsButton = styled.button`
-  padding: 10px 20px;
-  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
-  color: #FFF;
-  border: none;
-  cursor: pointer;
-  border-radius: 20px;
-`;
+
 
 const QuestionCounter = styled.div`
   text-align: center;
   margin-bottom: 20px;
   font-family: Roboto; 
 `
+
+
+const BookResultsContainer = styled.div`
+  width: 1000px;
+  height: 630px;
+  padding: 10px;
+  border: 5px solid #DDBFB5;
+  border-radius: 30px;
+  background-color: #f9f9f9;
+`;
+const BookResultsTitle = styled.h2`
+  text-align: center;
+  font-size: 42px;
+  font-family: Roboto;
+  margin-top: 10px;
+`
+const BookInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+const BookCover = styled.img`
+  width: 250px;
+  height: 280px
+  margin-top: 40px;
+  
+`;
+
+
+
+const BookTitle = styled.h3`
+
+  font-size: 25px;
+  font-family: Roboto;
+  margin-top: 10px;
+`;
+const BookAuthor = styled.p`
+
+  margin-top: 2px; /* Remove default margin */
+`;
+const DoneButton = styled.button`
+margin-top: 20px;
+  padding: 10px 60px;
+  font-size: 24px;
+  font-family: Roboto;
+  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+  color: white;
+  border: none;
+  border: 4px solid #FFF;
+  border-radius: 40px;
+  cursor: pointer;
+`;
 
 // State to store user answers
 // Function to handle user's answer selection
@@ -353,16 +399,20 @@ const Quiz = () => {
   }, [recommendedBooks]);
 
   useEffect(() => {
-    if (showResults) {
+    if (showResults && !recommendedBooks.every(book => book.coverUrl)) {
       fetchBookCovers();
     }
-  }, [showResults, fetchBookCovers]);
+  }, [showResults, recommendedBooks, fetchBookCovers]);
+  
 
   const fetchBookCover = async (bookTitle) => {
     try {
       const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(bookTitle)}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch book cover');
+      }
       const data = await response.json();
-      const bookData = data.items[0];
+      const bookData = data.items?.[0];
       if (bookData && bookData.volumeInfo && bookData.volumeInfo.imageLinks) {
         return bookData.volumeInfo.imageLinks.thumbnail;
       }
@@ -370,6 +420,7 @@ const Quiz = () => {
       console.error('Error fetching book cover:', error);
     }
   };
+  
 
   const getBookRecommendations = () => {
     let filteredBooks = books;
@@ -448,39 +499,39 @@ const Quiz = () => {
   };
 
   const renderBookRecommendations = () => {
+    
     return (
       <div>
-        <h2>Book Recommendations:</h2>
+        <BookResultsContainer>
+        <BookResultsTitle>Our Recommendation</BookResultsTitle>
         {recommendedBooks.map(book => (
           <div key={book.title}>
-            <h3>{book.title}</h3>
-            <p><strong>Author:</strong> {book.author}</p>
-            <p><strong>Genre:</strong> {book.genre}</p>
-            <p><strong>Description:</strong> {book.description}</p>
-            {book.coverUrl && <BookImage src={book.coverUrl} alt="Book Cover" />}
+            <BookInfoContainer>
+              <div>
+              <BookTitle>{book.title}</BookTitle>
+              <BookAuthor><strong>By</strong> {book.author}</BookAuthor>
+              </div>
+              
+              <BookCover src={book.coverUrl} alt="Book Cover" />
+              <Link to="/discover/TakeOurQuiz">
+                <DoneButton>Done</DoneButton>
+              </Link>
+            </BookInfoContainer>
+            
           </div>
         ))}
+        </BookResultsContainer>
       </div>
     );
   };
+  
 
-  // Function to render "See Results" button
-  const renderSeeResultsButton = () => {
-    if (!showResults && Object.keys(answers).length === 7) {
-      return (
-        <SeeResultsButton onClick={() => setShowResults(true)}>
-          See Results
-        </SeeResultsButton>
-      );
-    }
-    return null;
-  };
-
+  
   return (
     <Container>
       {!showResults && renderQuestion()}
       {showResults && renderBookRecommendations()}
-      {renderSeeResultsButton()}
+      
     </Container>
   );
 };
