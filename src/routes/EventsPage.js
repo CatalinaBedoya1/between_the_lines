@@ -62,7 +62,7 @@ const EventsPage = () => {
 
           <Register>
             <p>2,375 Views</p>
-            <ERegisterButton>Register</ERegisterButton>
+            <Link to= '/community/EventsSignup' ><ERegisterButton>Register</ERegisterButton></Link>
             <HeartIcon>
               <p>2,119</p>
               <img src= {heart} alt="red heart icon" />
@@ -92,7 +92,7 @@ const EventsPage = () => {
 
           <Register>
             <p>1,875 Views</p>
-            <ERegisterButton>Register</ERegisterButton>
+            <Link to= '/community/EventsSignup' ><ERegisterButton>Register</ERegisterButton></Link>
             <HeartIcon>
               <p>1,784</p>
               <img src= {heart} alt="red heart icon" />
@@ -224,6 +224,14 @@ export const EventsComplete = () => {
     return (
       <div className='EventsComplete'>
         <h1>EventComplete</h1>
+      </div>
+    );
+  };
+
+  export const events2 = () => {
+    return (
+      <div className='events2'>
+        <h1>Event 2</h1>
       </div>
     );
   };
