@@ -1,9 +1,13 @@
+require('dotenv').config();
+
 const express = require('express');
 const fetch = require('node-fetch');
 
+
+
 const app = express();
 const PORT = process.env.PORT || 3000;
-const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
+const NYT_API_KEY = process.env.NYT_API_KEY;
 const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g';
 
 app.get('/api/books/:category', async (req, res) => {
@@ -11,12 +15,14 @@ app.get('/api/books/:category', async (req, res) => {
     const category = req.params.category;
     const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${category}.json?api-key=${NYT_API_KEY}`);
     const data = await response.json();
+    console.log(data); // Log the response data
     res.json(data.results.books || []);
   } catch (error) {
     console.error(`Error fetching ${category} books:`, error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 
 app.get('/api/book-cover', async (req, res) => {
   const { bookTitle } = req.query;
@@ -38,3 +44,6 @@ app.get('/api/book-cover', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
+
