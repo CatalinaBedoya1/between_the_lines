@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import quizImage from '../assets/QuizImage.png';
 import QuizBgImg from '../assets/QuizBgImg.png';
+import { Link } from 'react-router-dom';
 
 const TakeOurQuiz = () => {
     return (
@@ -12,7 +13,8 @@ const TakeOurQuiz = () => {
           </QuizTitleContainer>
           <QuizImageContainer>
           <QuizImage src={quizImage} alt="QuizImage" />
-          <StartButton to="/quiz">Get Started</StartButton>
+          <Link to="/quiz"><StartButton>Get Started</StartButton></Link>
+
           </QuizImageContainer>
             
         

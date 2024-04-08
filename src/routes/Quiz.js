@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
-
+import QuizBackgroundImg from '../assets/QuizBgImg.png';
 
 
 
@@ -211,42 +211,76 @@ const slideIn = keyframes`
 
 
 const Container = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: auto;
   height: 100vh; /* Set height to fill the viewport */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(${QuizBackgroundImg}); // Set background image
+  background-size: cover;
+  background-position: center;
 `;
 const QuestionContainer = styled.div`
   animation: ${slideIn} 0.5s ease forwards;
   opacity: 0;
-  margin-bottom: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 1090px;
+  height: auto;
+  
+  border: 3px solid #DDBFB5;
+  border-radius: 30px;
   background-color: #f9f9f9;
 
   &.active {
     opacity: 1;
   }
 `;
+const QuestionText = styled.h2`
+text-align: center;
+margin-top: 50px;
+font-size: 40px;
+font-family: Roboto;
+  
+`;
+const Line = styled.hr`
+  position: absolute; /* Position the line */
+  margin-top: 30px;
+  left: 50%; /* Center the line */
+  transform: translateX(-50%); /* Center the line */
+  width: 80%; /* Set the width */
+  border: none;
+  border-top: 5px solid #DDBFB5; /* Style the line */
+`;
+
 const AnswerContainer = styled.div`
-  margin-top: 10px;
+  margin: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 80px;
+  padding: 20px 5px;
+  
 `;
 const AnswerButton = styled.button`
-  padding: 10px 20px;
+  margin:10px;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-family: Roboto;
   background: #FFF;
   color: #000;
   border: 2px solid #000;
   cursor: pointer;
   border-radius: 20px;
-  margin-right: 10px;
+  
   transition: background-color 0.3s, color 0.3s;
+  flex: 0 0 calc(33.33% - 20px);
+
 
   &:hover {
-    background: #000;
+    background: #80B7C9;
     color: #FFF;
   }
 
@@ -271,6 +305,12 @@ const SeeResultsButton = styled.button`
   cursor: pointer;
   border-radius: 20px;
 `;
+
+const QuestionCounter = styled.div`
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: Roboto; 
+`
 
 // State to store user answers
 // Function to handle user's answer selection
@@ -379,9 +419,18 @@ const Quiz = () => {
       "What settings do you prefer in books?"
     ];
 
+    const renderQuestionCounter = () => {
+      return (
+        <QuestionCounter>
+          Question {currentQuestion + 1} out of {questionOptions.length}
+        </QuestionCounter>
+      );
+    };
+
     return (
       <QuestionContainer>
-        <h2>{questionText[currentQuestion]}</h2>
+        <QuestionText>{questionText[currentQuestion]}</QuestionText>
+        <Line />
         <AnswerContainer>
           {questionOptions[currentQuestion].map(option => (
             <AnswerButton
@@ -393,6 +442,7 @@ const Quiz = () => {
             </AnswerButton>
           ))}
         </AnswerContainer>
+        {renderQuestionCounter()}
       </QuestionContainer>
     );
   };
@@ -414,7 +464,6 @@ const Quiz = () => {
     );
   };
 
-  
   // Function to render "See Results" button
   const renderSeeResultsButton = () => {
     if (!showResults && Object.keys(answers).length === 7) {
@@ -426,7 +475,6 @@ const Quiz = () => {
     }
     return null;
   };
-  
 
   return (
     <Container>
