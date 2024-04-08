@@ -290,12 +290,6 @@ const AnswerButton = styled.button`
   }
 `;
 
-const BookImage = styled.img`
-  max-width: 200px;
-  display: block;
-  margin: 0 auto;
-  animation: ${fadeIn} 1s ease forwards;
-`;
 
 
 
@@ -316,7 +310,7 @@ const BookResultsContainer = styled.div`
 `;
 const BookResultsTitle = styled.h2`
   text-align: center;
-  font-size: 42px;
+  font-size: 45px;
   font-family: Roboto;
   margin-top: 10px;
 `
@@ -339,11 +333,14 @@ const BookTitle = styled.h3`
 
   font-size: 25px;
   font-family: Roboto;
-  margin-top: 10px;
+  bold-weight: Normal;
+  margin-top: 15px;
 `;
 const BookAuthor = styled.p`
-
-  margin-top: 2px; /* Remove default margin */
+  font-size: 16px;
+  font-family: Roboto;
+  bold-weight: Lighter
+  margin-top: 10px; /* Remove default margin */
 `;
 const DoneButton = styled.button`
 margin-top: 20px;
@@ -356,6 +353,15 @@ margin-top: 20px;
   border: 4px solid #FFF;
   border-radius: 40px;
   cursor: pointer;
+`;
+const ResultsLine = styled.hr`
+  position: absolute; /* Position the line */
+  margin-top: 5px;
+  left: 50%; /* Center the line */
+  transform: translateX(-50%); /* Center the line */
+  width: 50%; /* Set the width */
+  border: none;
+  border-top: 5px solid #DDBFB5; /* Style the line */
 `;
 
 // State to store user answers
@@ -504,12 +510,13 @@ const Quiz = () => {
       <div>
         <BookResultsContainer>
         <BookResultsTitle>Our Recommendation</BookResultsTitle>
+        <ResultsLine />
         {recommendedBooks.map(book => (
           <div key={book.title}>
             <BookInfoContainer>
               <div>
               <BookTitle>{book.title}</BookTitle>
-              <BookAuthor><strong>By</strong> {book.author}</BookAuthor>
+              <BookAuthor>By {book.author}</BookAuthor>
               </div>
               
               <BookCover src={book.coverUrl} alt="Book Cover" />
