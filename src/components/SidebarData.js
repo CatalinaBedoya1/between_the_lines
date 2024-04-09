@@ -16,7 +16,7 @@ export const SidebarData = [
   {
     title: 'Discover',
     path: '/discover',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <IoIcons.IoIosSearch />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -24,26 +24,26 @@ export const SidebarData = [
       {
         title: 'Whats Trending',
         path: '/discover/whatsTrending',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Search',
         path: '/discover/searchResultsPage',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Take Our Quiz',
         path: '/discover/takeOurQuiz',
-        icon: <IoIcons.IoIosPaper />
+        
       }
     ]
   },
   {
     title: 'Community',
     path: '/community',
-    icon: <IoIcons.IoIosPaper />,
+    icon: < IoIcons.IoMdPeople />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -51,26 +51,26 @@ export const SidebarData = [
       {
         title: 'Book Clubs',
         path: '/community/bookClubs',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
         title: 'Discussions',
         path: '/community/discussions',
-        icon: <IoIcons.IoIosPaper />,
+        
         cName: 'sub-nav'
       },
       {
-        title: 'Book Voting',
-        path: '/community/bookVoting',
-        icon: <IoIcons.IoIosPaper />
+        title: 'Events',
+        path: '/community/eventsPage',
+        
       }
     ]
   },
   {
     title: 'Dashboard',
     path: '/dashboard',
-    icon: <IoIcons.IoMdPeople />
+    icon: <IoIcons.IoIosPaper />
   },
   {
     title: 'About Us',

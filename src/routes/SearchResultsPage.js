@@ -3,8 +3,8 @@ import styled, { keyframes } from 'styled-components';
 import { IoSearchOutline } from 'react-icons/io5';
 import SearchRPPicks from '../components/SearchRPPicks';
 import gridIcon from '../assets/gridIcon.png';
-import GroupImage from '../assets/Group.png';
-import { Link } from 'react-router-dom';
+import AbstractImg from '../assets/AbstractImg.png';
+// import { Link } from 'react-router-dom';
 import Card from "../components/Card";
 
 // Import forum images
@@ -18,13 +18,15 @@ import forumSquare7 from '../assets/forumSquare7.png';
 import forumSquare8 from '../assets/forumSquare8.png';
 
 
-const Container = styled.div`
+
+
+const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
   min-height: 100vh; 
-  background-image: url(${GroupImage});
+  background-image: url(${AbstractImg});
   background-size: cover;
   background-attachment: fixed;
 `;
@@ -59,67 +61,72 @@ const BookAuthor = styled.p`
 const SearchIconContainer = styled.div`
   padding: 5px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  
 `;
 
 const SearchIcon = styled(IoSearchOutline)`
   flex-shrink: 0;
+  
 `;
 
 const SearchBar = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 10px 30px;
   border: 1px solid #ccc;
   border-radius: 20px;
 `;
 
 const SearchInput = styled.input`
   flex: 1;
-  padding: 5px;
+  padding: 0px;
   border: none;
   outline: none;
+  margin-right: 110px;
 `;
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 25px;
 `;
 
 const FilterButtonAll = styled.button`
-  padding: 10px 20px;
+  padding: 10px 50px;
   background-color: #CCB7B6;
   color: #FFF;
   border: none;
   cursor: pointer;
+  font-size: 16px;
   border-radius: 20px;
   margin-right: 10px;
 `;
 const FilterButtonRomance = styled.button`
-  padding: 10px 20px;
+  padding: 10px 50px;
   background-color: #93C8C2;
   color: #FFF;
   border: none;
   cursor: pointer;
+  font-size: 16px;
   border-radius: 20px;
   margin-right: 10px;
 `;
 const FilterButtonSciFi = styled.button`
-  padding: 10px 20px;
+  padding: 10px 50px;
   background-color: #679DAE;
   color: #FFF;
   border: none;
   cursor: pointer;
+  font-size: 16px;
   border-radius: 20px;
   margin-right: 10px;
 `;
 const FilterButtonMore = styled.button`
-  padding: 10px 20px;
+  padding: 10px 30px;
   background-color: #E1DDDD;
   color: #FFF;
   border: none;
   cursor: pointer;
+  font-size: 16px;
   border-radius: 20px;
   margin-right: 10px;
 `;
@@ -130,11 +137,12 @@ const TitleContainer = styled.div`
   margin-bottom: 25px;
 `;
 
-const Title = styled.h2`
+const SearchTitle = styled.h2`
   margin-bottom: 25px;
   text-align: left;
   font-family: Roboto;
   font-size: 26px;
+  font-color: black;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -161,9 +169,10 @@ const bounce = keyframes`
 
 
 const AnimatedButton = styled.button`
-  padding: 10px 20px;
+  padding: 10px 40px;
   background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
   color: #FFF;
+  font-size: 16px;
   border: none;
   cursor: pointer;
   border-radius: 20px;
@@ -174,10 +183,11 @@ const AnimatedButton = styled.button`
     animation-play-state: paused;
   }
 `;
+
 const SectionTitle = styled.h4`
   font-weight: bold;
-  color: #333;
-  margin-left: -1180px;
+  color: black;
+  margin-left: -1190px;
   text-align: left;
   font-family: Roboto;
   font-size: 26px;
@@ -188,10 +198,11 @@ const SectionTitle = styled.h4`
 `;
 
 const SeeMoreButton = styled.button`
-padding: 10px 20px;
+padding: 10px 40px;
 background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
 color: #FFF;
 border: none;
+font-size: 16px;
   cursor: pointer;
   border-radius: 20px;
   margin-right: 10px;
@@ -323,7 +334,7 @@ const SearchResultsPage = () => {
 
 
   return (
-    <Container>
+    <SearchContainer>
       <SearchBar>
         <SearchInput
           type="text"
@@ -341,12 +352,11 @@ const SearchResultsPage = () => {
         <FilterButtonSciFi onClick={() => setSearchQuery('sci-fi')}>Sci-Fi</FilterButtonSciFi>
         <FilterButtonMore onClick={() => setSearchQuery('more')}>+</FilterButtonMore>
         
-        {/* Add more filter buttons as needed */}
       </ButtonContainer>
 
       <SearchRPPicks />
       <TitleContainer>
-        <Title>All...</Title>
+        <SearchTitle>All...</SearchTitle>
         
         <GridIcon src={gridIcon} alt="Grid Icon" />
         <span>Sort by: Most Popular</span>
@@ -363,15 +373,15 @@ const SearchResultsPage = () => {
       </BooksGrid>
       <ButtonContainer>
         <AnimatedButton onClick={handlePreviousPage}>Previous</AnimatedButton>
+        <div style={{ marginRight: '10px' }}></div>
         <AnimatedButton onClick={handleNextPage}>Next</AnimatedButton>
       </ButtonContainer>
 
       <Forum2ArtSection />
 
 
-    </Container>
+    </SearchContainer>
   );
 };
 
 export default SearchResultsPage;
-

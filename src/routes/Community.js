@@ -11,7 +11,7 @@ import Forum2ArtSection from '../components//Forums2';
 export const Community = () => {
     return (
       <div className='community'>
-        <div classname= 'communityheader'>
+        <div className= 'communityheader'>
           <img src={herosectionimage} alt="HeroSection" />
           <div className='hero-community-content'>
             <h1>Welcome Jane Doe,</h1>
@@ -49,9 +49,6 @@ export const Community = () => {
         <div className = "voting-button">
           <div className = "vote-btn">Vote</div>
         </div>
-       
-        
-        <Forum2ArtSection/>
 
     
         <div className="leaderboard-container">
@@ -80,10 +77,10 @@ export const BookClubs = () => {
     );
   };
   
-  export const BookVoting= () => {
+  export const EventsPage= () => {
     return (
-      <div className='bookVoting'>
-        <h1>BookVoting</h1>
+      <div className='eventsPage'>
+        <h1>EventsPage</h1>
       </div>
     );
   };

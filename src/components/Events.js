@@ -33,6 +33,7 @@ const EventsData = () => {
       <div className="event-carousel">
         {event.map((event, index) => (
           <Card
+            key={index}
             imageUrl={event.imageUrl}
             description={event.description}
           />

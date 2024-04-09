@@ -1,5 +1,3 @@
-// discussions.js
-
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +6,8 @@ import DiscussionsImg from '../assets/DiscussionsImg.png';
 import DiscussionsImg2 from '../assets/DiscussionsImg2.png';
 import DiscussionsImg3 from '../assets/DiscussionsImg3.png';
 import { Link } from 'react-router-dom';
+import CreatePost from '../components/CreatePost';
+import WordLoopAnimation from '../components/WordLoopAnimation';
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -23,17 +23,18 @@ const DiscussionBackgroundImage = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(${props => props.backgroundImage});
+    background-image: url(${DiscussionsImg});
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.6;
+
 `;
 
 const DiscussionContentContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px; /* Adjust as needed */
+    max-width: 800px; /* Adjust as needed */
     text-align: center;
 `;
 
@@ -43,26 +44,26 @@ const DiscussionTopContent = styled.div`
     margin-bottom: 0px;
 `;
 
-const LeftImageContainer = styled.div`
+const DisLeftImageContainer = styled.div`
     padding-bottom: 20px;
     z-index:2;
 `;
 
-const RightImageContainer = styled.div`
+const DisRightImageContainer = styled.div`
     padding-bottom: 20px;
     z-index: 2;
 `;
 
-const LeftImage = styled.img`
-    width: 220px;
+const DisLeftImage = styled.img`
+    width: 270px;
     height: auto;
     margin-top: 100px;
-    margin-right: 40px;
+    margin-left: 100px;
 `;
 
-const RightImage = styled.img`
-    width: 300px; /* Adjust size as needed */
-    height: auto;
+const DisRightImage = styled.img`
+    width: auto; /* Adjust size as needed */
+    height: 260px;
 `;
 
 const DiscussionSearchBarContainer = styled.div`
@@ -70,15 +71,18 @@ const DiscussionSearchBarContainer = styled.div`
     align-items: center;
     position: relative;
     z-index: 2;
-    width: 450px;
+    width: 500px;
+    margin-left: 100px;
 `;
 
 const DiscussionInput = styled.input`
-    width: 450px;
+    width: 500px;
     border: 1px solid #ccc;
-    padding: 8px 30px 8px 50px;
+    padding: 10px 50px ;
     border-radius: 30px;
     height: 50px;
+    font-color: #3F3C3C;
+    font-family: Inter;
 `;
 
 const SearchIcon = styled.div`
@@ -89,74 +93,95 @@ const SearchIcon = styled.div`
 
 const PopularTopicsText = styled.div`
     font-size: 16px;
-    color: #3F3C3C;
+    font-family: Roboto;
+    color: white;
     z-index: 1;
-    margin-top: -90px;
-    margin-right: 100px;
+    margin-top: -100px;
+    margin-right: 30px;
+`;
+const DiscussionTitle = styled.h1`
+  font-size: 40px;
+  font-family: Roboto;
+  font-weight: bold;
+  color: white; 
+  z-index: 2;
+  margin-top: 50px;
+  position: relative; 
+  overflow: hidden;
+  display: flex; /* Add this to make items align horizontally */
+  align-items: center; /* Align items vertically */
+`;
+
+const Text = styled.span`
+  margin-right: 10px; /* Adjust the spacing between the text and the animation */
+  font-size: 40px;
+  font-family: Roboto;
+  
 `;
 
 const Discussions = () => {
     return (
         <div>
             <DiscussionHeaderContainer>
-                <DiscussionBackgroundImage backgroundImage={DiscussionsImg} />
+            <DiscussionBackgroundImage src={DiscussionsImg} alt="Discussions-img2" />
                 <DiscussionContentContainer>
+                <DiscussionTitle><Text>Find what you're looking for: </Text> <WordLoopAnimation /></DiscussionTitle>
+                
                     <DiscussionTopContent>
-                        <LeftImageContainer>
-                            <LeftImage src={DiscussionsImg2} alt="Discussions-img2" />
-                        </LeftImageContainer>
+                        <DisLeftImageContainer>
+                            <DisLeftImage src={DiscussionsImg2} alt="Discussions-img2" />
+                        </DisLeftImageContainer>
                         <DiscussionSearchBarContainer>
                             <DiscussionInput type="text" id="searchInput" placeholder="Search for topics..." />
                             <SearchIcon>
                                 <FontAwesomeIcon icon={faSearch} />
                             </SearchIcon>
                         </DiscussionSearchBarContainer>
-                        <RightImageContainer>
-                            <RightImage src={DiscussionsImg3} alt="Discussions-img3" />
-                        </RightImageContainer>
+                        <DisRightImageContainer>
+                            <DisRightImage src={DiscussionsImg3} alt="Discussions-img3" />
+                        </DisRightImageContainer>
                     </DiscussionTopContent>
-                    <PopularTopicsText>Popular Topics:  Adventure,   Fantasy,   Romance </PopularTopicsText>
+                    <PopularTopicsText>Popular Topics:  Adventure, Fantasy, Romance, Memoirs</PopularTopicsText>
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
             {/* Other content of your discussions */}
-        <div> 
-            <h1>Tags</h1>
-            <div className='btns-genres'>
-                <div className='genre-row1'>
-                    <Link to="/discover/thriller" className="btn-thriller">Thriller</Link>
-                    <Link to="/discover/romance" className="btn-romance">Romance</Link>
+            <h2>Forums</h2>
+            <h2>Tags</h2>
+            <div className='btns-discussion-genres'>
+                <div className='genre-1'>
+                    <Link to="/discussions/thriller" className="btn-thriller">Thriller</Link>
+                    <Link to="/discussions/romance" className="btn-romance">Romance</Link>
                 </div> 
-                <div className='genre-row2' >
-                    <Link to="/discover/booktok" className="btn-booktok">Booktok</Link>
-                    <Link to="/discover/horror" className="btn-horror">Horror</Link>
+                <div className='genre-2' >
+                    <Link to="/discussions/booktok" className="btn-booktok">Booktok</Link>
+                    <Link to="/discussions/horror" className="btn-horror">Horror</Link>
                 </div>
-                <div className='genre-row3'>
-                    <Link to="/discover/dark" className="btn-dark">Dark</Link>
-                    <Link to="/discover/cliff-hanger" className="btn-cliff-hanger">Cliff-hanger</Link>
+                <div className='genre-3'>
+                    <Link to="/discussions/dark" className="btn-dark">Dark</Link>
+                    <Link to="/discussions/cliff-hanger" className="btn-cliff-hanger">Cliff-hanger</Link>
                 </div>
-                <div className='genre-row4'>
-                    <Link to="/discover/fantasy" className="btn-fantasy">Fantasy</Link>
-                    <Link to="/discover/historical" className="btn-historical">Historical</Link>
+                <div className='genre-4'>
+                    <Link to="/discussions/fantasy" className="btn-fantasy">Fantasy</Link>
+                    <Link to="/discussions/historical" className="btn-historical">Historical</Link>
                 </div>
-                <div className='genre-row5'>
-                    <Link to="/discover/recommended" className="btn-recommended">Recommended</Link>
-                    <Link to="/discover/series" className="btn-series">Series</Link>
+                <div className='genre-5'>
+                    <Link to="/discussions/recommended" className="btn-recommended">Recommended</Link>
+                    <Link to="/discussions/series" className="btn-series">Series</Link>
                 </div>
-                <div className='genre-row6'>
-                    <Link to="/discover/humor" className="btn-humor">Humor</Link>
+                <div className='genre-6'>
+                    <Link to="/discussions/humor" className="btn-humor">Humor</Link>
                     <Link to="/discover/spanish" className="btn-spanish">Spanish</Link>
                 </div>
-                <div className='genre-row7'>
-                    <Link to="/discover/educational" className="btn-educational">Educational</Link>
-                    <Link to="/discover/enemies" className="btn-enemies">Enemies</Link>
+                <div className='genre-7'>
+                    <Link to="/discussions/educational" className="btn-educational">Educational</Link>
+                    <Link to="/discussions/enemies" className="btn-enemies">Enemies</Link>
                 </div>
-                <div className='genre-row8'>
-                    <Link to="/discover/comedy" className="btn-comedy">Comedy</Link>
-                    <Link to="/discover/friendstolovers" className="btn-friendstolovers">Friends to lovers</Link>
+                <div className='genre-8'>
+                    <Link to="/discussions/comedy" className="btn-comedy">Comedy</Link>
+                    <Link to="/discussions/friendstolovers" className="btn-friends-to-lovers">Friends to Lovers</Link>
                 </div>
             </div>
         </div>
-     </div>
     );
 };
 

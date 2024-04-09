@@ -1,50 +1,59 @@
-// import React, { useRef, useState } from 'react';
-import React, {useRef } from 'react';
-import recommended01 from "../assets/book1.png";
-import recommended02 from "../assets/book2.png";
-import recommended03 from "../assets/book3.png";
-import recommended04 from "../assets/book4.png";
-import recommended05 from "../assets/book5.png";
-import recommended06 from "../assets/book6.png";
-import recommended07 from "../assets/book7.png";
-import recommended08 from "../assets/book8.png";
-import recommended09 from "../assets/book9.png";
-import recommended10 from "../assets/book10.png";
+import React, {useRef, useState } from 'react';
+import want1 from "../assets/DashboardBooks/want1.png";
+import want2 from "../assets/DashboardBooks/want2.png";
+import want3 from "../assets/DashboardBooks/want3.png";
+import want4 from "../assets/DashboardBooks/want4.png";
+import want5 from "../assets/DashboardBooks/want5.png";
+import want6 from "../assets/DashboardBooks/want6.png";
+import want7 from "../assets/DashboardBooks/want7.png";
+import want8 from "../assets/DashboardBooks/want8.png";
+import recent1 from "../assets/DashboardBooks/recent1.png";
+import recent2 from "../assets/DashboardBooks/recent2.png";
+import recent3 from "../assets/DashboardBooks/recent3.png";
+import recent4 from "../assets/DashboardBooks/recent4.png";
+import recent5 from "../assets/DashboardBooks/recent5.png";
+import recent6 from "../assets/DashboardBooks/recent6.png";
+import recent7 from "../assets/DashboardBooks/recent7.png";
+import recent8 from "../assets/DashboardBooks/recent8.png";
 // import rightArrowIcon from "../assets/RightArrow.png";
 // import leftArrowIcon from "../assets/LeftArrow.png";
 import styled from 'styled-components';
 
-// const ITEM_WIDTH = 214;
 
-const CustomComponent = () => {
-    // const [scrollPosition, setScrollPosition] = useState(0);
+const BookSlider = () => {
     const containerRef = useRef();
 
     // Data array
     const WANTTOREAD_DATA = [
-        { id: "01", image: recommended01 },
-        { id: "02", image: recommended02 },
-        { id: "03", image: recommended03 },
-        { id: "04", image: recommended04 },
-        { id: "05", image: recommended05 },
-        { id: "06", image: recommended06 },
-        { id: "07", image: recommended07 },
-        { id: "08", image: recommended08 },
-        { id: "09", image: recommended09 },
-        { id: "10", image: recommended10 },
+        { id: "01", image: want1, details: "Thicker Than Water by Kerry Washington" },
+        { id: "02", image: want2, details: "Things We Never Got Over by Lucy Score" },
+        { id: "03", image: want3, details: "Firefly Lane by Kristin Hannah" },
+        { id: "04", image: want4, details: "Crying In Hmart by Michelle Zauner" },
+        { id: "05", image: want5, details: "The House in the Cerulean Sea by TJ Klune" },
+        { id: "06", image: want6, details: "Anxious People by Fredrik Backman" },
+        { id: "07", image: want7, details: "If He Had Been With Me by Laura Nowlin" },
+        { id: "08", image: want8, details: "Happy Place by Emily Henry" },
+        { id: "09", image: want1, details: "Thicker Than Water by Kerry Washington" },
+        { id: "10", image: want2, details: "Things We Never Got Over by Lucy Score" },
+        { id: "11", image: want3, details: "Firefly Lane by Kristin Hannah"  },
+        { id: "12", image: want4, details: "Crying In Hmart by Michelle Zauner" },
     ];
 
-    // Function to handle scroll when button clicked
-    // const handleScroll = (scrollAmount) => {
-    //     // Calculate new scroll position
-    //     const newScrollPosition = scrollPosition + scrollAmount;
-
-    //     // Update new scroll position
-    //     setScrollPosition(newScrollPosition);
-
-    //     // Set scrollLeft
-    //     containerRef.current.scrollLeft = newScrollPosition;
-    // };
+    // Data array
+    const RECENTREAD_DATA = [
+        { id: "01", image: recent1, details: "The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid" },
+        { id: "02", image: recent2, details: "The Way I used to Be by Amber Smith" },
+        { id: "03", image: recent3, details: "Twisted Lies by Ana Huang" },
+        { id: "04", image: recent4, details: "It Happened One Summer by Tessa Bailey" },
+        { id: "05", image: recent5, details: "The Silent Patient by Alex Michaelides" },
+        { id: "06", image: recent6, details: "The Stand- In by Lily Chu" },
+        { id: "07", image: recent7, details: "Twisted Hate by Ana Huang" },
+        { id: "08", image: recent8, details: "Litte Fires Everywhere by Celeste Ng" },
+        { id: "09", image: recent1, details: "The Seven Husbands of Evelyn Hugo by Taylor Jenkins Reid" },
+        { id: "10", image: recent2, details: "The Way I used to Be by Amber Smith" },
+        { id: "11", image: recent3, details: "Twisted Lies by Ana Huang" },
+        { id: "12", image: recent4, details: "It Happened One Summer by Tessa Bailey" },
+    ];
 
     return (
         <Container>
@@ -52,39 +61,17 @@ const CustomComponent = () => {
                 <p>Want to Read ...</p>
             </RecommendationSection>
 
-            <div
-                ref={containerRef}
-                style={{
-                    width: "1150px",
-                    overflowX: "scroll",
-                    scrollBehavior: "smooth",
-                }}
-            >
+            <ScrollContainer ref={containerRef}>
                 <ContentBox>
                     {WANTTOREAD_DATA.map((item) => (
                         <BookCard 
                             key={item.id} 
                             image={item.image}
-                            >
-                        </BookCard>
+                            details={item.details}
+                        />
                     ))}
                 </ContentBox>
-            </div>
-            
-
-            {/*edit later*/}
-            {/* <ActionButtons>
-                <NavigationButton
-                    style={{ backgroundImage: `url(${leftArrowIcon})` }}
-                    onClick={() => { handleScroll(-ITEM_WIDTH) }}
-                />
-                
-                <NavigationButton
-                    style={{ backgroundImage: `url(${rightArrowIcon})` }}
-                    onClick={() => { handleScroll(ITEM_WIDTH) }}
-                />
-            </ActionButtons> */}
-
+            </ScrollContainer>
             
 
             <RecommendationSection>
@@ -92,30 +79,26 @@ const CustomComponent = () => {
                 <p>Recently Read ...</p>
             </RecommendationSection>
 
-            <div
-                ref={containerRef}
-                style={{
-                    width: "1150px",
-                    overflowX: "scroll",
-                    scrollBehavior: "smooth",
-                }}
-            >
+            <ScrollContainer ref={containerRef}>
                 <ContentBox>
-                    {WANTTOREAD_DATA.map((item) => (
+                    {RECENTREAD_DATA.map((item) => (
                         <BookCard 
                             key={item.id} 
                             image={item.image}
-                            >
-                        </BookCard>
+                            details={item.details}
+                        />
                     ))}
                 </ContentBox>
-            </div>
+            </ScrollContainer>
+            
 
         </Container>
     );
 };
 
-export default CustomComponent;
+export default BookSlider;
+
+
 
 // Styled components
 const RecommendationSection = styled.div`
@@ -136,42 +119,90 @@ const Container = styled.div`
     background-color: #9DBEBD;
 `;
 
+const ScrollContainer = styled.div`
+    width: 1150px;
+    height: 275px; //moves scroll bar
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: white;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #5397AC;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+`;
+
+
 const ContentBox = styled.div`
     width: 2250px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 `;
 
-const BookCard = styled.div`
-    width: 155px;
-    height: 205px;
+
+const BookCard = ({ image, details }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+        <StyledBookCard 
+            image={image}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            {isHovered && <Details>{details}</Details>}
+        </StyledBookCard>
+    );
+};
+
+const StyledBookCard = styled.div`
+    width: 145px;
+    height: 214px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-image: ${(props) => `url(${props.image})`};
-    background-size: cover;
+    background-size: contain;
+
+    transition: transform 0.2s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
 `;
 
-// const ActionButtons = styled.div`
-//     display: flex;
-//     align-items: center;
-//     gap: 1100px;
-//     margin-top: 20px;
-// `;
-
-// const NavigationButton = styled.button`
-//     width: 25px; /* Adjust width according to your arrow image */
-//     height: 50px; /* Adjust height according to your arrow image */
-//     background-color: transparent;
-//     border: none;
-//     cursor: pointer;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     transition: all 0.5s ease;
-
-//     &:hover {
-//         // Adjust styles for hover state if needed
-//     }
-// `;
+const Details = styled.p`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 10px;
+    //border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;

@@ -7,11 +7,13 @@ import msFirst from '../assets/card1.png';
 import msSecond from '../assets/card2.png';
 import msThird from '../assets/card3.png';
 import msFourth from '../assets/card4.png';
-import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
+import myImage3 from '../assets/BOTM_GROUP2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
 
 
+
 //Herosection has header, mission statements, Book of the month, events, and book forums.
+
 
 function HeroSection() {
     return (
@@ -21,9 +23,13 @@ function HeroSection() {
           <div className="hero-content">
             <h1>Welcome to Between the Lines</h1>
             <p>A hub for all book lovers!</p>
-            <Link to="/discover/takeOurQuiz" className="btn">Take Quiz</Link>
+            <a href="/discover/takeOurQuiz" className="HomeQuizbtn">Take Our Quiz</a>
+
           </div>
         </div>
+        
+
+        
         <div className="row">
           <div className="text-center">
             <img src={msFirst} alt="card1" className="msimg" />
@@ -50,7 +56,7 @@ function HeroSection() {
             <p className='missionText'>Register for a variety of online and in-person monthly events</p>
           </div>
         </div>
-
+        
         <div className="row">
         </div>
         
@@ -74,7 +80,7 @@ function HeroSection() {
           <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
         </div>
       </div>
-     
+      
 
       </div>
   );

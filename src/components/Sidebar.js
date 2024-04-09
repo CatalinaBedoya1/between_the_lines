@@ -6,7 +6,7 @@ import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
-import BTLLogo from '../assets/BTLLogo.png'; // Import your logo image file
+import BTLLogo from '../assets/BTLLogo.png'; 
 
 import './Navbar.css';
 
@@ -14,19 +14,20 @@ const Nav = styled.div`
   background: #A08786;
   height: 80px;
   display: flex;
-  justify-content: space-between; /* Align items evenly */
+  justify-content: space-between; 
   align-items: center;
-  padding: 0 20px;
+  
 `;
 
 const Logo = styled.img`
-  height: 60px; /* Set the height of your logo */
-  margin-left: 560px;
+  height: 60px;
+  margin-left: 79px;
+  
 `;
 
 const NavIcon = styled(Link)`
-  margin-left: 2rem;
-  font-size: 2rem;
+  margin-left: 20px;
+  font-size: 30px;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -34,7 +35,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-    background: #A08786;
+    background: #A08786; /* dark teal blue */
     width: 250px;
     height: 100vh;
     display: flex;
@@ -47,8 +48,8 @@ const SidebarNav = styled.nav`
   `;
 
 const LoginButton = styled(Link)`
-  margin-left: auto;
-  margin-right: 2rem;
+  
+  margin-right: 20px;
   font-size: 1.2rem;
   color: #fff;
   text-decoration: none;
@@ -69,7 +70,7 @@ const SidebarWrap = styled.div`
 `;
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -86,7 +87,7 @@ const Sidebar = () => {
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={toggleSidebar} />
           </NavIcon>
-          <Logo src={BTLLogo} alt="BTL Logo" /> {/* Add your logo here */}
+          <Logo src={BTLLogo} alt="BTL Logo" /> 
           <LoginButton to="/login">Login</LoginButton>
         </Nav>
         {isOpen && (
