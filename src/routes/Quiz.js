@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import QuizBackgroundImg from '../assets/QuizBgImg.png';
 import { Link } from 'react-router-dom';
-
+import Confetti from 'react-confetti';
 
 // Define your book data
 const books = [
@@ -81,11 +81,24 @@ const books = [
     setting: 'Urban and modern city',
     description: 'An action-packed urban fantasy follows a group of rebels, the Reckoners, as they challenge the tyrannical rule of superpowered beings known as Epics.In their daring mission, they encounter danger, betrayal, and unexpected twists in their quest for justice and freedom.',
    },
+   {
+    title: 'Dune',
+    author: 'Frank Herbert',
+    genre: 'Science fictions',
+    length: 'Long',
+    pace: 'Moderate',
+    writingStyle: 'Larger than life and heroic',
+    characters: 'Comples and morally ambiguous',
+    plot: 'Fast-paced and action-packed',
+    settings: 'Futuristic',
+    description: 'Set in a universe where noble houses vie for control of the desert planet Arrakis, which holds the key to the most valuable substance in the galaxy.'
+   },
+
    //classics
    {
     title: 'Wuthering Heights',
     author: 'Emily Brontë',
-    genre: 'Gothic fiction/Romance/Classic',
+    genre: 'Classic Literature',
     length: 'Medium',
     pace: 'Moderate',
     writingStyle: 'Evocative and atmospheric',
@@ -118,6 +131,18 @@ const books = [
   plot: 'Twisty and full of surprise',
   settings: 'Urban and modern city',
   description: 'A gripping psychological thriller that follows the story of Alicia Berenson, a talented artist who inexplicably murders her husband and then stops speaking. Confined to a psychiatric facility, she becomes the obsession of Theo Faber, a psychotherapist determined to unravel the mystery behind her silence. Theo delves deeper into Alicias past and psyche, he uncovers shocking secrets that force him to confront his own demons.', 
+  },
+  {
+    title: 'The Girl on the Train',
+    author: 'Paula Hawkins',
+    genre: 'Mystery/Thriller',
+    length: 'Medium',
+    pace: 'Fast',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Complex and morally ambiguous',
+    plot: 'Twisty and full of surprises',
+    settings: 'Urban and modern cities',
+    description: 'This gripping psychological thriller follows Rachel, an alcoholic divorcee who becomes entangled in a missing person investigation, unraveling dark secrets and uncovering shocking truths as she rides the train through the suburbs of London.'
   },
 
   //Memoir
@@ -160,18 +185,47 @@ const books = [
   },
   //Historical Fiction
   {
-
+    title: 'Nightingale',
+    author: 'Kristen Hannah',
+    genre: 'Historical Fiction',
+    length: 'Long',
+    pace: 'Fast',
+    settings: 'Historical periods and settings',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Complex and morally ambiguous',
+    plot: 'Slow-burn and character-driven',
+    description: 'Follows the story of two sisters navigating love, loss, and survival during the German occupation of France.',
   },
   {
 
   },
   //Fantasy
   {
-
+    title: 'The Night Circus',
+    author: 'Erin Morgenstern',
+    genre: 'Fantasy',
+    length: 'Medium',
+    pace: 'Slow',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Relatable and everyday people',
+    plot: 'A journey of self-discovery and personal growth',
+    settings: 'One or more of the above',
+    description: 'In this enchanting fantasy novel, a magical competition unfolds between two young illusionists, Celia and Marco, within the confines of the mysterious Le Cirque des Rêves, blending reality and illusion in a spectacle of wonder and romance.'
   },
   {},
   //Non-fiction
-
+  {
+    title: 'Educated',
+    author: 'Tara Westover',
+    genre: 'Non-Fiction',
+    length: 'Medium',
+    pace: 'Moderate',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Relatable and everyday people',
+    plot: 'A journey of self-discovery and personal growth',
+    settings: 'One or more of the above',
+    description: "This powerful memoir recounts Tara Westover's extraordinary journey from her isolated upbringing in a strict Mormon family in rural Idaho to her quest for knowledge and education, overcoming obstacles and forging her own path to independence and enlightenment."
+  },
 
   //Contemporary Fiction
 
@@ -190,14 +244,7 @@ const books = [
 },
   
 ];
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+
 const slideIn = keyframes`
   from {
     transform: translateY(-20px);
@@ -375,7 +422,7 @@ const questionOptions = [
   ["Descriptive and lyrical", "Concise and to the point", "Dialogue-heavy and conversational"],
   ["Complex and morally ambiguous", "Relatable and everyday people", "Larger-than-life and heroic"],
   ["Twisty and full of surprise", "Slow-burn and character-driven", "Fast-paced and action-packed", "A journey of self-discovery and personal growth"],
-  ["Urban and modern cities","Rural and countryside","Historical periods and settings","One or more of the above"]
+  ["Urban and modern cities","Rural and countryside","Historical periods and settings","Futuristic","One or more of the above"]
 ];
 
 const Quiz = () => {
@@ -383,6 +430,8 @@ const Quiz = () => {
   const [answers, setAnswers] = useState({});
   const [recommendedBooks, setRecommendedBooks] = useState([]);
   const [showResults, setShowResults] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  
 
   const handleAnswerSelect = (answer) => {
     setAnswers({ ...answers, [currentQuestion]: answer });
@@ -392,6 +441,7 @@ const Quiz = () => {
       const recommendations = getBookRecommendations();
       setRecommendedBooks(recommendations);
       setShowResults(true);
+      setShowConfetti(true); 
     }
   };
   
@@ -538,6 +588,7 @@ const Quiz = () => {
     <Container>
       {!showResults && renderQuestion()}
       {showResults && renderBookRecommendations()}
+      {showConfetti && <Confetti />}
       
     </Container>
   );
