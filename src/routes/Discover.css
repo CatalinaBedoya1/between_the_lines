@@ -118,6 +118,10 @@
       padding: 10px 40px;
       background-color: #D6B2A6; /* pink */
   }
+  .BOTM-container {
+    background-color: #fff;
+    margin-top: 20px;
+  }
 
   .BOTM-content{
     padding-left: 80px;

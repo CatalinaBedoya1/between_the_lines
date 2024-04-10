@@ -181,6 +181,7 @@ const Discussions = () => {
                     <Link to="/discussions/friendstolovers" className="btn-friends-to-lovers">Friends to Lovers</Link>
                 </div>
             </div>
+            <CreatePost />
         </div>
     );
 };
