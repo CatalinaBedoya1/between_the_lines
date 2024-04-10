@@ -12,8 +12,10 @@
     color: black;
     font-size: 20px;
     text-align: center; /*card*/
-    width: 30;
+    /* width: 30; */
+    width: 100;
     margin: 0 auto;
+    background-color: blue;
 }
 
 .seemore-btn{

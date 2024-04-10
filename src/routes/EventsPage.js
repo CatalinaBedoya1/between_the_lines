@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
-import EventsHeroImg2 from '../assets/EventsHeroImg2.png';
+//import EventsHeroImg2 from '../assets/EventsHeroImg2.png';
 import { Link } from 'react-router-dom';
 import onlineevent1 from '../assets/onlineevent1.png';
 import onlineevent2 from '../assets/onlineevent2.png';
