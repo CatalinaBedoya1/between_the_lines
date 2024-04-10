@@ -5,6 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import DiscussionsImg from '../assets/DiscussionsImg.png';
 import DiscussionsImg2 from '../assets/DiscussionsImg2.png';
 import DiscussionsImg3 from '../assets/DiscussionsImg3.png';
+import { Link } from 'react-router-dom';
 import CreatePost from '../components/CreatePost';
 import WordLoopAnimation from '../components/WordLoopAnimation';
 
@@ -120,7 +121,7 @@ const Text = styled.span`
 
 const Discussions = () => {
     return (
-        <><div>
+        <div>
             <DiscussionHeaderContainer>
             <DiscussionBackgroundImage src={DiscussionsImg} alt="Discussions-img2" />
                 <DiscussionContentContainer>
@@ -144,10 +145,44 @@ const Discussions = () => {
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
             {/* Other content of your discussions */}
-        </div><CreatePost /></>
+            <h2>Forums</h2>
+            <h2>Tags</h2>
+            <div className='btns-discussion-genres'>
+                <div className='genre-1'>
+                    <Link to="/discussions/thriller" className="btn-thriller">Thriller</Link>
+                    <Link to="/discussions/romance" className="btn-romance">Romance</Link>
+                </div> 
+                <div className='genre-2' >
+                    <Link to="/discussions/booktok" className="btn-booktok">Booktok</Link>
+                    <Link to="/discussions/horror" className="btn-horror">Horror</Link>
+                </div>
+                <div className='genre-3'>
+                    <Link to="/discussions/dark" className="btn-dark">Dark</Link>
+                    <Link to="/discussions/cliff-hanger" className="btn-cliff-hanger">Cliff-hanger</Link>
+                </div>
+                <div className='genre-4'>
+                    <Link to="/discussions/fantasy" className="btn-fantasy">Fantasy</Link>
+                    <Link to="/discussions/historical" className="btn-historical">Historical</Link>
+                </div>
+                <div className='genre-5'>
+                    <Link to="/discussions/recommended" className="btn-recommended">Recommended</Link>
+                    <Link to="/discussions/series" className="btn-series">Series</Link>
+                </div>
+                <div className='genre-6'>
+                    <Link to="/discussions/humor" className="btn-humor">Humor</Link>
+                    <Link to="/discover/spanish" className="btn-spanish">Spanish</Link>
+                </div>
+                <div className='genre-7'>
+                    <Link to="/discussions/educational" className="btn-educational">Educational</Link>
+                    <Link to="/discussions/enemies" className="btn-enemies">Enemies</Link>
+                </div>
+                <div className='genre-8'>
+                    <Link to="/discussions/comedy" className="btn-comedy">Comedy</Link>
+                    <Link to="/discussions/friendstolovers" className="btn-friends-to-lovers">Friends to Lovers</Link>
+                </div>
+            </div>
+        </div>
     );
 };
 
 export default Discussions;
-
-

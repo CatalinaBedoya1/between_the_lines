@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
-
-
-
+import QuizBackgroundImg from '../assets/QuizBgImg.png';
+import { Link } from 'react-router-dom';
+import Confetti from 'react-confetti';
 
 // Define your book data
 const books = [
@@ -81,11 +81,24 @@ const books = [
     setting: 'Urban and modern city',
     description: 'An action-packed urban fantasy follows a group of rebels, the Reckoners, as they challenge the tyrannical rule of superpowered beings known as Epics.In their daring mission, they encounter danger, betrayal, and unexpected twists in their quest for justice and freedom.',
    },
+   {
+    title: 'Dune',
+    author: 'Frank Herbert',
+    genre: 'Science fictions',
+    length: 'Long',
+    pace: 'Moderate',
+    writingStyle: 'Larger than life and heroic',
+    characters: 'Comples and morally ambiguous',
+    plot: 'Fast-paced and action-packed',
+    settings: 'Futuristic',
+    description: 'Set in a universe where noble houses vie for control of the desert planet Arrakis, which holds the key to the most valuable substance in the galaxy.'
+   },
+
    //classics
    {
     title: 'Wuthering Heights',
     author: 'Emily Brontë',
-    genre: 'Gothic fiction/Romance/Classic',
+    genre: 'Classic Literature',
     length: 'Medium',
     pace: 'Moderate',
     writingStyle: 'Evocative and atmospheric',
@@ -118,6 +131,18 @@ const books = [
   plot: 'Twisty and full of surprise',
   settings: 'Urban and modern city',
   description: 'A gripping psychological thriller that follows the story of Alicia Berenson, a talented artist who inexplicably murders her husband and then stops speaking. Confined to a psychiatric facility, she becomes the obsession of Theo Faber, a psychotherapist determined to unravel the mystery behind her silence. Theo delves deeper into Alicias past and psyche, he uncovers shocking secrets that force him to confront his own demons.', 
+  },
+  {
+    title: 'The Girl on the Train',
+    author: 'Paula Hawkins',
+    genre: 'Mystery/Thriller',
+    length: 'Medium',
+    pace: 'Fast',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Complex and morally ambiguous',
+    plot: 'Twisty and full of surprises',
+    settings: 'Urban and modern cities',
+    description: 'This gripping psychological thriller follows Rachel, an alcoholic divorcee who becomes entangled in a missing person investigation, unraveling dark secrets and uncovering shocking truths as she rides the train through the suburbs of London.'
   },
 
   //Memoir
@@ -160,18 +185,47 @@ const books = [
   },
   //Historical Fiction
   {
-
+    title: 'Nightingale',
+    author: 'Kristen Hannah',
+    genre: 'Historical Fiction',
+    length: 'Long',
+    pace: 'Fast',
+    settings: 'Historical periods and settings',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Complex and morally ambiguous',
+    plot: 'Slow-burn and character-driven',
+    description: 'Follows the story of two sisters navigating love, loss, and survival during the German occupation of France.',
   },
   {
 
   },
   //Fantasy
   {
-
+    title: 'The Night Circus',
+    author: 'Erin Morgenstern',
+    genre: 'Fantasy',
+    length: 'Medium',
+    pace: 'Slow',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Relatable and everyday people',
+    plot: 'A journey of self-discovery and personal growth',
+    settings: 'One or more of the above',
+    description: 'In this enchanting fantasy novel, a magical competition unfolds between two young illusionists, Celia and Marco, within the confines of the mysterious Le Cirque des Rêves, blending reality and illusion in a spectacle of wonder and romance.'
   },
   {},
   //Non-fiction
-
+  {
+    title: 'Educated',
+    author: 'Tara Westover',
+    genre: 'Non-Fiction',
+    length: 'Medium',
+    pace: 'Moderate',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Relatable and everyday people',
+    plot: 'A journey of self-discovery and personal growth',
+    settings: 'One or more of the above',
+    description: "This powerful memoir recounts Tara Westover's extraordinary journey from her isolated upbringing in a strict Mormon family in rural Idaho to her quest for knowledge and education, overcoming obstacles and forging her own path to independence and enlightenment."
+  },
 
   //Contemporary Fiction
 
@@ -190,14 +244,7 @@ const books = [
 },
   
 ];
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+
 const slideIn = keyframes`
   from {
     transform: translateY(-20px);
@@ -211,42 +258,76 @@ const slideIn = keyframes`
 
 
 const Container = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: auto;
   height: 100vh; /* Set height to fill the viewport */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url(${QuizBackgroundImg}); // Set background image
+  background-size: cover;
+  background-position: center;
 `;
 const QuestionContainer = styled.div`
   animation: ${slideIn} 0.5s ease forwards;
   opacity: 0;
-  margin-bottom: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 1090px;
+  height: auto;
+  
+  border: 3px solid #DDBFB5;
+  border-radius: 30px;
   background-color: #f9f9f9;
 
   &.active {
     opacity: 1;
   }
 `;
+const QuestionText = styled.h2`
+text-align: center;
+margin-top: 50px;
+font-size: 40px;
+font-family: Roboto;
+  
+`;
+const Line = styled.hr`
+  position: absolute; /* Position the line */
+  margin-top: 30px;
+  left: 50%; /* Center the line */
+  transform: translateX(-50%); /* Center the line */
+  width: 80%; /* Set the width */
+  border: none;
+  border-top: 5px solid #DDBFB5; /* Style the line */
+`;
+
 const AnswerContainer = styled.div`
-  margin-top: 10px;
+  margin: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 80px;
+  padding: 20px 5px;
+  
 `;
 const AnswerButton = styled.button`
-  padding: 10px 20px;
+  margin:10px;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-family: Roboto;
   background: #FFF;
   color: #000;
   border: 2px solid #000;
   cursor: pointer;
   border-radius: 20px;
-  margin-right: 10px;
+  
   transition: background-color 0.3s, color 0.3s;
+  flex: 0 0 calc(33.33% - 20px);
+
 
   &:hover {
-    background: #000;
+    background: #80B7C9;
     color: #FFF;
   }
 
@@ -256,20 +337,78 @@ const AnswerButton = styled.button`
   }
 `;
 
-const BookImage = styled.img`
-  max-width: 200px;
-  display: block;
-  margin: 0 auto;
-  animation: ${fadeIn} 1s ease forwards;
+
+
+
+const QuestionCounter = styled.div`
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: Roboto; 
+`
+
+
+const BookResultsContainer = styled.div`
+  width: 1000px;
+  height: 630px;
+  padding: 10px;
+  border: 5px solid #DDBFB5;
+  border-radius: 30px;
+  background-color: #f9f9f9;
+`;
+const BookResultsTitle = styled.h2`
+  text-align: center;
+  font-size: 45px;
+  font-family: Roboto;
+  margin-top: 10px;
+`
+const BookInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+`;
+const BookCover = styled.img`
+  width: 250px;
+  height: 280px
+  margin-top: 40px;
+  
 `;
 
-const SeeResultsButton = styled.button`
-  padding: 10px 20px;
+
+
+const BookTitle = styled.h3`
+
+  font-size: 25px;
+  font-family: Roboto;
+  bold-weight: Normal;
+  margin-top: 15px;
+`;
+const BookAuthor = styled.p`
+  font-size: 16px;
+  font-family: Roboto;
+  bold-weight: Lighter
+  margin-top: 10px; /* Remove default margin */
+`;
+const DoneButton = styled.button`
+margin-top: 20px;
+  padding: 10px 60px;
+  font-size: 24px;
+  font-family: Roboto;
   background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
-  color: #FFF;
+  color: white;
   border: none;
+  border: 4px solid #FFF;
+  border-radius: 40px;
   cursor: pointer;
-  border-radius: 20px;
+`;
+const ResultsLine = styled.hr`
+  position: absolute; /* Position the line */
+  margin-top: 5px;
+  left: 50%; /* Center the line */
+  transform: translateX(-50%); /* Center the line */
+  width: 50%; /* Set the width */
+  border: none;
+  border-top: 5px solid #DDBFB5; /* Style the line */
 `;
 
 // State to store user answers
@@ -283,7 +422,7 @@ const questionOptions = [
   ["Descriptive and lyrical", "Concise and to the point", "Dialogue-heavy and conversational"],
   ["Complex and morally ambiguous", "Relatable and everyday people", "Larger-than-life and heroic"],
   ["Twisty and full of surprise", "Slow-burn and character-driven", "Fast-paced and action-packed", "A journey of self-discovery and personal growth"],
-  ["Urban and modern cities","Rural and countryside","Historical periods and settings","One or more of the above"]
+  ["Urban and modern cities","Rural and countryside","Historical periods and settings","Futuristic","One or more of the above"]
 ];
 
 const Quiz = () => {
@@ -291,6 +430,8 @@ const Quiz = () => {
   const [answers, setAnswers] = useState({});
   const [recommendedBooks, setRecommendedBooks] = useState([]);
   const [showResults, setShowResults] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  
 
   const handleAnswerSelect = (answer) => {
     setAnswers({ ...answers, [currentQuestion]: answer });
@@ -300,6 +441,7 @@ const Quiz = () => {
       const recommendations = getBookRecommendations();
       setRecommendedBooks(recommendations);
       setShowResults(true);
+      setShowConfetti(true); 
     }
   };
   
@@ -313,16 +455,20 @@ const Quiz = () => {
   }, [recommendedBooks]);
 
   useEffect(() => {
-    if (showResults) {
+    if (showResults && !recommendedBooks.every(book => book.coverUrl)) {
       fetchBookCovers();
     }
-  }, [showResults, fetchBookCovers]);
+  }, [showResults, recommendedBooks, fetchBookCovers]);
+  
 
   const fetchBookCover = async (bookTitle) => {
     try {
       const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(bookTitle)}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch book cover');
+      }
       const data = await response.json();
-      const bookData = data.items[0];
+      const bookData = data.items?.[0];
       if (bookData && bookData.volumeInfo && bookData.volumeInfo.imageLinks) {
         return bookData.volumeInfo.imageLinks.thumbnail;
       }
@@ -330,6 +476,7 @@ const Quiz = () => {
       console.error('Error fetching book cover:', error);
     }
   };
+  
 
   const getBookRecommendations = () => {
     let filteredBooks = books;
@@ -379,9 +526,18 @@ const Quiz = () => {
       "What settings do you prefer in books?"
     ];
 
+    const renderQuestionCounter = () => {
+      return (
+        <QuestionCounter>
+          Question {currentQuestion + 1} out of {questionOptions.length}
+        </QuestionCounter>
+      );
+    };
+
     return (
       <QuestionContainer>
-        <h2>{questionText[currentQuestion]}</h2>
+        <QuestionText>{questionText[currentQuestion]}</QuestionText>
+        <Line />
         <AnswerContainer>
           {questionOptions[currentQuestion].map(option => (
             <AnswerButton
@@ -393,46 +549,47 @@ const Quiz = () => {
             </AnswerButton>
           ))}
         </AnswerContainer>
+        {renderQuestionCounter()}
       </QuestionContainer>
     );
   };
 
   const renderBookRecommendations = () => {
+    
     return (
       <div>
-        <h2>Book Recommendations:</h2>
+        <BookResultsContainer>
+        <BookResultsTitle>Our Recommendation</BookResultsTitle>
+        <ResultsLine />
         {recommendedBooks.map(book => (
           <div key={book.title}>
-            <h3>{book.title}</h3>
-            <p><strong>Author:</strong> {book.author}</p>
-            <p><strong>Genre:</strong> {book.genre}</p>
-            <p><strong>Description:</strong> {book.description}</p>
-            {book.coverUrl && <BookImage src={book.coverUrl} alt="Book Cover" />}
+            <BookInfoContainer>
+              <div>
+              <BookTitle>{book.title}</BookTitle>
+              <BookAuthor>By {book.author}</BookAuthor>
+              </div>
+              
+              <BookCover src={book.coverUrl} alt="Book Cover" />
+              <Link to="/discover/TakeOurQuiz">
+                <DoneButton>Done</DoneButton>
+              </Link>
+            </BookInfoContainer>
+            
           </div>
         ))}
+        </BookResultsContainer>
       </div>
     );
   };
-
-  
-  // Function to render "See Results" button
-  const renderSeeResultsButton = () => {
-    if (!showResults && Object.keys(answers).length === 7) {
-      return (
-        <SeeResultsButton onClick={() => setShowResults(true)}>
-          See Results
-        </SeeResultsButton>
-      );
-    }
-    return null;
-  };
   
 
+  
   return (
     <Container>
       {!showResults && renderQuestion()}
       {showResults && renderBookRecommendations()}
-      {renderSeeResultsButton()}
+      {showConfetti && <Confetti />}
+      
     </Container>
   );
 };

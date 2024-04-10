@@ -20,13 +20,19 @@ import heart from '../assets/redhearticon.png';
 const EventsPage = () => {
   return ( 
   <div>
+    <EventsPageContainer>
     <EventsHeroContainer>
       <StyledEventsHeroImg src={EventsHeroImg} alt='EHImg'/>
-      <StyledEventsHeroImg2 src={EventsHeroImg2} alt='EHImg2'/>
+      
       <EventsContent>
-            <EHTitle>Want to be involved in the world of literature? Join one of our events today!</EHTitle>
-            <EHDescription>Join our Newsletter</EHDescription>
-            <Link to="/community/eventsComplete">Sign Up</Link>
+            <EHTitle>World Of Literature</EHTitle>
+            <EHDescription>Explore local and online events near you! Join today</EHDescription>
+           <EHSignup>Join Our Newsletter</EHSignup>
+            <Link to="/community/eventsComplete">
+              <EventsButton>
+              Sign Up
+              </EventsButton>
+              </Link>
       </EventsContent>
     </EventsHeroContainer>
 
@@ -58,7 +64,7 @@ const EventsPage = () => {
 
           <Register>
             <p>2,375 Views</p>
-            <ERegisterButton>Register</ERegisterButton>
+            <Link to= '/community/EventsSignup' ><ERegisterButton>Register</ERegisterButton></Link>
             <HeartIcon>
               <p>2,119</p>
               <img src= {heart} alt="red heart icon" />
@@ -88,7 +94,7 @@ const EventsPage = () => {
 
           <Register>
             <p>1,875 Views</p>
-            <ERegisterButton>Register</ERegisterButton>
+            <Link to= '/community/EventsSignup' ><ERegisterButton>Register</ERegisterButton></Link>
             <HeartIcon>
               <p>1,784</p>
               <img src= {heart} alt="red heart icon" />
@@ -205,7 +211,7 @@ const EventsPage = () => {
 
     </LocalCard>
     </LocalEventsContainer>
-
+    </EventsPageContainer>
     </div>
 
 
@@ -224,58 +230,74 @@ export const EventsComplete = () => {
     );
   };
 
+  export const events2 = () => {
+    return (
+      <div className='events2'>
+        <h1>Event 2</h1>
+      </div>
+    );
+  };
+
+  const EventsPageContainer = styled.div`
+  height: 1670px;
+  `;
   
 
 const EventsHeroContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 320px;
-  background-color: #F0F6F9;
+  height: 370px;
+  background-color: #FFEDED;
 `;
 
 const StyledEventsHeroImg = styled.img`
 position: absolute;
-top: 40px;
-right: 170px;
-width: 180px;
-height: 181px;
+top: 7px;
+right: 150px;
+width: auto;
+height: 340px;
 object-fit: cover; 
 `;
 
-const StyledEventsHeroImg2 = styled.img`
-position: absolute;
-top: 130px;
-left: 200px;
-width: 150px;
-height: 151px;
-object-fit: cover; 
-`
+
 const EHTitle = styled.h1`
-  margin-bottom: 20px; /* Add margin bottom to create spacing */
-  font-size: 30px;
-  font-family: Kaisei Opti;
-  font-weight: normal;
+   /* Add margin bottom to create spacing */
+  font-size: 83px;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  color: #9F7B7B;
+  margin-top: 30px;
 `;
 
 const EHDescription = styled.p`
-  margin-top: 60px; /* Add margin top to create spacing */
+  margin-top: 0px; /* Add margin top to create spacing */
   font-size: 20px;
-  font-family: Kaisei Opti;
-  font-weight: lighter;
+  font-family: "Roboto Mono", monospace;
+  font-weight: <weight>;
+  font-style: normal;
+  color: #D1A1A1;
+`;
+const EHSignup = styled.p`
+font-size: 14px;
+margin-top: 30px;
+font-family: "Inconsolata", monospace;
+font-weight: <weight>;
+font-style: lighter;
+color: #9F7B7B;
 `;
 
 const EventsContent = styled.div`
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  left: 0;
+  transform: translateY(-50%);
   color: #000000;
+  margin-left: 120px;
 `;
 
 const EventsButton = styled.button`
   padding: 10px 40px;
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: #9F7B7B; 
   color: white;
   border: none;
@@ -286,7 +308,7 @@ const EventsButton = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #0056b3; 
+    background-color: #D1A1A1; 
   }
 `;
 

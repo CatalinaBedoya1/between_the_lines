@@ -18,7 +18,11 @@
     "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
+<<<<<<< HEAD
     "react-card-flip": "^1.2.2",
+=======
+    "react-confetti": "^6.1.0",
+>>>>>>> d759cc1c9b9f47e278665a2aa6744cbd39197d29
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-intersection-observer": "^9.8.1",
