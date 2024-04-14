@@ -3,10 +3,14 @@ import './Community.css';
 import herosectionimage from '../assets/herosectionimage.png';
 import Events from '../components/Events';
 import Leaderboard from '../assets/Leaderboard.png';
-import Voting from '../assets/Voting.png';
 import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
 import Forum2ArtSection from '../components//Forums2';
+import VotingBook1 from '../assets/VotingBook1.png';
+import VotingBook2 from '../assets/VotingBook2.png';
+import VotingBook3 from '../assets/VotingBook3.png';
+import VotingBook4 from '../assets/VotingBook4.png';
+import Voting from '../components/Voting';
 
 export const Community = () => {
     return (
@@ -42,15 +46,9 @@ export const Community = () => {
       </div>
               
       <Forum2ArtSection/>
+      
+      <Voting />
 
-        <div className = "voting-container">
-          <img src={Voting} alt = "voting" className ='voting-static' />
-        </div>
-        <div className = "voting-button">
-          <div className = "vote-btn">Vote</div>
-        </div>
-
-    
         <div className="leaderboard-container">
             <img src={Leaderboard} alt="leaderboard" className="leaderboard-static" />
         </div>
