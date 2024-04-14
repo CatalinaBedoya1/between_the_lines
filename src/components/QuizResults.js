@@ -55,7 +55,7 @@ const QuizRecContainer = styled.div`
 `;
 
 const ScrollContainer = styled.div`
-    width: 1500px; //1150px;
+    width: 1300px; //1150px;
     height: 315px; //moves scroll bar
     display: flex;
     flex-direction: row;

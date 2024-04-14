@@ -264,7 +264,7 @@ const EHTitle = styled.h1`
   font-size: 83px;
   font-family: "Pacifico", cursive;
   font-weight: 400;
-  color: #9F7B7B;
+  color: #A08786;
   margin-top: 30px;
 `;
 
@@ -274,7 +274,7 @@ const EHDescription = styled.p`
   font-family: "Roboto Mono", monospace;
   font-weight: <weight>;
   font-style: normal;
-  color: #D1A1A1;
+  color: #DA92AC;
 `;
 const EHSignup = styled.p`
 font-size: 14px;
@@ -282,7 +282,7 @@ margin-top: 30px;
 font-family: "Inconsolata", monospace;
 font-weight: <weight>;
 font-style: lighter;
-color: #9F7B7B;
+color: #DA92AC;
 `;
 
 const EventsContent = styled.div`
@@ -297,7 +297,7 @@ const EventsContent = styled.div`
 const EventsButton = styled.button`
   padding: 10px 40px;
   margin-top: 10px;
-  background-color: #9F7B7B; 
+  background-color: #A08786; 
   color: white;
   border: none;
   border-radius: 50px;

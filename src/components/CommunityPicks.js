@@ -126,10 +126,11 @@ const BookCover = styled.img`
     height: 200px;
 `;
 
-const BookTitle = styled.p`
-    font-size: 16px;
-    margin-top: 10px;
-`;
+ const BookTitle = styled.p`
+     font-size: 16px;
+     margin-top: 10px;
+ `;
+
 
 
 

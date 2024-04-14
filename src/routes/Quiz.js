@@ -55,18 +55,7 @@ const books = [
     settings: 'Urban and modern city',
     description: 'The 3rd book in the Twisted Series follows future doctor Josh Chen and fiery redhead Jules Ambrose in a heated enemies-with-benefits arrangement, swearing off love. As their relationship deepens, they confront their pasts and must decide whether to embrace their unexpected connection or risk losing everything. This captivating tale explores passion, redemption, and the transformative power of love and can be read as a standalone.',
     },
-   {
-    title: 'Twisted Lies',
-    author: 'Ana Huang',
-    genre: 'Romance',
-    length: 'Long',
-    pace: 'Moderate',
-    writingStyle: 'Concise and to the point',
-    characters: 'Complex and morally ambiguous',
-    plot: 'Twisty and full of surprises',
-    settings: 'Urban and modern city',
-    description: 'Twisted Lies is about Christian Harper, a charming yet deadly man, who is drawn to Stella Alonso, a shy woman with a troubled past. Despite his dark nature, Christian offers Stella a deal she cant refuse, sparking a passionate and dangerous romance. As secrets unravel, their love becomes tainted by lies, threatening to destroy them both. This is the last and final installment of the Twisted Series and can be read as a standalone.'
-    },
+   
    
    //Sci-fi
   {
@@ -85,7 +74,7 @@ const books = [
     title: 'Dune',
     author: 'Frank Herbert',
     genre: 'Science fictions',
-    length: 'Long',
+    length: 'Long (more than 500 pages)',
     pace: 'Moderate',
     writingStyle: 'Larger than life and heroic',
     characters: 'Comples and morally ambiguous',
@@ -107,6 +96,30 @@ const books = [
     setting: 'desolate moorland of Yorkshire, England',
     description: 'Wuthering Heights is a timeless classic that delves into the passionate and tumultuous relationships between the inhabitants of two neighboring houses, Wuthering Heights and Thrushcross Grange. The story unfolds through the eyes of the narrator, Mr. Lockwood, as he becomes entangled in the dark history of the Earnshaw and Linton families. Emily Brontës masterful prose and vivid depiction of the Yorkshire moors create an atmospheric backdrop for the intense emotions and moral conflicts that drive the narrative forward. Wuthering Heights explores themes of love, revenge, and the destructive power of obsession, leaving a lasting impact on readers with its haunting portrayal of human nature.'
    },
+   {
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    genre: "classic literature",
+    length: "medium (300-500 pages)",
+    pace: "moderate (3-4 days per book)",
+    writingStyle: "descriptive and lyrical",
+    characters: "complex and morally ambiguous",
+    plot: "intricate and multi-generational, centered around themes of love, wealth, and the American Dream",
+    settings: "urban and modern cities",
+    description: "A timeless classic exploring themes of decadence, idealism, and the promise and disillusionment of the American Dream during the Roaring Twenties."
+  },
+  {
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    genre: "classic literature",
+    length: "medium (300-500 pages)",
+    pace: "moderate (3-4 days per book)",
+    writingStyle: "descriptive and lyrical",
+    characters: "relatable and everyday people",
+    plot: "a journey of self-discovery and personal growth",
+    settings: "rural and countryside",
+    description: "A powerful and poignant exploration of racial injustice and moral growth in the American South, told through the eyes of young Scout Finch as she learns about empathy, compassion, and the complexities of human nature."
+  },
    //mystery
    { 
     title: 'Gone Girl',
@@ -143,6 +156,18 @@ const books = [
     plot: 'Twisty and full of surprises',
     settings: 'Urban and modern cities',
     description: 'This gripping psychological thriller follows Rachel, an alcoholic divorcee who becomes entangled in a missing person investigation, unraveling dark secrets and uncovering shocking truths as she rides the train through the suburbs of London.'
+  },
+  {
+    title: 'The Da Vinci Code',
+    author: 'Dan Brown',
+    genre: 'mystery/thriller',
+    length: 'medium (300-500 pages)',
+    pace: 'fast (1-2 days per book)',
+    writingStyle: 'descriptive and lyrical',
+    characters: 'complex and morally ambiguous',
+    plot: 'twisty and full of surprises',
+    settings: 'urban and modern cities',
+    description: 'A captivating mystery thriller that follows symbologist Robert Langdon as he unravels ancient secrets and uncovers hidden truths while on a quest to solve a murder mystery.',
   },
 
   //Memoir
@@ -212,7 +237,67 @@ const books = [
     settings: 'One or more of the above',
     description: 'In this enchanting fantasy novel, a magical competition unfolds between two young illusionists, Celia and Marco, within the confines of the mysterious Le Cirque des Rêves, blending reality and illusion in a spectacle of wonder and romance.'
   },
-  {},
+  {
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    genre: "fantasy",
+    length: "medium (300-500 pages)",
+    pace: "moderate (3-4 days per book)",
+    writingStyle: "descriptive and lyrical",
+    characters: "larger-than-life and heroic",
+    plot: "a journey of self-discovery and personal growth",
+    settings: "rural and countryside",
+    description: "A classic fantasy adventure that follows the journey of Bilbo Baggins, a hobbit who is swept into an epic quest to reclaim the lost kingdom of Erebor from the dragon Smaug."
+  },
+  {
+    title: "Mistborn: The Final Empire",
+    author: "Brandon Sanderson",
+    genre: "fantasy",
+    length: "long (more than 500 pages)",
+    pace: "moderate (3-4 days per book)",
+    writingStyle: "descriptive and lyrical",
+    characters: "complex and morally ambiguous",
+    plot: "fast-paced and action-packed",
+    settings: "urban and modern cities",
+    description: "The first installment in the Mistborn trilogy, set in a world where the tyrannical Lord Ruler reigns over the Final Empire, and follows a group of rebels with magical abilities who seek to overthrow him."
+  },
+  {
+    title: "The Lies of Locke Lamora",
+    author: "Scott Lynch",
+    genre: "fantasy",
+    length: "medium (300-500 pages)",
+    pace: "fast-paced and action-packed",
+    writingStyle: "descriptive and lyrical",
+    characters: "complex and morally ambiguous",
+    plot: "twisty and full of surprises",
+    settings: "urban and modern cities",
+    description: "The first book in the Gentleman Bastard series, set in the city of Camorr and follows the exploits of master thief Locke Lamora and his crew as they navigate the criminal underworld."
+  },
+  {
+    title: "The Poppy War",
+    author: "R.F. Kuang",
+    genre: "fantasy",
+    length: "medium (300-500 pages)",
+    pace: "fast-paced and action-packed",
+    writingStyle: "descriptive and lyrical",
+    characters: "complex and morally ambiguous",
+    plot: "twisty and full of surprises",
+    settings: "urban and modern cities",
+    description: "Set in a world inspired by Chinese history and mythology, The Poppy War follows Rin, a young orphan from a poor village, as she discovers her shamanic powers and becomes embroiled in a brutal war between nations."
+  },
+  {
+    title: "Throne of Glass",
+    author: "Sarah J. Maas",
+    genre: "fantasy",
+    length: "long (more than 500 pages)",
+    pace: "fast-paced and action-packed",
+    writingStyle: "descriptive and lyrical",
+    characters: "larger-than-life and heroic",
+    plot: "twisty and full of surprises",
+    settings: "urban and modern cities",
+    description: "Follow assassin Celaena Sardothien as she competes in a deadly tournament to win her freedom, only to become entangled in a web of political intrigue and supernatural threats that could change the fate of her world."
+  },
+  
   //Non-fiction
   {
     title: 'Educated',
@@ -228,6 +313,55 @@ const books = [
   },
 
   //Contemporary Fiction
+  {
+    title: 'Where the Crawdads Sing',
+    author: 'Delia Owens',
+    genre: 'Contemporary Fiction',
+    length: 'Medium',
+    pace: 'Moderate',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Complex and morally ambiguous',
+    plot: 'Twisty and full of surprise',
+    settings: 'Rural and countryside',
+    description: 'This atmospheric novel follows the life of Kya Clark, known as the "Marsh Girl," who grows up isolated in the marshes of North Carolina. When a young man is found dead, the town suspects her, leading to a captivating exploration of love, loneliness, and the beauty of nature.'
+
+  },
+  {
+    title: 'Normal People',
+    author: 'Sally Rooney',
+    genre: 'Contemporary Fiction',
+    length: 'Medium',
+    pace: 'Moderate',
+    writingStyle: 'Dialogue-heavy and conversational',
+    characters: 'Relatable and everyday people',
+    plot: 'Slow-burn and character-driven',
+    settings:'Urban and modern cities',
+    description: 'Follow the complex relationship between Connell and Marianne as they navigate love, friendship, and social dynamics from high school to university. Through intimate prose and authentic dialogue, the novel delves into the intricacies of human connection and the impact of social class.'
+  },
+  {
+    title: 'The Seven Husbands of Evelyn Hugo',
+    author: 'Taylor Jenkins Reid',
+    genre: 'Contemporary Fiction',
+    length: 'Medium',
+    pace: 'Moderate',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Larger-than-life and heroic',
+    plot: 'Twisty and full of surprises',
+    settings: 'Urban and modern cities',
+    description: 'Dive into the captivating life story of legendary film icon Evelyn Hugo as she reveals her secrets to an unknown journalist. Through tales of love, ambition, and sacrifice, the novel explores themes of identity, authenticity, and the price of fame.'
+  },
+  {
+    title: 'Little Fires Everywhere',
+    author: 'Celeste Ng',
+    genre: 'Contemporary Fiction',
+    length: 'Medium',
+    pace: 'Moderate',
+    writingStyle: 'Descriptive and lyrical',
+    characters: 'Complex and morally ambiguous',
+    plot: 'Slow-burn and character-driven',
+    settings: 'Rural and countryside',
+    description: 'In the picture-perfect suburb of Shaker Heights, the lives of two families become intertwined in unexpected ways when an artist and her daughter move into the neighborhood. As secrets unravel and tensions rise, the novel explores themes of motherhood, identity, and the weight of choices.'
+  },
 
   //Horror
 {
@@ -241,6 +375,30 @@ const books = [
   plot: 'Twisty and full of surprise',
   settings: 'Rural and countryside',
   description: "Set in 1950s Mexico, 'Mexican Gothic' follows socialite Noemí Taboada as she investigates strange occurrences in a remote mansion where her cousin resides. With elements of horror and psychological suspense, this atmospheric novel explores themes of family secrets, colonialism, and the supernatural."
+},
+{
+  title: "The Shining",
+  author: "Stephen King",
+  genre: "Horror",
+  length: "Medium (300-500 pages)",
+  pace: "Moderate (3-4 days per book)",
+  writingStyle: "Descriptive and lyrical",
+  characters: "Complex and morally ambiguous",
+  plot: "Twisty and full of surprises",
+  settings: "Rural and countryside",
+  description: "Stephen King's iconic horror novel follows the Torrance family as they become the winter caretakers of the Overlook Hotel, where supernatural forces drive the father, Jack, to madness."
+},
+{
+  title: "The Haunting of Hill House",
+  author: "Shirley Jackson",
+  genre: "Horror",
+  length: "Short (less than 300 pages)",
+  pace: "Moderate (3-4 days per book)",
+  writingStyle: "Descriptive and lyrical",
+  characters: "Complex and morally ambiguous",
+  plot: "Twisty and full of surprises",
+  settings: "Rural and countryside",
+  description: "Dr. John Montague invites several individuals with paranormal experiences to stay at Hill House, where strange occurrences begin to escalate, blurring the lines between reality and madness."
 },
   
 ];
@@ -476,6 +634,7 @@ const Quiz = () => {
       console.error('Error fetching book cover:', error);
     }
   };
+
   
 
   const getBookRecommendations = () => {
