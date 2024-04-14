@@ -126,10 +126,17 @@ const BookCover = styled.img`
     height: 200px;
 `;
 
+<<<<<<< HEAD
  const BookTitle = styled.p`
      font-size: 16px;
      margin-top: 10px;
  `;
+=======
+const BookTitle = styled.p`
+    font-size: 16px;
+    margin-top: 10px;
+`;
+>>>>>>> 3930fcb2a3dc551efca6653fbf4a71302add2fe5
 
 
 

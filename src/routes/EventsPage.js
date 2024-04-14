@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
+<<<<<<< HEAD
+=======
+//import EventsHeroImg2 from '../assets/EventsHeroImg2.png';
+>>>>>>> 3930fcb2a3dc551efca6653fbf4a71302add2fe5
 import { Link } from 'react-router-dom';
 import onlineevent1 from '../assets/onlineevent1.png';
 import onlineevent2 from '../assets/onlineevent2.png';
