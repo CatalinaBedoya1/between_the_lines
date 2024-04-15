@@ -3,7 +3,7 @@ import './Dashboard.css';
 import DashboardRecs from "../components/DashboardRecs";
 import QuizRecs from "../components/QuizResults";
 import DashIcon from "../assets/dashboardicon.png";
-import CurrentReading from "../assets/dashboard.png";
+import CurrentReading from "../assets/Dashprofile.png";
 
 
 

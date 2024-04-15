@@ -35,7 +35,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-    background: #A08786; /* dark teal blue */
+    background: #4281A4; /* dark teal blue */
     width: 250px;
     height: 100vh;
     display: flex;

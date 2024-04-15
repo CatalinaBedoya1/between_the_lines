@@ -32,7 +32,7 @@
     height: auto;;
     display: block; 
     margin-bottom: 50px;
-    margin-left: -300px;
+    margin-left: -280px;
 }
 
 .dashboard p {
@@ -43,7 +43,7 @@
     padding: 10px 30px;
     border-radius: 50px;
     color: #ffffff;
-    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    background: #DA92AC;
     margin-top: -40px;
     margin-bottom: 50px;
     margin-left: 1000px;
@@ -57,7 +57,7 @@
     border-radius: 50px;
     font-size: 18px;
     color: #ffffff;
-    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    background: #DA92AC;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -73,13 +73,13 @@
     border-radius: 50px;
     font-size: 18px;
     color: #ffffff;
-    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    background: #DA92AC;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     box-shadow: 0 0 0 4px #ffffff;
     margin-left: 810px;
-    margin-top: -60px;
+    margin-top: -70px;
 
 }
 
@@ -90,13 +90,13 @@
     border-radius: 50px;
     font-size: 18px;
     color: #ffffff;
-    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    background: #DA92AC;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     box-shadow: 0 0 0 4px #ffffff;
     margin-left: 560px;
-    margin-top: -60px;
+    margin-top: -70px;
 }
 
 .chat3{
@@ -106,13 +106,13 @@
     border-radius: 50px;
     font-size: 18px;
     color: #ffffff;
-    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    background: #DA92AC;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     box-shadow: 0 0 0 4px #ffffff;
     margin-left: 1070px;
-    margin-top: -60px;
+    margin-top: -70px;
 }
 
 .topgenres p{
@@ -138,23 +138,23 @@
 }
 
 .topgenre1 {
-    background-color: #95B9B4; /*green */
+    background-color: #EAD2AC; /*yellow */
 }
 
 .topgenre2 {
-    background-color: #5397AC; /*blue */
+    background-color: #DA92AC; /*pink */
 }
 
 .topgenre3 {
-    background-color: #D6B2A6; /*pink */
+    background-color: #88C3E4; /*pink */
 }
 
 .topgenre4{
-    background-color: #DBD1AB; /*yellow */
+    background-color: #9DBEBD; /*yellow */
 }
 
 .topgenre5{
-    background-color: #5397AC; /*blue */
+    background-color: #4281A4; /*blue */
     flex-direction: column;
 }
 

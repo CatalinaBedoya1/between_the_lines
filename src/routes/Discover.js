@@ -8,6 +8,7 @@ import myImage2 from '../assets/ifyoucouldseethesun.png';
 import { IoSearchOutline } from 'react-icons/io5';
 import styled from 'styled-components';
 
+
 const SearchIcon = styled(IoSearchOutline)`
   flex-shrink: 0;
 `;
@@ -91,6 +92,7 @@ export const Discover = () => {
       </div>
 
       <CommunityPicks/>
+ 
 
       
 

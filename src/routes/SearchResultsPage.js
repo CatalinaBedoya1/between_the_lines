@@ -4,7 +4,6 @@ import { IoSearchOutline } from 'react-icons/io5';
 import SearchRPPicks from '../components/SearchRPPicks';
 import gridIcon from '../assets/gridIcon.png';
 import AbstractImg from '../assets/AbstractImg.png';
-// import { Link } from 'react-router-dom';
 import Card from "../components/Card";
 
 // Import forum images
@@ -16,12 +15,115 @@ import forumSquare5 from '../assets/forumSquare5.png';
 import forumSquare6 from '../assets/forumSquare6.png';
 import forumSquare7 from '../assets/forumSquare7.png';
 import forumSquare8 from '../assets/forumSquare8.png';
+//carousel images
+import CarouselImg1 from '../assets/CarouselImg1.png';
+import CarouselImg2 from '../assets/CarouselImg2.png';
+import CarouselImg3 from '../assets/CarouselImg3.png';
 
+//carousel 
+const CarouselHeader = styled.div`
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #FFF; /* Pink background color */
+`;
 
+const ContentContainer = styled.div`
+  display: flex;
+`;
 
+const DiscoverMoreContainer = styled.div`
+  width: 30%; /* Width for the "Discover More" section */
+  padding: 20px;
+  margin-left: 30px;
+`;
+
+const DiscoverMoreTitle = styled.h2`
+margin-top: 10px;
+
+font-size: 66px;
+font-family: "Pacifico", cursive;
+  font-weight: 400;
+  color: #A08786; /* White text color */
+`;
+const DiscoverPara = styled.p`
+margin-top:10px;
+
+font-size: 16px;
+font-family: "Roboto Mono", monospace;
+  font-weight: <weight>;
+  font-style: normal;
+color: #A08786;
+`
+const CarouselContainer = styled.div`
+  position: relative;
+  width: 600px; /* Width for the carousel */
+  height: 500px;
+  margin-left: 260px;
+  margin-top: 40px;
+  overflow: hidden;
+`;
+
+const CarouselInner = styled.div`
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.5s ease;
+  width: ${(props) => props.length * 100}%; /* Adjust width dynamically based on number of items */
+`;
+
+const CarouselItem = styled.div`
+  margin-top: 10px;
+  
+  display: flex;
+  align-items: flex-start;
+  flex: 0 0 ${(props) => 100 / props.length}%; /* Adjust width dynamically based on number of items */
+`;
+const CarouselImg = styled.img`
+margin-top: 50px;
+  width: 250px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+`;
+
+const CarouselTextContainer = styled.div`
+  flex: 1;
+  padding: 20px; /* Adjusted padding */
+  margin-top: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  width: 100%; /* Adjusted width */
+`;
+
+const Title = styled.h2`
+  font-size: 24px;
+  font-weight: bold;
+  color: #A08786;
+  margin-bottom: 10px;
+`;
+
+const Author = styled.p`
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+`;
+const Rating = styled.div`
+  font-size: 16px;
+  color: #FFD700; /* Gold color */
+  margin-bottom: 10px;
+`;
+
+const Description = styled.p`
+  font-size: 16px;
+  color: #A08786;
+  margin-bottom: 10px;
+  line-height: 1.5; /* Adjusted line height */
+`;
+
+//regular
 
 const SearchContainer = styled.div`
   display: flex;
+  margin-left: 20px;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
@@ -56,6 +158,7 @@ const BookTitle = styled.h3`
 const BookAuthor = styled.p`
   margin-top: 5px;
   font-size: 14px;
+  background-color: white;
 `;
 
 const SearchIconContainer = styled.div`
@@ -70,11 +173,13 @@ const SearchIcon = styled(IoSearchOutline)`
 `;
 
 const SearchBar = styled.div`
+margin-top:30px;
   display: flex;
   align-items: center;
   padding: 10px 30px;
   border: 1px solid #ccc;
   border-radius: 20px;
+  color: #fff;
 `;
 
 const SearchInput = styled.input`
@@ -91,7 +196,7 @@ const ButtonContainer = styled.div`
 `;
 
 const FilterButtonAll = styled.button`
-  padding: 10px 50px;
+  padding: 10px 40px;
   background-color: #CCB7B6;
   color: #FFF;
   border: none;
@@ -101,7 +206,7 @@ const FilterButtonAll = styled.button`
   margin-right: 10px;
 `;
 const FilterButtonRomance = styled.button`
-  padding: 10px 50px;
+  padding: 10px 40px;
   background-color: #93C8C2;
   color: #FFF;
   border: none;
@@ -111,7 +216,7 @@ const FilterButtonRomance = styled.button`
   margin-right: 10px;
 `;
 const FilterButtonSciFi = styled.button`
-  padding: 10px 50px;
+  padding: 10px 40px;
   background-color: #679DAE;
   color: #FFF;
   border: none;
@@ -121,7 +226,7 @@ const FilterButtonSciFi = styled.button`
   margin-right: 10px;
 `;
 const FilterButtonMore = styled.button`
-  padding: 10px 30px;
+  padding: 10px 20px;
   background-color: #E1DDDD;
   color: #FFF;
   border: none;
@@ -283,14 +388,49 @@ const Forum2ArtSection = () => {
     );
   };
 
-
-
-
 const SearchResultsPage = () => {
   const [books, setBooks] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [startIndex, setStartIndex] = useState(0);
   const maxResults = 24;
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const carouselbooks = [
+      {
+        id: 1,
+        title: "The Sirens of Titan",
+        author: "Kurt Vonnegut",
+        description: "This novel follows the wealthy Malachi Constant as he becomes embroiled in a cosmic conflict orchestrated by alien forces. Through a blend of satire and science fiction, the novel delves into themes of fate, free will, and the absurdity of human existence.",
+        rating: 4.5,
+        image: CarouselImg1,
+      },
+      {
+        id: 2,
+        title: "All The Light We Cannot See",
+        author: "Anthony Doerr",
+        description: "While not afraid to confront the horrors of the Second World War, All the Light We Cannot See is a story of hope and resistance. The novel offers the reader an interesting glimpse into the French Resistance, Le Maquis, in his portrayal of the occupied city of Saint-Malo.",
+        rating: 5,
+        image: CarouselImg2,
+      },
+      {
+        id: 3,
+        title: "A Court of Thorns and Roses",
+        author: "Sarah J. Maas",
+        description: "Feyre is a huntress. She thinks nothing of slaughtering a wolf to capture its prey. But, like all mortals, she fears what lingers beyond the forest. And she will learn that taking the life of a magical creature comes at a high price . . .",
+        rating: 4.3,
+        image: CarouselImg3,
+      },
+    ];
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselbooks.length);
+      }, 3000); // Change slide every 3 seconds
+  
+      return () => clearInterval(interval);
+    }, [carouselbooks.length]);
+
+
 
   useEffect(() => {
     // Function to fetch books based on the user's search query and pagination
@@ -334,25 +474,56 @@ const SearchResultsPage = () => {
 
 
   return (
-    <SearchContainer>
-      <SearchBar>
-        <SearchInput
-          type="text"
-          placeholder="Search..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <SearchIconContainer onClick={() => setSearchQuery(searchQuery)}>
-          <SearchIcon size={20} color="#666" />
-        </SearchIconContainer>
-      </SearchBar>
-      <ButtonContainer>
+<SearchContainer>
+    <CarouselHeader>
+      <ContentContainer>
+        <DiscoverMoreContainer>
+          <DiscoverMoreTitle>Discover New Books</DiscoverMoreTitle>
+          <DiscoverPara>Search by author, title, or genre!</DiscoverPara>
+          {/* Add any content you want for the "Discover More" section */}
+          
+          <SearchBar>
+            <SearchInput
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <SearchIconContainer>
+              <SearchIcon size={20} color="#666" />
+            </SearchIconContainer>
+          </SearchBar>
+          <ButtonContainer>
         <FilterButtonAll onClick={() => setSearchQuery('all')}>All</FilterButtonAll>
         <FilterButtonRomance onClick={() => setSearchQuery('romance')}>Romance</FilterButtonRomance>
-        <FilterButtonSciFi onClick={() => setSearchQuery('sci-fi')}>Sci-Fi</FilterButtonSciFi>
+        <FilterButtonSciFi onClick={() => setSearchQuery('fantasy')}>Fantasy</FilterButtonSciFi>
         <FilterButtonMore onClick={() => setSearchQuery('more')}>+</FilterButtonMore>
         
       </ButtonContainer>
+
+        </DiscoverMoreContainer>
+        <CarouselContainer>
+          <CarouselInner length={carouselbooks.length} style={{ transform: `translateX(-${currentIndex * (100 / carouselbooks.length)}%)` }}>
+            {carouselbooks.map((book, index) => (
+              <CarouselItem key={index} length={carouselbooks.length}>
+                <CarouselImg src={book.image} alt={book.title} />
+                <CarouselTextContainer>
+                  <Title>{book.title}</Title>
+                  <Author>by {book.author}</Author>
+                  <Rating>{'\u2605'.repeat(Math.floor(book.rating))}</Rating>
+                  <Description>{book.description}</Description>
+                </CarouselTextContainer>
+              </CarouselItem>
+            ))}
+          </CarouselInner>
+        </CarouselContainer>
+      </ContentContainer>
+    </CarouselHeader>
+
+
+
+
+
 
       <SearchRPPicks />
       <TitleContainer>
