@@ -74,9 +74,10 @@ function HeroSection() {
             <p>scandalous secrets.</p>
   
           <div className="BOTM-buttons">
-          <Link to="/discover/fantasy" className="btn-2">fantasy</Link>
-            <Link to="/discover/fiction" className="btn-3">fiction</Link>
+            <Link to="/discover/fantasy" className="btn-2">fantasy</Link>
+           <Link to="/discover/fiction" className="btn-3">fiction</Link>
           </div>
+          
           <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
         </div>
       </div>

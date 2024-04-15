@@ -163,7 +163,7 @@
     text-decoration: none;
     cursor: pointer;
     border-radius: 50px;
-    background-color: #D6B2A6; /* pink */
+    background-color: #88C3E4; /* light blue */
     color: #fff; /* white */
     margin-right: 10px;
     margin-top: 20px;
@@ -171,6 +171,7 @@
 }
 
 .btn-3{
-    background-color: #95B9B4; /* green */
+    background-color: #4281A4; /* blue */
     margin-left: 30px;
 }
+
