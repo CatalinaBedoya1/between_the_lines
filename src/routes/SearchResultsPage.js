@@ -25,9 +25,7 @@ const CarouselHeader = styled.div`
   position: relative;
   width: 100%;
   height: 500px;
-  
   background-color: #FFF;
-
 
 `;
 
@@ -126,11 +124,11 @@ const Description = styled.p`
 
 const SearchContainer = styled.div`
   display: flex;
-  
+  margin-left: 20px;
   flex-direction: column;
   align-items: center;
-  
-  height: 2100px; 
+  margin-top: 50px;
+  min-height: 100vh; 
   background-image: url(${AbstractImg});
   background-size: cover;
   background-attachment: fixed;
