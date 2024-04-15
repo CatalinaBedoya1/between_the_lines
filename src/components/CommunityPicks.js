@@ -13,9 +13,7 @@ const NewCPPicks = () => {
             <NewSection category="trade-fiction-paperback" />
             <NewSection category="young-adult-hardcover" />
 
-            <div className="seemorebtn">
-                <img src={seeMore} alt="seemore" className="seemore-static" />
-            </div>
+            <SeeMoreButton>See More</SeeMoreButton>
         </NewContainer>
     );
 };
@@ -97,11 +95,13 @@ const NewQuizResult = styled.div`
 
 const NewContainer = styled.div`
     width: 100vw;
-    height: 300vh;
+    height: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+   
 `;
 
 const NewContentBox = styled.div`
@@ -130,7 +130,21 @@ const BookTitle = styled.p`
     font-size: 16px;
     margin-top: 10px;
 `;
-
+const SeeMoreButton = styled.div`
+padding: 10px 60px;
+    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    color: white;
+    border: 3px solid #FFF;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: Roboto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+    `
 
 
 
