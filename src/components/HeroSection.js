@@ -30,35 +30,40 @@ function HeroSection() {
         
 
         
-        <div className="row">
-          <div className="text-center">
-            <img src={msFirst} alt="card1" className="msimg" />
-            <h3 className='missionText'>Private & Public Book Clubs</h3>
-            <p className='missionText'>
-              Join a huge community of book clubs OR make your own with your friends
-            </p>
-          </div>
-          <div className="text-center">
-            <img src={msSecond} alt="card2" className="msimg" />
-            <h3 className='missionText'>Forum Discussion</h3>
-            <p className='missionText'>
-              Public discussion board to share experiences, questions, and any fun topics
-            </p>
-          </div>
-          <div className="text-center">
-            <img src={msThird} alt="card3" className="msimg" />
-            <h3 className='missionText'>Personalized Experience</h3>
-            <p className='missionText'>Take our book quiz to explore books based on your choices</p>
-          </div>
-          <div className="text-center">
-            <img src={msFourth} alt="card4" className="msimg" />
-            <h3 className='missionText'>Events</h3>
-            <p className='missionText'>Register for a variety of online and in-person monthly events</p>
-          </div>
-        </div>
         
-        <div className="row">
-        </div>
+        <div className="mission-section">
+  <div className="text-center mission-container">
+    <img src={msFirst} alt="card1" className="msimg" />
+    <div className="line"></div>
+    <h3 className="mission-header">Book Clubs</h3>
+    <p className="mission-text">Join a huge community of book clubs OR make your own with your friends</p>
+  </div>
+  <div className="text-center mission-container">
+    <img src={msSecond} alt="card2" className="msimg" />
+    <div className="line"></div>
+    <h3 className="mission-header">Forums</h3>
+    <p className="mission-text">Public discussion board to share experiences, questions, and any fun topics</p>
+  </div>
+  <div className="text-center mission-container">
+    <img src={msThird} alt="card3" className="msimg" />
+    <div className="line"></div>
+    <div className="mission-text">
+      <h3 className="mission-header">Personalization</h3>
+      <p className="mission-text">Take our book quiz to explore books based on your choices</p>
+    </div>
+  </div>
+  <div className="text-center mission-container">
+    <img src={msFourth} alt="card4" className="msimg" />
+    <div className="line"></div>
+    <h3 className="mission-header">Events</h3>
+    <p className="mission-text">Register for a variety of online and in-person monthly events</p>
+  </div>
+</div>
+
+    
+        
+       
+     
         
         <div className="BOTM-container">
         <img src={myImage3} alt="Book of the month cover" className="BOTM-imageZoom" />
