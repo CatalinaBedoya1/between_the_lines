@@ -55,33 +55,58 @@
 }
 
 /* Mission section */
-.row {
+.mission-section {
+  height: 500px;
+  width:100%;
   padding: 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
+
 .text-center {
-  padding: 20px;
+  padding: 50px;
+  margin-top: 60px;
   text-align: center;
-  width: calc(25% - 40px); /* Adjust as needed */
+  width: calc(25% - 40px); 
+  border: 2px solid #A08786; 
+  position: relative;
+}
+.mission-header {
+  margin-top: 20px;
+  font-family: Arial, sans-serif; /* Change to desired font */
+  font-size: 24px; /* Change to desired font size */
+  font-weight: bold; /* Optionally change font weight */
+  color: #A08786;
 }
 
-.missionText {
-  padding: 10px;
-  color: black;
-  font-size: 1.2rem;
+.mission-text {
+  margin-top: 20px;
+  font-family: Arial, sans-serif; /* Change to desired font */
+  font-size: 18px; /* Change to desired font size */
+  color: #A08786;
 }
 
 .msimg {
+  width: 170px;
+  height: auto;
+  position: absolute; 
+  top: -120px; 
+  left: 50px;
+  z-index: 1;
+}
+.line {
   width: 100%;
+  height: 1px;
+  background-color: #A08786;
+  margin-bottom: 10px;
 }
 
 
 .BOTM-container {
   position:relative;
-  margin-top: 30px; /* Adjust as needed */
+  margin-top: 10px; /* Adjust as needed */
   width: 100vw;
   z-index: 0;
   padding:0;
@@ -138,7 +163,7 @@
   margin-left: 300px;
 }
 .BOTM-imageZoom {
-  width: 100vw; /* Adjust as needed */
+  width: 100%; /* Adjust as needed */
   height:auto;
   display: block;
   z-index: -1;

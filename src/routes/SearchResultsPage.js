@@ -19,13 +19,16 @@ import forumSquare8 from '../assets/forumSquare8.png';
 import CarouselImg1 from '../assets/CarouselImg1.png';
 import CarouselImg2 from '../assets/CarouselImg2.png';
 import CarouselImg3 from '../assets/CarouselImg3.png';
-
+import SearchbackgroundImg from '../assets/SearchbackgroundImg.png';
 //carousel 
 const CarouselHeader = styled.div`
   position: relative;
   width: 100%;
   height: 500px;
-  background-color: #FFF; /* Pink background color */
+  
+  background-color: #FFF;
+
+
 `;
 
 const ContentContainer = styled.div`
@@ -123,11 +126,11 @@ const Description = styled.p`
 
 const SearchContainer = styled.div`
   display: flex;
-  margin-left: 20px;
+  
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
-  min-height: 100vh; 
+  
+  height: 2100px; 
   background-image: url(${AbstractImg});
   background-size: cover;
   background-attachment: fixed;
@@ -476,6 +479,7 @@ const SearchResultsPage = () => {
   return (
 <SearchContainer>
     <CarouselHeader>
+
       <ContentContainer>
         <DiscoverMoreContainer>
           <DiscoverMoreTitle>Discover New Books</DiscoverMoreTitle>
