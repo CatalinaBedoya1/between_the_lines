@@ -127,7 +127,8 @@ function AboutUs() {
               <LogoStaircase img src={LogoStair} alt="3 logo stacked"/>
               <FeatureContent>
               <h1>How we are different?</h1>
-              <p>blah blah blah-- insert later </p>
+              <br></br>
+              <h2>We offer public and private community book forums, <br></br>up to date events, curated book recommendations, <br></br>and free membership to a welcoming community of alike readers!</h2>
               </FeatureContent>
             </FeaturesCard>
           </FeaturesContainer>
@@ -216,7 +217,7 @@ const AboutUsHeroContent = styled.div`
   const FeaturesCard = styled.div`
     display: flex;
     flex-direction: row;
-    width: 1200px;
+    width: 1300px;
     height: 300px;
     justify-content: space-between;
    

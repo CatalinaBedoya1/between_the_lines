@@ -69,6 +69,7 @@ export const Discover = () => {
 
       {/* insert book of the month*/}
         <div className="BOTM-container">
+          <br></br>
         <img src={myImage3} alt="Book of the month cover" className="BOTM-imageZoom" />
         <div className="BOTM-content">
           <h1>BOOK OF THE MONTH</h1>

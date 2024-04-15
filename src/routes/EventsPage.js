@@ -390,9 +390,10 @@ const ERegisterButton = styled.div`
 const HeartIcon = styled.div`
   display: flex;
   flex-direction: row;
-
+  
   img {
-    width: 25px;
+    padding-left: 10px;
+    width: 35px;
     height: 20px;
   }
 `;

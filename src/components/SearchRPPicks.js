@@ -1,12 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const NEW_ITEM_WIDTH = 200;
 const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
 
 const SearchRPPicks = () => {
-    const [newScrollPosition, setNewScrollPosition] = useState(0);
-    const newContainerRef = useRef();
+    const containerRef = useRef();
     const [trendingBooks, setTrendingBooks] = useState([]);
 
     useEffect(() => {
@@ -28,49 +26,32 @@ const SearchRPPicks = () => {
         fetchTrendingBooks();
     }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
-    // Scroll when button clicked
-    const handleNewScroll = (scrollAmount) => {
-        const newNewScrollPosition = newScrollPosition + scrollAmount;
-        setNewScrollPosition(newNewScrollPosition);
-        newContainerRef.current.scrollLeft = newNewScrollPosition;
-    };
-
     return (
         <Container>
             <QuizResult>
                 <p>Top Community Picks...</p>
             </QuizResult>
 
-            <div
-                ref={newContainerRef}
-                style={{
-                    width: "1150px",
-                    overflowX: "scroll",
-                    scrollBehavior: "smooth",
-                }}
-            >
+            <ScrollContainer ref={containerRef}>
                 <ContentBox>
                     {trendingBooks.map((book, index) => (
                         <CPcard key={index}>
                             <BookCover src={book.book_image} alt={book.title} />
-                            <BookTitle>{book.title}</BookTitle>
+                            
+                            <HoverOverlay>
+                                <HoverText>
+                                {book.title}
+                                <br></br>
+                                {book.author}
+                                <br></br>
+                                <br></br>
+                                {book.description}
+                                </HoverText>
+                            </HoverOverlay>
                         </CPcard>
                     ))}
                 </ContentBox>
-            </div>
-
-            <ActionButtons>
-                <Button
-                    onClick={() => { handleNewScroll(-NEW_ITEM_WIDTH) }}
-                >
-                    &lt;
-                </Button>
-                <Button
-                    onClick={() => { handleNewScroll(NEW_ITEM_WIDTH) }}
-                >
-                    &gt;
-                </Button>
-            </ActionButtons>
+            </ScrollContainer>
         </Container>
     );
 };
@@ -79,7 +60,7 @@ export default SearchRPPicks;
 
 // Styled components...
 const QuizResult = styled.div`
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: left;
     margin-left: 130px;
     width: 100%;
@@ -100,49 +81,95 @@ const Container = styled.div`
     
 `;
 
+const ScrollContainer = styled.div`
+    width: 1300px; //1150px;
+    height: 315px; //moves scroll bar
+    display: flex;
+    flex-direction: row;
+
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 10px;
+
+    //background-color: green;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #d6d6d6;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #5397AC;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+`;
+
+
 const ContentBox = styled.div`
-    width: 1800px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 `;
 
 const CPcard = styled.div`
-    width: 214px;
-    height: 314px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex; 
+    margin: 10px;   
+    width: 145px;
+    height: 214px;
+    position: relative;
+
+    &:hover {
+        //transform: scale(1.2); 
+        transition: transform 0.2s ease; 
+    }
 `;
 
 const BookCover = styled.img`
-    width: 150px;
-    height: 200px;
-`;
-
-const BookTitle = styled.p`
-    font-size: 16px;
-    margin-top: 10px;
-`;
-
-const ActionButtons = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 1100px;
-    margin-top: 20px;
-`;
-
-const Button = styled.button`
-    width: 25px;
-    height: 50px;
-    font-size:
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: all 0.5s ease;
+    width: 145px;
+    height: 214px;
 
     &:hover {
-        // Add hover styles if needed
+        transform: scale(1.2); 
+        transition: transform 0.2s ease; 
     }
+`;
+
+const HoverOverlay = styled.div`
+    position: absolute;
+    top: 0;
+    left:  calc(100% + 35px);
+    width: 140%;
+    height: 100%;
+    background-color: #4281A4; //rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    justify-content: center;
+    //align-items: center;
+    padding: 20px;
+    opacity: 0;
+    z-index: -1;
+    
+    transition: opacity 0.3s ease;
+
+    ${CPcard}:hover  & {
+        opacity: 1;
+        z-index: 1;
+        transform: scale(1.2);
+    }
+`;
+
+const HoverText = styled.p`
+    font-size: 15px;
+    //margin-top: 10px;
 `;
