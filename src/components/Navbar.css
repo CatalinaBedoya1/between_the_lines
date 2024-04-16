@@ -10,10 +10,12 @@
   
   .sub-menu li {
     padding: 10px;
+    border-radius: 50px;
   }
   
   .sub-menu li:hover {
-    background-color: #666; /* Background color when hovering over sub-menu item */
+    background-color: #666666; /* Background color when hovering over sub-menu item */
+    border-radius: 10px;
   }
   
   
