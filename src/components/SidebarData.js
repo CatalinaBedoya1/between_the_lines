@@ -22,7 +22,7 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: 'Whats Trending',
+        title: 'AudioBooks',
         path: '/discover/whatsTrending',
         
         cName: 'sub-nav'
