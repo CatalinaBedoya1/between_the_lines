@@ -10,6 +10,7 @@ import forumSquare6 from "../assets/forumSquare6.png";
 import forumSquare7 from "../assets/forumSquare7.png";
 import forumSquare8 from "../assets/forumSquare8.png";
 import { Link } from 'react-router-dom';
+import styled from "styled-components";
 
 
 
@@ -74,13 +75,28 @@ const Forum2ArtSection = () => {
           />
         ))}
       </div>
-      <div className="seemore-btn">
-            <Link to="/community" className="events-btn">See More</Link>
-      </div>
+      <Link to="/community"><SeemorebuttonForum>See More</SeemorebuttonForum></Link>
     </>
   );
+
 
 };
 
 
 export default Forum2ArtSection;
+
+const SeemorebuttonForum = styled.button `
+padding: 10px 40px;
+    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    color: white;
+    border: 3px solid #FFF;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: Roboto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+`
