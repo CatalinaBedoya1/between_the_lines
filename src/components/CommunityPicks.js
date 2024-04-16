@@ -2,7 +2,7 @@
 // EDITED CODE WIP- MADDY
 
 import React, { useRef, useState, useEffect } from 'react';
-import seeMore from "../assets/seemorebtn.png";
+
 import styled from 'styled-components';
 
 const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
@@ -24,9 +24,8 @@ const NewCPPicks = () => {
             <br></br>
             
 
-            <div className="seemorebtn">
-                <img src={seeMore} alt="seemore" className="seemore-static" />
-            </div>
+            
+            <SeeMoreButton>See More</SeeMoreButton>
         </Container>
     );
 };
@@ -254,3 +253,18 @@ const CardHoverButton = styled.div`
         background-color: #3a738e;
     }
 `;
+const SeeMoreButton = styled.div`
+padding: 10px 60px;
+    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    color: white;
+    border: 3px solid #FFF;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: Roboto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+    `
