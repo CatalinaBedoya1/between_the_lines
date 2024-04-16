@@ -55,7 +55,7 @@ const LoginButton = styled(Link)`
   text-decoration: none;
   padding: 10px 20px;
   border: 2px solid transparent;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: all 0.3s ease;
 
   &:hover {
