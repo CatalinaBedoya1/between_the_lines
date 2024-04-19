@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import VotingBook1 from '../assets/VotingBook1.png';
@@ -16,7 +15,6 @@ const VotingContainer = styled.div`
   background-position: center; 
 `;
 
-
 const VotingTitle = styled.div`
   font-size: 50px;
   font-weight: bold;
@@ -31,12 +29,11 @@ const VotingDescription = styled.div`
 `;
 
 const VotingImageContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 20px;
-  
-
 `;
 
 const VotingImage = styled.img`
@@ -63,54 +60,94 @@ const VotingButton = styled.button`
   background-color: ${props => props.bgColor || '#ccc'};
   color: white;
 `;
+
 const MainVotingButton = styled.button`
-display: block;
+  display: block;
   width: 100px;
   padding: 10px;
   margin-left: 670px;
   margin-top: 40px;
   border: none;
-    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
-    color: white;
-    border: 3px solid #FFF;
-    border-radius: 20px;
-    font-size: 18px;
-    font-family: Roboto;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+  color: white;
+  border: 3px solid #FFF;
+  border-radius: 20px;
+  font-size: 18px;
+  font-family: Roboto;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   
-    &:hover {
-      background-color: #0056b3;
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+
+const VotingImageOverlay = styled.div`
+  position: relative;
+  cursor: pointer;
+
+  &:hover::after {
+    content: '${props => props.votes}';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Change the background color and opacity as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: black;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
-  `;
+    to {
+      opacity: 1;
+    }
+  }
+`;
 
 const Voting = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const [votes, setVotes] = useState({
+    1: 0, // Romance
+    2: 0, // Fantasy
+    3: 0, // Sci-fi
+    4: 0, // Thriller
+  });
 
   const handleVote = () => {
-    alert(`Voted for option ${selectedOption}`);
+    if (selectedOption) {
+      setVotes(prevVotes => ({
+        ...prevVotes,
+        [selectedOption]: prevVotes[selectedOption] + 1,
+      }));
+    }
   };
 
   return (
     <VotingContainer>
-
       <VotingTitle>Vote</VotingTitle>
       <VotingDescription>For the next book of the month</VotingDescription>
-
       <VotingImageContainer>
-        <VotingImage src={VotingBook1} alt="VotingBook1" />
-        <VotingImage src={VotingBook2} alt="VotingBook2" />
-        <VotingImage src={VotingBook3} alt="VotingBook3" />
-        <VotingImage src={VotingBook4} alt="VotingBook4" />
+        <VotingImageOverlay votes={votes[1]} onClick={() => setSelectedOption(1)}>
+          <VotingImage src={VotingBook1} alt="VotingBook1" />
+        </VotingImageOverlay>
+        <VotingImageOverlay votes={votes[2]} onClick={() => setSelectedOption(2)}>
+          <VotingImage src={VotingBook2} alt="VotingBook2" />
+        </VotingImageOverlay>
+        <VotingImageOverlay votes={votes[3]} onClick={() => setSelectedOption(3)}>
+          <VotingImage src={VotingBook3} alt="VotingBook3" />
+        </VotingImageOverlay>
+        <VotingImageOverlay votes={votes[4]} onClick={() => setSelectedOption(4)}>
+          <VotingImage src={VotingBook4} alt="VotingBook4" />
+        </VotingImageOverlay>
       </VotingImageContainer>
-
-      <VotingButtonContainer>
-        <VotingButton bgColor="#ff6347" onClick={() => setSelectedOption(1)}>Romance</VotingButton>
-        <VotingButton bgColor="#6495ed" onClick={() => setSelectedOption(2)}>Fantasy</VotingButton>
-        <VotingButton bgColor="#32cd32" onClick={() => setSelectedOption(3)}>Sci-fi</VotingButton>
-        <VotingButton bgColor="#ff8c00" onClick={() => setSelectedOption(4)}>Thriller</VotingButton>
-      </VotingButtonContainer>
-
       <MainVotingButton className="vote-button" onClick={handleVote}>Vote</MainVotingButton>
     </VotingContainer>
   );

@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
-const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g';
+const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont know why this seems commented out 
 
 app.get('/api/books/:category', async (req, res) => {
   try {

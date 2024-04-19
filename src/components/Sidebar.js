@@ -11,7 +11,7 @@ import BTLLogo from '../assets/BTLLogo.png';
 import './Navbar.css';
 
 const Nav = styled.div`
-  background: #A08786;
+  background: #897ad5;
   height: 80px;
   display: flex;
   justify-content: space-between; 
@@ -35,7 +35,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-    background: #4281A4; /* dark teal blue */
+    background: #3e2d70; /* dark teal blue */
     width: 250px;
     height: 100vh;
     display: flex;

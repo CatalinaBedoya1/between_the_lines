@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
 import loginImage from '../assets/loginImage.png';
 import { Link } from 'react-router-dom';
-import VectorLinesImg from '../assets/VectorLinesImg.png';
+import loginBgImg from '../assets/loginBgImg.png';
+import loginIcon from '../assets/loginIcon.svg';
+import loginIcon2 from '../assets/loginIcon2.svg';
+import signupIcon1 from '../assets/signupIcon1.svg';
+
+
 
 
 const Login = () => {
@@ -14,92 +17,81 @@ const Login = () => {
 
   };
 
-    return (
-      <Container>
-        <BackgroundImage src={VectorLinesImg} alt="VectorLinesImg" />
+  return (
+    <Container>
+      <BackgroundImage src={loginBgImg} alt="loginBgImg" />
 
-        <FormContainer>
-          <Title>Login</Title>
-          <Form>
-            <Label>Username</Label>
-            <InputContainer>
-              <Icon>
-                <FontAwesomeIcon icon={faUser} />
-              </Icon>
-              <Input type="text" placeholder="Type your username" />
-            </InputContainer>
-            <Line />
-            <Label>Password</Label>
-            <InputContainer>
-              <Icon>
-                <FontAwesomeIcon icon={faLock} />
-              </Icon>
-              <Input type="password" placeholder="Type your password" />
-            </InputContainer>
-            <Line />
-            <ForgotPasswordLink>Forgot password?</ForgotPasswordLink>
-            <Link to="/home">
-            <Button type="button" onClick={handleLogin}>Login</Button>
-            </Link>
-          </Form>
-          <SignupLink>Don't have an account? <a href="/signup">Sign Up</a></SignupLink>
-        </FormContainer>
-        <BottomImage src={loginImage} alt="LoginImage" />
-      </Container>
-    );
-  };
+      <FormContainer>
+        <Title>Login</Title>
+        <Form>
+        <TitleText1>Username</TitleText1>
+          <InputContainer1>
+            <Icon>
+            <img src={loginIcon} alt="loginIcon" />
+            </Icon>
+            <Input type="text" placeholder="Type your username" />
+          </InputContainer1>
+          <TitleText2>Password</TitleText2>
+          <InputContainer2>
+            <Icon>
+            <img src={signupIcon1} alt="signupIcon1" />
+            </Icon>
+            <Input type="password" placeholder="Type your password" />
+          </InputContainer2>
 
+          <ForgotPasswordLink to="/forgot-password">Forgot password?</ForgotPasswordLink>
 
-
+          <Button type="button" onClick={handleLogin}>Login</Button>
+        </Form>
+        <SignupLink>Don't have an account? <Link to="/signup">Sign Up</Link></SignupLink>
+      </FormContainer>
+      <BottomImage src={loginImage} alt="LoginImage" />
+    </Container>
+  );
+};
 
 const Container = styled.div`
-
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
-  z-index: -2;
- 
-
+  height: 890px;
+  width: 100vw;
 `;
+
 const BackgroundImage = styled.img`
   position: absolute;
-  top: 80px;
   left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 0; /* Set z-index to 0 */
+  width: 100vw;
+  height: 890px;
+  z-index: 0;
 `;
 
-
-
 const FormContainer = styled.div`
-  background-color: #f3f3f3;
-  padding: 40px;
-  border-radius: 20px;
+  background-color: #FFFFFF;
+  border-radius: 50px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1;
   text-align: left;
+  width: auto;
+  height: 430px;
+  padding: 20px;
 `;
 
 const BottomImage = styled.img`
   position: absolute;
-  bottom: 0;
-  left: 140px;
+  margin-bottom: 630px;
+  align-items: center;
   width: auto;
-  height: 50%;
+  height: 28%;
   z-index: 6;
   object-fit: cover;
-
 `;
 
 const Title = styled.h2`
-  font-size: 45px;
+  font-size: 30px;
   font-family: Roboto;
   text-align: center;
-  margin-bottom: 30px;
-  margin-top: 0px;
+  margin-top: 5px;
 `;
 
 const Form = styled.form`
@@ -107,62 +99,74 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
 `;
-
-const Label = styled.b`
-  margin-bottom: 10px;
-  margin-right: 230px;
-
+const TitleText1 = styled.p`
+  margin-right: 220px;
+  font-size: 19px;
+  margin-top: 20px;
+  
+  color: #000000;
+  font-family: Roboto;
+  font-weight: bold;
+`;
+const TitleText2 = styled.p`
+  font-size: 19px;
+  margin-top: 20px;
+  margin-right: 220px;
+  color: #000000;
+  font-family: Roboto;
+  font-weight: bold;
 `;
 
-const InputContainer = styled.div`
+
+const InputContainer1 = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 25px;
-  
+  margin-top: 10px;
+`;
+const InputContainer2 = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 `;
 
 const Icon = styled.span`
-  margin-right: 30px;
+  margin-right: 10px;
 `;
 
 const Input = styled.input`
-  width: 280px;
-  font-size: 1.1rem;
-  font-family: Roboto;
   border: none;
   outline: none;
-  margin-right: 80px;
-  height: 50px;
-  border-radius: 10px;
-  padding: 5px 10px;
-`;
-const Line = styled.hr`
-  border: 0.5px solid #ccc;
-  margin: 10px 0;
+  font-size: 1.1rem;
+  font-family: Roboto;
+  border-bottom: 1px solid #000000;
+  width: 280px;
+  padding: 10px;
+  margin-left: 10px;
 `;
 
 const Button = styled.button`
-  padding: 10px;
+  height: 40px;
   width: 250px;
-  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+  background: #F68AAF;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 40px;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 22px;
   font-family: Roboto;
+  margin-top: 50px;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #897AD5;
   }
 `;
 
 const SignupLink = styled.p`
   text-align: center;
-  margin-top: 25px;
+  margin-top: 20px;
 
   a {
-    color: #007bff;
+    color: #F68AAF;
     text-decoration: none;
 
     &:hover {
@@ -170,10 +174,14 @@ const SignupLink = styled.p`
     }
   }
 `;
-const ForgotPasswordLink = styled.b`
+
+const ForgotPasswordLink = styled(Link)`
   text-align: left;
-  margin-bottom: 20px;
-  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 220px;
+  color: #000000;
+  font-size: 14px;
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;

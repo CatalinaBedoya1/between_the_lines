@@ -7,7 +7,7 @@
 }
 
 .hero-image {
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: block;
   z-index: -1;
@@ -21,7 +21,7 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: rgb(255, 255, 255);
-  width: 100%;
+  width: 100vw;
 }
 
 .hero-content h1 {
@@ -56,8 +56,8 @@
 
 /* Mission section */
 .mission-section {
-  height: 500px;
-  width:100%;
+  height: auto;
+  width:100vw;
   padding: 5%;
   display: flex;
   flex-wrap: wrap;
@@ -89,7 +89,7 @@
 }
 
 .msimg {
-  width: 170px;
+  width: 63%;
   height: auto;
   position: absolute; 
   top: -120px; 

@@ -4,7 +4,7 @@ const { Pool } = require('pg');
 
 const app = express();
 const port = 3000;
-
+//still need to figure out how the server will collect the voting data
 // Create a connection pool to PostgreSQL database
 const pool = new Pool({
   user: 'your_postgres_user',
