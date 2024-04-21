@@ -57,7 +57,7 @@
 /* Mission section */
 .mission-section {
   height: auto;
-  width:100vw;
+  width: 100vw;
   padding: 5%;
   display: flex;
   flex-wrap: wrap;
@@ -69,21 +69,21 @@
   padding: 50px;
   margin-top: 60px;
   text-align: center;
-  width: calc(25% - 40px); 
+  width: 20%; 
   border: 2px solid #A08786; 
   position: relative;
 }
 .mission-header {
   margin-top: 20px;
-  font-family: Arial, sans-serif; /* Change to desired font */
-  font-size: 24px; /* Change to desired font size */
-  font-weight: bold; /* Optionally change font weight */
+  font-family: Arial, sans-serif; 
+  font-size: 24px; 
+  font-weight: bold; 
   color: #A08786;
 }
 
 .mission-text {
   margin-top: 20px;
-  font-family: Arial, sans-serif; /* Change to desired font */
+  font-family: Arial, sans-serif; 
   font-size: 18px; /* Change to desired font size */
   color: #A08786;
 }
@@ -108,14 +108,15 @@
   position:relative;
   margin-top: 10px; /* Adjust as needed */
   width: 100vw;
+  height: auto;
   z-index: 0;
-  padding:0;
-  margin:0;
+ 
 }
 
 .BOTM-content {
   position: absolute;
   width: 100%;
+  height: auto;
   color: rgb(255, 255, 255);
   top: 50%;
   left: 50%;
@@ -163,7 +164,7 @@
   margin-left: 300px;
 }
 .BOTM-imageZoom {
-  width: 100%; /* Adjust as needed */
+  width: 100%; 
   height:auto;
   display: block;
   z-index: -1;
@@ -174,8 +175,8 @@
   position:absolute;
   top: 20px;
   right: 130px;
-  width: 300px; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 300px; 
+  height: auto; 
   z-index: 1;
 }
 
@@ -188,15 +189,15 @@
     text-decoration: none;
     cursor: pointer;
     border-radius: 50px;
-    background-color: #88C3E4; /* light blue */
-    color: #fff; /* white */
+    background-color: #88C3E4; 
+    color: #fff;
     margin-right: 10px;
     margin-top: 20px;
     margin-left: 280px;
 }
 
 .btn-3{
-    background-color: #4281A4; /* blue */
+    background-color: #4281A4; 
     margin-left: 30px;
 }
 

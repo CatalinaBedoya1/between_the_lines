@@ -13,16 +13,11 @@
     font-size: 20px;
     text-align: center; /*card*/
     /* width: 30; */
-    width: 100;
+    width: 100%;
+    height: auto;
     margin: 0 auto;
     
 }
 
-.seemore-btn{
-    font-size: medium;
-    color: navy;
-    
-
-}
 
 

@@ -42,24 +42,8 @@ const VotingImage = styled.img`
   margin: 0 20px;
 `;
 
-const VotingButtonContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
 
-const VotingButton = styled.button`
-  display: block;
-  width: 100px;
-  padding: 10px;
-  margin: 0 70px;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  font-size: 16px;
-  background-color: ${props => props.bgColor || '#ccc'};
-  color: white;
-`;
+
 
 const MainVotingButton = styled.button`
   display: block;
@@ -121,14 +105,29 @@ const Voting = () => {
     4: 0, // Thriller
   });
 
-  const handleVote = () => {
-    if (selectedOption) {
+  const handleVote = async () => {
+    try {
+      const response = await fetch('/api/votes1', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ bookId: 1 }), // Assuming image 1 corresponds to option 1
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to record vote');
+      }
+
       setVotes(prevVotes => ({
         ...prevVotes,
-        [selectedOption]: prevVotes[selectedOption] + 1,
+        [selectedOption]: prevVotes[selectedOption] + 1, // Assuming image 1 corresponds to option 1
       }));
+    } catch (error) {
+      console.error('Error recording vote:', error);
     }
   };
+
 
   return (
     <VotingContainer>
@@ -149,6 +148,10 @@ const Voting = () => {
         </VotingImageOverlay>
       </VotingImageContainer>
       <MainVotingButton className="vote-button" onClick={handleVote}>Vote</MainVotingButton>
+      <p>Votes: {votes[1]}</p>
+      <p>Votes for option 2: {votes[2]}</p>
+    <p>Votes for option 3: {votes[3]}</p>
+    <p>Votes for option 4: {votes[4]}</p>
     </VotingContainer>
   );
 };
