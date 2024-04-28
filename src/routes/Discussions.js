@@ -158,6 +158,8 @@ const Discussions = () => {
                     <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
                     <Link to="/discussions/historical"> <button className="historical">Historical </button> </Link> 
              </div>
+             <h1> Trending Forums</h1>
+
              </div> 
                {/*
            <CreatePost /> */}
