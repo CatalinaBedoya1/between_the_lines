@@ -146,6 +146,8 @@ const Discussions = () => {
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
             {/* Other content of your discussions */}
+
+
             <div> <header> View All 
                 Trending Book of the Month  Trending  User Feedback </header> </div> 
             <div>
@@ -161,8 +163,8 @@ const Discussions = () => {
              <h1> Trending Forums</h1>
 
              </div> 
-               {/*
-           <CreatePost /> */}
+               {
+           <CreatePost /> }
             </div>
     );
 };

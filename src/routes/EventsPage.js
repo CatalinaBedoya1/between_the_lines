@@ -240,6 +240,7 @@ export const EventsComplete = () => {
 
   const EventsPageContainer = styled.div`
   height: 1670px;
+  width: auto;
   `;
   
 
@@ -247,7 +248,7 @@ const EventsHeroContainer = styled.div`
   position: relative;
   width: 100%;
   height: 370px;
-  background-color: #FFEDED;
+  background-color: #e2def8;
 `;
 
 const StyledEventsHeroImg = styled.img`
@@ -265,7 +266,7 @@ const EHTitle = styled.h1`
   font-size: 83px;
   font-family: "Pacifico", cursive;
   font-weight: 400;
-  color: #A08786;
+  color: #897ad5;
   margin-top: 30px;
 `;
 
@@ -275,7 +276,7 @@ const EHDescription = styled.p`
   font-family: "Roboto Mono", monospace;
   font-weight: <weight>;
   font-style: normal;
-  color: #DA92AC;
+  color: #3e2d70;
 `;
 const EHSignup = styled.p`
 font-size: 14px;
@@ -283,7 +284,7 @@ margin-top: 30px;
 font-family: "Inconsolata", monospace;
 font-weight: <weight>;
 font-style: lighter;
-color: #DA92AC;
+color: #3e2d70;
 `;
 
 const EventsContent = styled.div`
@@ -298,7 +299,7 @@ const EventsContent = styled.div`
 const EventsButton = styled.button`
   padding: 10px 40px;
   margin-top: 10px;
-  background-color: #A08786; 
+  background-color: #f68aaf; 
   color: white;
   border: none;
   border-radius: 50px;
@@ -308,7 +309,7 @@ const EventsButton = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #D1A1A1; 
+    background-color: #f676a5; 
   }
 `;
 

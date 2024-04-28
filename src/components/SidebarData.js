@@ -21,12 +21,7 @@ export const SidebarData = [
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
     subNav: [
-      {
-        title: 'AudioBooks',
-        path: '/discover/whatsTrending',
-        
-        cName: 'sub-nav'
-      },
+      
       {
         title: 'Search',
         path: '/discover/searchResultsPage',
@@ -48,12 +43,7 @@ export const SidebarData = [
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
     subNav: [
-      {
-        title: 'Book Clubs',
-        path: '/community/bookClubs',
-        
-        cName: 'sub-nav'
-      },
+      
       {
         title: 'Discussions',
         path: '/community/discussions',

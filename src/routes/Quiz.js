@@ -737,6 +737,7 @@ const Quiz = () => {
         default:
           break;
       }
+      console.log(`Filtered books after question ${questionId}:`, filteredBooks);
     }
 
     // Return filtered books, or return a random book if no match found

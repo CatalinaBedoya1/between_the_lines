@@ -2,7 +2,9 @@
     padding: 50px
 }
 .createPostContainerInside{
-    background-color: #E6F4F9;
+    border-radius: 10px;
+
+    background-color: #4281A4;
     width: 800px;
     height: 450px;
     display: flex;
@@ -16,6 +18,8 @@
 
 
 .createPostText{  
+    border-radius: 10px;
+
     justify-content: top;
     width: 750px;
     border: 1px solid #ccc;
@@ -26,6 +30,8 @@
 
 
 .createPostBodyText{  
+    border-radius: 10px;
+
     width: 750px;
     height: 300px;
     border: 1px solid #ccc;
@@ -39,7 +45,7 @@
     border-radius: 50px;
     font-size: 18px;
     color: #ffffff;
-    background-color: #8a8265;
+    background-color: #F8A2C0;
     text-align: center;
     cursor: pointer;
     box-shadow: 0 0 0 4px #ffffff;

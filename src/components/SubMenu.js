@@ -15,7 +15,7 @@ const SidebarLink = styled(Link)`
   font-size: 18px;
 
   &:hover {
-    background: #88C3E4;  /*light teal blue */
+    background: #897ad5;  /*light teal blue */
     border-left: 4px solid #632ce4;
     cursor: pointer;
   }
@@ -26,7 +26,7 @@ const SidebarLabel = styled.span`
 `;
 
 const DropdownLink = styled(Link)`
-  background: #4281A4;  /*dark teal blue */
+  background: #3e2d70;  /*dark teal blue */
   height: 60px;
   padding-left: 3rem;
   display: flex;
@@ -36,7 +36,7 @@ const DropdownLink = styled(Link)`
   font-size: 18px;
 
   &:hover {
-    background: #88C3E4;  /* light teal blue */
+    background: #897ad5;  /* light teal blue */
     cursor: pointer;
   }
 `;
