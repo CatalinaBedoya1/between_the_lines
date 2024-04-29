@@ -5,6 +5,7 @@ import './EventsSignup.css';
 function EventsSignup() {
     return (
         <>
+       
             <div className='registration'>
                 <div className='registertext'>
                     <h2>Register Now!</h2>

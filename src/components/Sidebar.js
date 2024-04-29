@@ -13,10 +13,10 @@ import './Navbar.css';
 const Nav = styled.div`
   background: #897ad5;
   height: 80px;
+  width: 100%; /* Set width to 100% */
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  
 `;
 
 const Logo = styled.img`
