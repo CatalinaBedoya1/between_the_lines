@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 import CreatePost from '../components/CreatePost';
 import WordLoopAnimation from '../components/WordLoopAnimation';
 import './Discussions.css';
+import bookforum1 from '../assets/DashboardBooks/recent2.png';
+import profile1 from '../assets/profile1.png';
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -148,26 +150,169 @@ const Discussions = () => {
             {/* Other content of your discussions */}
 
 
-            <div> <header> View All 
-                Trending Book of the Month  Trending  User Feedback </header> </div> 
+            <div> 
+                <span style={{ marginRight: '20px' }}>
+                <header style={{ marginLeft: '10px' }}>
+                    View All
+                    <Link to="/discussions/trending"> <button className="trending">Trending</button></Link>
+                    Book of the Month
+                    Trending
+                    User Feedback
+                        <OnlineDivider></OnlineDivider>
+                </header> 
+                </span>
+            </div> 
             <div>
-            <header>Filter: </header>
             <div className='btns-discussion-genres'>
+            <header>Filter: </header>
                     <Link to="/discussions/thriller"> <button className="thriller"> Thriller </button> </Link>
                     <Link to="/discussions/booktok"> <button className="booktok">Booktok </button> </Link>
                     <Link to="/discussions/horror"> <button className="horror">Horror </button> </Link>
                     <Link to="/discussions/cliff-hanger"> <button className="cliff-hanger">Cliff-hanger </button> </Link>
                     <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
-                    <Link to="/discussions/historical"> <button className="historical">Historical </button> </Link> 
-             </div>
-             <h1> Trending Forums</h1>
+                    <Link to="/discussions/historical"> <button className="historical">Historical </button> </Link>
+                    <Link to="/discussions/more"> <button className="more">+</button> </Link> 
+            </div>
+            <ForumName>
+            <h1> Trending Forums</h1>
+            </ForumName>
+
+             <BFContainerRow>
+             <BookForumContainter>
+                <BookCard>
+                    <img src= {bookforum1} alt="Book Forum 1" />
+                    <BookContent>
+                        <h4>IF YOU COULD SEE THE SUN</h4>
+                        <h4>ANN LIANG</h4>
+                        <br></br>
+                        <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
+                        <Link to="/discussions/fiction"> <button className="fiction">Fiction </button> </Link>
+                        <br></br>
+                        <br></br>
+                        <ForumHeading>
+                            <Horizontal>Topics</Horizontal>
+                            <Horizontal>Replies</Horizontal>
+                            <Horizontal>Views</Horizontal>
+                            <Horizontal>User</Horizontal>
+                            <Horizontal>Date</Horizontal>
+                        </ForumHeading>
+                            <br></br>
+                            <Divider></Divider>
+                            <br></br>
+                        <User1>
+                            <p>Ann Liang Best Work</p>
+                            <p>3,495</p>
+                            <p>3,855</p>
+                            <img src= {profile1} alt="Profile 1" />
+                            <p>10 seconds ago</p>
+                        </User1>
+
+                        <User2>
+                            <p>Other works by Ann Liang</p>
+                            <p>7,777</p>
+                            <p>8,452</p>
+                            
+                            <p>1 hour ago</p>
+                        </User2>
+                        <User3>
+                            <p>Best chapter</p>
+                        </User3>
+                        <User4>
+                            <p>Love the character</p>
+                        </User4>
+                            
+                    </BookContent>
+                </BookCard>
+            </BookForumContainter>
+            </BFContainerRow>
+            
 
              </div> 
                {
-           <CreatePost /> }
-            </div>
+           <CreatePost /> } 
+        </div>
     );
 };
 
+const ForumName = styled.div`
+  padding-left: 40px;
+  padding-top: 20px;
+`;
+const BFContainerRow= styled.div`
+  display: flex;
+  flex-direection: row;
+  //background-color: pink;
+`;
+const BookForumContainter = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 100px;
+
+  //background-color: blue;
+
+`;
+const BookCard = styled.div`
+  display: flex;
+  margin: 10px;
+  width: 800px;    //800px;
+  height: 300px;
+  //background-color: green;
+
+  img {
+    width: auto; 
+    height: 100%; 
+  }
+`;
+const BookContent = styled.div`
+  padding-top: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 30px;
+`;
+const OnlineDivider = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #ccc; 
+`;
+const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #000000; 
+`;
+const Topic = styled.div`
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const Replies = styled.div`
+  display:flex;
+  flex-direction: column;
+`;
+const Horizontal = styled.div`
+    margin: 0 50px;
+
+`;
+const ForumHeading = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+const User1 = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+`;
+const User2 = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+const User3 = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+const User4 = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
 export default Discussions;
 
