@@ -14,6 +14,7 @@ import profile1 from '../assets/profile1.png';
 import profile4 from '../assets/profile4.png';
 import profile3 from '../assets/profile3.png';
 import profile2 from '../assets/profile2.png';
+import bookforum2 from '../assests/'
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -220,14 +221,68 @@ const Discussions = () => {
                         <User3>
                             <p>Best chapter</p>
                             <p>3,354</p>
-                            
+                            <p>7,474</p>
+                            <img src= {profile3} alt="Profile 3" />
+                            <p>5 hours ago</p>
                         </User3>
                         <User4>
                             <p>Love the character</p>
-                        </User4>
-                            
+                            <p>6,578</p>
+                            <p>9,456</p>
+                            <img src= {profile2} alt="Profile 4" />
+                            <p>8 hours ago</p>
+                        </User4>      
+                        <h6>Load more topics</h6>
                     </BookContent>
                 </BookCard>
+
+                <BookCard>
+                    <img src= {bookforum1} alt="Book Forum 2" />
+                    <BookContent>
+                        <br></br>
+                        <ForumHeading>
+                            <Horizontal>Topics</Horizontal>
+                            <Horizontal>Replies</Horizontal>
+                            <Horizontal>Views</Horizontal>
+                            <Horizontal>User</Horizontal>
+                            <Horizontal>Date</Horizontal>
+                        </ForumHeading>
+                            <br></br>
+                            <Divider></Divider>
+                            <br></br>
+                        <User1>
+                            <p>Ann Liang Best Work</p>
+                            <p>3,495</p>
+                            <p>3,855</p>
+                            <img src= {profile2} alt="Profile 1" />
+                            <p>10 seconds ago</p>
+                        </User1>
+
+                        <User2>
+                            <p>Other works by Ann Liang</p>
+                            <p>7,777</p>
+                            <p>8,452</p>
+                            <img src= {profile3} alt="Profile 2" />
+                            <p>1 hour ago</p>
+                        </User2>
+                        <User3>
+                            <p>Best chapter</p>
+                            <p>3,354</p>
+                            <p>7,474</p>
+                            <img src= {profile4} alt="Profile 3" />
+                            <p>5 hours ago</p>
+                        </User3>
+                        <User4>
+                            <p>Love the character</p>
+                            <p>6,578</p>
+                            <p>9,456</p>
+                            <img src= {profile1} alt="Profile 4" />
+                            <p>8 hours ago</p>
+                        </User4>      
+                        <h6>Load more topics</h6>
+                    </BookContent>
+                </BookCard>
+
             </BookForumContainter>
             </BFContainerRow>
             
