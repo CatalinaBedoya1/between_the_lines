@@ -1,49 +1,96 @@
-import React from 'react';
-import styled from 'styled-components';
-import loginImage from '../assets/loginImage.png';
-import { Link } from 'react-router-dom';
-import loginBgImg from '../assets/loginBgImg.png';
-import loginIcon from '../assets/loginIcon.svg';
-import loginIcon2 from '../assets/loginIcon2.svg';
-import signupIcon1 from '../assets/signupIcon1.svg';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Link,  } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import loginImage from "../assets/loginImage.png";
+import loginBgImg from "../assets/loginBgImg.png";
+import loginIcon from "../assets/loginIcon.svg";
+import signupIcon1 from "../assets/signupIcon1.svg";
 
+const Login = ({ setAuth }) => {
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: ""
+  });
 
+  const { email, password } = inputs;
+  const navigate = useNavigate();
 
+  const onChange = e =>
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
 
-const Login = () => {
+  const onSubmitForm = async e => {
+    e.preventDefault();
+    try {
+      const body = { email, password };
+      const response = await fetch(
+        "http://localhost:4000/authentication/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json"
+          },
+          body: JSON.stringify(body)
+        }
+      );
 
+      const parseRes = await response.json();
 
-  const handleLogin = () => {
-
+      if (parseRes.jwtToken) {
+        localStorage.setItem("token", parseRes.jwtToken);
+        setAuth(true);
+        toast.success("Logged in Successfully");
+        navigate("/dashboard");
+      } else {
+        setAuth(false);
+        toast.error(parseRes);
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
   };
 
   return (
     <Container>
       <BackgroundImage src={loginBgImg} alt="loginBgImg" />
-
       <FormContainer>
         <Title>Login</Title>
-        <Form>
-        <TitleText1>Username</TitleText1>
-          <InputContainer1>
+        <Form onSubmit={onSubmitForm}>
+          <TitleText1>Username</TitleText1>
+          <InputContainer>
             <Icon>
-            <img src={loginIcon} alt="loginIcon" />
+              <img src={loginIcon} alt="loginIcon" />
             </Icon>
-            <Input type="text" placeholder="Type your username" />
-          </InputContainer1>
+            <Input
+              type="text"
+              name="email"
+              value={email}
+              onChange={e => onChange(e)}
+              className="form-control my-3"
+            />
+          </InputContainer>
           <TitleText2>Password</TitleText2>
-          <InputContainer2>
+          <InputContainer>
             <Icon>
-            <img src={signupIcon1} alt="signupIcon1" />
+              <img src={signupIcon1} alt="signupIcon1" />
             </Icon>
-            <Input type="password" placeholder="Type your password" />
-          </InputContainer2>
-
-          <ForgotPasswordLink to="/forgot-password">Forgot password?</ForgotPasswordLink>
-
-          <Button type="button" onClick={handleLogin}>Login</Button>
+            <Input
+              type="password"
+              name="password"
+              value={password}
+              onChange={e => onChange(e)}
+              className="form-control my-3"
+            />
+          </InputContainer>
+          <ForgotPasswordLink to="/forgot-password">
+            Forgot password?
+          </ForgotPasswordLink>
+          <Button type="submit">Login</Button>
         </Form>
-        <SignupLink>Don't have an account? <Link to="/signup">Sign Up</Link></SignupLink>
+        <SignupLink>
+          Don't have an account? <Link to="/register">Sign Up</Link>
+        </SignupLink>
       </FormContainer>
       <BottomImage src={loginImage} alt="LoginImage" />
     </Container>
@@ -67,7 +114,7 @@ const BackgroundImage = styled.img`
 `;
 
 const FormContainer = styled.div`
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 50px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1;
@@ -99,15 +146,16 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
 `;
+
 const TitleText1 = styled.p`
   margin-right: 220px;
   font-size: 19px;
   margin-top: 20px;
-  
   color: #000000;
   font-family: Roboto;
   font-weight: bold;
 `;
+
 const TitleText2 = styled.p`
   font-size: 19px;
   margin-top: 20px;
@@ -117,13 +165,7 @@ const TitleText2 = styled.p`
   font-weight: bold;
 `;
 
-
-const InputContainer1 = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-`;
-const InputContainer2 = styled.div`
+const InputContainer = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
@@ -147,7 +189,7 @@ const Input = styled.input`
 const Button = styled.button`
   height: 40px;
   width: 250px;
-  background: #F68AAF;
+  background: #f68aaf;
   color: #fff;
   border: none;
   border-radius: 40px;
@@ -157,7 +199,7 @@ const Button = styled.button`
   margin-top: 50px;
 
   &:hover {
-    background-color: #897AD5;
+    background-color: #897ad5;
   }
 `;
 
@@ -166,7 +208,7 @@ const SignupLink = styled.p`
   margin-top: 20px;
 
   a {
-    color: #F68AAF;
+    color: #f68aaf;
     text-decoration: none;
 
     &:hover {

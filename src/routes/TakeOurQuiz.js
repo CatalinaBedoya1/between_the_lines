@@ -60,7 +60,7 @@ const TakeOurQuiz = () => {
 `;
 
   const QuizImage = styled.img`
-  width: 600px; /* Adjust the width as needed */
+  width: 600px; 
   height: auto;
   margin-top: 73px;
   z-index:3

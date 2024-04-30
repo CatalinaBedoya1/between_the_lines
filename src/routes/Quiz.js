@@ -4,7 +4,7 @@ import QuizBackgroundImg from '../assets/QuizBgImg.png';
 import { Link } from 'react-router-dom';
 import Confetti from 'react-confetti';
 
-// Define your book data
+
 const books = [
   //romance
   { 
@@ -709,7 +709,7 @@ const Quiz = () => {
   const getBookRecommendations = () => {
     let filteredBooks = books;
 
-    // Filter books based on user's answers for each question
+    // this is the filter function but might need to ask Prof for a better way
     for (let questionId in answers) {
       const answer = answers[questionId];
       switch (parseInt(questionId)) {

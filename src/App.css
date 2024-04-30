@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Trajan+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 
@@ -11,6 +10,7 @@
 }
 
 .home,
+.login,
 .community,
 .discover,
 .whatsTrending,
@@ -37,16 +37,7 @@
 }
 
 
-/* Navbar CSS */
-.navbar {
-  position: relative;
-  z-index: 1;
-  background-color: #918273;
-  height: 60px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
+
 
 .menu-bars {
   margin-left: 2rem;

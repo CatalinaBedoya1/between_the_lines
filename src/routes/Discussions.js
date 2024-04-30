@@ -11,6 +11,9 @@ import WordLoopAnimation from '../components/WordLoopAnimation';
 import './Discussions.css';
 import bookforum1 from '../assets/DashboardBooks/recent2.png';
 import profile1 from '../assets/profile1.png';
+import profile4 from '../assets/profile4.png';
+import profile3 from '../assets/profile3.png';
+import profile2 from '../assets/profile2.png';
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -111,12 +114,12 @@ const DiscussionTitle = styled.h1`
   margin-top: 50px;
   position: relative; 
   overflow: hidden;
-  display: flex; /* Add this to make items align horizontally */
+  display: flex; 
   align-items: center; /* Align items vertically */
 `;
 
 const Text = styled.span`
-  margin-right: 10px; /* Adjust the spacing between the text and the animation */
+  margin-right: 10px; 
   font-size: 40px;
   font-family: Roboto;
   
@@ -147,7 +150,7 @@ const Discussions = () => {
                     <PopularTopicsText>Popular Topics:  Adventure, Fantasy, Romance, Memoirs</PopularTopicsText>
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
-            {/* Other content of your discussions */}
+            
 
 
             <div> 
@@ -211,11 +214,13 @@ const Discussions = () => {
                             <p>Other works by Ann Liang</p>
                             <p>7,777</p>
                             <p>8,452</p>
-                            
+                            <img src= {profile4} alt="Profile 2" />
                             <p>1 hour ago</p>
                         </User2>
                         <User3>
                             <p>Best chapter</p>
+                            <p>3,354</p>
+                            
                         </User3>
                         <User4>
                             <p>Love the character</p>
@@ -279,15 +284,6 @@ const Divider = styled.div`
   width: 100%;
   height: 1px;
   background-color: #000000; 
-`;
-const Topic = styled.div`
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const Replies = styled.div`
-  display:flex;
-  flex-direction: column;
 `;
 const Horizontal = styled.div`
     margin: 0 50px;
