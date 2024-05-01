@@ -109,12 +109,12 @@ const DiscussionTitle = styled.h1`
   margin-top: 50px;
   position: relative; 
   overflow: hidden;
-  display: flex; /* Add this to make items align horizontally */
+  display: flex; 
   align-items: center; /* Align items vertically */
 `;
 
 const Text = styled.span`
-  margin-right: 10px; /* Adjust the spacing between the text and the animation */
+  margin-right: 10px; 
   font-size: 40px;
   font-family: Roboto;
   
@@ -145,7 +145,7 @@ const Discussions = () => {
                     <PopularTopicsText>Popular Topics:  Adventure, Fantasy, Romance, Memoirs</PopularTopicsText>
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
-            {/* Other content of your discussions */}
+            
 
 
             <div> <header> View All 

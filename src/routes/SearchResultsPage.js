@@ -34,7 +34,7 @@ const ContentContainer = styled.div`
 `;
 
 const DiscoverMoreContainer = styled.div`
-  width: 30%; /* Width for the "Discover More" section */
+  width: 30%; 
   padding: 20px;
   margin-left: 30px;
 `;
@@ -58,7 +58,7 @@ color: #A08786;
 `
 const CarouselContainer = styled.div`
   position: relative;
-  width: 600px; /* Width for the carousel */
+  width: 600px; 
   height: 500px;
   margin-left: 260px;
   margin-top: 40px;
@@ -69,7 +69,7 @@ const CarouselInner = styled.div`
   display: flex;
   align-items: flex-start;
   transition: transform 0.5s ease;
-  width: ${(props) => props.length * 100}%; /* Adjust width dynamically based on number of items */
+  width: ${(props) => props.length * 100}%; 
 `;
 
 const CarouselItem = styled.div`
@@ -77,17 +77,17 @@ const CarouselItem = styled.div`
   
   display: flex;
   align-items: flex-start;
-  flex: 0 0 ${(props) => 100 / props.length}%; /* Adjust width dynamically based on number of items */
+  flex: 0 0 ${(props) => 100 / props.length}%; 
 `;
 const CarouselImg = styled.img`
 margin-top: 50px;
-  width: 250px; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 250px; 
+  height: auto; 
 `;
 
 const CarouselTextContainer = styled.div`
   flex: 1;
-  padding: 20px; /* Adjusted padding */
+  padding: 20px; 
   margin-top: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -109,7 +109,7 @@ const Author = styled.p`
 `;
 const Rating = styled.div`
   font-size: 16px;
-  color: #FFD700; /* Gold color */
+  color: #FFD700; 
   margin-bottom: 10px;
 `;
 
@@ -117,7 +117,7 @@ const Description = styled.p`
   font-size: 16px;
   color: #A08786;
   margin-bottom: 10px;
-  line-height: 1.5; /* Adjusted line height */
+  line-height: 1.5; 
 `;
 
 //regular
@@ -136,8 +136,8 @@ const SearchContainer = styled.div`
 
 const BooksGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Each row will contain 6 books */
-  gap: 20px; /* Gap between books */
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 20px; 
 `;
 
 const Book = styled.div`
@@ -147,8 +147,8 @@ const Book = styled.div`
 `;
 
 const BookImage = styled.img`
-  width: 150px; /* Adjust width as needed */
-  height: 200px; /* Adjust height as needed */
+  width: 150px; 
+  height: 200px; 
 `;
 
 const BookTitle = styled.h3`
@@ -239,7 +239,7 @@ const FilterButtonMore = styled.button`
 const TitleContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 32px; /* Adjust the margin as needed */
+  margin-left: 32px; 
   margin-bottom: 25px;
 `;
 
@@ -255,9 +255,9 @@ const SearchTitle = styled.h2`
     letter-spacing: 1.08px;
 `;
 const GridIcon = styled.img`
-  width: 20px; /* Adjust the size as needed */
+  width: 20px; 
   height: auto;
-  margin-left: 1100px; /* Adjust the margin as needed */
+  margin-left: 1100px; 
   
 `;
 
@@ -426,7 +426,7 @@ const SearchResultsPage = () => {
     useEffect(() => {
       const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselbooks.length);
-      }, 3000); // Change slide every 3 seconds
+      }, 3000); 
   
       return () => clearInterval(interval);
     }, [carouselbooks.length]);
@@ -434,7 +434,7 @@ const SearchResultsPage = () => {
 
 
   useEffect(() => {
-    // Function to fetch books based on the user's search query and pagination
+    // Function to fetch books based on the user's search query 
     const fetchBooks = async () => {
       try {
         
@@ -482,7 +482,7 @@ const SearchResultsPage = () => {
         <DiscoverMoreContainer>
           <DiscoverMoreTitle>Discover New Books</DiscoverMoreTitle>
           <DiscoverPara>Search by author, title, or genre!</DiscoverPara>
-          {/* Add any content you want for the "Discover More" section */}
+          
           
           <SearchBar>
             <SearchInput

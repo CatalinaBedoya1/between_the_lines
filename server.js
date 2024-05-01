@@ -1,20 +1,32 @@
-const express = require('express');
+const express = require("express");
+const app = express();
 const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
-const votingRoutes = require('./votingRoutes');
+require('dotenv').config();
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+
+const cors = require("cors");
+
 
 
 const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
 const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont know why this seems commented out 
 
-//voting 
-app.use(bodyParser.json());
-app.use('/api/votes1', votingRoutes);
+app.use(cors());
+app.use(express.json()); //req.body
 
 
+
+//ROUTES
+
+
+//register && login routes
+app.use("/authentication", require("./Server/routes/jwtAuth"));
+
+//dashboard routes
+app.use("/dashboard", require("./Server/routes/dashboard"));
+
+//APIS
 app.get('/api/books/:category', async (req, res) => {
   try {
     const category = req.params.category;
@@ -45,9 +57,8 @@ app.get('/api/book-cover', async (req, res) => {
 });
 
 
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(4000, () => {
+  console.log('Server is running on port 4000');
 });
 
 

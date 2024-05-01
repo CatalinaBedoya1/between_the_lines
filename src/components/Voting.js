@@ -107,26 +107,31 @@ const Voting = () => {
 
   const handleVote = async () => {
     try {
-      const response = await fetch('/api/votes1', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ bookId: 1 }), // Assuming image 1 corresponds to option 1
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to record vote');
+      if (selectedOption) { // Check if an option is selected
+        const response = await fetch('/api/votes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ bookId: selectedOption }), // Pass selectedOption instead of hardcoded value
+        });
+  
+        if (!response.ok) {
+          throw new Error('Failed to record vote');
+        }
+  
+        setVotes(prevVotes => ({
+          ...prevVotes,
+          [selectedOption]: prevVotes[selectedOption] + 1,
+        }));
+      } else {
+        console.error('No option selected');
       }
-
-      setVotes(prevVotes => ({
-        ...prevVotes,
-        [selectedOption]: prevVotes[selectedOption] + 1, // Assuming image 1 corresponds to option 1
-      }));
     } catch (error) {
       console.error('Error recording vote:', error);
     }
   };
+  
 
 
   return (
