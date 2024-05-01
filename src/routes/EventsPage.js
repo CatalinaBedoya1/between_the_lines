@@ -213,12 +213,6 @@ const EventsPage = () => {
     </LocalEventsContainer>
     </EventsPageContainer>
     </div>
-
-
-
-
-
-
   )
 }
 
@@ -313,6 +307,7 @@ const EventsButton = styled.button`
   }
 `;
 
+//end of cat's code//
 const EventName = styled.div`
   padding-left: 40px;
   padding-top: 20px;
