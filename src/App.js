@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Outlet, Navigate} from 'react-router-dom';
+import { Routes, Route, Outlet} from 'react-router-dom';
 
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
@@ -11,7 +11,7 @@ import Community, { BookClubs } from './routes/Community';
 import Discussions from './routes/Discussions';
 import EventsPage from './routes/EventsPage';
 import EventsComplete from './routes/EventsComplete';
-import EventsSignup from './routes/EventsSignup';
+import EventsSignup from './routes/eventsSignup';
 import BookDetails from './routes/BookDetails';
 import Dashboard from './routes/Dashboard';
 import AboutUs from './routes/AboutUs';
@@ -54,7 +54,7 @@ function App () {
   return (
     <div className="container">
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+       
         <Route path="/login" element={<Login setAuth={setAuth} />} />
         <Route path="/register" element={<Register setAuth={setAuth} />} />
         <Route path="/dashboard" element={<Dashboard setAuth={setAuth} />} />
@@ -92,3 +92,8 @@ const AppLayout = () => (
 );
 
 export default App;
+
+
+
+
+
