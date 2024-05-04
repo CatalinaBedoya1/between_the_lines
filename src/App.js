@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Outlet} from 'react-router-dom';
+import { Routes, Route, Outlet, Navigate} from 'react-router-dom';
 
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
@@ -54,7 +54,7 @@ function App () {
   return (
     <div className="container">
       <Routes>
-       
+        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login setAuth={setAuth} />} />
         <Route path="/register" element={<Register setAuth={setAuth} />} />
         <Route path="/dashboard" element={<Dashboard setAuth={setAuth} />} />

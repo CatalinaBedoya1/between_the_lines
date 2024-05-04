@@ -6,7 +6,8 @@ require('dotenv').config();
 
 
 const cors = require("cors");
-
+const pool = require("./Server/db");
+app.use(express.json());
 
 
 const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
@@ -14,6 +15,49 @@ const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont
 
 app.use(cors());
 app.use(express.json()); //req.body
+
+
+//voting api routes
+app.post('/api/vote', async (req, res) => {
+  const { cover_id } = req.body;
+  try {
+    await pool.query('UPDATE book_votes SET votes = votes + 1 WHERE cover_id = $1', [cover_id]);
+
+    //to show all votes ever recorded i did this query 
+    const votesResult = await pool.query('SELECT votes FROM book_votes WHERE cover_id = $1', [cover_id]);
+    const votes = votesResult.rows.map(row => row.votes);
+    
+    res.status(200).json({ message: "Vote recorded successfully!", votes: votes });
+  } catch (error) {
+    console.error('Error recording vote:', error);
+    res.status(500).json({ error: 'An error occurred while recording the vote.' });
+  }
+});
+// API route to fetch initial vote counts for each book
+app.get('/api/vote-counts', async (req, res) => {
+  try {
+    const voteCounts = await getVoteCounts();
+    res.status(200).json({ success: true, voteCounts });
+  } catch (error) {
+    console.error('Error fetching vote counts:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch vote counts.' });
+  }
+});
+
+// Function to fetch vote counts for each book from the database
+const getVoteCounts = async () => {
+  const client = await pool.connect();
+  try {
+    const result = await client.query('SELECT cover_id, SUM(votes) AS total_votes FROM book_votes GROUP BY cover_id');
+    const voteCounts = {};
+    result.rows.forEach(row => {
+      voteCounts[row.cover_id] = row.total_votes;
+    });
+    return voteCounts;
+  } finally {
+    client.release();
+  }
+};
 
 
 
@@ -26,7 +70,7 @@ app.use("/authentication", require("./Server/routes/jwtAuth"));
 //dashboard routes
 app.use("/dashboard", require("./Server/routes/dashboard"));
 
-//APIS
+//book search APIS
 app.get('/api/books/:category', async (req, res) => {
   try {
     const category = req.params.category;

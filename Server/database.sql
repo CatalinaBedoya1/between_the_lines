@@ -8,6 +8,8 @@ CREATE TABLE users(
     user_password VARCHAR(255) NOT NULL
 );
 
+--ignore this table for now 
+
 CREATE TABLE todo(
     todo_id SERIAL,
     user_id UUID,
@@ -16,6 +18,22 @@ CREATE TABLE todo(
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
---insert fake users(as a test run to check )
+--insert fake users(as a test run to check )do this after yall get the database working
 INSERT INTO users (user_name, user_email, user_password) 
 VALUES ('henry', 'henry213@gmail.com','kth18822');
+
+
+--book_votes table 
+CREATE TABLE book_votes (
+    id SERIAL PRIMARY KEY,
+    cover_id INTEGER UNIQUE,
+    votes INTEGER DEFAULT 0
+);
+
+--unique id for each of our four books
+INSERT INTO book_votes (cover_id, votes)
+VALUES 
+    (1, 0), 
+    (2, 0), 
+    (3, 0), 
+    (4, 0); 
