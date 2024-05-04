@@ -41,7 +41,7 @@ const Dashboard = ({ setAuth }) => {
   }, []);
   return (
     <>
-      <Sidebar /> {/* Include Sidebar component */}
+      <Sidebar /> 
       <div className="dashboard">
         <img src={DashIcon} alt="DashboardIcon" className="Dashboard-Icon" />
         <div className="bio">
@@ -80,7 +80,7 @@ const Dashboard = ({ setAuth }) => {
           <QuizRecs />
         </div>
       </div>
-      <Footer /> {/* Include Footer component */}
+      <Footer /> 
     </>
   );
 };

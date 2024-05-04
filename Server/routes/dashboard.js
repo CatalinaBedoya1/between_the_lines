@@ -9,12 +9,7 @@ router.post("/", authorize, async (req, res) => {
       [req.user.id] 
     ); 
     
-  //if would be req.user if you change your payload to this:
-    
-  //   function jwtGenerator(user_id) {
-  //   const payload = {
-  //     user: user_id
-  //   };
+  
     
     res.json(user.rows[0]);
   } catch (err) {

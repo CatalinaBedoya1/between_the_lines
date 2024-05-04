@@ -38,7 +38,7 @@ const AboutUsData = [
     image: JustineGroup,
     name: "<| Justine |>",
     founder: "Co-Founder",
-    jobtitle: "BackEnd Developer",
+    jobtitle: "FrontEnd Developer",
     description: "Freedom without any purpose feels a whole lot like boredom- Asano Ino. I am a big fan of graphic novels, Junji Ito and Inio Asano have my heart. I spend my free time playing videogames and making music.",
   },
   {
