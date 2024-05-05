@@ -14,7 +14,9 @@ import profile1 from '../assets/profile1.png';
 import profile4 from '../assets/profile4.png';
 import profile3 from '../assets/profile3.png';
 import profile2 from '../assets/profile2.png';
-import bookforum2 from '../assests/'
+import bookforum2 from '../assets/forumbook2.png';
+import bookforum3 from '../assets/forumbook3.png';
+import bookforum4 from '../assets/forumbook4.png';
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -237,7 +239,7 @@ const Discussions = () => {
                 </BookCard>
 
                 <BookCard>
-                    <img src= {bookforum1} alt="Book Forum 2" />
+                    <img src= {bookforum2} alt="Book Forum 2" />
                     <BookContent>
                         <br></br>
                         <ForumHeading>
@@ -251,31 +253,31 @@ const Discussions = () => {
                             <Divider></Divider>
                             <br></br>
                         <User1>
-                            <p>Ann Liang Best Work</p>
-                            <p>3,495</p>
-                            <p>3,855</p>
+                            <p>Spicy scenes</p>
+                            <p>9,874</p>
+                            <p>10,523</p>
                             <img src= {profile2} alt="Profile 1" />
                             <p>10 seconds ago</p>
                         </User1>
 
                         <User2>
-                            <p>Other works by Ann Liang</p>
-                            <p>7,777</p>
-                            <p>8,452</p>
+                            <p>Fangirls Unite</p>
+                            <p>15,876</p>
+                            <p>19,348</p>
                             <img src= {profile3} alt="Profile 2" />
                             <p>1 hour ago</p>
                         </User2>
                         <User3>
-                            <p>Best chapter</p>
-                            <p>3,354</p>
-                            <p>7,474</p>
+                            <p>Next one: worth it?</p>
+                            <p>9,876</p>
+                            <p>10,532</p>
                             <img src= {profile4} alt="Profile 3" />
-                            <p>5 hours ago</p>
+                            <p>18 hours ago</p>
                         </User3>
                         <User4>
-                            <p>Love the character</p>
-                            <p>6,578</p>
-                            <p>9,456</p>
+                            <p>Love or obsession?</p>
+                            <p>12,947</p>
+                            <p>18,234</p>
                             <img src= {profile1} alt="Profile 4" />
                             <p>8 hours ago</p>
                         </User4>      
@@ -283,6 +285,99 @@ const Discussions = () => {
                     </BookContent>
                 </BookCard>
 
+                <BookCard>
+                    <img src= {bookforum3} alt="Book Forum 3" />
+                    <BookContent>
+                        <br></br>
+                        <ForumHeading>
+                            <Horizontal>Topics</Horizontal>
+                            <Horizontal>Replies</Horizontal>
+                            <Horizontal>Views</Horizontal>
+                            <Horizontal>User</Horizontal>
+                            <Horizontal>Date</Horizontal>
+                        </ForumHeading>
+                            <br></br>
+                            <Divider></Divider>
+                            <br></br>
+                        <User1>
+                            <p>Slow burn or Death of me?</p>
+                            <p>15,837</p>
+                            <p>19,746</p>
+                            <img src= {profile3} alt="Profile 1" />
+                            <p>1 second ago</p>
+                        </User1>
+
+                        <User2>
+                            <p>Debate of the century: Which trope is the best?</p>
+                            <p>15,876</p>
+                            <p>19,348</p>
+                            <img src= {profile4} alt="Profile 2" />
+                            <p>1 hour ago</p>
+                        </User2>
+                        <User3>
+                            <p>Heart vs Mind?</p>
+                            <p>9,876</p>
+                            <p>10,532</p>
+                            <img src= {profile1} alt="Profile 3" />
+                            <p>1 day ago</p>
+                        </User3>
+                        <User4>
+                            <p>Do you believe in destiny or fate?</p>
+                            <p>15,927</p>
+                            <p>20,349</p>
+                            <img src= {profile2} alt="Profile 4" />
+                            <p>10 hours ago</p>
+                        </User4>      
+                        <h6>Load more topics</h6>
+                    </BookContent>
+                </BookCard>
+
+                <BookCard>
+                    <img src= {bookforum4} alt="Book Forum 4" />
+                    <BookContent>
+                        <br></br>
+                        <ForumHeading>
+                            <Horizontal>Topics</Horizontal>
+                            <Horizontal>Replies</Horizontal>
+                            <Horizontal>Views</Horizontal>
+                            <Horizontal>User</Horizontal>
+                            <Horizontal>Date</Horizontal>
+                        </ForumHeading>
+                            <br></br>
+                            <Divider></Divider>
+                            <br></br>
+                        <User1>
+                            <p>What would you do if that happened to you?</p>
+                            <p>15,345</p>
+                            <p>22,247</p>
+                            <img src= {profile4} alt="Profile 1" />
+                            <p>1 minute ago</p>
+                        </User1>
+
+                        <User2>
+                            <p>What is love worth?</p>
+                            <p>23,647</p>
+                            <p>49,239</p>
+                            <img src= {profile1} alt="Profile 2" />
+                            <p>1 hour ago</p>
+                        </User2>
+                        <User3>
+                            <p>Best chapters?</p>
+                            <p>1,934</p>
+                            <p>2,437</p>
+                            <img src= {profile2} alt="Profile 3" />
+                            <p>1 day ago</p>
+                        </User3>
+                        <User4>
+                            <p>Male author or Female author</p>
+                            <p>12,842</p>
+                            <p>31,236</p>
+                            <img src= {profile3} alt="Profile 4" />
+                            <p>15 days ago</p>
+                        </User4>      
+                        <h6>Load more topics</h6>
+                    </BookContent>
+                </BookCard>
             </BookForumContainter>
             </BFContainerRow>
             
