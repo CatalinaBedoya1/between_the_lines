@@ -213,12 +213,6 @@ const EventsPage = () => {
     </LocalEventsContainer>
     </EventsPageContainer>
     </div>
-
-
-
-
-
-
   )
 }
 
