@@ -11,8 +11,9 @@ import WordLoopAnimation from '../components/WordLoopAnimation';
 import './Discussions.css';
 
 const DiscussionHeaderContainer = styled.div`
+padding-top: 80px;
     position: relative;
-    height: 450px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center; 

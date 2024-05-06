@@ -72,6 +72,7 @@ const EventsSignup = () => {
 export default EventsSignup;
 
 const EventsHeroContainer = styled.div`
+  padding-top: 80px;
   position: relative;
   width: 100%;
   height: 370px;
@@ -141,6 +142,7 @@ const EventsButton = styled.button`
 
 const EventsSignupContainer = styled.div`
     justify-width: center;
+    padding-top: 80px;
 `;
 
 //end of hero//

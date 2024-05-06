@@ -233,12 +233,14 @@ export const EventsComplete = () => {
   };
 
   const EventsPageContainer = styled.div`
-  height: 1670px;
+  padding-top: 80px;
+  height: 1700px;
   width: auto;
   `;
   
 
 const EventsHeroContainer = styled.div`
+
   position: relative;
   width: 100%;
   height: 370px;

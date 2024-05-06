@@ -45,7 +45,7 @@ const AboutUsData = [
     image: ReyaGroup,
     name: "<( Reya )>",
     founder: "Co-Founder",
-    jobtitle: "BackEnd Developer",
+    jobtitle: "FrontEnd Developer",
     description: "I started this project to show my love for books and help others explore other worlds through pages. Personally, every time I fell in love with a book I wanted to find other similar kinds of books but finding those types were hard and there weren't any good recommendations places that would help me. P.S. don't ever judge a book by its cover!",
   },
 ];
@@ -167,6 +167,7 @@ export default AboutUs;
 
 
 const AboutUsHeroContainer = styled.div`
+  padding-top: 80px;
   position: relative;
   width: 100%;
   height: 500px;

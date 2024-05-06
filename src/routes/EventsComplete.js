@@ -124,6 +124,7 @@ const EventsButton = styled.button`
 const EventsCompleteContainer = styled.div`
   display:
     justify-width: center;
+    padding-top: 80px;
 `;
 
 const CompTitle = styled.h1`

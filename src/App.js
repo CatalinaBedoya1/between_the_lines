@@ -27,6 +27,9 @@ import './App.css';
 toast.configure();
 
 function App () {
+  //functions for our loading screen (dont modify when you add design)
+ 
+ 
   const checkAuthenticated = async () => {
     try {
       const res = await fetch("http://localhost:4000/authentication/verify", {
@@ -50,6 +53,8 @@ function App () {
   const setAuth = boolean => {
     setIsAuthenticated(boolean);
   };
+
+  
 
   return (
     <div className="container">
@@ -82,6 +87,8 @@ function App () {
     </div>
   );
 }
+
+
 
 const AppLayout = () => (
   <>
