@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
 //import EventsHeroImg2 from '../assets/EventsHeroImg2.png';
 import { Link } from 'react-router-dom';
-import onlineevent1 from '../assets/onlineevent1.png';
-import onlineevent2 from '../assets/onlineevent2.png';
+import onlineevent1 from '../assets/KingOfSloth.png';
+import onlineevent2 from '../assets/LoveOnTheBrain.png';
 import eventprofile1 from '../assets/profile1.png';
 import eventprofile2 from '../assets/profile2.png';
-import localevent1 from '../assets/localevent1.png';
-import localevent2 from '../assets/localevent2.png';
-import localevent3 from '../assets/localevent3.png';
+import localevent1 from '../assets/LocalEvent1.png';
+import localevent2 from '../assets/LocalEvent2.png';
+import localevent3 from '../assets/LocalEvent3.png';
 import calendar from '../assets/calendar.png';
 import heart from '../assets/redhearticon.png';
 
@@ -358,7 +358,7 @@ const OnlineDivider = styled.div`
 
 const Register = styled.div`
   display:flex;
-  justify-content: space-between
+  justify-content: space-between;
 `;
 
 const LRegister = styled.div`
@@ -370,7 +370,7 @@ const LRegister = styled.div`
 
 const ERegisterButton = styled.div`
   padding: 3px 20px;
-  background-color: #95B9B4; 
+  background-color: #F68AAF; 
   color: white;
   border: none;
   border-radius: 50px;
@@ -380,7 +380,7 @@ const ERegisterButton = styled.div`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #6D8985; 
+    background-color: #CD6F90; 
   }
 `;
 
@@ -415,7 +415,8 @@ const LocalEventsContainer = styled.div`
 `;
 
 const LocalCard = styled.div`
-  border: 3px solid black;
+  border: 2px solid;
+  border-color: #AEB5C0;
   margin: 10px;
   width: 350px;
   height: 455px;

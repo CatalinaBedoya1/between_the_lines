@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
-import TwistedBox from '../assets/TwistedLoveBox.png';
+import KingOfSlothBox from '../assets/KingOfSlothbox.png';
 import SocialIcons from '../assets/social icons.png';
 
 const EventsSignup = () => {
@@ -47,7 +47,7 @@ const EventsSignup = () => {
             </Link>
             </PIContainer>
               <EventSummaryContainer>
-                <EventDetailsImg src={TwistedBox} alt="BookEventImage" />
+                <EventDetailsImg src={KingOfSlothBox} alt="BookEventImage" />
                   <EventText>
                   <h2>Webinar with </h2>
                   <h2>author, Ana Huang!</h2>
@@ -239,6 +239,12 @@ const ERegisterButton = styled.button`
   color: white;
   font-size: 18px;
   cursor: pointer;
+
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #CD6F90; 
+  }
 `;
 
 const EventSummaryContainer = styled.div`
@@ -253,7 +259,7 @@ const EventDetailsImg = styled.img`
   padding-left: 100px;
   z-index; -1;
   width: 450px;
-  height: 650px;
+  height: 680px;
 `;
 
 const EventText = styled.div`
@@ -261,7 +267,7 @@ const EventText = styled.div`
   position: absolute;
   flex-direction: column;
   z-index: 1;
-  margin-top: 390px;
+  margin-top: 410px;
   margin-left: 170px;
   font-size: 18px;
   color: white;

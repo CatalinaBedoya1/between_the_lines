@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Confetti from 'react-confetti';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
@@ -8,6 +9,7 @@ import heart from '../assets/redhearticon.png';
 import AnaHuang from '../assets/AnaHuang.png';
 
 const EventsComplete=() =>{
+  const[showConfetti, setShowConfetti] = useState(true);
     return(
         <EventsCompleteContainer>
         <EventsHeroContainer>
@@ -30,6 +32,7 @@ const EventsComplete=() =>{
         </CompTitle>
         
         <MidCompleteContainer>
+        
         <BookPicContainer>
         <TwistedBoxPic src={KingOfSlothBox} alt="BookEventImage"/>
         <ShareText>Share this event</ShareText>
@@ -61,6 +64,8 @@ const EventsComplete=() =>{
             <ECDescription>
               <ECText>
               <p>Join us as we talk with #1 New York Times Bestselling Author of the "Twisted" series about her upcoming release of "King of Sloth".</p>
+              <br></br>
+              <p1>"The greatest gift we have is time. Use it wisely."</p1>
               </ECText>
             </ECDescription>
             <ECNextSteps>
@@ -70,11 +75,15 @@ const EventsComplete=() =>{
               <p>3. Join the event and enjoy!</p>
             </ECNextSteps>
         </CompleteInfoContainer>
-
         </MidCompleteContainer>
+      <Confetti>
+        {showConfetti && <Confetti />}
+      </Confetti>
         </EventsCompleteContainer>
     );
+  
 }
+
 
 export default EventsComplete;
 
@@ -273,6 +282,10 @@ const ECText = styled.p`
   line-height: 28px;
   margin-left: 50px;
   margin-right: 50px;
+
+  p1{
+    font-style: italic;
+  }
 `;
 
 const ECNextSteps = styled.div`
