@@ -11,7 +11,7 @@ import Community, { BookClubs } from './routes/Community';
 import Discussions from './routes/Discussions';
 import EventsPage from './routes/EventsPage';
 import EventsComplete from './routes/EventsComplete';
-import EventsSignup from './routes/eventsSignup';
+import EventsSignup from './routes/EventsSignup';
 import BookDetails from './routes/BookDetails';
 import Dashboard from './routes/Dashboard';
 import AboutUs from './routes/AboutUs';
@@ -27,6 +27,9 @@ import './App.css';
 toast.configure();
 
 function App () {
+  //functions for our loading screen (dont modify when you add design)
+ 
+ 
   const checkAuthenticated = async () => {
     try {
       const res = await fetch("http://localhost:4000/authentication/verify", {
@@ -83,6 +86,8 @@ function App () {
     </div>
   );
 }
+
+
 
 const AppLayout = () => (
   <>

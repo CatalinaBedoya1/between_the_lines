@@ -4,6 +4,10 @@ import styled from 'styled-components';
 
 
 const SidebarLink = styled(Link)`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 650;
+font-style: normal;
   display: flex;
   color: #FFF;
   justify-content: space-between;
@@ -26,6 +30,10 @@ const SidebarLabel = styled.span`
 `;
 
 const DropdownLink = styled(Link)`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
   background: #3e2d70;  /*dark teal blue */
   height: 60px;
   padding-left: 3rem;

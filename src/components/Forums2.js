@@ -86,13 +86,16 @@ const Forum2ArtSection = () => {
 export default Forum2ArtSection;
 
 const SeemorebuttonForum = styled.button `
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
 padding: 10px 40px;
     background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
     color: white;
     border: 3px solid #FFF;
     border-radius: 20px;
     font-size: 18px;
-    font-family: Roboto;
     cursor: pointer;
     transition: background-color 0.3s ease;
   

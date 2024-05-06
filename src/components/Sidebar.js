@@ -9,6 +9,7 @@ import { IconContext } from 'react-icons/lib';
 import BTLLogo from '../assets/BTLLogo.png'; 
 
 import './Navbar.css';
+import DarkModeToggle from './DarkModeToggle';
 
 const Nav = styled.div`
   background: #897ad5;
@@ -17,6 +18,9 @@ const Nav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed; /* Make the navbar fixed */
+  top: 0; /* Align it to the top of the screen */
+  z-index: 5; /* Ensure it remains on top */
 `;
 
 const Logo = styled.img`
@@ -48,7 +52,10 @@ const SidebarNav = styled.nav`
   `;
 
 const LoginButton = styled(Link)`
-  
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 650;
+font-style: normal;
   margin-right: 20px;
   font-size: 1.2rem;
   color: #fff;
@@ -89,6 +96,7 @@ const Sidebar = () => {
           </NavIcon>
           <Logo src={BTLLogo} alt="BTL Logo" /> 
           <LoginButton to="/login">Login</LoginButton>
+          <DarkModeToggle />
         </Nav>
         {isOpen && (
           <SidebarNav>
