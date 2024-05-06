@@ -25,14 +25,24 @@
 }
 
 .hero-content h1 {
+    font-family: "Agbalumo", system-ui;
+    font-weight: 400;
+    font-style: normal;
   font-size: 4rem;
 }
 
 .hero-content p {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 .HomeQuizbtn {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
   padding: 10px 30px;
   font-size: 1.2rem;
   background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
@@ -66,26 +76,30 @@
 
 
 .text-center {
+
   padding: 50px;
   margin-top: 60px;
   text-align: center;
   width: 20%; 
-  border: 2px solid #A08786; 
+  border: 2px solid #3E2D70; 
   position: relative;
 }
 .mission-header {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
   margin-top: 20px;
-  font-family: Arial, sans-serif; 
   font-size: 24px; 
-  font-weight: bold; 
-  color: #A08786;
+  color: #3E2D70;
 }
 
 .mission-text {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
   margin-top: 20px;
-  font-family: Arial, sans-serif; 
   font-size: 18px; /* Change to desired font size */
-  color: #A08786;
+  color: #3E2D70;
 }
 
 .msimg {
@@ -135,6 +149,9 @@
 }
 
 .BOTM-content h1 {
+  font-family: "Agbalumo", system-ui;
+  font-weight: 400;
+  font-style: normal;
   font-size: 3rem;
   right: 50px;
   margin-bottom: 35px;
@@ -142,6 +159,9 @@
 }
 
 .BOTM-content h2{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
   font-size: 2.75rem;
   margin-bottom: 5px;
   text-align: left;
@@ -149,11 +169,17 @@
 }
 
 .BOTM-content h3{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-size: 2rem;
   margin-left: 350px;
 }
 
 .BOTM-content p {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-size: 1.7rem;
   margin-bottom:5px;
   margin-left: -570px;
@@ -182,6 +208,9 @@
 
 .btn-2,
 .btn-3{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
   display: inline-block;
     padding: 10px 20px;
     font-size: 23px;
@@ -199,5 +228,6 @@
 .btn-3{
     background-color: #4281A4; 
     margin-left: 30px;
+    
 }
 

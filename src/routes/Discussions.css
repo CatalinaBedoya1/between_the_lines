@@ -1,55 +1,76 @@
 
 .booktok {
-      padding: 10px 60px;
-      background-color: #A6C6C1;
+      padding: 10px 10px;
+      background-color: #897AD5;
       color:rgb(235, 238, 237);
       display: inline-block;
-      padding: 10px 60px;
       text-align: center;
       border-radius: 50px;
 }
 .cliff-hanger {
-    padding: 10px 50px;
-    background-color: #5397AC;
+    padding: 10px 10px;
+    background-color: #F676A5;
     color: white;
     display: inline-block;
-    padding: 10px 60px;
     text-align: center;
     border-radius: 50px;
 }
 .historical {
-    padding: 10px 50px;
-    background-color: #BAA6A5;
+    padding: 10px 10px;
+    background-color: #F68AAF;
     color:rgb(255, 255, 255);
     display: inline-block;
-    padding: 10px 60px;
     text-align: center;
     border-radius: 50px;
 }
 .thriller {
-    padding: 10px 60px;
-    background-color: #5397AC;
+    padding: 10px 10px;
+    background-color: #F676A5;
     color: rgb(255, 255, 255);
     display: inline-block;
-    padding: 10px 60px;
     text-align: center;
     border-radius: 50px;
 }
 .horror {
-    background-color: #D3C698;
-    padding: 10px 50px;
+    background-color: #74C8F0;
+    padding: 10px 10px;
     color: white;
     display: inline-block;
-    padding: 10px 60px;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 40px;
 }
 .fantasy {
-    background-color: #A6C6C1;
-    padding: 10px 50px;
+    background-color: #897AD5;
+    padding: 10px 10px;
     color: white;
     display: inline-block;
-    padding: 10px 60px;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 40px;
+}
+.more {
+    background-color: #74C8F0;
+    padding: 10px 10px;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    border-radius: 40px;
+}
+.header {
+    margin-left: 60px;
+}
+.trending {
+    background-color: #B0507F;
+    padding: 10px 10px;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    border-radius: 40px;
+}
+.fiction {
+    background-color: #4281A4;
+    padding: 10px 10px;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    border-radius: 40px;
 }

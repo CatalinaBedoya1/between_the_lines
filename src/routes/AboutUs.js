@@ -15,35 +15,35 @@ import styled from 'styled-components';
 const AboutUsData = [
   {
     image: CatGroup,
-    name: "<{ Catalina }>",
+    name: "Catalina",
     founder: "Co-Founder",
     jobtitle: "Full Stack Developer",
     description: "When I’m not stressing over school, I love to grab a book and enter a different world. With the creation of Between The Lines, I hope more people can revisit this hobby in a fun, collaborative environment.",
   },
   {
     image: FranGroup,
-    name: " <[ Francesca ]>",
+    name: " Francesca",
     founder: "Co-Founder",
     jobtitle: "UX/UI and FrontEnd Developer",
     description: "After recently getting back into reading in the past two years, I’ve always been looking for new books to immerse myself into. My hope is that people will be able to connect with like-minded readers and share their mutual love for literature.",
   },
   {
     image: MaddyGroup,
-    name: "</ Madeline >",
+    name: "Madeline",
     founder: "Co-Founder",
     jobtitle: "UX/UI and FrontEnd Developer",
     description: "I started this project because wanted to create a community that cherishes storytelling, adventure, and fantasy. I love reading about Greek myths and adventures that inspired wonder and imagination. ",
   },
   {
     image: JustineGroup,
-    name: "<| Justine |>",
+    name: "Justine",
     founder: "Co-Founder",
     jobtitle: "FrontEnd Developer",
     description: "Freedom without any purpose feels a whole lot like boredom- Asano Ino. I am a big fan of graphic novels, Junji Ito and Inio Asano have my heart. I spend my free time playing videogames and making music.",
   },
   {
     image: ReyaGroup,
-    name: "<( Reya )>",
+    name: "Reya",
     founder: "Co-Founder",
     jobtitle: "FrontEnd Developer",
     description: "I started this project to show my love for books and help others explore other worlds through pages. Personally, every time I fell in love with a book I wanted to find other similar kinds of books but finding those types were hard and there weren't any good recommendations places that would help me. P.S. don't ever judge a book by its cover!",
@@ -76,9 +76,11 @@ const FlipCard = ({ image, name, founder, jobtitle, description}) => {
             >
               <img src={image} alt="pic"/>
               <AboutUsCardContent>
+                <AboutUsName>
                 <br></br>
                 <h2>{name}</h2>
-                <br></br>
+  
+                </AboutUsName>
                 <AboutUsTitle>
                 <CoFounder>{founder}</CoFounder>
                 <JobTitle>{jobtitle}</JobTitle>
@@ -91,12 +93,10 @@ const FlipCard = ({ image, name, founder, jobtitle, description}) => {
               onMouseLeave={handleMouseLeave}
             >
               <AboutUsCardContent2>
+              <AboutUsName>
                 <h2>{name}</h2>
                 <br></br>
-                <AboutUsTitle>
-                <CoFounder>{founder}</CoFounder>
-                <JobTitle>{jobtitle}</JobTitle>
-                </AboutUsTitle>
+                </AboutUsName>
                 <Quote>{description}</Quote>
               </AboutUsCardContent2>
             </BackAboutUsCard> 
@@ -174,7 +174,7 @@ const AboutUsHeroContainer = styled.div`
   padding-top: 100px;
   padding-left: 50px;
   
-  background-color: #9DBEBD;
+  background-color: #3E2D70;
 `;
 
 const AboutUsHeroImg = styled.img`
@@ -197,11 +197,17 @@ const AboutUsHeroContent = styled.div`
 `;
 
   const AHtitle = styled.div`
+  font-family: "Agbalumo", system-ui;
+  font-weight: 400;
+  font-style: normal;
     font-size: 45px;
   `;
 
   const AHdetails = styled.div`
-    font-size: 30px;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   `;
 
   const FeaturesContainer = styled.div`
@@ -232,6 +238,11 @@ const AboutUsHeroContent = styled.div`
   `;
 
   const FeatureContent = styled.div`
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  color:#3E2D70;
     display: flex;
     flex-direction: column;
     padding-left: 100px;
@@ -244,6 +255,7 @@ const AboutUsHeroContent = styled.div`
 
 
   const AboutUsContainer = styled.div`
+  
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -256,8 +268,12 @@ const AboutUsHeroContent = styled.div`
   `;
 
   const AboutUsIntroCard = styled.div`
+  font-family: "Agbalumo", system-ui;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 15px;
     border: 5px solid #9DBEBD;
-    padding-top: 100px;
+    padding-top: 40px;
     padding-left: 50px;
     padding-right: 40px;
     width: 350px;
@@ -268,6 +284,10 @@ const AboutUsHeroContent = styled.div`
   `;
 
   const IntroCardArrow =styled.div`
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
     display: flex;
     flex-direction: row;
     //justify-content:space-around;
@@ -305,31 +325,48 @@ const AboutUsHeroContent = styled.div`
       height: 250px;
     }
   `;
+  const AboutUsName =styled.div `
+  font-family: "Agbalumo", system-ui;
+  font-weight: 100;
+  font-style: normal;
+  color: #3E2D70;
+  `;
 
   const AboutUsCardContent =styled.div `
+
     color: #9DBEBD;    
     //background-color: green;
 
   `;
   const AboutUsCardContent2 =styled.div `
+  
   color: white;    
   //background-color: green;
 
 `;
 
   const AboutUsTitle =styled.div`
+  
     font-size: 40px;
     padding-top: 20px;
     //background-color: blue;
   `;
   const CoFounder = styled.div`
-    font-size: 20px;
-    padding-bottom:15px;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+    font-size: 15px;
+    padding-bottom:10px;
     //background-color:red;
   `;
 
   const JobTitle =styled.div`
-    font-size: 20px;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
   `;
 
 
@@ -345,8 +382,13 @@ const AboutUsHeroContent = styled.div`
   `;
 
   const Quote = styled.div`
-    padding: 50px;
-    font-size: 17px;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color:#3E2D70;
+    padding: 25px;
+    font-size: 20px;
   `;
 
 

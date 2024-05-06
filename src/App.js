@@ -54,7 +54,6 @@ function App () {
     setIsAuthenticated(boolean);
   };
 
-  
 
   return (
     <div className="container">

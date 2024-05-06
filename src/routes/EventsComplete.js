@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
-import TwistedBox from '../assets/TwistedLove.png';
+import KingOfSlothBox from '../assets/KingOfSloth.png';
 import SocialIcons from '../assets/social icons.png';
 import heart from '../assets/redhearticon.png';
-import './EventsComplete.css';
+import AnaHuang from '../assets/AnaHuang.png';
 
 const EventsComplete=() =>{
     return(
@@ -31,7 +31,7 @@ const EventsComplete=() =>{
         
         <MidCompleteContainer>
         <BookPicContainer>
-        <TwistedBoxPic src={TwistedBox} alt="BookEventImage"/>
+        <TwistedBoxPic src={KingOfSlothBox} alt="BookEventImage"/>
         <ShareText>Share this event</ShareText>
                     <ShareIcons>
                       <img src = {SocialIcons} alt= "Social Media Icons"/>
@@ -40,11 +40,35 @@ const EventsComplete=() =>{
         
         <CompleteInfoContainer>
             <ECTitle>Webinar with author, Ana Huang!</ECTitle>
+            <Row1Info>
             <p>2,345 views</p>
             <HeartIcon>
-              <p>133</p>
+              <p2>133</p2>
               <img src= {heart} alt="red heart icon" />
             </HeartIcon>
+            </Row1Info>
+            <ECAuthor>
+            <img src={AnaHuang} alt = "Ana Huang img" />
+            <ECAuthorInfo>
+            <h3>Ana Huang</h3>
+            <p>Ana Huang is a New York Times, USA Today, international, and #1 Amazon bestselling author.</p>
+            <p>Her work includes: </p>
+            <p>- The Twisted Series</p>
+            <p>- The Kings of Sin Series</p>
+            <p>- The If Love Series</p>
+            </ECAuthorInfo>
+            </ECAuthor>
+            <ECDescription>
+              <ECText>
+              <p>Join us as we talk with #1 New York Times Bestselling Author of the "Twisted" series about her upcoming release of "King of Sloth".</p>
+              </ECText>
+            </ECDescription>
+            <ECNextSteps>
+              <h3>Next Steps</h3>
+              <p>1. Keep a look out for an email containing a link to join</p>
+              <p>2. Save the date and mark your calendar</p>
+              <p>3. Join the event and enjoy!</p>
+            </ECNextSteps>
         </CompleteInfoContainer>
 
         </MidCompleteContainer>
@@ -128,6 +152,9 @@ const EventsCompleteContainer = styled.div`
 `;
 
 const CompTitle = styled.h1`
+font-family: "Agbalumo", system-ui;
+font-weight: 400;
+font-style: normal;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -136,6 +163,7 @@ const CompTitle = styled.h1`
 `;
 
 const MidCompleteContainer = styled.div`
+
   display: flex;
 `;
 const BookPicContainer = styled.div`
@@ -155,6 +183,11 @@ height: auto;
 `;
 
 const ShareText = styled.h1`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
+font-size: 15px;
   font-size: 30px;
   margin-top: 10px;
   margin-left: 220px;
@@ -168,6 +201,11 @@ const ShareIcons = styled.div`
   margin-bottom: 40px;
 `;
  const CompleteInfoContainer = styled.div`
+ font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
+font-size: 15px;
     display: flex;
     flex-direction: column;
     background-color: #F68AAF;
@@ -185,17 +223,80 @@ const ShareIcons = styled.div`
 
  const ECTitle = styled.h1`
     color: white;
-    margin-top: 30px;
+    margin-top: 50px;
+ `;
+
+ const Row1Info = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  font-size: 20px;
+
+  p{
+    margin-right: 130px;
+  }
  `;
 
  const HeartIcon = styled.div`
   display: flex;
   flex-direction: row;
   color: white;
+
+  p2{
+    margin-left: 130px;
+  }
   
   img {
     padding-left: 10px;
     width: 30px;
     height: 20px;
   }
+`;
+
+const ECAuthor = styled.div`
+display: flex;
+margin-top: 30px;
+
+img{
+  margin-left: 40px;
+  width: auto;
+  height: 180px;;
+}
+`;
+
+const ECAuthorInfo = styled.div`
+font-size: 20px;
+line-height: 28px;
+margin-right: 40px;
+
+h3{
+  color: white;
+  line-height: 30p
+}
+
+p{
+  margin-left: 20px;
+}
+`;
+
+const ECDescription = styled.div`
+  display: flex;
+`;
+const ECText = styled.p`
+  margin-top: 30px;
+  font-size: 22px;
+  line-height: 28px;
+  margin-left: 50px;
+  margin-right: 50px;
+`;
+
+const ECNextSteps = styled.div`
+color: white;
+font-size: 22px;
+line-height: 30px;
+
+h3{
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
 `;

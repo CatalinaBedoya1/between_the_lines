@@ -29,13 +29,21 @@
   }
   
   .BD-content h1 {
+    font-family: "Agbalumo", system-ui;
+    font-weight: 400;
+    font-style: normal;
     font-size: 3rem;
     right: 50px;
     margin-bottom: 35px;
     margin-left: 150px;
   }
   
-  .BD-content h2{
+  .BD-content h2{  
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    
     font-size: 2.75rem;
     margin-bottom: 5px;
     text-align: left;
@@ -43,11 +51,16 @@
   }
   
   .BD-content h3{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
     font-size: 2rem;
     margin-left: 350px;
   }
   
   .BD-content p {
+    
     font-size: 1.7rem;
     margin-bottom:5px;
     margin-left: -570px;
@@ -76,6 +89,7 @@
   }
   
   .BD-description{
+   
     position:relative;
     margin-right: 50px;
     margin-top: 30px; /* Adjust as needed */
@@ -85,7 +99,12 @@
     margin:0;
   }
 
-  .BD-description p{
+  .BD-description p{ 
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #3E2D70;
     font-size: 1.0rem;
     margin-bottom: 5px;
     text-align: center;
@@ -95,6 +114,10 @@
   }
 
   .WTRBtn{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
     position:absolute;
     top: 435px;
     right: 150px;
@@ -114,6 +137,7 @@
 }
 
 .BD-info{
+
   position:absolute;
   top: 500px;
   right: 115px;
@@ -129,8 +153,13 @@
 }
 
 .BD-info p{
-  color:#897AD5;
-  font-size: 1.2rem;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: #3E2D70;
+
+  font-size: 20px;
   text-align: right;
   padding-bottom: 10px;
 }

@@ -258,6 +258,8 @@ object-fit: cover;
 
 
 const EHTitle = styled.h1`
+  
+
    /* Add margin bottom to create spacing */
   font-size: 83px;
   font-family: "Pacifico", cursive;
@@ -284,6 +286,7 @@ color: #3e2d70;
 `;
 
 const EventsContent = styled.div`
+
   position: absolute;
   top: 50%;
   left: 0;
@@ -293,6 +296,14 @@ const EventsContent = styled.div`
 `;
 
 const EventsButton = styled.button`
+
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+
+
+
   padding: 10px 40px;
   margin-top: 10px;
   background-color: #f68aaf; 
@@ -300,7 +311,7 @@ const EventsButton = styled.button`
   border: none;
   border-radius: 50px;
   font-size: 18px;
-  font-family: Kaisei Opti;
+
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -312,11 +323,21 @@ const EventsButton = styled.button`
 
 
 const EventName = styled.div`
+font-family: "Agbalumo", system-ui;
+font-weight: 400;
+font-style: normal;
+color: #3E2D70;
   padding-left: 40px;
   padding-top: 20px;
 `;
 
 const OEContainerRow = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
+font-size: 15px;
   display: flex;
   flex-direection: row;
   //background-color: pink;
@@ -371,6 +392,11 @@ const LRegister = styled.div`
 `;
 
 const ERegisterButton = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
   padding: 3px 20px;
   background-color: #95B9B4; 
   color: white;
@@ -430,6 +456,12 @@ const LocalCard = styled.div`
 `;
 
 const LocalContent = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color:#3E2D70;
+font-size: 13px;
   padding: 10px;
 `;
 

@@ -146,6 +146,9 @@ export default BookSlider;
 const RecommendationSection = styled.div`
     text-align: left;
     color: white;
+    font-family: "Agbalumo", system-ui;
+    font-weight: 400;
+    font-style: normal;
 `;
 
 const DashContainer = styled.div`
@@ -221,6 +224,10 @@ const DashCard = styled.div`
 `;
 
 const HoverOverlay = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 200;
+font-style: normal;
     position: absolute;
     top: 0;
     left:  calc(100% + 35px);
@@ -245,7 +252,7 @@ const HoverOverlay = styled.div`
 `;
 
 const HoverText =styled.div`
-    font-size: 15px;
+    font-size: 14px;
 `;
 
 const HoverLink =styled.div`
