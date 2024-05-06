@@ -9,7 +9,7 @@ import { IconContext } from 'react-icons/lib';
 import BTLLogo from '../assets/BTLLogo.png'; 
 
 import './Navbar.css';
-import DarkModeToggle from './DarkModeToggle';
+
 
 const Nav = styled.div`
   background: #897ad5;
@@ -96,7 +96,7 @@ const Sidebar = () => {
           </NavIcon>
           <Logo src={BTLLogo} alt="BTL Logo" /> 
           <LoginButton to="/login">Login</LoginButton>
-          <DarkModeToggle />
+        
         </Nav>
         {isOpen && (
           <SidebarNav>
