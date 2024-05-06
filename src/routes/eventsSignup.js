@@ -88,6 +88,7 @@ object-fit: cover;
 `;
 
 const EHTitle = styled.h1`
+
    /* Add margin bottom to create spacing */
   font-size: 83px;
   font-family: "Pacifico", cursive;
@@ -145,6 +146,10 @@ const EventsSignupContainer = styled.div`
 
 //end of hero//
 const RegTitle = styled.div`
+
+font-family: "Agbalumo", system-ui;
+font-weight: 400;
+font-style: normal;
     font-size: 25px;
     text-align: center;
     color: #3E2D70;
@@ -152,6 +157,10 @@ const RegTitle = styled.div`
 `;
 
 const MidEventsContainer = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
     display: flex;
     justify-width: center;
 `;
@@ -191,11 +200,14 @@ const InputTitle1 = styled.p`
 `;
 
 const Input = styled.input`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
   border: 1.5px solid #9D9D9D;
   border-radius: 5px;
   height: 40px;
   font-size: 1.1rem;
-  font-family: Roboto;
   width: 700px;
   padding: 10px;
   margin-left: 10px;
@@ -230,6 +242,10 @@ const InputTitle5 = styled.p`
 `;
 
 const ERegisterButton = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
   padding: 10px 40px;
   margin-top: 50px;
   margin-left: 340px;

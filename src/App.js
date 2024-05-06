@@ -11,7 +11,7 @@ import Community, { BookClubs } from './routes/Community';
 import Discussions from './routes/Discussions';
 import EventsPage from './routes/EventsPage';
 import EventsComplete from './routes/EventsComplete';
-import EventsSignup from './routes/eventsSignup';
+import EventsSignup from './routes/EventsSignup';
 import BookDetails from './routes/BookDetails';
 import Dashboard from './routes/Dashboard';
 import AboutUs from './routes/AboutUs';

@@ -48,7 +48,10 @@ const SidebarNav = styled.nav`
   `;
 
 const LoginButton = styled(Link)`
-  
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 650;
+font-style: normal;
   margin-right: 20px;
   font-size: 1.2rem;
   color: #fff;

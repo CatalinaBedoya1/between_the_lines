@@ -19,6 +19,7 @@ import bookforum3 from '../assets/forumbook3.png';
 import bookforum4 from '../assets/forumbook4.png';
 
 const DiscussionHeaderContainer = styled.div`
+
     position: relative;
     height: 450px;
     display: flex;
@@ -27,6 +28,7 @@ const DiscussionHeaderContainer = styled.div`
 `;
 
 const DiscussionBackgroundImage = styled.div`
+
     position: absolute;
     top: 0;
     left: 0;
@@ -40,6 +42,7 @@ const DiscussionBackgroundImage = styled.div`
 `;
 
 const DiscussionContentContainer = styled.div`
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,6 +51,7 @@ const DiscussionContentContainer = styled.div`
 `;
 
 const DiscussionTopContent = styled.div`
+
     display: flex;
     align-items: center;
     margin-bottom: 0px;
@@ -76,6 +80,7 @@ const DisRightImage = styled.img`
 `;
 
 const DiscussionSearchBarContainer = styled.div`
+
     display: flex;
     align-items: center;
     position: relative;
@@ -85,13 +90,16 @@ const DiscussionSearchBarContainer = styled.div`
 `;
 
 const DiscussionInput = styled.input`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
     width: 500px;
     border: 1px solid #ccc;
     padding: 10px 50px ;
     border-radius: 30px;
     height: 50px;
     font-color: #3F3C3C;
-    font-family: Inter;
 `;
 
 const SearchIcon = styled.div`
@@ -101,16 +109,23 @@ const SearchIcon = styled.div`
 `;
 
 const PopularTopicsText = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
     font-size: 16px;
-    font-family: Roboto;
     color: white;
     z-index: 1;
     margin-top: -100px;
     margin-right: 30px;
 `;
 const DiscussionTitle = styled.h1`
+
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   font-size: 40px;
-  font-family: Roboto;
   font-weight: bold;
   color: white; 
   z-index: 2;
@@ -122,10 +137,22 @@ const DiscussionTitle = styled.h1`
 `;
 
 const Text = styled.span`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   margin-right: 10px; 
   font-size: 40px;
-  font-family: Roboto;
   
+`;
+
+const Text2 = styled.span`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+  margin-right: 10px; 
+  font-size: 20px;
 `;
 
 const Discussions = () => {
@@ -159,11 +186,13 @@ const Discussions = () => {
             <div> 
                 <span style={{ marginRight: '20px' }}>
                 <header style={{ marginLeft: '10px' }}>
+                    <Text2>
                     View All
                     <Link to="/discussions/trending"> <button className="trending">Trending</button></Link>
                     Book of the Month
                     Trending
                     User Feedback
+                    </Text2>
                         <OnlineDivider></OnlineDivider>
                 </header> 
                 </span>
@@ -390,15 +419,24 @@ const Discussions = () => {
 };
 
 const ForumName = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   padding-left: 40px;
   padding-top: 20px;
 `;
 const BFContainerRow= styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   display: flex;
   flex-direection: row;
   //background-color: pink;
 `;
 const BookForumContainter = styled.div`
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;

@@ -18,6 +18,9 @@
 }
 
 .footer-left p {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
   margin: 4px;
   font-size: 16px;
   color: #FFFFFF;
@@ -81,11 +84,17 @@
   display: flex; /* Add this line */
   flex-direction: column; 
 }
-.get-updates h1 {
+.get-updates h1 {  
+  font-family: "Agbalumo", system-ui;
+  font-weight: 400;
+  font-style: normal;
   font-size: 36px;
   margin-bottom: 20px;
 }
 .get-updates p {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
   font-size: 16px;
   margin-bottom: 5px;
 }

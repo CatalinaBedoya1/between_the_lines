@@ -24,6 +24,10 @@
 }
 
 .hero-community-content {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
   position: absolute;
   top: 50%;
   left: 25%;

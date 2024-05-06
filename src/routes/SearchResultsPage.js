@@ -19,7 +19,7 @@ import forumSquare8 from '../assets/forumSquare8.png';
 import CarouselImg1 from '../assets/CarouselImg1.png';
 import CarouselImg2 from '../assets/CarouselImg2.png';
 import CarouselImg3 from '../assets/CarouselImg3.png';
-import SearchbackgroundImg from '../assets/SearchbackgroundImg.png';
+//import SearchbackgroundImg from '../assets/SearchbackgroundImg.png';
 //carousel 
 const CarouselHeader = styled.div`
   position: relative;
