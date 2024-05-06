@@ -95,6 +95,7 @@ const Sidebar = () => {
           </NavIcon>
           <Logo src={BTLLogo} alt="BTL Logo" /> 
           <LoginButton to="/login">Login</LoginButton>
+        
         </Nav>
         {isOpen && (
           <SidebarNav>
