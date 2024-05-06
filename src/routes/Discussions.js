@@ -160,7 +160,8 @@ const Discussions = () => {
                 <span style={{ marginRight: '20px' }}>
                 <header style={{ marginLeft: '10px' }}>
                     View All
-                    <Link to="/discussions/trending"> <button className="trending">Trending</button></Link>
+                    <Discussionsbuttons> 
+                        <Link to="/discussions/trending"> <button className="trending">Trending</button></Link> </Discussionsbuttons>
                     Book of the Month
                     Trending
                     User Feedback
@@ -171,6 +172,7 @@ const Discussions = () => {
             <div>
             <div className='btns-discussion-genres'>
             <header>Filter: </header>
+            <Discussionsbuttons>
                     <Link to="/discussions/thriller"> <button className="thriller"> Thriller </button> </Link>
                     <Link to="/discussions/booktok"> <button className="booktok">Booktok </button> </Link>
                     <Link to="/discussions/horror"> <button className="horror">Horror </button> </Link>
@@ -178,6 +180,7 @@ const Discussions = () => {
                     <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
                     <Link to="/discussions/historical"> <button className="historical">Historical </button> </Link>
                     <Link to="/discussions/more"> <button className="more">+</button> </Link> 
+            </Discussionsbuttons>
             </div>
             <ForumName>
             <h1> Trending Forums</h1>
@@ -191,8 +194,10 @@ const Discussions = () => {
                         <h4>IF YOU COULD SEE THE SUN</h4>
                         <h4>ANN LIANG</h4>
                         <br></br>
+                        <Discussionsbuttons>
                         <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
                         <Link to="/discussions/fiction"> <button className="fiction">Fiction </button> </Link>
+                        </Discussionsbuttons>
                         <br></br>
                         <br></br>
                         <ForumHeading>
@@ -383,8 +388,6 @@ const Discussions = () => {
             
 
              </div> 
-               {
-           <CreatePost /> } 
         </div>
     );
 };
@@ -392,18 +395,18 @@ const Discussions = () => {
 const ForumName = styled.div`
   padding-left: 40px;
   padding-top: 20px;
+  text: agbalumo;
 `;
 const BFContainerRow= styled.div`
   display: flex;
   flex-direection: row;
-  //background-color: pink;
 `;
 const BookForumContainter = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding-left: 100px;
-
+  height: 1700px;
   //background-color: blue;
 
 `;
@@ -459,6 +462,10 @@ const User3 = styled.div`
 const User4 = styled.div`
     display: flex;
     justify-content: space-between;
+`;
+const Discussionsbuttons = styled.div`
+     display: flex;
+     gap: 10px;
 `;
 export default Discussions;
 

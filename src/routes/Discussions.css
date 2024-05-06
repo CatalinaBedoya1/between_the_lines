@@ -3,7 +3,6 @@
       padding: 10px 10px;
       background-color: #897AD5;
       color:rgb(235, 238, 237);
-      display: inline-block;
       text-align: center;
       border-radius: 50px;
 }
@@ -11,7 +10,6 @@
     padding: 10px 10px;
     background-color: #F676A5;
     color: white;
-    display: inline-block;
     text-align: center;
     border-radius: 50px;
 }
@@ -19,7 +17,6 @@
     padding: 10px 10px;
     background-color: #F68AAF;
     color:rgb(255, 255, 255);
-    display: inline-block;
     text-align: center;
     border-radius: 50px;
 }
@@ -27,7 +24,6 @@
     padding: 10px 10px;
     background-color: #F676A5;
     color: rgb(255, 255, 255);
-    display: inline-block;
     text-align: center;
     border-radius: 50px;
 }
@@ -35,7 +31,6 @@
     background-color: #74C8F0;
     padding: 10px 10px;
     color: white;
-    display: inline-block;
     text-align: center;
     border-radius: 40px;
 }
@@ -43,7 +38,6 @@
     background-color: #897AD5;
     padding: 10px 10px;
     color: white;
-    display: inline-block;
     text-align: center;
     border-radius: 40px;
 }
@@ -51,7 +45,6 @@
     background-color: #74C8F0;
     padding: 10px 10px;
     color: white;
-    display: inline-block;
     text-align: center;
     border-radius: 40px;
 }
@@ -62,7 +55,6 @@
     background-color: #B0507F;
     padding: 10px 10px;
     color: white;
-    display: inline-block;
     text-align: center;
     border-radius: 40px;
 }
@@ -70,7 +62,6 @@
     background-color: #4281A4;
     padding: 10px 10px;
     color: white;
-    display: inline-block;
     text-align: center;
     border-radius: 40px;
 }
