@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Confetti from 'react-confetti';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
@@ -8,6 +9,7 @@ import heart from '../assets/redhearticon.png';
 import AnaHuang from '../assets/AnaHuang.png';
 
 const EventsComplete=() =>{
+  const[showConfetti, setShowConfetti] = useState(true);
     return(
         <EventsCompleteContainer>
         <EventsHeroContainer>
@@ -30,6 +32,7 @@ const EventsComplete=() =>{
         </CompTitle>
         
         <MidCompleteContainer>
+        
         <BookPicContainer>
         <TwistedBoxPic src={KingOfSlothBox} alt="BookEventImage"/>
         <ShareText>Share this event</ShareText>
@@ -48,7 +51,7 @@ const EventsComplete=() =>{
             </HeartIcon>
             </Row1Info>
             <ECAuthor>
-            <img src={AnaHuang} alt = "Ana Huang photo" />
+            <img src={AnaHuang} alt = "Ana Huang img" />
             <ECAuthorInfo>
             <h3>Ana Huang</h3>
             <p>Ana Huang is a New York Times, USA Today, international, and #1 Amazon bestselling author.</p>
@@ -61,6 +64,8 @@ const EventsComplete=() =>{
             <ECDescription>
               <ECText>
               <p>Join us as we talk with #1 New York Times Bestselling Author of the "Twisted" series about her upcoming release of "King of Sloth".</p>
+              <br></br>
+              <p1>"The greatest gift we have is time. Use it wisely."</p1>
               </ECText>
             </ECDescription>
             <ECNextSteps>
@@ -70,11 +75,15 @@ const EventsComplete=() =>{
               <p>3. Join the event and enjoy!</p>
             </ECNextSteps>
         </CompleteInfoContainer>
-
         </MidCompleteContainer>
+      <Confetti>
+        {showConfetti && <Confetti />}
+      </Confetti>
         </EventsCompleteContainer>
     );
+  
 }
+
 
 export default EventsComplete;
 
@@ -148,9 +157,13 @@ const EventsButton = styled.button`
 const EventsCompleteContainer = styled.div`
   display:
     justify-width: center;
+    padding-top: 80px;
 `;
 
 const CompTitle = styled.h1`
+font-family: "Agbalumo", system-ui;
+font-weight: 400;
+font-style: normal;
   text-align: center;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -159,6 +172,7 @@ const CompTitle = styled.h1`
 `;
 
 const MidCompleteContainer = styled.div`
+
   display: flex;
 `;
 const BookPicContainer = styled.div`
@@ -178,6 +192,11 @@ height: auto;
 `;
 
 const ShareText = styled.h1`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
+font-size: 15px;
   font-size: 30px;
   margin-top: 10px;
   margin-left: 220px;
@@ -191,6 +210,11 @@ const ShareIcons = styled.div`
   margin-bottom: 40px;
 `;
  const CompleteInfoContainer = styled.div`
+ font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
+font-size: 15px;
     display: flex;
     flex-direction: column;
     background-color: #F68AAF;
@@ -273,6 +297,10 @@ const ECText = styled.p`
   line-height: 28px;
   margin-left: 50px;
   margin-right: 50px;
+
+  p1{
+    font-style: italic;
+  }
 `;
 
 const ECNextSteps = styled.div`

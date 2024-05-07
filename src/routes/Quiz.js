@@ -485,8 +485,9 @@ const slideIn = keyframes`
 
 
 const Container = styled.div`
+padding-top: 80px;
   max-width: auto;
-  height: 100vh; /* Set height to fill the viewport */
+  height: 800px; /* Set height to fill the viewport */
   display: flex;
   flex-direction: column;
   justify-content: center;

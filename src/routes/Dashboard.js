@@ -8,6 +8,7 @@ import './Dashboard.css';
 import Sidebar from "../components/Sidebar"; // Import Sidebar component
 import Footer from "../components/Footer";
 
+
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
 

@@ -23,11 +23,12 @@ const TakeOurQuiz = () => {
     };
 
     const Container = styled.div`
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 700px;
+    height: 800px;
     background-image: url(${QuizBgImg}); // Set the background image
   background-size: cover;
   `;
@@ -56,7 +57,7 @@ const TakeOurQuiz = () => {
   `;
   const QuizImageContainer = styled.div`
     position: relative;
-    margin-bottom: 17px;
+    margin-bottom: 0px;
 `;
 
   const QuizImage = styled.img`

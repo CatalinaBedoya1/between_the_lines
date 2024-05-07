@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
-import TwistedBox from '../assets/TwistedLoveBox.png';
+import KingOfSlothBox from '../assets/KingOfSlothbox.png';
 import SocialIcons from '../assets/social icons.png';
 
 const EventsSignup = () => {
@@ -47,7 +47,7 @@ const EventsSignup = () => {
             </Link>
             </PIContainer>
               <EventSummaryContainer>
-                <EventDetailsImg src={TwistedBox} alt="BookEventImage" />
+                <EventDetailsImg src={KingOfSlothBox} alt="BookEventImage" />
                   <EventText>
                   <h2>Webinar with </h2>
                   <h2>author, Ana Huang!</h2>
@@ -72,6 +72,7 @@ const EventsSignup = () => {
 export default EventsSignup;
 
 const EventsHeroContainer = styled.div`
+  padding-top: 80px;
   position: relative;
   width: 100%;
   height: 370px;
@@ -88,6 +89,7 @@ object-fit: cover;
 `;
 
 const EHTitle = styled.h1`
+
    /* Add margin bottom to create spacing */
   font-size: 83px;
   font-family: "Pacifico", cursive;
@@ -141,10 +143,15 @@ const EventsButton = styled.button`
 
 const EventsSignupContainer = styled.div`
     justify-width: center;
+    padding-top: 80px;
 `;
 
 //end of hero//
 const RegTitle = styled.div`
+
+font-family: "Agbalumo", system-ui;
+font-weight: 400;
+font-style: normal;
     font-size: 25px;
     text-align: center;
     color: #3E2D70;
@@ -152,6 +159,10 @@ const RegTitle = styled.div`
 `;
 
 const MidEventsContainer = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
     display: flex;
     justify-width: center;
 `;
@@ -191,11 +202,14 @@ const InputTitle1 = styled.p`
 `;
 
 const Input = styled.input`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
   border: 1.5px solid #9D9D9D;
   border-radius: 5px;
   height: 40px;
   font-size: 1.1rem;
-  font-family: Roboto;
   width: 700px;
   padding: 10px;
   margin-left: 10px;
@@ -230,6 +244,10 @@ const InputTitle5 = styled.p`
 `;
 
 const ERegisterButton = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
   padding: 10px 40px;
   margin-top: 50px;
   margin-left: 340px;
@@ -239,6 +257,12 @@ const ERegisterButton = styled.button`
   color: white;
   font-size: 18px;
   cursor: pointer;
+
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #CD6F90; 
+  }
 `;
 
 const EventSummaryContainer = styled.div`
@@ -253,7 +277,7 @@ const EventDetailsImg = styled.img`
   padding-left: 100px;
   z-index; -1;
   width: 450px;
-  height: 650px;
+  height: 680px;
 `;
 
 const EventText = styled.div`
@@ -261,7 +285,7 @@ const EventText = styled.div`
   position: absolute;
   flex-direction: column;
   z-index: 1;
-  margin-top: 390px;
+  margin-top: 410px;
   margin-left: 170px;
   font-size: 18px;
   color: white;

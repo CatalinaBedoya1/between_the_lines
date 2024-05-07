@@ -20,12 +20,19 @@ const VoteContainer = styled.div`
 `;
 
 const Voteheader = styled.div`
+font-family: "Agbalumo", system-ui;
+font-weight: 400;
+font-style: normal;
   color: white;
   margin-top: 20px;
   font-size: 50px;
 `;
 
 const Voteheader2 = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   color: white;
   margin-top: 10px;
   font-size: 28px;
@@ -57,6 +64,10 @@ const VoteBookImage = styled.img`
 `;
 
 const VoteCount = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -76,6 +87,10 @@ const VoteCount = styled.div`
 
 
 const VoteButton = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   background-color: ${({ color }) => color};
   color: white;
   font-size: 16px;
@@ -92,6 +107,10 @@ const VoteButton = styled.button`
 `;
 
 const VoteSubmitButton = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   background-color: #F68AAF; 
   color: #fff; 
   font-size: 30px;
@@ -109,6 +128,10 @@ const VoteSubmitButton = styled.button`
 `;
 
 const SubmitedText = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   color: white; /* Choose your desired color */
   margin-top: 20px; /* Adjust the margin-top as needed */
 `;

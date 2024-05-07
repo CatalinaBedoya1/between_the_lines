@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
 //import EventsHeroImg2 from '../assets/EventsHeroImg2.png';
 import { Link } from 'react-router-dom';
-import onlineevent1 from '../assets/onlineevent1.png';
-import onlineevent2 from '../assets/onlineevent2.png';
+import onlineevent1 from '../assets/KingOfSloth.png';
+import onlineevent2 from '../assets/LoveOnTheBrain.png';
 import eventprofile1 from '../assets/profile1.png';
 import eventprofile2 from '../assets/profile2.png';
 import localevent1 from '../assets/localevent1.png';
@@ -233,12 +233,14 @@ export const EventsComplete = () => {
   };
 
   const EventsPageContainer = styled.div`
-  height: 1670px;
+  padding-top: 80px;
+  height: 1700px;
   width: auto;
   `;
   
 
 const EventsHeroContainer = styled.div`
+
   position: relative;
   width: 100%;
   height: 370px;
@@ -256,6 +258,8 @@ object-fit: cover;
 
 
 const EHTitle = styled.h1`
+  
+
    /* Add margin bottom to create spacing */
   font-size: 83px;
   font-family: "Pacifico", cursive;
@@ -282,6 +286,7 @@ color: #3e2d70;
 `;
 
 const EventsContent = styled.div`
+
   position: absolute;
   top: 50%;
   left: 0;
@@ -291,6 +296,14 @@ const EventsContent = styled.div`
 `;
 
 const EventsButton = styled.button`
+
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+
+
+
   padding: 10px 40px;
   margin-top: 10px;
   background-color: #f68aaf; 
@@ -298,7 +311,7 @@ const EventsButton = styled.button`
   border: none;
   border-radius: 50px;
   font-size: 18px;
-  font-family: Kaisei Opti;
+
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -310,11 +323,21 @@ const EventsButton = styled.button`
 
 
 const EventName = styled.div`
+font-family: "Agbalumo", system-ui;
+font-weight: 400;
+font-style: normal;
+color: #3E2D70;
   padding-left: 40px;
   padding-top: 20px;
 `;
 
 const OEContainerRow = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
+font-size: 15px;
   display: flex;
   flex-direection: row;
   //background-color: pink;
@@ -358,7 +381,7 @@ const OnlineDivider = styled.div`
 
 const Register = styled.div`
   display:flex;
-  justify-content: space-between
+  justify-content: space-between;
 `;
 
 const LRegister = styled.div`
@@ -369,8 +392,13 @@ const LRegister = styled.div`
 `;
 
 const ERegisterButton = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
   padding: 3px 20px;
-  background-color: #95B9B4; 
+  background-color: #F68AAF; 
   color: white;
   border: none;
   border-radius: 50px;
@@ -380,7 +408,7 @@ const ERegisterButton = styled.div`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #6D8985; 
+    background-color: #CD6F90; 
   }
 `;
 
@@ -415,7 +443,8 @@ const LocalEventsContainer = styled.div`
 `;
 
 const LocalCard = styled.div`
-  border: 3px solid black;
+  border: 2px solid;
+  border-color: #AEB5C0;
   margin: 10px;
   width: 350px;
   height: 455px;
@@ -428,6 +457,12 @@ const LocalCard = styled.div`
 `;
 
 const LocalContent = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color:#3E2D70;
+font-size: 13px;
   padding: 10px;
 `;
 

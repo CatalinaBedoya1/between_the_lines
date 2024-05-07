@@ -156,22 +156,27 @@ const Discussions = () => {
             
 
 
-            <div> 
-                <span style={{ marginRight: '20px' }}>
-                <header style={{ marginLeft: '10px' }}>
+            
+            <div style={{ display: 'flex', alignItems: 'center', marginLeft: '40px', gap: '30px' }}>
+                <span style={{ marginLeft: '40px', display: 'inline-flex', alignItems: 'center' }}>
                     View All
-                    <Discussionsbuttons> 
-                        <Link to="/discussions/trending"> <button className="trending">Trending</button></Link> </Discussionsbuttons>
+                    <Trendingbutton> 
+                        <Link to="/discussions/trending"> 
+                        <button className="trending">Trending</button>
+                        </Link>
+                    </Trendingbutton>
+                </span>
+                <span style={{ display: 'inline-flex', alignItems: 'center'}}>
                     Book of the Month
                     Trending
                     User Feedback
-                        <OnlineDivider></OnlineDivider>
-                </header> 
-                </span>
+                </span> 
             </div> 
+            <OnlineDivider></OnlineDivider>
             <div>
             <div className='btns-discussion-genres'>
-            <header>Filter: </header>
+            <header style={{ marginLeft: '40px', display: 'inline-flex', alignItems: 'center' }}>
+                Filter:
             <Discussionsbuttons>
                     <Link to="/discussions/thriller"> <button className="thriller"> Thriller </button> </Link>
                     <Link to="/discussions/booktok"> <button className="booktok">Booktok </button> </Link>
@@ -181,7 +186,9 @@ const Discussions = () => {
                     <Link to="/discussions/historical"> <button className="historical">Historical </button> </Link>
                     <Link to="/discussions/more"> <button className="more">+</button> </Link> 
             </Discussionsbuttons>
+            </header>
             </div>
+
             <ForumName>
             <h1> Trending Forums</h1>
             </ForumName>
@@ -198,6 +205,10 @@ const Discussions = () => {
                         <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
                         <Link to="/discussions/fiction"> <button className="fiction">Fiction </button> </Link>
                         </Discussionsbuttons>
+                        <Shareoptions>
+                            <p>Share</p>
+                            <img src= {heart} alt="red heart icon" />
+                        </Shareoptions>
                         <br></br>
                         <br></br>
                         <ForumHeading>
@@ -393,9 +404,13 @@ const Discussions = () => {
 };
 
 const ForumName = styled.div`
-  padding-left: 40px;
-  padding-top: 20px;
-  text: agbalumo;
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+padding-left: 40px;
+padding-top: 20px;
+text: agbalumo;
 `;
 const BFContainerRow= styled.div`
   display: flex;
@@ -465,7 +480,23 @@ const User4 = styled.div`
 `;
 const Discussionsbuttons = styled.div`
      display: flex;
-     gap: 10px;
+     gap: 20px;
+     margin-left: 20px;
+`;
+const Shareoptions = styled.div`
+  display: flex;
+  flex-direction: row;
+  
+  img {
+    padding-left: 10px;
+    width: 35px;
+    height: 20px;
+  }
+`;
+const Trendingbutton = styled.div`
+     display: flex;
+     gap: 20px;
+     flex-wrap: nowrap;
 `;
 export default Discussions;
 
