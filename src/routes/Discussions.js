@@ -17,6 +17,8 @@ import profile2 from '../assets/profile2.png';
 import bookforum2 from '../assets/forumbook2.png';
 import bookforum3 from '../assets/forumbook3.png';
 import bookforum4 from '../assets/forumbook4.png';
+import instagram from '../assets/Vector.png';
+import twitter from '../assets/Vector (1).png';
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -201,14 +203,16 @@ const Discussions = () => {
                         <h4>IF YOU COULD SEE THE SUN</h4>
                         <h4>ANN LIANG</h4>
                         <br></br>
+                        <Shareoptions>
                         <Discussionsbuttons>
                         <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
                         <Link to="/discussions/fiction"> <button className="fiction">Fiction </button> </Link>
                         </Discussionsbuttons>
-                        <Shareoptions>
-                            <p>Share</p>
-                            <img src= {heart} alt="red heart icon" />
+                            <h6>Share</h6>
+                            <img src= {instagram} alt="instagram icon" />
+                            <img src= {twitter} alt="twitter icon" />
                         </Shareoptions>
+
                         <br></br>
                         <br></br>
                         <ForumHeading>
@@ -465,18 +469,34 @@ const User1 = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    img {
+    width: 50px;
+    height: 50px;
+  }
 `;
 const User2 = styled.div`
     display: flex;
     justify-content: space-between;
+    img {
+    width: 50px;
+    height: 50px;
+  }
 `;
 const User3 = styled.div`
     display: flex;
     justify-content: space-between;
+    img {
+    width: 50px;
+    height: 50px;
+  }
 `;
 const User4 = styled.div`
     display: flex;
     justify-content: space-between;
+    img {
+    width: 50px;
+    height: 50px;
+  }
 `;
 const Discussionsbuttons = styled.div`
      display: flex;
