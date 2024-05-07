@@ -19,6 +19,7 @@ import bookforum3 from '../assets/forumbook3.png';
 import bookforum4 from '../assets/forumbook4.png';
 import instagram from '../assets/Vector.png';
 import twitter from '../assets/Vector (1).png';
+import award from '../assets/award.png';
 
 const DiscussionHeaderContainer = styled.div`
     position: relative;
@@ -160,24 +161,24 @@ const Discussions = () => {
 
             
             <div style={{ display: 'flex', alignItems: 'center', marginLeft: '40px', gap: '30px' }}>
-                <span style={{ marginLeft: '40px', display: 'inline-flex', alignItems: 'center' }}>
+                <div style={{ marginLeft: '40px', display: 'inline-flex', alignItems: 'center' }}>
                     View All
                     <Trendingbutton> 
                         <Link to="/discussions/trending"> 
                         <button className="trending">Trending</button>
                         </Link>
                     </Trendingbutton>
-                </span>
-                <span style={{ display: 'inline-flex', alignItems: 'center'}}>
+                </div>
+                <div style={{ display: 'inline-flex', alignItems: 'center'}}>
                     Book of the Month
                     Trending
                     User Feedback
-                </span> 
+                </div> 
             </div> 
             <OnlineDivider></OnlineDivider>
             <div>
             <div className='btns-discussion-genres'>
-            <header style={{ marginLeft: '40px', display: 'inline-flex', alignItems: 'center' }}>
+            <header style={{ marginLeft: '80px', display: 'inline-flex', alignItems: 'center' }}>
                 Filter:
             <Discussionsbuttons>
                     <Link to="/discussions/thriller"> <button className="thriller"> Thriller </button> </Link>
@@ -198,19 +199,22 @@ const Discussions = () => {
              <BFContainerRow>
              <BookForumContainter>
                 <BookCard>
+                    <Award>
+                    <img src= {award} alt="Book of the month award" />
+                    </Award>
                     <img src= {bookforum1} alt="Book Forum 1" />
                     <BookContent>
-                        <h4>IF YOU COULD SEE THE SUN</h4>
-                        <h4>ANN LIANG</h4>
+                        <h3 className='Title'>IF YOU COULD SEE THE SUN</h3>
+                        <h3 className='Title'>ANN LIANG</h3>
                         <br></br>
                         <Shareoptions>
                         <Discussionsbuttons>
                         <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
                         <Link to="/discussions/fiction"> <button className="fiction">Fiction </button> </Link>
                         </Discussionsbuttons>
-                            <h6>Share</h6>
-                            <img src= {instagram} alt="instagram icon" />
-                            <img src= {twitter} alt="twitter icon" />
+                            <h3 className='Share'>Share</h3>
+                            <img src= {instagram} alt="instagramicon" className='instagram' />
+                            <img src= {twitter} alt="twittericon" className="twitter" />
                         </Shareoptions>
 
                         <br></br>
@@ -225,6 +229,7 @@ const Discussions = () => {
                             <br></br>
                             <Divider></Divider>
                             <br></br>
+                        <Link to= '/community/BookDetails'>
                         <User1>
                             <p>Ann Liang Best Work</p>
                             <p>3,495</p>
@@ -254,14 +259,14 @@ const Discussions = () => {
                             <img src= {profile2} alt="Profile 4" />
                             <p>8 hours ago</p>
                         </User4>      
-                        <h6>Load more topics</h6>
+                        <p className='MoreTopics'>Load more topics</p>
+                        </Link>
                     </BookContent>
                 </BookCard>
 
                 <BookCard>
                     <img src= {bookforum2} alt="Book Forum 2" />
                     <BookContent>
-                        <br></br>
                         <ForumHeading>
                             <Horizontal>Topics</Horizontal>
                             <Horizontal>Replies</Horizontal>
@@ -300,8 +305,8 @@ const Discussions = () => {
                             <p>18,234</p>
                             <img src= {profile1} alt="Profile 4" />
                             <p>8 hours ago</p>
-                        </User4>      
-                        <h6>Load more topics</h6>
+                        </User4>    
+                        <p className='MoreTopics'> Load more topics </p>
                     </BookContent>
                 </BookCard>
 
@@ -348,7 +353,7 @@ const Discussions = () => {
                             <img src= {profile2} alt="Profile 4" />
                             <p>10 hours ago</p>
                         </User4>      
-                        <h6>Load more topics</h6>
+                        <p className='MoreTopics'>Load more topics</p>
                     </BookContent>
                 </BookCard>
 
@@ -395,7 +400,7 @@ const Discussions = () => {
                             <img src= {profile3} alt="Profile 4" />
                             <p>15 days ago</p>
                         </User4>      
-                        <h6>Load more topics</h6>
+                        <p className='MoreTopics'>Load more topics</p>
                     </BookContent>
                 </BookCard>
             </BookForumContainter>
@@ -414,7 +419,6 @@ font-weight: 700;
 font-style: normal;
 padding-left: 40px;
 padding-top: 20px;
-text: agbalumo;
 `;
 const BFContainerRow= styled.div`
   display: flex;
@@ -429,6 +433,14 @@ const BookForumContainter = styled.div`
   //background-color: blue;
 
 `;
+const Award = styled.div`
+    width: 80px; 
+    height: 80px; 
+    position: absolute; 
+    bottom: -190px;
+    left: 100px;
+`;
+
 const BookCard = styled.div`
   display: flex;
   margin: 10px;
@@ -505,12 +517,11 @@ const Discussionsbuttons = styled.div`
 `;
 const Shareoptions = styled.div`
   display: flex;
-  flex-direction: row;
   
   img {
     padding-left: 10px;
     width: 35px;
-    height: 20px;
+    height: 30px;
   }
 `;
 const Trendingbutton = styled.div`
@@ -518,5 +529,6 @@ const Trendingbutton = styled.div`
      gap: 20px;
      flex-wrap: nowrap;
 `;
+
 export default Discussions;
 

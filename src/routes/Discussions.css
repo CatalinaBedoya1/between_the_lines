@@ -66,3 +66,24 @@
     text-align: center;
     border-radius: 40px;
 }
+.MoreTopics {
+    color: gray;
+    position: relative;
+    left: 260px;
+}
+.Share {
+    position: relative;
+    top: -30px;
+    left: 380px;
+}
+.instagram {
+    position: relative;
+    left: 320px;
+}
+.twitter {
+    position: relative;
+    left: 320px;
+}
+.Title {
+    color: #3E2D70;
+}
