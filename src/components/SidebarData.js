@@ -23,6 +23,14 @@ export const SidebarData = [
     subNav: [
       
       {
+        title: 'Audiobooks',
+        path: '/discover/audiobooks',
+        
+        cName: 'sub-nav'
+      },
+  
+      
+      {
         title: 'Search',
         path: '/discover/searchResultsPage',
         
