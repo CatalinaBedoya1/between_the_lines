@@ -13,13 +13,13 @@ import './Navbar.css';
 const Nav = styled.div`
   background: #897ad5;
   height: 80px;
-  width: 100%; /* Set width to 100% */
+  width: 100%; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed; /* Make the navbar fixed */
-  top: 0; /* Align it to the top of the screen */
-  z-index: 5; /* Ensure it remains on top */
+  position: fixed; 
+  top: 0; 
+  z-index: 5; 
 `;
 
 const Logo = styled.img`
