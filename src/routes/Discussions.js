@@ -454,7 +454,7 @@ const BookCard = styled.div`
   }
 `;
 const BookContent = styled.div`
-  padding-top: 30px;
+  padding-top: -40px;
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 30px;
