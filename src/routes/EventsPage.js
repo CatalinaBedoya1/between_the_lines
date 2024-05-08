@@ -7,9 +7,9 @@ import onlineevent1 from '../assets/KingOfSloth.png';
 import onlineevent2 from '../assets/LoveOnTheBrain.png';
 import eventprofile1 from '../assets/profile1.png';
 import eventprofile2 from '../assets/profile2.png';
-import localevent1 from '../assets/localevent1.png';
-import localevent2 from '../assets/localevent2.png';
-import localevent3 from '../assets/localevent3.png';
+import localevent1 from '../assets/LocalEvent1.png';
+import localevent2 from '../assets/LocalEvent2.png';
+import localevent3 from '../assets/LocalEvent3.png';
 import calendar from '../assets/calendar.png';
 import heart from '../assets/redhearticon.png';
 

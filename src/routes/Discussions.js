@@ -479,12 +479,13 @@ const ForumHeading = styled.div`
 `;
 const User1 = styled.div`
     display: flex;
-    justify-content: space-between;
+    align-items: center; /* Align items vertically */
     margin-top: 10px;
     img {
-    width: 50px;
-    height: 50px;
-  }
+        width: 50px;
+        height: 50px;
+        margin-right: 10px; /* Add some spacing between the image and text */
+    }
 `;
 const User2 = styled.div`
     display: flex;
