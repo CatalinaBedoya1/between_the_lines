@@ -4,6 +4,9 @@
   align-items: center;
 }
 
+.splinecommunity{
+  z-index:-3;
+}
 
 .communityheader {
   width: 100%;
@@ -33,7 +36,7 @@
 }
 
 .hero-community-content {
-  font-family: "Manrope", sans-serif;
+  font-family: "Agbalumo", system-ui;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
