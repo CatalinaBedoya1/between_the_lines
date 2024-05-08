@@ -17,18 +17,19 @@ import profile2 from '../assets/profile2.png';
 import bookforum2 from '../assets/forumbook2.png';
 import bookforum3 from '../assets/forumbook3.png';
 import bookforum4 from '../assets/forumbook4.png';
+import instagram from '../assets/Vector.png';
+import twitter from '../assets/Vector (1).png';
+import award from '../assets/award.png';
 
 const DiscussionHeaderContainer = styled.div`
-    padding: 80px;
     position: relative;
-    height: 500px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center; 
 `;
 
 const DiscussionBackgroundImage = styled.div`
-
     position: absolute;
     top: 0;
     left: 0;
@@ -42,7 +43,6 @@ const DiscussionBackgroundImage = styled.div`
 `;
 
 const DiscussionContentContainer = styled.div`
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +51,6 @@ const DiscussionContentContainer = styled.div`
 `;
 
 const DiscussionTopContent = styled.div`
-
     display: flex;
     align-items: center;
     margin-bottom: 0px;
@@ -80,7 +79,6 @@ const DisRightImage = styled.img`
 `;
 
 const DiscussionSearchBarContainer = styled.div`
-
     display: flex;
     align-items: center;
     position: relative;
@@ -90,16 +88,13 @@ const DiscussionSearchBarContainer = styled.div`
 `;
 
 const DiscussionInput = styled.input`
-font-family: "Manrope", sans-serif;
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
     width: 500px;
     border: 1px solid #ccc;
     padding: 10px 50px ;
     border-radius: 30px;
     height: 50px;
     font-color: #3F3C3C;
+    font-family: Inter;
 `;
 
 const SearchIcon = styled.div`
@@ -109,23 +104,16 @@ const SearchIcon = styled.div`
 `;
 
 const PopularTopicsText = styled.div`
-font-family: "Manrope", sans-serif;
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
     font-size: 16px;
+    font-family: Roboto;
     color: white;
     z-index: 1;
     margin-top: -100px;
     margin-right: 30px;
 `;
 const DiscussionTitle = styled.h1`
-
-font-family: "Manrope", sans-serif;
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
   font-size: 40px;
+  font-family: Roboto;
   font-weight: bold;
   color: white; 
   z-index: 2;
@@ -137,22 +125,10 @@ font-style: normal;
 `;
 
 const Text = styled.span`
-font-family: "Manrope", sans-serif;
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
   margin-right: 10px; 
   font-size: 40px;
+  font-family: Roboto;
   
-`;
-
-const Text2 = styled.span`
-font-family: "Manrope", sans-serif;
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
-  margin-right: 10px; 
-  font-size: 20px;
 `;
 
 const Discussions = () => {
@@ -183,23 +159,28 @@ const Discussions = () => {
             
 
 
-            <div> 
-                <span style={{ marginRight: '20px' }}>
-                <header style={{ marginLeft: '10px' }}>
-                    <Text2>
+            
+            <div style={{ display: 'flex', alignItems: 'center', marginLeft: '40px', gap: '30px' }}>
+                <div style={{ marginLeft: '40px', display: 'inline-flex', alignItems: 'center' }}>
                     View All
-                    <Link to="/discussions/trending"> <button className="trending">Trending</button></Link>
+                    <Trendingbutton> 
+                        <Link to="/discussions/trending"> 
+                        <button className="trending">Trending</button>
+                        </Link>
+                    </Trendingbutton>
+                </div>
+                <div style={{ display: 'inline-flex', alignItems: 'center'}}>
                     Book of the Month
                     Trending
                     User Feedback
-                    </Text2>
-                        <OnlineDivider></OnlineDivider>
-                </header> 
-                </span>
+                </div> 
             </div> 
+            <OnlineDivider></OnlineDivider>
             <div>
             <div className='btns-discussion-genres'>
-            <header>Filter: </header>
+            <header style={{ marginLeft: '80px', display: 'inline-flex', alignItems: 'center' }}>
+                Filter:
+            <Discussionsbuttons>
                     <Link to="/discussions/thriller"> <button className="thriller"> Thriller </button> </Link>
                     <Link to="/discussions/booktok"> <button className="booktok">Booktok </button> </Link>
                     <Link to="/discussions/horror"> <button className="horror">Horror </button> </Link>
@@ -207,7 +188,10 @@ const Discussions = () => {
                     <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
                     <Link to="/discussions/historical"> <button className="historical">Historical </button> </Link>
                     <Link to="/discussions/more"> <button className="more">+</button> </Link> 
+            </Discussionsbuttons>
+            </header>
             </div>
+
             <ForumName>
             <h1> Trending Forums</h1>
             </ForumName>
@@ -215,13 +199,24 @@ const Discussions = () => {
              <BFContainerRow>
              <BookForumContainter>
                 <BookCard>
+                    <Award>
+                    <img src= {award} alt="Book of the month award" />
+                    </Award>
                     <img src= {bookforum1} alt="Book Forum 1" />
                     <BookContent>
-                        <h4>IF YOU COULD SEE THE SUN</h4>
-                        <h4>ANN LIANG</h4>
+                        <h3 className='Title'>IF YOU COULD SEE THE SUN</h3>
+                        <h3 className='Title'>ANN LIANG</h3>
                         <br></br>
+                        <Shareoptions>
+                        <Discussionsbuttons>
                         <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
                         <Link to="/discussions/fiction"> <button className="fiction">Fiction </button> </Link>
+                        </Discussionsbuttons>
+                            <h3 className='Share'>Share</h3>
+                            <img src= {instagram} alt="instagramicon" className='instagram' />
+                            <img src= {twitter} alt="twittericon" className="twitter" />
+                        </Shareoptions>
+
                         <br></br>
                         <br></br>
                         <ForumHeading>
@@ -234,6 +229,7 @@ const Discussions = () => {
                             <br></br>
                             <Divider></Divider>
                             <br></br>
+                        <Link to= '/community/BookDetails'>
                         <User1>
                             <p>Ann Liang Best Work</p>
                             <p>3,495</p>
@@ -263,14 +259,14 @@ const Discussions = () => {
                             <img src= {profile2} alt="Profile 4" />
                             <p>8 hours ago</p>
                         </User4>      
-                        <h6>Load more topics</h6>
+                        <p className='MoreTopics'>Load more topics</p>
+                        </Link>
                     </BookContent>
                 </BookCard>
 
                 <BookCard>
                     <img src= {bookforum2} alt="Book Forum 2" />
                     <BookContent>
-                        <br></br>
                         <ForumHeading>
                             <Horizontal>Topics</Horizontal>
                             <Horizontal>Replies</Horizontal>
@@ -309,8 +305,8 @@ const Discussions = () => {
                             <p>18,234</p>
                             <img src= {profile1} alt="Profile 4" />
                             <p>8 hours ago</p>
-                        </User4>      
-                        <h6>Load more topics</h6>
+                        </User4>    
+                        <p className='MoreTopics'> Load more topics </p>
                     </BookContent>
                 </BookCard>
 
@@ -357,7 +353,7 @@ const Discussions = () => {
                             <img src= {profile2} alt="Profile 4" />
                             <p>10 hours ago</p>
                         </User4>      
-                        <h6>Load more topics</h6>
+                        <p className='MoreTopics'>Load more topics</p>
                     </BookContent>
                 </BookCard>
 
@@ -404,7 +400,7 @@ const Discussions = () => {
                             <img src= {profile3} alt="Profile 4" />
                             <p>15 days ago</p>
                         </User4>      
-                        <h6>Load more topics</h6>
+                        <p className='MoreTopics'>Load more topics</p>
                     </BookContent>
                 </BookCard>
             </BookForumContainter>
@@ -412,8 +408,6 @@ const Discussions = () => {
             
 
              </div> 
-               {
-           <CreatePost /> } 
         </div>
     );
 };
@@ -423,28 +417,30 @@ font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
 font-weight: 700;
 font-style: normal;
-  padding-left: 40px;
-  padding-top: 20px;
+padding-left: 40px;
+padding-top: 20px;
 `;
 const BFContainerRow= styled.div`
-font-family: "Manrope", sans-serif;
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
   display: flex;
   flex-direection: row;
-  //background-color: pink;
 `;
 const BookForumContainter = styled.div`
-
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding-left: 100px;
-
+  height: 1700px;
   //background-color: blue;
 
 `;
+const Award = styled.div`
+    width: 80px; 
+    height: 80px; 
+    position: absolute; 
+    bottom: -190px;
+    left: 100px;
+`;
+
 const BookCard = styled.div`
   display: flex;
   margin: 10px;
@@ -485,18 +481,54 @@ const User1 = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    img {
+    width: 50px;
+    height: 50px;
+  }
 `;
 const User2 = styled.div`
     display: flex;
     justify-content: space-between;
+    img {
+    width: 50px;
+    height: 50px;
+  }
 `;
 const User3 = styled.div`
     display: flex;
     justify-content: space-between;
+    img {
+    width: 50px;
+    height: 50px;
+  }
 `;
 const User4 = styled.div`
     display: flex;
     justify-content: space-between;
+    img {
+    width: 50px;
+    height: 50px;
+  }
 `;
+const Discussionsbuttons = styled.div`
+     display: flex;
+     gap: 20px;
+     margin-left: 20px;
+`;
+const Shareoptions = styled.div`
+  display: flex;
+  
+  img {
+    padding-left: 10px;
+    width: 35px;
+    height: 30px;
+  }
+`;
+const Trendingbutton = styled.div`
+     display: flex;
+     gap: 20px;
+     flex-wrap: nowrap;
+`;
+
 export default Discussions;
 
