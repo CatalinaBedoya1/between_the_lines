@@ -1,6 +1,6 @@
 import React from 'react';
 import './Community.css';
-import communityImage from '../assets/communityheaderwhite.png';
+import communityImage from '../assets/btlcommunity.png';
 import Events from '../components/Events';
 import Leaderboard from '../assets/Leaderboard.png';
 import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
@@ -14,7 +14,7 @@ export const Community = () => {
         <div className= 'communityheader'>
           <img src={communityImage} alt="CommunityHeroSection" />
           <div className='hero-community-content'>
-            <h1>Welcome Jane Doe,</h1>
+            <h1>Welcome,</h1>
             <h1>Let's see what's new in the Community ...</h1>
           </div>
           </div>
