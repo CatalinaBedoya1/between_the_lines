@@ -86,6 +86,8 @@ const Sidebar = () => {
     setIsOpen(false);
   };
 
+  
+
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>

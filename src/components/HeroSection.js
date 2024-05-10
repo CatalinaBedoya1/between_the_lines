@@ -22,7 +22,7 @@ function HeroSection() {
           <div className="SplineHomepage">
             <SplineHome/>
           </div>
-
+        
           <div className="hero-content">
             <h1>Welcome to Between the Lines</h1>
             <p>A hub for all book lovers!</p>

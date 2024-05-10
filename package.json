@@ -18,6 +18,7 @@
     "express": "^4.19.2",
     "flowbite-react": "^0.7.2",
     "framer-motion": "^11.0.25",
+    "grapheme-splitter": "^1.0.4",
     "jsonwebtoken": "^9.0.2",
     "mysql": "^2.18.1",
     "node-fetch": "^2.7.0",
@@ -37,6 +38,7 @@
     "react-toastify": "^8.1.0",
     "react-toggle-dark-mode": "^1.1.1",
     "styled-components": "^6.1.8",
+    "type-animation": "^0.1.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -27,10 +27,7 @@ import './App.css';
 
 toast.configure();
 
-function App () {
-  //functions for our loading screen (dont modify when you add design)
- 
- 
+function App() {
   const checkAuthenticated = async () => {
     try {
       const res = await fetch("http://localhost:4000/authentication/verify", {

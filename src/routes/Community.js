@@ -9,6 +9,8 @@ import Forum2ArtSection from '../components//Forums2';
 import Voting from '../components/Voting';
 import SplineCommunity from '../components/SplineCommunity';
 
+//adding an animation component here so scroll down for Community code
+
 export const Community = () => {
     return (
       <div className='community'>
@@ -20,7 +22,7 @@ export const Community = () => {
           </div>
 
           <div className='hero-community-content'>
-            <h1>Welcome,</h1>
+            <h1> Welcome</h1>
             <h1>Let's see what's new in the Community ...</h1>
           </div>
         </div>

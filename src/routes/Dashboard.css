@@ -69,22 +69,9 @@
     text-align: left;
 }
 
-.editbutton {
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    
-    padding: 10px 30px;
-    border-radius: 50px;
-    color: #ffffff;
-    background: #DA92AC;
-    margin-top: -40px;
-    margin-bottom: 50px;
-    margin-left: 1000px;
-    font-size: 25px;
-}
 
+ 
+  
 .updateprogressbtn{
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;

@@ -7,6 +7,9 @@ import CurrentReading from "../assets/Dashprofile.png";
 import './Dashboard.css';
 import Sidebar from "../components/Sidebar"; // Import Sidebar component
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
+import { styled } from "styled-components";
+
 
 
 const Dashboard = ({ setAuth }) => {
@@ -15,7 +18,7 @@ const Dashboard = ({ setAuth }) => {
   const getProfile = async () => {
     try {
       const res = await fetch("http://localhost:4000/dashboard/", {
-        method: "POST",
+        method: "GET",
         headers: { jwt_token: localStorage.token }
       });
 
@@ -26,12 +29,15 @@ const Dashboard = ({ setAuth }) => {
     }
   };
 
+  const navigate = useNavigate();
+
   const logout = async e => {
     e.preventDefault();
     try {
       localStorage.removeItem("token");
       setAuth(false);
       toast.success("Logout successfully");
+      navigate("/login");
     } catch (err) {
       console.error(err.message);
     }
@@ -40,6 +46,7 @@ const Dashboard = ({ setAuth }) => {
   useEffect(() => {
     getProfile();
   }, []);
+
   return (
     <>
       <Sidebar /> 
@@ -49,14 +56,15 @@ const Dashboard = ({ setAuth }) => {
           <div>
             <h1 className="mt-5">Dashboard</h1>
             <h2>Welcome {name}</h2>
-            <button onClick={e => logout(e)} className="btn btn-primary">
-              Logout
-            </button>
+           
           </div>
           <h2>Joined March 2024</h2>
           <p>24 | Constantly lost in fictional worlds | Avid Romance Reader</p>
         </div>
-        <div className="editbutton">Edit Profile</div>
+        <ButtonGroup>
+      <LogoutButton onClick={e => logout(e)}>Logout</LogoutButton>
+      <EditButton>Edit Profile</EditButton>
+    </ButtonGroup>
         <div className="currentreading">
           <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
           <div className="updateprogressbtn">Update Progress</div>
@@ -85,5 +93,39 @@ const Dashboard = ({ setAuth }) => {
     </>
   );
 };
+const ButtonGroup = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 900px;
+`;
+
+const EditButton = styled.div`
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: #ffffff;
+  background: #DA92AC;
+  font-size: 25px;
+  margin-bottom: 50px;
+  margin-left: 20px; /* Adjust the margin as needed */
+`;
+
+const LogoutButton = styled.button`
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: #ffffff;
+  background-color: #DA92AC;
+  margin-bottom: 50px;
+  cursor: pointer;
+  font-size: 25px;
+  border: none;
+`;
 
 export default Dashboard;

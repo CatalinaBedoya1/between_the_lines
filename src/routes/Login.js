@@ -13,9 +13,8 @@ const Login = ({ setAuth }) => {
     email: "",
     password: ""
   });
-
-  const { email, password } = inputs;
   const navigate = useNavigate();
+  const { email, password } = inputs;
 
   const onChange = e =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
@@ -50,6 +49,9 @@ const Login = ({ setAuth }) => {
       console.error(err.message);
     }
   };
+
+
+      
 
   return (
     <Container>
