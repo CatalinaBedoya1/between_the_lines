@@ -1,8 +1,8 @@
 import React from 'react';
 import './Footer.css';
 import BTLLogo from '../assets/BTLLogo.png'; // Replace 'logo.png' with your actual logo file
-import InstagramIcon from '../assets/InstagramIcon.png';
-import TwitterIcon from '../assets/TwitterIcon.png';
+import InstagramIcon from '../assets/whiteinstagram.png';
+import TwitterIcon from '../assets/whitetwitter.png';
 
 const Footer = () => {
   return (

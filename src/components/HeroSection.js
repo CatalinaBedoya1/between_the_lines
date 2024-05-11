@@ -37,7 +37,7 @@ function HeroSection() {
         
         <div className="mission-section">
   <div className="text-center mission-container">
-    <br></br>
+    {/* <br></br> */}
     <img src={msFirst} alt="card1" className="msimg" />
     <div className="line"></div>
     <h3 className="mission-header">Book Clubs</h3>
