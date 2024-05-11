@@ -1,3 +1,4 @@
+
 .createPostContainerOutside{
     padding: 50px
 }
@@ -6,7 +7,7 @@
 
     background-color: #4281A4;
     width: 800px;
-    height: 450px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     font-size: 20px;
@@ -15,7 +16,6 @@
     padding: 20px;
     
 }
-
 
 .createPostText{  
     font-family: "Manrope", sans-serif;
@@ -46,6 +46,7 @@ font-style: normal;
     padding: 10px 30px 175px 20px;
   
 }
+ 
 
 .addImageBtn{
     font-family: "Manrope", sans-serif;
@@ -74,12 +75,12 @@ font-style: normal;
     border-radius: 50px;
     font-size: 18px;
     color: #ffffff;
-    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    background-color: #F8A2C0;
     text-align: center;
     cursor: pointer;
     box-shadow: 0 0 0 4px #ffffff;
     position: absolute;
     display: inline-block;
     margin-left: 545px;
-    margin-top: 370px;
+    margin-top: 415px;
 }

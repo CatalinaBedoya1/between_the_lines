@@ -20,22 +20,13 @@
     z-index: 1;
   }
   
-  .BD-divider{
-    width: 18%;
-    margin: auto;
-    border-width: 2px;
-    margin-top: 15px;
-    margin-bottom: 20px;
-  }
-  
   .BD-content h1 {
     font-family: "Agbalumo", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 3rem;
-    right: 50px;
+    font-size: 4rem;
     margin-bottom: 35px;
-    margin-left: 150px;
+    margin-left: 550px;
   }
   
   .BD-content h2{  
@@ -47,7 +38,7 @@
     font-size: 2.75rem;
     margin-bottom: 5px;
     text-align: left;
-    padding-left: 170px;
+    padding-left: 550px;
   }
   
   .BD-content h3{
@@ -56,7 +47,7 @@
     font-weight: 500;
     font-style: normal;
     font-size: 2rem;
-    margin-left: 350px;
+    margin-left: 550px;
   }
   
   .BD-content p {
@@ -65,10 +56,6 @@
     margin-bottom:5px;
     margin-left: -570px;
     text-align: center;
-  }
-  
-  .BD-divider{
-    margin-left: 300px;
   }
   
   .BD-imageZoom {
@@ -80,18 +67,17 @@
   }
   
   .BD-image {
-    position:absolute;
-    top: 0px;
-    right: 130px;
-    width: 275px; /* Adjust width as needed */
+    position:relative;
+    top: 100px;
+    left: 80px;
+    width: 475px; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
     z-index: 1;
   }
   
   .BD-description{
-   
     position:relative;
-    margin-right: 50px;
+    margin-left: 250px;
     margin-top: 30px; /* Adjust as needed */
     width: 70vw;
     z-index: 0;
@@ -113,27 +99,55 @@
     padding-top: 20px;
   }
 
+  .StarRating{
+    position: relative;
+    width: 400px;
+    margin-left: 50px;
+    z-index: 1;
+  }
+
   .WTRBtn{
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
     position:absolute;
-    top: 435px;
-    right: 150px;
+    top: 835px;
+    left: 150px;
     height: auto; /* Maintain aspect ratio */
     z-index: 1;
 
-    width: 230px;
-    padding: 10px 30px;
+    width: 330px;
+    padding: 12px 30px;
     border-radius: 50px;
-    font-size: 18px;
+    font-size: 20px;
     color: #ffffff;
     background-color: #F8A2C0;
     text-align: center;
     cursor: pointer;
     box-shadow: 0 0 0 4px #ffffff;
+}
 
+.WTLBtn{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  position: absolute;
+  top: 910px;
+  left: 150px;
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1;
+
+  width: 330px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #F8A2C0;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px #ffffff;
 }
 
 .BD-info{
