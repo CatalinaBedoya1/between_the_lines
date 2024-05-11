@@ -67,6 +67,7 @@ const Login = ({ setAuth }) => {
             <Input
               type="text"
               name="email"
+              placeholder="Type your email"
               value={email}
               onChange={e => onChange(e)}
               className="form-control my-3"
@@ -80,6 +81,7 @@ const Login = ({ setAuth }) => {
             <Input
               type="password"
               name="password"
+              placeholder="Type your password"
               value={password}
               onChange={e => onChange(e)}
               className="form-control my-3"
@@ -138,7 +140,9 @@ const BottomImage = styled.img`
 
 const Title = styled.h2`
   font-size: 30px;
-  font-family: Roboto;
+  font-family: Agbalumo;
+  font-weight: 700;
+  color: #3E2D70;
   text-align: center;
   margin-top: 5px;
 `;
@@ -151,20 +155,20 @@ const Form = styled.form`
 
 const TitleText1 = styled.p`
   margin-right: 220px;
-  font-size: 19px;
+  font-size: 18px;
   margin-top: 20px;
-  color: #000000;
-  font-family: Roboto;
-  font-weight: bold;
+  color: #3E2D70;
+  font-family: Manrope;
+  font-weight: 700;
 `;
 
 const TitleText2 = styled.p`
-  font-size: 19px;
+  font-size: 18px;
   margin-top: 20px;
   margin-right: 220px;
-  color: #000000;
-  font-family: Roboto;
-  font-weight: bold;
+  color: #3E2D70;
+  font-family: Manrope;
+  font-weight: 700;
 `;
 
 const InputContainer = styled.div`
@@ -199,7 +203,7 @@ const Button = styled.button`
   cursor: pointer;
   font-size: 22px;
   font-family: Roboto;
-  margin-top: 50px;
+  margin-top: 40px;
 
   &:hover {
     background-color: #897ad5;
@@ -209,6 +213,9 @@ const Button = styled.button`
 const SignupLink = styled.p`
   text-align: center;
   margin-top: 20px;
+  color: #3E2D70;
+  font-family: Manrope;
+  font-weight: 700;
 
   a {
     color: #f68aaf;
@@ -224,8 +231,10 @@ const ForgotPasswordLink = styled(Link)`
   text-align: left;
   margin-top: 10px;
   margin-left: 220px;
-  color: #000000;
+  color: #3E2D70;
   font-size: 14px;
+  font-family: 3E2D70;
+  font-weight: 590;
   text-decoration: none;
 
   &:hover {
