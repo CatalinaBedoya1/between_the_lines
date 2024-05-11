@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactCardFlip from "react-card-flip";
-import AboutUsHero from '../assets/AboutUsHero.png';
+import AboutUsHero from '../assets/bookgirlreading.png';
 import CatGroup from '../assets/AboutUs/catgroup.png';
 import FranGroup from '../assets/AboutUs/frangroup.png';
 import MaddyGroup from '../assets/AboutUs/maddygroup.png';
@@ -180,9 +180,9 @@ const AboutUsHeroContainer = styled.div`
 const AboutUsHeroImg = styled.img`
   position: absolute;
   top: 30px;
-  right: 30px;
-  width: 600px;
-  height: auto;
+  right: 80px;
+  width: auto;
+  height: 470px;
   object-fit: cover;
 `;
 

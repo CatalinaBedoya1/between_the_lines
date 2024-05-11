@@ -1,25 +1,34 @@
 import React from 'react';
 import './Community.css';
-import communityImage from '../assets/communityheaderwhite.png';
+import communityImage from '../assets/btlcommunity.png';
 import Events from '../components/Events';
 import Leaderboard from '../assets/Leaderboard.png';
 import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
 import Forum2ArtSection from '../components//Forums2';
 import Voting from '../components/Voting';
+import SplineCommunity from '../components/SplineCommunity';
+
+//adding an animation component here so scroll down for Community code
 
 export const Community = () => {
     return (
       <div className='community'>
         <div className= 'communityheader'>
-          <img src={communityImage} alt="CommunityHeroSection" />
+          {/* <img src={communityImage} alt="CommunityHeroSection" /> */}
+          
+          <div className='splinecommunity'>
+          <SplineCommunity/>
+          </div>
+
           <div className='hero-community-content'>
-            <h1>Welcome Jane Doe,</h1>
+            <h1> Welcome</h1>
             <h1>Let's see what's new in the Community ...</h1>
           </div>
-          </div>
+        </div>
         
         <Events />
+
         <div className="BOTM-container">
         <img src={myImage3} alt="Book of the month cover" className="BOTM-imageZoom" />
         <div className="BOTM-content">

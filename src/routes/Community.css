@@ -4,11 +4,23 @@
   align-items: center;
 }
 
+.splinecommunity{
+  z-index:-3;
+}
+
 .communityheader {
   width: 100%;
   height: auto;
-  display: block;
+  padding:0px;
+  margin:0px;
 }
+
+
+.communityheader img {
+  width: 100%;
+  height: auto;
+}
+
 
 
 
@@ -24,7 +36,7 @@
 }
 
 .hero-community-content {
-  font-family: "Manrope", sans-serif;
+  font-family: "Agbalumo", system-ui;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -32,11 +44,11 @@
   top: 50%;
   left: 25%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgb(255, 255, 255);
+  text-align: left;
   background-size: contain;
   background-position: left;
-  color: rgb(0, 0, 0);
+  color:white;
   width: 50%;
+  padding-left: 100px;
 }
 

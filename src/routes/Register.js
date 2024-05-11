@@ -37,7 +37,7 @@ const Register = ({ setAuth }) => {
       const parseRes = await response.json();
 
       if (parseRes.jwtToken) {
-        localStorage.setItem("token", parseRes.jwtToken);
+        localStorage.setItem("jwtToken", parseRes.jwtToken);
         setAuth(true);
         toast.success("Register Successfully");
       } else {

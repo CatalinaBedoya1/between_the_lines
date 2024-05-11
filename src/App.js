@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import Home from './routes/Home';
 import Discover from './routes/Discover';
+import Audiobooks from './routes/Audiobooks';
 import WhatsTrending from './routes/WhatsTrending';
 import TakeOurQuiz from './routes/TakeOurQuiz';
 import Community, { BookClubs } from './routes/Community';
@@ -26,10 +27,7 @@ import './App.css';
 
 toast.configure();
 
-function App () {
-  //functions for our loading screen (dont modify when you add design)
- 
- 
+function App() {
   const checkAuthenticated = async () => {
     try {
       const res = await fetch("http://localhost:4000/authentication/verify", {
@@ -68,6 +66,7 @@ function App () {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/discover" element={<Discover />} />
+            <Route path="/discover/audiobooks" element={<Audiobooks />} />
             <Route path="/discover/whatsTrending" element={<WhatsTrending />} />
             <Route path="/discover/takeOurQuiz" element={<TakeOurQuiz />} />
             <Route path="/discover/searchResultsPage" element={<SearchResultsPage />} />

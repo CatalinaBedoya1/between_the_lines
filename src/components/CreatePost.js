@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./CreatePost.css";
 import styled from 'styled-components';
 
 
-
 const CreatePost = () => {
+  const [thread, setThread] = useState("");
+
+  const handleThreadSubmit = (e) => {
+    e.preventDefault();
+    console.log({ thread });
+    setThread("");
+  }
 
   return (
     <div className='createPostContainerOutside'>    

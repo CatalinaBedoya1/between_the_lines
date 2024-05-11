@@ -8,8 +8,8 @@ import msThird from '../assets/card3.png';
 import msFourth from '../assets/card4.png';
 import myImage3 from '../assets/BOTM_GROUP2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
-import btl3Dnotext from '../assets/btl3dnotext.png';
-
+import BOTMButton from '../components/FixedBOTMButton';
+import SplineHome from '../components/SplineHomepage';
 
 
 //Herosection has header, mission statements, Book of the month, events, and book forums.
@@ -19,13 +19,18 @@ function HeroSection() {
     return (
       <div>
         <div className="hero-container">
-          <img src={btl3Dnotext} alt="Hero section background" className="hero-image" />
+          <div className="SplineHomepage">
+            <SplineHome/>
+          </div>
+        
           <div className="hero-content">
             <h1>Welcome to Between the Lines</h1>
             <p>A hub for all book lovers!</p>
             <a href="/discover/takeOurQuiz" className="HomeQuizbtn">Take Our Quiz</a>
-
           </div>
+
+
+          <BOTMButton/>
         </div>  
 
         
