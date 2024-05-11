@@ -229,35 +229,35 @@ const Discussions = () => {
                             <br></br>
                             <Divider></Divider>
                             <br></br>
-                        <Link to= '/community/BookDetails'>
+                        <Link to= '/community/BookDetails' className='bookdetailslink'>
                         <User1>
-                            <p>Ann Liang Best Work</p>
-                            <p>3,495</p>
-                            <p>3,855</p>
+                            <p className='text'>Ann Liang Best Work</p>
+                            <p className='text'>3,495</p>
+                            <p className='text'>3,855</p>
                             <img src= {profile1} alt="Profile 1" />
-                            <p>10 seconds ago</p>
+                            <p className='text'>10 seconds ago</p>
                         </User1>
 
                         <User2>
-                            <p>Other works by Ann Liang</p>
-                            <p>7,777</p>
-                            <p>8,452</p>
+                            <p className='text'>Other works by Ann Liang</p>
+                            <p className='text'>7,777</p>
+                            <p className='text'>8,452</p>
                             <img src= {profile4} alt="Profile 2" />
-                            <p>1 hour ago</p>
+                            <p className='text'>1 hour ago</p>
                         </User2>
                         <User3>
-                            <p>Best chapter</p>
-                            <p>3,354</p>
-                            <p>7,474</p>
+                            <p className='text'>Best chapter</p>
+                            <p className='text'>3,354</p>
+                            <p className='text'>7,474</p>
                             <img src= {profile3} alt="Profile 3" />
-                            <p>5 hours ago</p>
+                            <p className='text'>5 hours ago</p>
                         </User3>
                         <User4>
-                            <p>Love the character</p>
-                            <p>6,578</p>
-                            <p>9,456</p>
+                            <p className='text'>Love the character</p>
+                            <p className='text'>6,578</p>
+                            <p className='text'>9,456</p>
                             <img src= {profile2} alt="Profile 4" />
-                            <p>8 hours ago</p>
+                            <p className='text'>8 hours ago</p>
                         </User4>      
                         <p className='MoreTopics'>Load more topics</p>
                         </Link>
@@ -278,33 +278,33 @@ const Discussions = () => {
                             <Divider></Divider>
                             <br></br>
                         <User1>
-                            <p>Spicy scenes</p>
-                            <p>9,874</p>
-                            <p>10,523</p>
+                            <p className='text'>Spicy scenes</p>
+                            <p className='text'>9,874</p>
+                            <p className='text'>10,523</p>
                             <img src= {profile2} alt="Profile 1" />
-                            <p>10 seconds ago</p>
+                            <p className='text'>10 seconds ago</p>
                         </User1>
 
                         <User2>
-                            <p>Fangirls Unite</p>
-                            <p>15,876</p>
-                            <p>19,348</p>
+                            <p className='text'>Fangirls Unite</p>
+                            <p className='text'>15,876</p>
+                            <p className='text'>19,348</p>
                             <img src= {profile3} alt="Profile 2" />
-                            <p>1 hour ago</p>
+                            <p className='text'>1 hour ago</p>
                         </User2>
                         <User3>
-                            <p>Next one: worth it?</p>
-                            <p>9,876</p>
-                            <p>10,532</p>
+                            <p className='text'>Next one: worth it?</p>
+                            <p className='text'>9,876</p>
+                            <p className='text'>10,532</p>
                             <img src= {profile4} alt="Profile 3" />
-                            <p>18 hours ago</p>
+                            <p className='text'>18 hours ago</p>
                         </User3>
                         <User4>
-                            <p>Love or obsession?</p>
-                            <p>12,947</p>
-                            <p>18,234</p>
+                            <p className='text'>Love or obsession?</p>
+                            <p className='text'>12,947</p>
+                            <p className='text'>18,234</p>
                             <img src= {profile1} alt="Profile 4" />
-                            <p>8 hours ago</p>
+                            <p className='text'>8 hours ago</p>
                         </User4>    
                         <p className='MoreTopics'> Load more topics </p>
                     </BookContent>
@@ -325,33 +325,33 @@ const Discussions = () => {
                             <Divider></Divider>
                             <br></br>
                         <User1>
-                            <p>Slow burn or Death of me?</p>
-                            <p>15,837</p>
-                            <p>19,746</p>
+                            <p className='text'>Slow burn or Death of me?</p>
+                            <p className='text'>15,837</p>
+                            <p className='text'>19,746</p>
                             <img src= {profile3} alt="Profile 1" />
-                            <p>1 second ago</p>
+                            <p className='text'>1 second ago</p>
                         </User1>
 
                         <User2>
-                            <p>Debate of the century: Which trope is the best?</p>
-                            <p>15,876</p>
-                            <p>19,348</p>
+                            <p className='text'>Debate of the century: Which trope is the best?</p>
+                            <p className='text'>15,876</p>
+                            <p className='text'>19,348</p>
                             <img src= {profile4} alt="Profile 2" />
-                            <p>1 hour ago</p>
+                            <p className='text'>1 hour ago</p>
                         </User2>
                         <User3>
-                            <p>Heart vs Mind?</p>
-                            <p>9,876</p>
-                            <p>10,532</p>
+                            <p className='text'>Heart vs Mind?</p>
+                            <p className='text'>9,876</p>
+                            <p className='text'>10,532</p>
                             <img src= {profile1} alt="Profile 3" />
-                            <p>1 day ago</p>
+                            <p className='text'>1 day ago</p>
                         </User3>
                         <User4>
-                            <p>Do you believe in destiny or fate?</p>
-                            <p>15,927</p>
-                            <p>20,349</p>
+                            <p className='text'>Do you believe in destiny or fate?</p>
+                            <p className='text'>15,927</p>
+                            <p className='text'>20,349</p>
                             <img src= {profile2} alt="Profile 4" />
-                            <p>10 hours ago</p>
+                            <p className='text'>10 hours ago</p>
                         </User4>      
                         <p className='MoreTopics'>Load more topics</p>
                     </BookContent>
@@ -372,33 +372,33 @@ const Discussions = () => {
                             <Divider></Divider>
                             <br></br>
                         <User1>
-                            <p>What would you do if that happened to you?</p>
-                            <p>15,345</p>
-                            <p>22,247</p>
+                            <p className='text'>What would you do if that happened to you?</p>
+                            <p className='text'>15,345</p>
+                            <p className='text'>22,247</p>
                             <img src= {profile4} alt="Profile 1" />
-                            <p>1 minute ago</p>
+                            <p className='text'>1 minute ago</p>
                         </User1>
 
                         <User2>
-                            <p>What is love worth?</p>
-                            <p>23,647</p>
-                            <p>49,239</p>
+                            <p className='text'>What is love worth?</p>
+                            <p className='text'>23,647</p>
+                            <p className='text'>49,239</p>
                             <img src= {profile1} alt="Profile 2" />
-                            <p>1 hour ago</p>
+                            <p className='text'>1 hour ago</p>
                         </User2>
                         <User3>
-                            <p>Best chapters?</p>
-                            <p>1,934</p>
-                            <p>2,437</p>
+                            <p className='text'>Best chapters?</p>
+                            <p className='text'>1,934</p>
+                            <p className='text'>2,437</p>
                             <img src= {profile2} alt="Profile 3" />
-                            <p>1 day ago</p>
+                            <p className='text'>1 day ago</p>
                         </User3>
                         <User4>
-                            <p>Male author or Female author</p>
-                            <p>12,842</p>
-                            <p>31,236</p>
+                            <p className='text'>Male author or Female author</p>
+                            <p className='text'>12,842</p>
+                            <p className='text'>31,236</p>
                             <img src= {profile3} alt="Profile 4" />
-                            <p>15 days ago</p>
+                            <p className='text'>15 days ago</p>
                         </User4>      
                         <p className='MoreTopics'>Load more topics</p>
                     </BookContent>
@@ -417,8 +417,9 @@ font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
 font-weight: 700;
 font-style: normal;
-padding-left: 40px;
+padding-left: 85px;
 padding-top: 20px;
+margin-bottom: -90px;
 `;
 const BFContainerRow= styled.div`
   display: flex;
@@ -429,24 +430,22 @@ const BookForumContainter = styled.div`
   flex-direction: column;
   justify-content: space-around;
   padding-left: 100px;
-  height: 1700px;
-  //background-color: blue;
+  height: 2000px;
 
 `;
 const Award = styled.div`
     width: 80px; 
     height: 80px; 
     position: absolute; 
-    bottom: -190px;
+    bottom: -135px;
     left: 100px;
 `;
 
 const BookCard = styled.div`
   display: flex;
   margin: 10px;
-  width: 800px;    //800px;
+  width: 800px;    
   height: 300px;
-  //background-color: green;
 
   img {
     width: auto; 
@@ -457,7 +456,7 @@ const BookContent = styled.div`
   padding-top: -40px;
   padding-left: 100px;
   padding-right: 100px;
-  padding-bottom: 30px;
+  padding-bottom: 90px;
 `;
 const OnlineDivider = styled.div`
   width: 100%;
@@ -471,43 +470,64 @@ const Divider = styled.div`
 `;
 const Horizontal = styled.div`
     margin: 0 50px;
-
 `;
 const ForumHeading = styled.div`
     display: flex;
     justify-content: space-between;
 `;
+
 const User1 = styled.div`
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 5px
+    align-items: center;
+    width: auto;
+    height: 70px;
+    text-align: center;
+
     img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 `;
 const User2 = styled.div`
     display: flex;
     justify-content: space-between;
+    margin-top: 5px;
+    align-items: center;
+    width: auto;
+    height: 70px;
+    text-align: center;
+
     img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 `;
 const User3 = styled.div`
     display: flex;
     justify-content: space-between;
+    margin-top: 5px;
+    align-items: center;
+    width: auto;
+    height: 70px;
+    text-align: center;
     img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 `;
 const User4 = styled.div`
     display: flex;
     justify-content: space-between;
+    margin-top: 5px;
+    align-items: center;
+    width: auto;
+    height: 70px;
+    text-align: center;
+
     img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
 `;
 const Discussionsbuttons = styled.div`
