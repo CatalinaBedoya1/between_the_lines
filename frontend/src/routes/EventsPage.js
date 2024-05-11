@@ -234,7 +234,7 @@ export const EventsComplete = () => {
 
   const EventsPageContainer = styled.div`
   padding-top: 80px;
-  height: 1700px;
+  height: 1800px;
   width: auto;
   `;
   
