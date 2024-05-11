@@ -302,8 +302,6 @@ font-optical-sizing: auto;
 font-weight: 700;
 font-style: normal;
 
-
-
   padding: 10px 40px;
   margin-top: 10px;
   background-color: #f68aaf; 
@@ -319,7 +317,6 @@ font-style: normal;
     background-color: #f676a5; 
   }
 `;
-
 
 
 const EventName = styled.div`
