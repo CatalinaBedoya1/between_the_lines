@@ -40,6 +40,7 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  font-size: 30px;
   position: absolute;
   top: 50%;
   left: 25%;
@@ -51,4 +52,6 @@
   width: 50%;
   padding-left: 100px;
 }
+
+
 

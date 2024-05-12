@@ -7,31 +7,11 @@ import myImage2 from '../assets/ifyoucouldseethesun.png';
 import Forum2ArtSection from '../components//Forums2';
 import Voting from '../components/Voting';
 import SplineCommunity from '../components/SplineCommunity';
+import TypeAnimation from '../components/TypeAnimation';
 
 //adding an animation component here so scroll down for Community code
 
-import { TypeAnimation } from 'react-type-animation';
- 
-const ExampleComponent = () => {
-  return (
-    <TypeAnimation
-      sequence={[
-        'One', // Types 'One'
-        1000, // Waits 1s
-        'Two', // Deletes 'One' and types 'Two'
-        2000, // Waits 2s
-        'Two Three', // Types 'Three' without deleting 'Two'
-        () => {
-          console.log('Sequence completed');
-        },
-      ]}
-      wrapper="span"
-      cursor={true}
-      repeat={Infinity}
-      style={{ fontSize: '2em', display: 'inline-block' }}
-    />
-  );
-};
+
 
 export const Community = () => {
     return (
@@ -44,7 +24,7 @@ export const Community = () => {
           </div>
 
           <div className='hero-community-content'>
-            <h1> <ExampleComponent /></h1>
+            <h1> <TypeAnimation /></h1>
             <h1>Let's see what's new in the Community ...</h1>
           </div>
         </div>
