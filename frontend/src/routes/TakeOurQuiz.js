@@ -42,16 +42,23 @@ const TakeOurQuiz = () => {
     
     `;
   const Title = styled.h2`
+  font-family: "Agbalumo", system-ui;
+  font-weight: 400;
+  font-style: normal;    
+  color: #3E2D70;
     font-size: 42px;
-    font-family: Roboto;
     font-weight: 700;
     margin-bottom: 20px;
+
   `;
   
   const Description = styled.p`
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;   
+  color: #3E2D70;
     font-size: 25px;
-    font-family: Roboto;
-    font-weight: 300;
     margin-bottom: 5px;
     text-align: center;
   `;
@@ -68,6 +75,10 @@ const TakeOurQuiz = () => {
 `;
 
 const StartButton = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
     position: absolute;
     top: 85%;
     left: 50%;
@@ -78,7 +89,6 @@ const StartButton = styled.button`
     border: 3px solid #FFF;
     border-radius: 20px;
     font-size: 18px;
-    font-family: Roboto;
     cursor: pointer;
     transition: background-color 0.3s ease;
   

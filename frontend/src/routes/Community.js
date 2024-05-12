@@ -1,8 +1,7 @@
 import React from 'react';
 import './Community.css';
-import communityImage from '../assets/btlcommunity.png';
 import Events from '../components/Events';
-import Leaderboard from '../assets/Leaderboard.png';
+import Leaderboard from '../assets/NewLeaderboard.png';
 import myImage3 from '../assets/ifyoucouldseethesunzoom2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
 import Forum2ArtSection from '../components//Forums2';

@@ -258,30 +258,34 @@ object-fit: cover;
 
 
 const EHTitle = styled.h1`
-  
+font-family: "Agbalumo", system-ui;
+font-weight: 400;
+font-style: normal;
+color: #3E2D70;
 
    /* Add margin bottom to create spacing */
   font-size: 83px;
-  font-family: "Pacifico", cursive;
-  font-weight: 400;
+
   color: #897ad5;
   margin-top: 30px;
 `;
 
 const EHDescription = styled.p`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   margin-top: 0px; /* Add margin top to create spacing */
   font-size: 20px;
-  font-family: "Roboto Mono", monospace;
-  font-weight: <weight>;
-  font-style: normal;
   color: #3e2d70;
 `;
 const EHSignup = styled.p`
 font-size: 14px;
 margin-top: 30px;
-font-family: "Inconsolata", monospace;
-font-weight: <weight>;
-font-style: lighter;
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
 color: #3e2d70;
 `;
 

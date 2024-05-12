@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './routes/Home';
 import Discover from './routes/Discover';
 import Audiobooks from './routes/Audiobooks';
+import AudiobookDetails from './routes/AudiobookDetails';
 import WhatsTrending from './routes/WhatsTrending';
 import TakeOurQuiz from './routes/TakeOurQuiz';
 import Community, { BookClubs } from './routes/Community';
@@ -67,6 +68,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/discover" element={<Discover />} />
             <Route path="/discover/audiobooks" element={<Audiobooks />} />
+            <Route path="/discover/audiobooksDetails" element={<AudiobookDetails />} />
             <Route path="/discover/whatsTrending" element={<WhatsTrending />} />
             <Route path="/discover/takeOurQuiz" element={<TakeOurQuiz />} />
             <Route path="/discover/searchResultsPage" element={<SearchResultsPage />} />

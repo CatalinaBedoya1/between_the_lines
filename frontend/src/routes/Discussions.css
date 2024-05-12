@@ -87,3 +87,11 @@
 .Title {
     color: #3E2D70;
 }
+.bookdetailslink {
+    text-decoration: none;
+    color: inherit;
+}
+.text {
+    flex: 1;
+    text-align: center;
+}

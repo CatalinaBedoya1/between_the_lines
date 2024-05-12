@@ -42,10 +42,10 @@ const DiscoverMoreContainer = styled.div`
 
 const DiscoverMoreTitle = styled.h2`
 margin-top: 10px;
-
+font-family: "Agbalumo", system-ui;
+font-weight: 400;
+font-style: normal;
 font-size: 66px;
-font-family: "Pacifico", cursive;
-  font-weight: 400;
   color: #A08786; /* White text color */
 `;
 const DiscoverPara = styled.p`
@@ -87,6 +87,10 @@ margin-top: 50px;
 `;
 
 const CarouselTextContainer = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
   flex: 1;
   padding: 20px; 
   margin-top: 100px;
@@ -124,6 +128,7 @@ const Description = styled.p`
 //regular
 
 const SearchContainer = styled.div`
+
   display: flex;
   margin-left: 20px;
   flex-direction: column;
@@ -185,6 +190,10 @@ margin-top:30px;
 `;
 
 const SearchInput = styled.input`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   flex: 1;
   padding: 0px;
   border: none;
@@ -192,12 +201,14 @@ const SearchInput = styled.input`
   margin-right: 110px;
 `;
 const ButtonContainer = styled.div`
+
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
 `;
 
 const FilterButtonAll = styled.button`
+
   padding: 10px 40px;
   background-color: #CCB7B6;
   color: #FFF;
@@ -228,6 +239,10 @@ const FilterButtonSciFi = styled.button`
   margin-right: 10px;
 `;
 const FilterButtonMore = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   padding: 10px 20px;
   background-color: #E1DDDD;
   color: #FFF;
@@ -238,6 +253,11 @@ const FilterButtonMore = styled.button`
   margin-right: 10px;
 `;
 const TitleContainer = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+
   display: flex;
   align-items: center;
   margin-left: 32px; 
@@ -245,9 +265,12 @@ const TitleContainer = styled.div`
 `;
 
 const SearchTitle = styled.h2`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   margin-bottom: 25px;
   text-align: left;
-  font-family: Roboto;
   font-size: 26px;
   font-color: black;
     font-style: normal;
@@ -276,6 +299,10 @@ const bounce = keyframes`
 
 
 const AnimatedButton = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   padding: 10px 40px;
   background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
   color: #FFF;
@@ -292,19 +319,24 @@ const AnimatedButton = styled.button`
 `;
 
 const SectionTitle = styled.h4`
+font-family: "Manrope", sans-serif;
+font-weight: 700;
+font-style: normal;
   font-weight: bold;
   color: black;
   margin-left: -1190px;
   text-align: left;
-  font-family: Roboto;
   font-size: 26px;
-    font-style: normal;
-    font-weight: 400;
+
     line-height: normal;
     letter-spacing: 1.08px;
 `;
 
 const SeeMoreButton = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
 padding: 10px 40px;
 background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
 color: #FFF;
