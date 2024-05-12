@@ -7,6 +7,7 @@ import loginBgImg from '../assets/loginBgImg.png';
 import loginIcon1 from '../assets/loginIcon1.svg';
 import loginIcon2 from '../assets/loginIcon2.svg';
 import signupIcon1 from '../assets/signupIcon1.svg';
+import SignUpImage from '../assets/loginImage.png';
 
 const Register = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
@@ -52,6 +53,7 @@ const Register = ({ setAuth }) => {
   return (
     <SignUpContainer>
       <BackgroundImage src={loginBgImg} alt="LoginBgImg" />
+      <BottomImage src={SignUpImage} alt="SignUpImage" />
       <SignUpFormContainer>
         <SignupTitle>Sign Up</SignupTitle>
         <SignupForm onSubmit={onSubmitForm}>
@@ -91,6 +93,12 @@ const Register = ({ setAuth }) => {
               className="form-control my-3"
             />
           </SignUpInputContainer>
+
+          <CheckboxContainer>
+            <CheckSquare type="checkbox" />
+            <CheckboxLabel>Sign Up for our Newsletter</CheckboxLabel>
+          </CheckboxContainer>
+
           <Button type="submit">Sign Up<Link to="/login"></Link></Button>
         </SignupForm>
         <LoginLink>Already have an account? <Link to="/login">Login</Link></LoginLink>
@@ -99,13 +107,22 @@ const Register = ({ setAuth }) => {
   );
 };
 
+const BottomImage = styled.img`
+  position: absolute;
+  margin-bottom: 685px;
+  align-items: center;
+  width: auto;
+  height: 26%;
+  z-index: 6;
+  object-fit: cover;
+`;
+
 const SignUpContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 900px;
   width: 100vw;
-  position: relative;
 `;
 
 const BackgroundImage = styled.img`
@@ -113,7 +130,7 @@ const BackgroundImage = styled.img`
   left: 0;
   width: 100%;
   height: 900px;
-  z-index: -1;
+  z-index: 0;
 `;
 
 const SignUpFormContainer = styled.div`
@@ -124,13 +141,15 @@ const SignUpFormContainer = styled.div`
   text-align: left;
   width: auto;
   height: 600px;
-  padding: 20px;
+  padding: 30px;
   margin-top: 100px;
 `;
 
 const SignupTitle = styled.h2`
-  font-size: 30px;
-  font-family: Roboto;
+  font-size: 35px;
+  font-family: Agbalumo;
+  font-weight: 800;
+  color: #3E2D70;
   text-align: center;
   margin-top: 0px;
 `;
@@ -142,33 +161,38 @@ const SignupForm = styled.form`
 `;
 
 const SignUpTitleText1 = styled.p`
-  margin-right: 270px;
-  font-size: 16px;
+  margin-right: 250px;
+  font-size: 18px;
   margin-top: 20px;
-  color: #000000;
-  font-family: Roboto;
-  font-weight: bold;
+  color: #3E2D70;
+  font-family: Manrope;
+  font-weight: 800;
 `;
 
 const SignUpTitleText2 = styled.p`
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 20px;
-  margin-right: 240px;
-  color: #000000;
-  font-family: Roboto;
-  font-weight: bold;
+  margin-right: 210px;
+  color: #3E2D70;
+  font-family: Manrope;
+  font-weight: 800;
 `;
 
 const SignUpTitleText3 = styled.p`
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 20px;
-  margin-right: 244px;
-  color: #000000;
-  font-family: Roboto;
-  font-weight: bold;
+  margin-right: 215px;
+  color: #3E2D70;
+  font-family: Manrope;
+  font-weight: 800;
 `;
 
-const SignUpInputContainer = styled.div``;
+const SignUpInputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 40px;
+`;
 
 const Input = styled.input`
   border: none;
@@ -201,6 +225,7 @@ const Button = styled.button`
 const LoginLink = styled.p`
   text-align: center;
   margin-top: 15px;
+  color: #3E2D70;
   a {
     color: #F68AAF;
     text-decoration: none;
@@ -209,6 +234,28 @@ const LoginLink = styled.p`
       text-decoration: underline;
     }
   }
+`;
+const CheckboxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-right: 20px;
+`;
+
+const CheckSquare = styled.input`
+  margin-right: 10px;
+  
+  &:checked {
+    accent-color: #F68AAF;
+    border-color: #F68AAF;
+  }
+`;
+
+const CheckboxLabel = styled.div`
+  font-size: 18px;
+  font-family: Manrope;
+  font-weight: 800;
+  color: #3E2D70;
 `;
 
 export default Register;
