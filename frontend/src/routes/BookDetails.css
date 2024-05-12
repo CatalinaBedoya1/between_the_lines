@@ -1,0 +1,184 @@
+
+.BD-container {
+    position:relative;
+    margin-top: 30px; /* Adjust as needed */
+    width: 100vw;
+    z-index: 0;
+    padding:0;
+    margin:0;
+  }
+  
+  .BD-content {
+    position: absolute;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex:1;
+    padding: 20px;
+    z-index: 1;
+  }
+  
+  .BD-content h1 {
+    font-family: "Agbalumo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    margin-bottom: 35px;
+    margin-left: 550px;
+  }
+  
+  .BD-content h2{  
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    
+    font-size: 2.75rem;
+    margin-bottom: 5px;
+    text-align: left;
+    padding-left: 550px;
+  }
+  
+  .BD-content h3{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2rem;
+    margin-left: 550px;
+  }
+  
+  .BD-content p {
+    
+    font-size: 1.7rem;
+    margin-bottom:5px;
+    margin-left: -570px;
+    text-align: center;
+  }
+  
+  .BD-imageZoom {
+    width: 100vw; /* Adjust as needed */
+    height:auto;
+    display: block;
+    z-index: -1;
+    opacity: 0.75;
+  }
+  
+  .BD-image {
+    position:relative;
+    top: 100px;
+    left: 80px;
+    width: 475px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1;
+  }
+  
+  .BD-description{
+    position:relative;
+    margin-left: 250px;
+    margin-top: 30px; /* Adjust as needed */
+    width: 70vw;
+    z-index: 0;
+    padding:0;
+    margin:0;
+  }
+
+  .BD-description p{ 
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #3E2D70;
+    font-size: 1.0rem;
+    margin-bottom: 5px;
+    text-align: center;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-top: 20px;
+  }
+
+  .StarRating{
+    position: relative;
+    width: 400px;
+    margin-left: 50px;
+    z-index: 1;
+  }
+
+  .WTRBtn{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    position:absolute;
+    top: 835px;
+    left: 150px;
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1;
+
+    width: 330px;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #F8A2C0;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+}
+
+.WTLBtn{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  position: absolute;
+  top: 910px;
+  left: 150px;
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1;
+
+  width: 330px;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #F8A2C0;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px #ffffff;
+}
+
+.BD-info{
+
+  position:absolute;
+  top: 500px;
+  right: 115px;
+  width: 300px; /* Adjust width as needed */
+  z-index: 1;
+  
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #F8A2C0;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px #F8A2C0;
+}
+
+.BD-info p{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: #3E2D70;
+
+  font-size: 20px;
+  text-align: right;
+  padding-bottom: 10px;
+}
+.BD-icon {
+  height: 50px;
+  margin-left: 20px;
+  margin-right: auto;
+}

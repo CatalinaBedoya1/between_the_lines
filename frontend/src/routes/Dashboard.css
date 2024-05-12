@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Cardo:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+.agbalumo-regular {
+    font-family: "Agbalumo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.manrope-1 {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+.dashboard{
+    padding-top: 80px;
+    display: flex;
+   flex-direction: column; 
+}
+.Dashboard-Icon{
+    margin-top: 50px;
+    margin-left: -1150px;
+}
+.bio{
+    color: #3E2D70;
+    margin-left: -100px;
+    
+}
+
+.bio h1{
+    font-family: "Agbalumo", system-ui;
+    font-style: normal;
+    font-weight: 400;
+
+    margin-top: -165px;
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+.bio h2{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.bio p{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    text-align: left;
+    margin-bottom: 80px; 
+    font-size: 30px;
+}
+
+.currentreading{
+
+    width: 1000px;
+    height: auto;;
+    display: block; 
+    margin-bottom: 50px;
+    margin-left: -280px;
+}
+
+.dashboard p {
+    text-align: left;
+}
+
+
+ 
+  
+.updateprogressbtn{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    position: absolute;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #DA92AC;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+    margin-top: -110px;
+    margin-left: 25px;
+}
+
+.chat1{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    position: absolute;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #DA92AC;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+    margin-left: 810px;
+    margin-top: -70px;
+
+}
+
+.chat2{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    position: absolute;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #DA92AC;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+    margin-left: 560px;
+    margin-top: -70px;
+}
+
+.chat3{
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    position: absolute;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #DA92AC;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+    margin-left: 1070px;
+    margin-top: -70px;
+}
+
+.topgenres p{
+    font-family: "Agbalumo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 30px;
+    color: #3E2D70;
+}
+
+.topgenre1,
+.topgenre2,
+.topgenre3,
+.topgenre4,
+.topgenre5{
+    display: inline-block;
+    padding: 10px 60px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+    color: #fff; /* white */
+    margin-right: 40px;
+    margin-top: 30px;
+}
+
+.topgenre1 {
+    background-color: #EAD2AC; /*yellow */
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.topgenre2 {
+    background-color: #DA92AC; /*pink */
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.topgenre3 {
+    background-color: #88C3E4; /*pink */
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.topgenre4{
+    background-color: #9DBEBD; /*yellow */
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.topgenre5{
+    background-color: #4281A4; /*blue */
+    flex-direction: column;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+.quizresultheader{
+    font-family: "Agbalumo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    /* padding-left: 20px; */
+    color: #3E2D70;
+
+    /* margin-bottom: 20px;
+    text-align: left;
+    margin-left: 130px;
+    width: 100%;
+    color: #A08786; */
+    
+}
+
