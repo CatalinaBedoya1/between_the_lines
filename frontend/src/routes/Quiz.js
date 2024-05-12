@@ -512,10 +512,14 @@ const QuestionContainer = styled.div`
   }
 `;
 const QuestionText = styled.h2`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
 text-align: center;
 margin-top: 50px;
 font-size: 40px;
-font-family: Roboto;
   
 `;
 const Line = styled.hr`
@@ -529,6 +533,7 @@ const Line = styled.hr`
 `;
 
 const AnswerContainer = styled.div`
+
   margin: 60px;
   display: flex;
   flex-wrap: wrap;
@@ -540,12 +545,16 @@ const AnswerContainer = styled.div`
   
 `;
 const AnswerButton = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
   margin:10px;
   padding: 15px 30px;
   font-size: 20px;
-  font-family: Roboto;
   background: #FFF;
-  color: #000;
+  color: #3E2D70;
   border: 2px solid #000;
   cursor: pointer;
   border-radius: 20px;
@@ -555,8 +564,8 @@ const AnswerButton = styled.button`
 
 
   &:hover {
-    background: #80B7C9;
-    color: #FFF;
+    background: #F68AAF;
+    color: #3E2D70;
   }
 
   &.selected {
@@ -569,9 +578,13 @@ const AnswerButton = styled.button`
 
 
 const QuestionCounter = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
   text-align: center;
   margin-bottom: 20px;
-  font-family: Roboto; 
 `
 
 
@@ -584,12 +597,20 @@ const BookResultsContainer = styled.div`
   background-color: #f9f9f9;
 `;
 const BookResultsTitle = styled.h2`
+font-family: "Agbalumo", system-ui;
+font-weight: 400;
+font-style: normal;
+color: #3E2D70;
   text-align: center;
   font-size: 45px;
-  font-family: Roboto;
   margin-top: 10px;
 `
 const BookInfoContainer = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -605,23 +626,34 @@ const BookCover = styled.img`
 
 
 const BookTitle = styled.h3`
-
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
   font-size: 25px;
-  font-family: Roboto;
   bold-weight: Normal;
   margin-top: 15px;
 `;
 const BookAuthor = styled.p`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
   font-size: 16px;
-  font-family: Roboto;
   bold-weight: Lighter
   margin-top: 10px; /* Remove default margin */
 `;
 const DoneButton = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
 margin-top: 20px;
   padding: 10px 60px;
   font-size: 24px;
-  font-family: Roboto;
   background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
   color: white;
   border: none;

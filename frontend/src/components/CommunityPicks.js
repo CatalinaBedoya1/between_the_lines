@@ -122,6 +122,12 @@ export default NewCPPicks;
 /*style containers*/
 
 const NewQuizResult = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
+
     margin-bottom: 30px;
     text-align: left;
     margin-left: 130px;
@@ -254,13 +260,17 @@ const CardHoverButton = styled.div`
     }
 `;
 const SeeMoreButton = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
 padding: 10px 60px;
     background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
     color: white;
     border: 3px solid #FFF;
     border-radius: 20px;
     font-size: 18px;
-    font-family: Roboto;
+
     cursor: pointer;
     transition: background-color 0.3s ease;
   
