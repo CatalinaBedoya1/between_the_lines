@@ -60,14 +60,18 @@ export default SearchRPPicks;
 
 // Styled components...
 const QuizResult = styled.div`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
     margin-bottom: 30px;
     text-align: left;
     margin-left: 130px;
     width: 100%;
-    font-family: Roboto;
+
     font-size: 26px;
-    font-style: normal;
-    font-weight: 400;
+
     line-height: normal;
     letter-spacing: 1.08px;
 `;
@@ -170,6 +174,10 @@ const HoverOverlay = styled.div`
 `;
 
 const HoverText = styled.p`
-    font-size: 15px;
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 300;
+font-style: normal;
+    font-size: 12px;
     //margin-top: 10px;
 `;

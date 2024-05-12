@@ -182,10 +182,13 @@ const Icon = styled.span`
 `;
 
 const Input = styled.input`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   border: none;
   outline: none;
-  font-size: 1.1rem;
-  font-family: Roboto;
+  font-size: 0.8rem;
   border-bottom: 1px solid #000000;
   width: 280px;
   padding: 10px;
@@ -194,6 +197,10 @@ const Input = styled.input`
 
 
 const Button = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   height: 40px;
   width: 250px;
   background: #f68aaf;
@@ -202,7 +209,6 @@ const Button = styled.button`
   border-radius: 40px;
   cursor: pointer;
   font-size: 22px;
-  font-family: Roboto;
   margin-top: 40px;
 
   &:hover {
@@ -228,12 +234,15 @@ const SignupLink = styled.p`
 `;
 
 const ForgotPasswordLink = styled(Link)`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #353232;
   text-align: left;
   margin-top: 10px;
   margin-left: 220px;
-  color: #3E2D70;
   font-size: 14px;
-  font-family: 3E2D70;
   font-weight: 590;
   text-decoration: none;
 

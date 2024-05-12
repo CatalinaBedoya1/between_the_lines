@@ -195,10 +195,13 @@ const SignUpInputContainer = styled.div`
 `;
 
 const Input = styled.input`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   border: none;
   outline: none;
-  font-size: 1.1rem;
-  font-family: Roboto;
+  font-size: 0.8rem;
   border-bottom: 1px solid #000000;
   width: 280px;
   padding: 10px;
@@ -206,6 +209,10 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   height: 40px;
   width: 250px;
   background: #F68AAF;
@@ -214,7 +221,6 @@ const Button = styled.button`
   border-radius: 40px;
   cursor: pointer;
   font-size: 22px;
-  font-family: Roboto;
   margin-top: 25px;
 
   &:hover {
@@ -223,8 +229,13 @@ const Button = styled.button`
 `;
 
 const LoginLink = styled.p`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
   text-align: center;
   margin-top: 15px;
+  font-size: 0.8rem;
   color: #3E2D70;
   a {
     color: #F68AAF;
