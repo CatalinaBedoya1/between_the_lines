@@ -20,8 +20,8 @@ import pic12 from "../assets/AudioAnimation/pic12.png";
 
 
 const translateAnimation = keyframes`
-    from { transform: translateX(100%); }
-    to { transform:translateX(0%); }
+    from { transform: translateX(0%); }
+    to { transform:translateX(-200%); }
 `;
 
 const rotateAnimation = keyframes`
@@ -46,7 +46,6 @@ const Audiobooks = () => {
         { id: "10", cover: pic10, title: "The Sirens of Titan", author: "Kurt Vonnegut" },
         { id: "11", cover: pic11, title: "King of Sloth", author: "Ana Huang" },
         { id: "12", cover: pic12, title: "Cold Blooded Liar", author: "Karen Rose" },
-
     ];
 
     // New Releases
@@ -90,9 +89,8 @@ const Audiobooks = () => {
                 </SearchIcon>
             </AudioSearchBarContainer>
 
-        {/* WORK IN PROGRESS ;-; -MADDY*/}
         <HeroAniContainer>
-        <ScrollContainer ref={containerRef}>
+        <HeroScrollContainer ref={containerRef}>
             <HeroAniContentBox>
                 {HEROSECTION_DATA.map((HeroData) => (
                     <HeroCard key={HeroData.id}>
@@ -102,9 +100,8 @@ const Audiobooks = () => {
                     </HeroCard>
                 ))}
             </HeroAniContentBox>
-        </ScrollContainer>
+        </HeroScrollContainer>
         </HeroAniContainer>
-
         </AudiobookHeader>
 
         <AudioSectionText>New Releases ...</AudioSectionText>
@@ -139,7 +136,7 @@ const Audiobooks = () => {
                     <TrendingCardContent>
                         
                         <GreyText>
-                            <img src={GreyTriangle}/>
+                            <img src={GreyTriangle} alt="grey triangle"/>
                             Hover for sample
                         </GreyText>
                         <TTitle>{TrendData.title}</TTitle>
@@ -152,19 +149,16 @@ const Audiobooks = () => {
                 ))}
         </TrendingAudioContainer>
         
-        <Link to= "/discover/audiobooksDetails">
+        <Link to= "/discover/audiobooksDetails" style={{ textDecoration: 'none'}}>
             <SeeMoreButton>See More</SeeMoreButton>
         </Link>
+
         </AudiobookContainer>
     );
 };
 
 export default Audiobooks;
 
-const AudioBooksContainer = styled.div`
-    width: 100%;
-    height: 100vh;
-`
 
 const AudiobookContainer=styled.div`
     display:flex;
@@ -242,9 +236,17 @@ const HeroAniContentBox = styled.div`
     margin-top:30px;
     align-items: center;
     gap: 70px;
+`;
+const HeroScrollContainer = styled.div`
+    width: 100%; //1150px;
+    height: auto; //moves scroll bar
+    display: flex;
+    flex-direction: row;
 
-
-    //animation: ${translateAnimation} 15s linear infinite;
+    overflow:hidden;
+    padding-bottom:20px;
+    font-family: Manrope;
+    font-size:25px;
 `;
 const HeroCard = styled.div`
     display: flex;
@@ -254,6 +256,7 @@ const HeroCard = styled.div`
     width: auto;
     height: auto;
 
+    animation: ${translateAnimation} 15s linear infinite;
     
     img {
         width: 200px; 
@@ -264,10 +267,9 @@ const HeroCard = styled.div`
 
     &:hover {
         transform: scale(1.1);
-
-        &:hover img{ 
-            animation: ${rotateAnimation} 10s linear infinite;
-        }
+       &:hover img{
+        animation: ${rotateAnimation} 10s linear infinite;
+       }
     }
 `;
 const Title = styled.div`
@@ -469,16 +471,15 @@ const TRating = styled.div`
 
 
 const SeeMoreButton = styled.div`
-    justify-content:center;
     text-align:center;
-    width:300px;
+    width:200px;
     height:40px;
     border-radius:50px;
     font-size: 25px;
     font-family: Manrope;
-    margin:0;
-    margin-top: 30px;
-    margin-bottom: 100px;
+    margin: auto;
+    margin-top:50px;
+    margin-bottom:50px;
     background-color: #F68AAF;
     color:white;
 `;
