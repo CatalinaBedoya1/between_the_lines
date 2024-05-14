@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -29,8 +29,32 @@ const rotateAnimation = keyframes`
     to { transform: rotate(360deg); }
 `;
 
-const Audiobooks = () => {
+
+
+
+  const Audiobooks = () => {
     const containerRef = useRef();
+    const [audiobooks, setAudiobooks] = useState([]);
+  
+    useEffect(() => {
+        const fetchAudiobooks = async () => {
+            try {
+                const response = await fetch('/api/audiobooks');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch audiobooks');
+                }
+                const data = await response.json();
+                setAudiobooks(data.audiobooks);
+            } catch (error) {
+                console.error('Error fetching audiobooks:', error);
+            }
+        };
+        fetchAudiobooks();
+    }, []);
+
+
+
+
 
     //hero animation
     const HEROSECTION_DATA=[
@@ -64,17 +88,8 @@ const Audiobooks = () => {
         
     ];
 
-    //Trending Audiobooks
-    const TRENDING_DATA =[
-        { id: "01", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "02", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "03", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "04", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "05", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "06", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "07", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "08", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-    ];
+
+
 
     return (
         <AudiobookContainer>
@@ -129,25 +144,24 @@ const Audiobooks = () => {
         <AudioSectionText>Trending Audiobooks ...</AudioSectionText>
 
         <TrendingAudioContainer>
-                {TRENDING_DATA.map((TrendData) => (
+  {audiobooks.map((book) => (
+    <TrendingCard key={book.id}>
+      <img src={book.cover} alt="audiobook-cover" />
+      <TrendingCardContent>
+        <GreyText>
+          <img src={GreyTriangle} alt="triangle" />
+          Hover for sample
+        </GreyText>
+        <TTitle>{book.title}</TTitle>
+        <TAuthor>{book.author}</TAuthor>
+        <TTime>{book.time}</TTime>
+        <TRating>{book.rating}</TRating>
+        <GreyText>See more ...</GreyText>
+      </TrendingCardContent>
+    </TrendingCard>
+  ))}
+</TrendingAudioContainer>
 
-                <TrendingCard key={TrendData.id}>
-                    <img src={TrendData.cover} alt="trendingimg" />
-                    <TrendingCardContent>
-                        
-                        <GreyText>
-                            <img src={GreyTriangle} alt="grey triangle"/>
-                            Hover for sample
-                        </GreyText>
-                        <TTitle>{TrendData.title}</TTitle>
-                        <TAuthor>{TrendData.author}</TAuthor>
-                        <TTime>{TrendData.time}</TTime>
-                        <TRating>{TrendData.rating}</TRating>
-                        <GreyText>See more ...</GreyText>
-                    </TrendingCardContent>
-                </TrendingCard>
-                ))}
-        </TrendingAudioContainer>
         
         <Link to= "/discover/audiobooksDetails" style={{ textDecoration: 'none'}}>
             <SeeMoreButton>See More</SeeMoreButton>
@@ -212,7 +226,7 @@ const AudioInput = styled.input`
 `;
 const SearchIcon = styled.div`
     position: absolute;
-    left: 560px;
+    left: 500px;
     color: #3F3C3C;
 `;
 
