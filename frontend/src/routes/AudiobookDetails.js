@@ -16,9 +16,12 @@ import similar9 from "../assets/AudioDetails/similar9.png";
 import similar10 from "../assets/AudioDetails/similar10.png";
 import similar11 from "../assets/AudioDetails/similar11.png";
 import similar12 from "../assets/AudioDetails/similar12.png";
+import playButton from "../assets/playbutton.png";
+import playerLeft from "../assets/playerleft.png";
+import playerRight from "../assets/playerright.png";
 
 
-
+import { Accordion } from 'react-bootstrap';
 
 const rotateAnimation = keyframes`
     from { transform: rotate (0deg); }
@@ -61,6 +64,21 @@ const AudiobookDetails = () => {
                     <Headphoneimg src={headphones} alt="white headphones"/>
                 </AddButton>
 
+                <Accordion defaultActiveKey="0">
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header>Introduction</Accordion.Header>
+                    <Accordion.Body>
+                    text
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="1">
+                    <Accordion.Header>Chapter 1</Accordion.Header>
+                    <Accordion.Body>
+                    text
+                    </Accordion.Body>
+                </Accordion.Item>
+                </Accordion>
+
             </LeftContainer>
 
             <RightContainer>
@@ -72,7 +90,21 @@ const AudiobookDetails = () => {
                     <Time>9 hours 2 minutes</Time>
                 </HeaderContent>
 
+                
+         
+                
+                
+                
+
                 <HeaderBody>
+                    <PlayerButtons>
+                        <img src={playerLeft} alt="left side of play button"/>
+                        <img src={playButton} alt="play button"/>
+                        <img src={playerRight} alt="right side play button"/>
+                    </PlayerButtons>
+
+
+
                     <BodyP>
                         Alice Sun has always felt invisible at her elite Beijing international boarding school, where she’s the only scholarship student among China’s most rich and influential teens. But then she starts uncontrollably turning invisible—actually invisible.
                     </BodyP>
@@ -199,6 +231,8 @@ const Headphoneimg=styled.img`
 
 
 
+
+
 const RightContainer = styled.div`
     flex-direction:column;
     width:1000px;
@@ -230,6 +264,19 @@ const Time = styled.div`
     font-weight:500;
     font-size: 30px;
     color:white;
+`;
+
+
+const PlayerButtons =styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-bottom:30px;
+
+
+    align-items:center;
+    width: 600px;
+    height: 100px;
 `;
 
 const HeaderBody = styled.div`
