@@ -142,13 +142,13 @@ const CarouselTextContainer = styled.div`
 const Title = styled.h2`
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: #3E2D70;
   margin-bottom: 10px;
 `;
 
 const Author = styled.p`
   font-size: 18px;
-  color: #666;
+  color: #3E2D70;
   margin-bottom: 10px;
 `;
 
@@ -160,7 +160,7 @@ const Rating = styled.div`
 
 const Description = styled.p`
   font-size: 16px;
-  color: #333;
+  color: #3E2D70;
   margin-bottom: 10px;
   line-height: 1.5; /* Adjusted line height */
 `;

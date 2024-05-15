@@ -38,7 +38,6 @@ font-style: normal;
 
 .btn-adventure,
 .btn-classic,
-.btn-cookbooks,
 .btn-contemporaryfiction,
 .btn-dystopian,
 .btn-fantasy,
@@ -63,29 +62,62 @@ font-style: normal;
     text-decoration: none;
     cursor: pointer;
     border-radius: 50px;
-    background-color: #DA92AC; /* yellow */
+    background-color: #DA92AC; /* pink */
     color: #fff; /* white */
     margin-top: 20px;
     margin-right: 30px;
 }
 
 .btn-adventure{
-    margin-left: 40px;
+    margin-left: 150px;
 }
+
+.btn-adventure:hover,
+.btn-sciencefiction:hover,
+.btn-histfiction:hover,
+.btn-truecrime:hover{
+  background-color: #ef749f; /*pink*/
+  transition: 0.3s ease;
+}
+
 .btn-classic, .btn-horror,   .btn-search{
       padding: 10px 60px;
-      background-color: #E6B89C; /* blue */
+      background-color: #897AD5; /* purple */
   }
-  
-.btn-cookbooks, .btn-poetry, .btn-thriller {
+
+.btn-classic:hover,
+.btn-horror:hover,
+.btn-search:hover,
+.btn-mystery:hover,
+.btn-search:hover{
+    background-color: #6c54df; /* purple */
+    transition: 0.3s ease;
+  }
+
+.btn-poetry, .btn-thriller {
       padding: 10px 60px;
-      background-color: #88C3E4; /* green */
+      background-color: #88C3E4; /* lightblue */
+  }
+
+  .btn-fantasy:hover,
+  .btn-poetry:hover,
+  .btn-thriller:hover{
+    background-color: #58b7ee;
+    transition: 0.3s ease;
   }
 
 .btn-fiction, .btn-romance {
-    background-color: #EAD2AC;
+    background-color: #B0507F; /* maroon*/
   }
   
+.btn-dystopian:hover,
+.btn-fiction:hover,
+.btn-romance:hover,
+.btn-selfhelp:hover{
+    background-color: #da3c88;
+    transition: 0.3s ease;
+  }
+
 .btn-fantasy{
     margin-left: 90px;
     background-color: #88C3E4; /* lightblue */
@@ -96,19 +128,27 @@ font-style: normal;
       background-color: #95B9B4; /* green */
   }
 
+.btn-contemporaryfiction:hover,
+.btn-memoir:hover,
+.btn-nonfiction:hover,
+.btn-youngadult:hover{
+    background-color: #50b1a4;
+    transition: 0.3s ease;
+  }
+
   .btn-mystery{
       padding: 10px 60px;
-      background-color: #E6B89C; /* blue */
+      background-color: #897AD5; /* purple */
       margin-left: 70px;
   }
 
   .btn-dystopian{
       padding: 10px 50px;
-      background-color: #EAD2AC; /* yellow */
+      background-color: #B0507F; /* maroon */
   }
   .btn-selfhelp{
     padding: 10px 50px;
-    background-color: #EAD2AC; /* yellow */
+    background-color: #B0507F; /* maroon */
     margin-left: 130px;
   }
 
@@ -118,12 +158,12 @@ font-style: normal;
 
   .btn-youngadult{
       padding: 10px 70px;
-      background-color: #5397AC; /* blue */
+      background-color: #95B9B4; /* green */
   }
 
   .btn-search{
       padding: 10px 40px;
-      background-color: #D6B2A6; /* pink */
+      background-color: #897AD5; /* purple */
   }
   .BOTM-container {
     background-color: #fff;
@@ -132,11 +172,17 @@ font-style: normal;
 
   .BOTM-content{
     padding-left: 80px;
+    margin-top: 30px;
   }
 
   .BOTM-content h2{
     margin:0;
     color: white;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin-top: -20px;
   }
 
   .BOTM-content p{
@@ -148,9 +194,14 @@ font-style: normal;
     margin-left: 20px;
   }
 
+  .BOTM-summary p{
+    font-style: italic;
+    font-size: 22px;
+  }
   .BOTM-image{
     height: 500px;
     width: auto;
+    margin-top: 35px;
   }
 
  .qResultHeader{

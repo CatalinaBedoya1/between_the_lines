@@ -84,7 +84,7 @@ font-style: normal;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 60px;
-    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    background: #F68AAF;
     color: white;
     border: 3px solid #FFF;
     border-radius: 20px;
@@ -93,7 +93,7 @@ font-style: normal;
     transition: background-color 0.3s ease;
   
     &:hover {
-      background-color: #0056b3;
+      background-color: #CD6F90;
     }
   `;
  

@@ -34,7 +34,7 @@ font-optical-sizing: auto;
 font-weight: 700;
 font-style: normal;
   color: white;
-  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 28px;
 `;
 const VoteBooksContainer = styled.div`
@@ -42,7 +42,6 @@ const VoteBooksContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
-  margin-top: 50px;
   width: 100%; /* Ensure full width */
   
 `;

@@ -176,7 +176,7 @@ const ScrollContainer = styled.div`
 
     /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        background: #4BB5D6;
     }
 `;
 
@@ -262,19 +262,20 @@ const CardHoverButton = styled.div`
 const SeeMoreButton = styled.div`
 font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
-font-weight: 700;
+font-weight: 600;
 font-style: normal;
-padding: 10px 60px;
-    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+margin-bottom: 30px;
+padding: 10px 40px;
+    background: #F68AAF;
     color: white;
     border: 3px solid #FFF;
-    border-radius: 20px;
-    font-size: 18px;
-
+    border-radius: 50px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   
     &:hover {
-      background-color: #0056b3;
+      background-color: #CD6F90;
     }
-    `
+`;
+    
