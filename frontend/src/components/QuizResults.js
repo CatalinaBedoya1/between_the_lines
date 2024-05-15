@@ -112,7 +112,7 @@ const ScrollContainer = styled.div`
 
     /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        background: #4BB5D6;
     }
 `;
 

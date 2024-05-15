@@ -2,10 +2,10 @@ import React from 'react'
 import '../App.css';
 import './HeroSection.css';
 import { Link } from 'react-router-dom';
-import msFirst from '../assets/card1.png';
-import msSecond from '../assets/card2.png';
-import msThird from '../assets/card3.png';
-import msFourth from '../assets/card4.png';
+import msFirst from '../assets/MSIcon1.png';
+import msSecond from '../assets/MSIcon2.png';
+import msThird from '../assets/MSIcon3.png';
+import msFourth from '../assets/MSIcon4.png';
 import myImage3 from '../assets/BOTM_GROUP2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
 import BOTMButton from '../components/FixedBOTMButton';
@@ -66,10 +66,6 @@ function HeroSection() {
     <p className="mission-text">Register for a variety of online and in-person monthly events</p>
   </div>
 </div>
-
-
-
-
         
         <div className="BOTM-container">
           

@@ -1,14 +1,14 @@
 import React from "react";
 import Card from "./Card";
 import "./Forums2.css";
-import forumSquare1 from "../assets/forumSquare1.png";
-import forumSquare2 from "../assets/forumSquare2.png";
-import forumSquare3 from "../assets/forumSquare3.png";
-import forumSquare4 from "../assets/forumSquare4.png";
-import forumSquare5 from "../assets/forumSquare5.png";
-import forumSquare6 from "../assets/forumSquare6.png";
-import forumSquare7 from "../assets/forumSquare7.png";
-import forumSquare8 from "../assets/forumSquare8.png";
+import forumSquare1 from "../assets/bookforum1.png";
+import forumSquare2 from "../assets/bookforum2.png";
+import forumSquare3 from "../assets/bookforum3.png";
+import forumSquare4 from "../assets/bookforum4.png";
+import forumSquare5 from "../assets/bookforum5.png";
+import forumSquare6 from "../assets/bookforum6.png";
+import forumSquare7 from "../assets/bookforum7.png";
+import forumSquare8 from "../assets/bookforum8.png";
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 
@@ -23,38 +23,39 @@ const Forum2ArtSection = () => {
     },
     {
       imageUrl: forumSquare2,
-      description: "A Darker Shade of Magic by V.E. Schwab",
+      description: "The Way I Am Now by Amber Smith",
     },
     {
       imageUrl: forumSquare3,
-      description: "Do I Know You by Emily Wibberley & Austin Seigmud- Broka",
+      description: "A Thousand Splendid Suns by Khaled Housseini",
     },
     {
         imageUrl: forumSquare4,
-        description: "Verity By Colleen Hoover",
+        description: "Things We Hide From The Light by Lucy Score",
       }
   ];
   const forums2ndrow = [
     {
       imageUrl: forumSquare5,
-      description: "Rebecca By Daphne Du Maurier",
+      description: "The Goldfinch by Donna Tartt",
     },
     {
       imageUrl: forumSquare6,
-      description: "Where the Crawdads Sing By Delia Owens",
+      description: "Where the Crawdads Sing by Delia Owens",
     },
     {
       imageUrl: forumSquare7,
-      description: "All the Light We Cannot See By Anthony Doerr",
+      description: "Book Lovers by Emily Henry",
     },
     {
         imageUrl: forumSquare8,
-        description: "The Gilded Ones By Namina Forna",
+        description: "Wildfire by Hannah Grace",
       }
   ];
   return (
     <>
-      <h4 className="forums2art-text" id="Art">
+      <h4 className="forums2art-text" id="Art"
+      style={{fontFamily: 'Agbalumo', fontSize: '50px', color: '#3E2D70', textAlign: 'center'}}>
         Popular Book Club Forums
       </h4>
       <div className="forums2artsection">
@@ -90,16 +91,17 @@ font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
 font-weight: 700;
 font-style: normal;
+margin-bottom: 30px;
 padding: 10px 40px;
-    background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+    background: #F68AAF;
     color: white;
     border: 3px solid #FFF;
-    border-radius: 20px;
-    font-size: 18px;
+    border-radius: 50px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   
     &:hover {
-      background-color: #0056b3;
+      background-color: #CD6F90;
     }
 `

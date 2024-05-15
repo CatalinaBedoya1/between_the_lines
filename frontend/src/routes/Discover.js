@@ -27,9 +27,7 @@ export const Discover = () => {
         <Link to="/discover/adventure" className="btn-adventure">adventure</Link>
         <Link to="/discover/classic" className="btn-classic">classic</Link>
         <Link to="/discover/contemporaryfiction" className="btn-contemporaryfiction">contemporary fiction</Link>
-        <Link to="/discover/cookbooks" className="btn-cookbooks">cook books</Link>
         <Link to="/discover/dystopian" className="btn-dystopian">dystopian</Link>
-        
         
         </div> 
         <div className='genre-row2' >
