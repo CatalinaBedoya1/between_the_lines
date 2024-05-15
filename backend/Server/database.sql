@@ -8,7 +8,7 @@ CREATE TABLE users(
     user_password VARCHAR(255) NOT NULL
 );
 
---ignore this table for now 
+
 
 CREATE TABLE todo(
     todo_id SERIAL,
@@ -37,3 +37,9 @@ VALUES
     (2, 0), 
     (3, 0), 
     (4, 0); 
+
+
+--modified users table
+ALTER TABLE users
+ADD COLUMN bio TEXT,
+ADD COLUMN profile_pic TEXT;

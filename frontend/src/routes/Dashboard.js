@@ -9,11 +9,14 @@ import Sidebar from "../components/Sidebar"; // Import Sidebar component
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
-
-
+import EditProfileForm from "../components/EditProfileForm";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+  const [bio, setBio] = useState("");
+  const [profilePic, setProfilePic] = useState("");
+  const [userId, setUserId] = useState(""); // State to store the user ID
 
   const getProfile = async () => {
     try {
@@ -24,6 +27,9 @@ const Dashboard = ({ setAuth }) => {
 
       const parseData = await res.json();
       setName(parseData.user_name);
+      setBio(parseData.bio); // Set bio state
+      setProfilePic(parseData.profile_pic);
+      setUserId(parseData.user_id); // Set user ID state
     } catch (err) {
       console.error(err.message);
     }
@@ -47,6 +53,36 @@ const Dashboard = ({ setAuth }) => {
     getProfile();
   }, []);
 
+  const handleSaveProfile = async (newBio, newProfilePic) => {
+    try {
+      // Call API endpoint to update user profile with new bio and profile picture
+      const res = await fetch(`http://localhost:4000/profile/${userId}/bio`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          jwt_token: localStorage.token,
+        },
+        body: JSON.stringify({ bio: newBio, profile_pic: newProfilePic }),
+      });
+  
+      const parseRes = await res.json();
+  
+      // Update bio and profilePic states
+      setBio(parseRes.bio);
+      setProfilePic(parseRes.profile_pic);
+  
+      // Show success message
+      toast.success("Profile updated successfully");
+  
+      // Close the edit profile form
+      setIsEditing(false);
+    } catch (err) {
+      console.error(err.message);
+      // Handle error
+      toast.error("Failed to update profile");
+    }
+  };
+
   return (
     <>
       <Sidebar /> 
@@ -56,15 +92,27 @@ const Dashboard = ({ setAuth }) => {
           <div>
             <h1 className="mt-5">Dashboard</h1>
             <h2>Welcome {name}</h2>
-           
           </div>
           <h2>Joined March 2024</h2>
-          <p>24 | Constantly lost in fictional worlds | Avid Romance Reader</p>
+          <p>{bio}</p>
         </div>
+
         <ButtonGroup>
-      <LogoutButton onClick={e => logout(e)}>Logout</LogoutButton>
-      <EditButton>Edit Profile</EditButton>
-    </ButtonGroup>
+          <LogoutButton onClick={logout}>Logout</LogoutButton>
+          <EditButton onClick={() => setIsEditing(true)}>Edit Profile</EditButton>
+        </ButtonGroup>
+
+        {isEditing && (
+          <div className="modal-overlay">
+            <EditProfileForm
+              bio={bio}
+              profilePic={profilePic}
+              onSave={handleSaveProfile}
+              onClose={() => setIsEditing(false)}
+            />
+          </div>
+        )}
+
         <div className="currentreading">
           <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
           <div className="updateprogressbtn">Update Progress</div>
@@ -93,12 +141,12 @@ const Dashboard = ({ setAuth }) => {
     </>
   );
 };
+
 const ButtonGroup = styled.div`
   display: flex;
   align-items: center;
   margin-left: 900px;
 `;
-
 const EditButton = styled.div`
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
@@ -111,6 +159,7 @@ const EditButton = styled.div`
   font-size: 25px;
   margin-bottom: 50px;
   margin-left: 20px; /* Adjust the margin as needed */
+  cursor: pointer;
 `;
 
 const LogoutButton = styled.button`
@@ -127,5 +176,7 @@ const LogoutButton = styled.button`
   font-size: 25px;
   border: none;
 `;
+
+
 
 export default Dashboard;

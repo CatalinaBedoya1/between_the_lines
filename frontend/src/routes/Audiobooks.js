@@ -35,22 +35,19 @@ const rotateAnimation = keyframes`
   const Audiobooks = () => {
     const containerRef = useRef();
     const [audiobooks, setAudiobooks] = useState([]);
-  
+    
     useEffect(() => {
         const fetchAudiobooks = async () => {
-            try {
-                const response = await fetch('/api/audiobooks');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch audiobooks');
-                }
-                const data = await response.json();
-                setAudiobooks(data.audiobooks);
-            } catch (error) {
-                console.error('Error fetching audiobooks:', error);
-            }
+          try {
+            const response = await fetch("/api/audiobooks");
+            const data = await response.json();
+            setAudiobooks(data);
+          } catch (error) {
+            console.error("Error fetching audiobooks:", error);
+          }
         };
         fetchAudiobooks();
-    }, []);
+      }, []);
 
 
 
@@ -142,7 +139,21 @@ const rotateAnimation = keyframes`
 
 
         <AudioSectionText>Trending Audiobooks ...</AudioSectionText>
+        <div>
+      <h1>Audiobooks</h1>
+      <ul>
+        {audiobooks.map((audiobook) => (
+          <li key={audiobook.id}>
+            <h2>{audiobook.title}</h2>
+            <p>{audiobook.author}</p>
+            <img src={audiobook.image} alt={audiobook.title} />
+          </li>
+        ))}
+      </ul>
+    </div>
 
+
+ {/*
         <TrendingAudioContainer>
   {audiobooks.map((book) => (
     <TrendingCard key={book.id}>
@@ -161,7 +172,7 @@ const rotateAnimation = keyframes`
     </TrendingCard>
   ))}
 </TrendingAudioContainer>
-
+*/}
         
         <Link to= "/discover/audiobooksDetails" style={{ textDecoration: 'none'}}>
             <SeeMoreButton>See More</SeeMoreButton>

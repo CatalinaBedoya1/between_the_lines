@@ -10,7 +10,7 @@ import myImage3 from '../assets/BOTM_GROUP2.png';
 import myImage2 from '../assets/ifyoucouldseethesun.png';
 import BOTMButton from '../components/FixedBOTMButton';
 import SplineHome from '../components/SplineHomepage';
-
+import ScrollReveal from './ScrollReveal';
 
 //Herosection has header, mission statements, Book of the month, events, and book forums.
 
@@ -18,6 +18,7 @@ import SplineHome from '../components/SplineHomepage';
 function HeroSection() {
     return (
       <div>
+        
         <div className="hero-container">
           <div className="SplineHomepage">
             <SplineHome/>
@@ -29,11 +30,12 @@ function HeroSection() {
             <a href="/discover/takeOurQuiz" className="HomeQuizbtn">Take Our Quiz</a>
           </div>
 
-
+        
           <BOTMButton/>
+          
         </div>  
 
-        
+       
         
         <div className="mission-section">
   <div className="text-center mission-container">
@@ -65,12 +67,12 @@ function HeroSection() {
   </div>
 </div>
 
-    
-        
-       
-     
+
+
+
         
         <div className="BOTM-container">
+          
         <img src={myImage3} alt="Book of the month cover" className="BOTM-imageZoom" />
         <div className="BOTM-content">
           <h1>BOOK OF THE MONTH</h1>
@@ -91,7 +93,7 @@ function HeroSection() {
           <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
         </div>
       </div>
-      
+     
 
       </div>
   );
