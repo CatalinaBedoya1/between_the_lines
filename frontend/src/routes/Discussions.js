@@ -181,13 +181,13 @@ const Discussions = () => {
             <header style={{ marginLeft: '80px', display: 'inline-flex', alignItems: 'center' }}>
                 Filter:
             <Discussionsbuttons>
-                    <Link to="/discussions/thriller"> <button className="thriller"> Thriller </button> </Link>
-                    <Link to="/discussions/booktok"> <button className="booktok">Booktok </button> </Link>
-                    <Link to="/discussions/horror"> <button className="horror">Horror </button> </Link>
-                    <Link to="/discussions/cliff-hanger"> <button className="cliff-hanger">Cliff-hanger </button> </Link>
-                    <Link to="/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
-                    <Link to="/discussions/historical"> <button className="historical">Historical </button> </Link>
-                    <Link to="/discussions/more"> <button className="more">+</button> </Link> 
+                    <Link to="/community/discussions/thriller"> <button className="thriller"> Thriller </button> </Link>
+                    <Link to="/community/discussions/booktok"> <button className="booktok">Booktok </button> </Link>
+                    <Link to="/community/discussions/horror"> <button className="horror">Horror </button> </Link>
+                    <Link to="/community/discussions/cliff-hanger"> <button className="cliff-hanger">Cliff-hanger </button> </Link>
+                    <Link to="/community/discussions/fantasy"> <button className="fantasy">Fantasy </button> </Link>
+                    <Link to="/community/discussions/historical"> <button className="historical">Historical </button> </Link>
+                    <Link to="/community/discussions/more"> <button className="more">+</button> </Link> 
             </Discussionsbuttons>
             </header>
             </div>
@@ -549,6 +549,7 @@ const Trendingbutton = styled.div`
      gap: 20px;
      flex-wrap: nowrap;
 `;
+
 
 export default Discussions;
 

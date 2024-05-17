@@ -60,7 +60,6 @@ const getVoteCounts = async () => {
 };
 
 
-
 //ROUTES
 
 
@@ -98,6 +97,14 @@ app.get('/api/book-cover', async (req, res) => {
     console.error('Error fetching book cover:', error);
     res.status(500).json({ success: false, message: 'Internal server error' });
   }
+});
+
+// Api to create for the forums
+app.post("/api/create/topic", async (req, res) => {
+    const { topic, userId } = req.body;
+    const topicId = generateID();
+
+    console.log({ topic, userId, topicId });
 });
 
 
