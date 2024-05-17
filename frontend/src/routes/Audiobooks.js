@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -20,8 +20,8 @@ import pic12 from "../assets/AudioAnimation/pic12.png";
 
 
 const translateAnimation = keyframes`
-    from { transform: translateX(100%); }
-    to { transform:translateX(0%); }
+    from { transform: translateX(0%); }
+    to { transform:translateX(-200%); }
 `;
 
 const rotateAnimation = keyframes`
@@ -29,8 +29,32 @@ const rotateAnimation = keyframes`
     to { transform: rotate(360deg); }
 `;
 
-const Audiobooks = () => {
+
+
+
+  const Audiobooks = () => {
     const containerRef = useRef();
+    const [audiobooks, setAudiobooks] = useState([]);
+  
+    useEffect(() => {
+        const fetchAudiobooks = async () => {
+            try {
+                const response = await fetch('/api/audiobooks');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch audiobooks');
+                }
+                const data = await response.json();
+                setAudiobooks(data.audiobooks);
+            } catch (error) {
+                console.error('Error fetching audiobooks:', error);
+            }
+        };
+        fetchAudiobooks();
+    }, []);
+
+
+
+
 
     //hero animation
     const HEROSECTION_DATA=[
@@ -46,7 +70,6 @@ const Audiobooks = () => {
         { id: "10", cover: pic10, title: "The Sirens of Titan", author: "Kurt Vonnegut" },
         { id: "11", cover: pic11, title: "King of Sloth", author: "Ana Huang" },
         { id: "12", cover: pic12, title: "Cold Blooded Liar", author: "Karen Rose" },
-
     ];
 
     // New Releases
@@ -65,17 +88,8 @@ const Audiobooks = () => {
         
     ];
 
-    //Trending Audiobooks
-    const TRENDING_DATA =[
-        { id: "01", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "02", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "03", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "04", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "05", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "06", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "07", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "08", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-    ];
+
+
 
     return (
         <AudiobookContainer>
@@ -90,9 +104,8 @@ const Audiobooks = () => {
                 </SearchIcon>
             </AudioSearchBarContainer>
 
-        {/* WORK IN PROGRESS ;-; -MADDY*/}
         <HeroAniContainer>
-        <ScrollContainer ref={containerRef}>
+        <HeroScrollContainer ref={containerRef}>
             <HeroAniContentBox>
                 {HEROSECTION_DATA.map((HeroData) => (
                     <HeroCard key={HeroData.id}>
@@ -102,9 +115,8 @@ const Audiobooks = () => {
                     </HeroCard>
                 ))}
             </HeroAniContentBox>
-        </ScrollContainer>
+        </HeroScrollContainer>
         </HeroAniContainer>
-
         </AudiobookHeader>
 
         <AudioSectionText>New Releases ...</AudioSectionText>
@@ -132,39 +144,35 @@ const Audiobooks = () => {
         <AudioSectionText>Trending Audiobooks ...</AudioSectionText>
 
         <TrendingAudioContainer>
-                {TRENDING_DATA.map((TrendData) => (
+  {audiobooks.map((book) => (
+    <TrendingCard key={book.id}>
+      <img src={book.cover} alt="audiobook-cover" />
+      <TrendingCardContent>
+        <GreyText>
+          <img src={GreyTriangle} alt="triangle" />
+          Hover for sample
+        </GreyText>
+        <TTitle>{book.title}</TTitle>
+        <TAuthor>{book.author}</TAuthor>
+        <TTime>{book.time}</TTime>
+        <TRating>{book.rating}</TRating>
+        <GreyText>See more ...</GreyText>
+      </TrendingCardContent>
+    </TrendingCard>
+  ))}
+</TrendingAudioContainer>
 
-                <TrendingCard key={TrendData.id}>
-                    <img src={TrendData.cover} alt="trendingimg" />
-                    <TrendingCardContent>
-                        
-                        <GreyText>
-                            <img src={GreyTriangle}/>
-                            Hover for sample
-                        </GreyText>
-                        <TTitle>{TrendData.title}</TTitle>
-                        <TAuthor>{TrendData.author}</TAuthor>
-                        <TTime>{TrendData.time}</TTime>
-                        <TRating>{TrendData.rating}</TRating>
-                        <GreyText>See more ...</GreyText>
-                    </TrendingCardContent>
-                </TrendingCard>
-                ))}
-        </TrendingAudioContainer>
         
-        <Link to= "/discover/audiobooksDetails">
+        <Link to= "/discover/audiobooksDetails" style={{ textDecoration: 'none'}}>
             <SeeMoreButton>See More</SeeMoreButton>
         </Link>
+
         </AudiobookContainer>
     );
 };
 
 export default Audiobooks;
 
-const AudioBooksContainer = styled.div`
-    width: 100%;
-    height: 100vh;
-`
 
 const AudiobookContainer=styled.div`
     display:flex;
@@ -218,7 +226,7 @@ const AudioInput = styled.input`
 `;
 const SearchIcon = styled.div`
     position: absolute;
-    left: 560px;
+    left: 500px;
     color: #3F3C3C;
 `;
 
@@ -242,9 +250,17 @@ const HeroAniContentBox = styled.div`
     margin-top:30px;
     align-items: center;
     gap: 70px;
+`;
+const HeroScrollContainer = styled.div`
+    width: 100%; //1150px;
+    height: auto; //moves scroll bar
+    display: flex;
+    flex-direction: row;
 
-
-    //animation: ${translateAnimation} 15s linear infinite;
+    overflow:hidden;
+    padding-bottom:20px;
+    font-family: Manrope;
+    font-size:25px;
 `;
 const HeroCard = styled.div`
     display: flex;
@@ -254,6 +270,7 @@ const HeroCard = styled.div`
     width: auto;
     height: auto;
 
+    animation: ${translateAnimation} 15s linear infinite;
     
     img {
         width: 200px; 
@@ -264,10 +281,9 @@ const HeroCard = styled.div`
 
     &:hover {
         transform: scale(1.1);
-
-        &:hover img{ 
-            animation: ${rotateAnimation} 10s linear infinite;
-        }
+       &:hover img{
+        animation: ${rotateAnimation} 10s linear infinite;
+       }
     }
 `;
 const Title = styled.div`
@@ -469,16 +485,15 @@ const TRating = styled.div`
 
 
 const SeeMoreButton = styled.div`
-    justify-content:center;
     text-align:center;
-    width:300px;
+    width:200px;
     height:40px;
     border-radius:50px;
     font-size: 25px;
     font-family: Manrope;
-    margin:0;
-    margin-top: 30px;
-    margin-bottom: 100px;
+    margin: auto;
+    margin-top:50px;
+    margin-bottom:50px;
     background-color: #F68AAF;
     color:white;
 `;

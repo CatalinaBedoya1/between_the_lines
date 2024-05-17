@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import './BookDetails.css';
 import CreatePost from '../components/CreatePost';
 import BOTMZoomImg from '../assets/BOTM_GROUP2.png';
 import BOTMCoverImg from '../assets/ifyoucouldseethesun.png';

@@ -45,17 +45,18 @@
   font-weight: 600;
   padding: 10px 30px;
   font-size: 1.2rem;
-  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
+  background: #F68AAF;
   color: white;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 50px;
   transition: background-color 0.3s;
-  border: 2px solid white;
+  border: 5px solid white;
   outline: none;
 }
 
 .HomeQuizbtn:hover {
-  background-color: #0056b3;
+  background-color: #CD6F90;
+  transition: 0.3s ease;
 }
 
 
@@ -76,7 +77,6 @@
 
 
 .text-center {
-
   padding: 50px;
   margin-top: 60px;
   text-align: center;
@@ -112,7 +112,7 @@
 }
 .line {
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: #A08786;
   margin-bottom: 10px;
 }
@@ -132,7 +132,7 @@
   width: 100%;
   height: auto;
   color: rgb(255, 255, 255);
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   flex:1;
@@ -146,6 +146,7 @@
   border-width: 2px;
   margin-top: 15px;
   margin-bottom: 20px;
+  margin-left: 300px;
 }
 
 .BOTM-content h1 {
@@ -155,7 +156,7 @@
   font-size: 3rem;
   right: 50px;
   margin-bottom: 35px;
-  margin-left: 150px;
+  margin-left: 190px;
 }
 
 .BOTM-content h2{
@@ -182,13 +183,10 @@
   font-weight: 400;
   font-size: 1.7rem;
   margin-bottom:5px;
-  margin-left: -570px;
+  margin-left: -520px;
   text-align: center;
 }
 
-.BOTM-divider{
-  margin-left: 300px;
-}
 .BOTM-imageZoom {
   width: 100%; 
   height:auto;
@@ -199,7 +197,7 @@
 
 .BOTM-image {
   position:absolute;
-  top: 20px;
+  top: -10px;
   right: 130px;
   width: 300px; 
   height: auto; 

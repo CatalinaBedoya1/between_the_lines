@@ -22,6 +22,7 @@ import Register from './routes/Register';
 import Quiz from './routes/Quiz';
 import SearchResultsPage from './routes/SearchResultsPage';
 import "react-toastify/dist/ReactToastify.css";
+import LoadingScreen from './components/LoadingScreen';
 
 import { toast } from 'react-toastify';
 import './App.css';
@@ -29,8 +30,10 @@ import './App.css';
 toast.configure();
 
 function App() {
+  
   const checkAuthenticated = async () => {
     try {
+      
       const res = await fetch("http://localhost:4000/authentication/verify", {
         method: "POST",
         headers: { jwt_token: localStorage.token }
@@ -39,8 +42,10 @@ function App() {
       const parseRes = await res.json();
 
       parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+      
     } catch (err) {
       console.error(err.message);
+      
     }
   };
   useEffect(() => {
@@ -48,46 +53,59 @@ function App() {
   }, []);
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
 
   const setAuth = boolean => {
     setIsAuthenticated(boolean);
+    
   };
 
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
   return (
     <div className="container">
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login setAuth={setAuth} />} />
-        <Route path="/register" element={<Register setAuth={setAuth} />} />
-        <Route path="/dashboard" element={<Dashboard setAuth={setAuth} />} />
+      {loading ? (
+        <LoadingScreen />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<Login setAuth={setAuth} />} />
+          <Route path="/register" element={<Register setAuth={setAuth} />} />
+          <Route path="/dashboard" element={<Dashboard setAuth={setAuth} />} />
 
-        {isAuthenticated && (
-          <Route element={<AppLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/discover" element={<Discover />} />
-            <Route path="/discover/audiobooks" element={<Audiobooks />} />
-            <Route path="/discover/audiobooksDetails" element={<AudiobookDetails />} />
-            <Route path="/discover/whatsTrending" element={<WhatsTrending />} />
-            <Route path="/discover/takeOurQuiz" element={<TakeOurQuiz />} />
-            <Route path="/discover/searchResultsPage" element={<SearchResultsPage />} />
-            <Route path="/community" element={<Community />} />
-            <Route path="/community/bookClubs" element={<BookClubs />} />
-            <Route path="/community/discussions" element={<Discussions />} />
-            <Route path="/community/EventsPage" element={<EventsPage />} />
-            <Route path="/community/eventsComplete" element={<EventsComplete />} />
-            <Route path="/community/EventsSignup" element={<EventsSignup />} />
-            <Route path="/community/BookDetails" element={<BookDetails />} />
-            <Route path="/aboutus" element={<AboutUs />} />
-            <Route path="/quiz" element={<Quiz />} />
-          </Route>
-        )}
-      </Routes>
+          {isAuthenticated && (
+            <Route element={<AppLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/discover" element={<Discover />} />
+              <Route path="/discover/audiobooks" element={<Audiobooks />} />
+              <Route path="/discover/audiobooksDetails" element={<AudiobookDetails />} />
+              <Route path="/discover/whatsTrending" element={<WhatsTrending />} />
+              <Route path="/discover/takeOurQuiz" element={<TakeOurQuiz />} />
+              <Route path="/discover/searchResultsPage" element={<SearchResultsPage />} />
+              <Route path="/community" element={<Community />} />
+              <Route path="/community/bookClubs" element={<BookClubs />} />
+              <Route path="/community/discussions" element={<Discussions />} />
+              <Route path="/community/EventsPage" element={<EventsPage />} />
+              <Route path="/community/eventsComplete" element={<EventsComplete />} />
+              <Route path="/community/EventsSignup" element={<EventsSignup />} />
+              <Route path="/community/BookDetails" element={<BookDetails />} />
+              <Route path="/aboutus" element={<AboutUs />} />
+              <Route path="/quiz" element={<Quiz />} />
+            </Route>
+          )}
+        </Routes>
+      )}
     </div>
   );
 }
-
 
 
 const AppLayout = () => (

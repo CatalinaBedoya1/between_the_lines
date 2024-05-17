@@ -9,6 +9,8 @@ import loginIcon from "../assets/loginIcon.svg";
 import signupIcon1 from "../assets/signupIcon1.svg";
 
 const Login = ({ setAuth }) => {
+ 
+
   const [inputs, setInputs] = useState({
     email: "",
     password: ""
@@ -21,6 +23,7 @@ const Login = ({ setAuth }) => {
 
   const onSubmitForm = async e => {
     e.preventDefault();
+    
     try {
       const body = { email, password };
       const response = await fetch(
@@ -55,6 +58,7 @@ const Login = ({ setAuth }) => {
 
   return (
     <Container>
+      
       <BackgroundImage src={loginBgImg} alt="loginBgImg" />
       <FormContainer>
         <Title>Login</Title>

@@ -107,6 +107,61 @@ app.post("/api/create/topic", async (req, res) => {
     console.log({ topic, userId, topicId });
 });
 
+//audiobook API
+const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
+
+
+
+const getAccessToken = async () => {
+  const url = 'https://accounts.spotify.com/api/token';
+  const authString = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64');
+
+  const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': `Basic ${authString}`
+      },
+      body: 'grant_type=client_credentials'
+  });
+
+  if (!response.ok) {
+      throw new Error(`Failed to obtain access token: ${response.status} - ${response.statusText}`);
+  }
+
+  const data = await response.json();
+  return data.access_token;
+};
+
+// API route to fetch audiobooks from Spotify
+app.get('/api/audiobooks', async (req, res) => {
+  try {
+      const accessToken = await getAccessToken();
+      const ids = req.query.ids; 
+      const market = req.query.market; 
+      const url = `https://api.spotify.com/v1/audiobooks?ids=${ids}&market=${market}`;
+
+      const response = await fetch(url, {
+          headers: {
+              'Authorization': `Bearer ${accessToken}`
+          }
+      });
+
+      if (!response.ok) {
+          throw new Error(`Failed to fetch audiobooks: ${response.status} - ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      res.status(200).json(data);
+  } catch (error) {
+      console.error('Error fetching audiobooks:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+
 
 app.listen(4000, () => {
   console.log('Server is running on port 4000');

@@ -7,14 +7,14 @@ import AbstractImg from '../assets/AbstractImg.png';
 import Card from "../components/Card";
 
 // Import forum images
-import forumSquare1 from '../assets/forumSquare1.png';
-import forumSquare2 from '../assets/forumSquare2.png';
-import forumSquare3 from '../assets/forumSquare3.png';
-import forumSquare4 from '../assets/forumSquare4.png';
-import forumSquare5 from '../assets/forumSquare5.png';
-import forumSquare6 from '../assets/forumSquare6.png';
-import forumSquare7 from '../assets/forumSquare7.png';
-import forumSquare8 from '../assets/forumSquare8.png';
+import forumSquare1 from '../assets/bookforum1.png';
+import forumSquare2 from '../assets/bookforum2.png';
+import forumSquare3 from '../assets/bookforum3.png';
+import forumSquare4 from '../assets/bookforum4.png';
+import forumSquare5 from '../assets/bookforum5.png';
+import forumSquare6 from '../assets/bookforum6.png';
+import forumSquare7 from '../assets/bookforum7.png';
+import forumSquare8 from '../assets/bookforum8.png';
 //carousel images
 import CarouselImg1 from '../assets/CarouselImg1.png';
 import CarouselImg2 from '../assets/CarouselImg2.png';
@@ -46,16 +46,15 @@ font-family: "Agbalumo", system-ui;
 font-weight: 400;
 font-style: normal;
 font-size: 66px;
-  color: #A08786; /* White text color */
+  color: #3E2D70; /* White text color */
 `;
 const DiscoverPara = styled.p`
 margin-top:10px;
-
-font-size: 16px;
-font-family: "Roboto Mono", monospace;
-  font-weight: <weight>;
+font-size: 20px;
+font-family: "Manrope", sans-serif;
+  font-weight: 700;
   font-style: normal;
-color: #A08786;
+color: #3E2D70;
 `
 const CarouselContainer = styled.div`
   position: relative;
@@ -201,7 +200,6 @@ font-style: normal;
   margin-right: 110px;
 `;
 const ButtonContainer = styled.div`
-
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
@@ -210,48 +208,80 @@ const ButtonContainer = styled.div`
 const FilterButtonAll = styled.button`
 
   padding: 10px 40px;
-  background-color: #CCB7B6;
+  background-color: #88C3E4;
   color: #FFF;
   border: none;
   cursor: pointer;
   font-size: 16px;
   border-radius: 20px;
   margin-right: 10px;
+  font-family: "Manrope", sans-serif; 
+  font-optical-sizing: auto;
+  font-weight: 600;
+
+  transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #58b7ee;
 `;
+
 const FilterButtonRomance = styled.button`
   padding: 10px 40px;
-  background-color: #93C8C2;
+  background-color: #DA92AC;
   color: #FFF;
   border: none;
   cursor: pointer;
   font-size: 16px;
   border-radius: 20px;
   margin-right: 10px;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+
+  transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #ef749f;
 `;
 const FilterButtonSciFi = styled.button`
   padding: 10px 40px;
-  background-color: #679DAE;
+  background-color: #897AD5;
   color: #FFF;
   border: none;
   cursor: pointer;
   font-size: 16px;
   border-radius: 20px;
   margin-right: 10px;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+
+  transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #6c54df;
 `;
+
 const FilterButtonMore = styled.button`
 font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
 font-weight: 700;
 font-style: normal;
   padding: 10px 20px;
-  background-color: #E1DDDD;
+  background-color: #B0507F;
   color: #FFF;
   border: none;
   cursor: pointer;
   font-size: 16px;
   border-radius: 20px;
   margin-right: 10px;
+
+  transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #da3c88;
 `;
+
 const TitleContainer = styled.div`
 font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
@@ -301,16 +331,18 @@ const bounce = keyframes`
 const AnimatedButton = styled.button`
 font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
-font-weight: 700;
+font-weight: 600;
 font-style: normal;
-  padding: 10px 40px;
-  background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
-  color: #FFF;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 20px;
-  margin-right: 10px;
+margin-bottom: 30px;
+padding: 10px 40px;
+    background: #F68AAF;
+    color: white;
+    border: 3px solid #FFF;
+    border-radius: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
   animation: ${bounce} 1s infinite;
   
   &:hover {
@@ -335,24 +367,22 @@ font-style: normal;
 const SeeMoreButton = styled.button`
 font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
-font-weight: 700;
+font-weight: 600;
 font-style: normal;
+margin-bottom: 30px;
 padding: 10px 40px;
-background: linear-gradient(230.28deg, #ddbfb5, #5397ac);
-color: #FFF;
-border: none;
-font-size: 16px;
-  cursor: pointer;
-  border-radius: 20px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-  animation: ${bounce} 1s infinite;
+    background: #F68AAF;
+    color: white;
+    border: 3px solid #FFF;
+    border-radius: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: ${bounce} 1s infinite;
   
   &:hover {
     animation-play-state: paused;
 `;
-
-
 
 
 const Forum2ArtSection = () => {
@@ -363,21 +393,21 @@ const Forum2ArtSection = () => {
       },
       {
         imageUrl: forumSquare2,
-        description: "A Darker Shade of Magic by V.E. Schwab",
+        description: "The Way I Am Now by Amber Smith",
       },
       {
         imageUrl: forumSquare3,
-        description: "Do I Know You by Emily Wibberley & Austin Seigmud- Broka",
+        description: "A Thousand Splendid Suns by Khaled Housseini",
       },
       {
         imageUrl: forumSquare4,
-        description: "Verity By Colleen Hoover",
+        description: "Things We Hide From The Light by Lucy Score",
       }
     ];
     const forums2ndrow = [
       {
         imageUrl: forumSquare5,
-        description: "Rebecca By Daphne Du Maurier",
+        description: "The Goldfinch by Donna Tartt",
       },
       {
         imageUrl: forumSquare6,
@@ -385,18 +415,19 @@ const Forum2ArtSection = () => {
       },
       {
         imageUrl: forumSquare7,
-        description: "All the Light We Cannot See By Anthony Doerr",
+        description: "Book Lovers by Emily Henry",
       },
       {
         imageUrl: forumSquare8,
-        description: "The Gilded Ones By Namina Forna",
+        description: "Wildfire by Hannah Grace",
       }
     ];
   
     return (
       <>
-        <SectionTitle className="forums2art-text" id="Art">
-          Book Club...
+        <SectionTitle className="forums2art-text" id="Art" 
+        style={{fontFamily: 'Agbalumo', fontSize: '50px', color: '#3E2D70'}}>
+          Book Club Forums
         </SectionTitle>
         <div className="forums2artsection">
           {forums.map((forum, index) => (
