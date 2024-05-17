@@ -111,6 +111,7 @@ app.get('/api/book-cover', async (req, res) => {
 });
 
 //audiobook API
+/*
 const AudioApiKey = process.env.SERPAPI_API_KEY;
 
 app.get("/api/audiobooks", async (req, res) => {
@@ -125,7 +126,7 @@ app.get("/api/audiobooks", async (req, res) => {
   }
 });
 
-
+*/
 
 
 
