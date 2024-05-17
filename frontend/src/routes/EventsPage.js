@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import EventsHeroImg from '../assets/EventsHeroImg.png';
 //import EventsHeroImg2 from '../assets/EventsHeroImg2.png';
@@ -12,15 +12,31 @@ import localevent2 from '../assets/LocalEvent2.png';
 import localevent3 from '../assets/LocalEvent3.png';
 import calendar from '../assets/calendar.png';
 import heart from '../assets/redhearticon.png';
-
+import Newsletter from '../components/Newsletter';
 
 
 
 
 const EventsPage = () => {
+  const [showNewsletter, setShowNewsletter] = useState(false);
+
+  const handleSignUpClick = () => {
+    setShowNewsletter(true);
+  };
+  const handleCloseNewsletter = () => {
+    setShowNewsletter(false);
+  };
   return ( 
   <div>
     <EventsPageContainer>
+    {showNewsletter && (
+          <>
+            <Overlay onClick={handleCloseNewsletter} />
+            <NewsletterContainer>
+              <Newsletter onClose={handleCloseNewsletter} />
+            </NewsletterContainer>
+          </>
+        )}
     <EventsHeroContainer>
       <StyledEventsHeroImg src={EventsHeroImg} alt='EHImg'/>
       
@@ -28,11 +44,8 @@ const EventsPage = () => {
             <EHTitle>World Of Literature</EHTitle>
             <EHDescription>Explore local and online events near you! Join today</EHDescription>
            <EHSignup>Join Our Newsletter</EHSignup>
-            <Link to="/community/eventsComplete">
-              <EventsButton>
-              Sign Up
-              </EventsButton>
-              </Link>
+           <EventsButton onClick={handleSignUpClick}>Sign Up</EventsButton>
+              
       </EventsContent>
     </EventsHeroContainer>
 
@@ -64,7 +77,7 @@ const EventsPage = () => {
 
           <Register>
             <p>2,375 Views</p>
-            <Link to= '/community/EventsSignup' ><ERegisterButton>Register</ERegisterButton></Link>
+            <StyledLink to= '/community/EventsSignup' ><ERegisterButton>Register</ERegisterButton></StyledLink>
             <HeartIcon>
               <p>2,119</p>
               <img src= {heart} alt="red heart icon" />
@@ -94,7 +107,7 @@ const EventsPage = () => {
 
           <Register>
             <p>1,875 Views</p>
-            <Link to= '/community/EventsSignup' ><ERegisterButton>Register</ERegisterButton></Link>
+            <StyledLink to= '/community/EventsSignup' ><ERegisterButton>Register</ERegisterButton></StyledLink>
             <HeartIcon>
               <p>1,784</p>
               <img src= {heart} alt="red heart icon" />
@@ -231,6 +244,24 @@ export const EventsComplete = () => {
       </div>
     );
   };
+  const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+`;
+
+const NewsletterContainer = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  color: #FFF;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+`;
 
   const EventsPageContainer = styled.div`
   padding-top: 80px;
@@ -390,14 +421,32 @@ const LRegister = styled.div`
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 25px;
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+`;
+
 
 const ERegisterButton = styled.div`
 font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
 font-weight: 700;
 font-style: normal;
-color: #3E2D70;
+text-decoration: none;
+color: inherit;
+
   padding: 3px 20px;
   background-color: #F68AAF; 
   color: white;
@@ -409,7 +458,8 @@ color: #3E2D70;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #CD6F90; 
+    text-decoration: none;
+    color: inherit;
   }
 `;
 

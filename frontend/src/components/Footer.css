@@ -77,7 +77,7 @@
 .get-updates {
 
   text-align: center; /* Align text center */
-  margin-left: 100px;
+  margin-left: 70px;
   font-size: 16px;
   color: #FFFFFF;
   margin-top: 0;
@@ -99,12 +99,8 @@
   margin-bottom: 5px;
 }
 
-.get-updates input {
-  margin: 5px;
-  padding: 10px 30px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
+
+
 .Right-vertical-line {
   height: 200px; /* Adjust height as needed */
   width: 1px;
@@ -114,6 +110,8 @@
 
   
 }
+
+
 /* Footer Right Section */
 .footer-right {
   display: flex;
