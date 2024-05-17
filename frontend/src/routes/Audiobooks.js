@@ -30,32 +30,42 @@ const rotateAnimation = keyframes`
 `;
 
 
-
+const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
 
   const Audiobooks = () => {
     const containerRef = useRef();
-    //const [audiobooks, setAudiobooks] = useState([]);
-    /*
+    const [books, setBooks] = useState([]);
+    const [title, setTitle] = useState("");
+    const category = "hardcover-fiction";
+  
     useEffect(() => {
-        const fetchAudiobooks = async () => {
+        const fetchBooks = async () => {
           try {
-            const response = await fetch("/api/audiobooks");
-            const data = await response.text()
-            console.log(data)
-            // response.text()
-            // const data = await response.json();
-            // setAudiobooks(data);
+            const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${category}.json?api-key=${NYT_API_KEY}`);
+            const data = await response.json();
+            console.log("Fetched data:", data);
+
+            const booksData = data.results.books || [];
+            setBooks(booksData);
+            setTitle(mapTitle(category)); // Mapping function to get custom title
+                
           } catch (error) {
-            console.error("Error fetching audiobooks:", error);
-            
+            console.error(`Error fetching ${category} books:`, error);
           }
         };
-        fetchAudiobooks();
-      }, []);
 
-*/
+        fetchBooks();
+    }, [category]);
 
+    // Mapping function to get custom title
+    const mapTitle = (category) => {
+        switch (category) {
+          case "hardcover-fiction":
+            return "Top Community Picks Fiction";
+        }
+      };
 
+    const maxBooks = 8;
 
     //hero animation
     const HEROSECTION_DATA=[
@@ -142,41 +152,38 @@ const rotateAnimation = keyframes`
 
 
 
-        <AudioSectionText>Trending Audiobooks ...</AudioSectionText>
-        <div>
-      <h1>Audiobooks</h1>
-      {/*<ul>
-        {audiobooks.map((audiobook) => (
-          <li key={audiobook.id}>
-            <h2>{audiobook.title}</h2>
-            <p>{audiobook.author}</p>
-            <img src={audiobook.image} alt={audiobook.title} />
-          </li>
-        ))}
-      </ul>*/}
-    </div>
+        <AudioSectionText>Trending books ...</AudioSectionText>
+        <TrendingAudioContainer ref={containerRef}>
+        {books.slice(0, maxBooks).map((book) => {
+             console.log(book.cover);
+             return (
+
+             
+            <TrendingCard key={book.id}>
+              <BookCover src={book.book_image} alt={book.title} />
+              <TrendingCardContent>
+                <GreyText>
+                  <img src={GreyTriangle} alt="triangle" />
+                  Hover for sample
+                </GreyText>
+                <TTitle>{book.title}</TTitle>
+                <TAuthor>{book.author}</TAuthor>
+
+                {/* i added some links to purchase the books*/}
+                <RetailerLinks>
+                    <a href={book.amazon_product_url} target="_blank" rel="noopener noreferrer">Amazon</a>
+                    <a href="https://www.audible.com/" target="_blank" rel="noopener noreferrer">Audible</a>
+                </RetailerLinks>
+
+                <GreyText>See more ...</GreyText>
+              </TrendingCardContent>
+            </TrendingCard>
+             );
+        })}
+
+        </TrendingAudioContainer>
 
 
- {/*
-        <TrendingAudioContainer>
-  {audiobooks.map((book) => (
-    <TrendingCard key={book.id}>
-      <img src={book.cover} alt="audiobook-cover" />
-      <TrendingCardContent>
-        <GreyText>
-          <img src={GreyTriangle} alt="triangle" />
-          Hover for sample
-        </GreyText>
-        <TTitle>{book.title}</TTitle>
-        <TAuthor>{book.author}</TAuthor>
-        <TTime>{book.time}</TTime>
-        <TRating>{book.rating}</TRating>
-        <GreyText>See more ...</GreyText>
-      </TrendingCardContent>
-    </TrendingCard>
-  ))}
-</TrendingAudioContainer>
-*/}
         
         <Link to= "/discover/audiobooksDetails" style={{ textDecoration: 'none'}}>
             <SeeMoreButton>See More</SeeMoreButton>
@@ -497,7 +504,35 @@ const TTime = styled.div`
 const TRating = styled.div` 
 `;
 
+const BookCover = styled.img`
+    width: 145px;
+    height: 214px;
+    object-fit: cover;
 
+    &:hover {
+        transform: scale(1.2); 
+        transition: transform 0.2s ease; 
+    }
+`;
+
+const RetailerLinks = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    a {
+        text-decoration: none;
+        color: #333;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+`;
 
 const SeeMoreButton = styled.div`
     text-align:center;
