@@ -40,10 +40,14 @@ const rotateAnimation = keyframes`
         const fetchAudiobooks = async () => {
           try {
             const response = await fetch("/api/audiobooks");
-            const data = await response.json();
-            setAudiobooks(data);
+            const data = await response.text()
+            console.log(data)
+            // response.text()
+            // const data = await response.json();
+            // setAudiobooks(data);
           } catch (error) {
             console.error("Error fetching audiobooks:", error);
+            
           }
         };
         fetchAudiobooks();

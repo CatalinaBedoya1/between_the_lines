@@ -39,7 +39,12 @@ VALUES
     (4, 0); 
 
 
---modified users table
-ALTER TABLE users
-ADD COLUMN bio TEXT,
-ADD COLUMN profile_pic TEXT;
+
+
+--modified users_profiles for dash 
+CREATE TABLE user_profiles (
+    user_id UUID PRIMARY KEY,
+    bio TEXT,
+    profile_picture BYTEA,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);

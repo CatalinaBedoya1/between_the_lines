@@ -1,95 +1,120 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const EditProfileForm = ({ bio, profilePic, onSave, onClose }) => {
-  const [newBio, setNewBio] = useState(bio);
-  const [newProfilePic, setNewProfilePic] = useState(profilePic);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Create a FormData object to send bio and profile picture as multipart/form-data
-    const formData = new FormData();
-    formData.append("bio", newBio);
-    formData.append("profile_pic", newProfilePic);
-
-    try {
-      // Call the onSave function passed from the parent component
-      await onSave(formData);
-      // Close the edit profile form
-      onClose();
-    } catch (error) {
-      console.error("Error updating profile:", error);
-      // Handle error (e.g., display error message)
-    }
-  };
-
-  return (
-    <ModalContainer>
-      <ModalContent>
-        <h2>Edit Profile</h2>
-        <form onSubmit={handleSubmit}>
-          <FormGroup>
-            <label htmlFor="bio">Bio:</label>
-            <textarea id="bio" value={newBio} onChange={(e) => setNewBio(e.target.value)} />
-          </FormGroup>
-          <FormGroup>
-            <label htmlFor="profilePic">Profile Picture:</label>
-            <input type="file" id="profilePic" onChange={(e) => setNewProfilePic(e.target.files[0])} />
-          </FormGroup>
-          <ButtonContainer>
-            <SubmitButton type="submit">Save</SubmitButton>
-            <CancelButton type="button" onClick={onClose}>Cancel</CancelButton>
-          </ButtonContainer>
-        </form>
-      </ModalContent>
-    </ModalContainer>
-  );
-};
-
-const ModalContainer = styled.div`
+const ModalOverlay = styled.div`
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 80%;
-  max-width: 600px;
-  padding: 20px;
-  border-radius: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1000;
 `;
 
 const ModalContent = styled.div`
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-const FormGroup = styled.div`
-  margin-bottom: 20px;
+const Title = styled.h2`
+  margin-bottom: 1rem;
 `;
 
-const ButtonContainer = styled.div`
+const FormContainer = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Label = styled.label`
+  width: 100%;
+  margin-bottom: 0.5rem;
+`;
+
+const TextArea = styled.textarea`
+  width: 100%;
+  margin-bottom: 1rem;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  margin-bottom: 1rem;
+`;
+
+const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 100%;
 `;
 
-const SubmitButton = styled.button`
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+const Button = styled.button`
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 `;
 
-const CancelButton = styled.button`
-  padding: 10px 20px;
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+const SaveButton = styled(Button)`
+  background-color: #4caf50;
+  color: white;
 `;
+
+const CancelButton = styled(Button)`
+  background-color: #f44336;
+  color: white;
+`;
+
+const EditProfileForm = ({ onSave, onClose, initialBio, initialProfilePic }) => {
+  const [bio, setBio] = useState(initialBio);
+  const [profilePic, setProfilePic] = useState(initialProfilePic);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSave(bio, profilePic);
+  };
+
+  return (
+    <ModalOverlay>
+      <ModalContent>
+        <Title>Edit Profile</Title>
+        <FormContainer onSubmit={handleSubmit}>
+          <Label htmlFor="bio">Bio:</Label>
+          <TextArea
+            id="bio"
+            value={bio}
+            onChange={(e) => setBio(e.target.value)}
+            rows="4"
+          ></TextArea>
+          <Label htmlFor="profilePic">Profile Picture:</Label>
+          <Input
+            type="file"
+            id="profilePic"
+            onChange={(e) => setProfilePic(e.target.files[0])}
+          />
+          <ButtonGroup>
+            <SaveButton type="submit">Save</SaveButton>
+            <CancelButton type="button" onClick={onClose}>Cancel</CancelButton>
+          </ButtonGroup>
+        </FormContainer>
+      </ModalContent>
+    </ModalOverlay>
+  );
+};
 
 export default EditProfileForm;
+
+
+
+
+
+

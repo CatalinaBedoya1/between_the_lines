@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 
+
 const cors = require("cors");
 
 app.use(cors());
@@ -73,7 +74,7 @@ app.use("/authentication", require("./Server/routes/jwtAuth"));
 //dashboard routes
 app.use("/dashboard", require("./Server/routes/dashboard"));
 
-app.use('/profile', require("./Server/routes/profileRoutes"));
+app.use("/user-profiles", require("./Server/routes/userProfileRoutes"));
 
 
 
@@ -115,7 +116,7 @@ const AudioApiKey = process.env.SERPAPI_API_KEY;
 app.get("/api/audiobooks", async (req, res) => {
   try {
     const response = await fetch(
-      `https://serpapi.com/search.json?engine=google_play_product&store=audiobooks&api_key=${AudioApiKey}`
+      `https://serpapi.com/search.json?engine=google_play_product&store=audiobooks&product_id=AQAAAAB4yxbLfM&api_key=${AudioApiKey}`
     );
     const data = await response.json();
     res.json(data);

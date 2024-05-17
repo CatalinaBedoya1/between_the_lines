@@ -5,7 +5,7 @@ import QuizRecs from "../components/QuizResults";
 import DashIcon from "../assets/dashboardicon.png";
 import CurrentReading from "../assets/Dashprofile.png";
 import './Dashboard.css';
-import Sidebar from "../components/Sidebar"; // Import Sidebar component
+import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
@@ -16,7 +16,7 @@ const Dashboard = ({ setAuth }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [bio, setBio] = useState("");
   const [profilePic, setProfilePic] = useState("");
-  const [userId, setUserId] = useState(""); // State to store the user ID
+  const [userId, setUserId] = useState("");
 
   const getProfile = async () => {
     try {
@@ -26,10 +26,11 @@ const Dashboard = ({ setAuth }) => {
       });
 
       const parseData = await res.json();
+      console.log("Parsed Data:", parseData);
       setName(parseData.user_name);
-      setBio(parseData.bio); // Set bio state
+      setBio(parseData.bio);
       setProfilePic(parseData.profile_pic);
-      setUserId(parseData.user_id); // Set user ID state
+      setUserId(parseData.user_id);
     } catch (err) {
       console.error(err.message);
     }
@@ -37,7 +38,7 @@ const Dashboard = ({ setAuth }) => {
 
   const navigate = useNavigate();
 
-  const logout = async e => {
+  const logout = async (e) => {
     e.preventDefault();
     try {
       localStorage.removeItem("token");
@@ -55,30 +56,31 @@ const Dashboard = ({ setAuth }) => {
 
   const handleSaveProfile = async (newBio, newProfilePic) => {
     try {
-      // Call API endpoint to update user profile with new bio and profile picture
-      const res = await fetch(`http://localhost:4000/profile/${userId}/bio`, {
+      console.log("User ID:", userId);
+
+      const formData = new FormData();
+      formData.append("bio", newBio);
+      if (newProfilePic) formData.append("profile_pic", newProfilePic);
+
+      const res = await fetch(`http://localhost:4000/user-profiles/${userId}`, {
         method: "PUT",
         headers: {
-          "Content-Type": "application/json",
           jwt_token: localStorage.token,
         },
-        body: JSON.stringify({ bio: newBio, profile_pic: newProfilePic }),
+        body: formData,
       });
-  
-      const parseRes = await res.json();
-  
-      // Update bio and profilePic states
-      setBio(parseRes.bio);
-      setProfilePic(parseRes.profile_pic);
-  
-      // Show success message
-      toast.success("Profile updated successfully");
-  
-      // Close the edit profile form
-      setIsEditing(false);
+
+      if (res.ok) {
+        const parseRes = await res.json();
+        setBio(parseRes.bio);
+        setProfilePic(parseRes.profile_pic);
+        toast.success("Profile updated successfully");
+        setIsEditing(false);
+      } else {
+        throw new Error("Failed to update profile");
+      }
     } catch (err) {
       console.error(err.message);
-      // Handle error
       toast.error("Failed to update profile");
     }
   };
@@ -103,14 +105,14 @@ const Dashboard = ({ setAuth }) => {
         </ButtonGroup>
 
         {isEditing && (
-          <div className="modal-overlay">
-            <EditProfileForm
-              bio={bio}
-              profilePic={profilePic}
-              onSave={handleSaveProfile}
-              onClose={() => setIsEditing(false)}
-            />
-          </div>
+          <EditProfileForm
+            initialBio={bio}
+            initialProfilePic={profilePic}
+            onSave={handleSaveProfile}
+            onClose={() => setIsEditing(false)}
+            bio={bio}
+            setBio={setBio}
+          />
         )}
 
         <div className="currentreading">
@@ -147,6 +149,7 @@ const ButtonGroup = styled.div`
   align-items: center;
   margin-left: 900px;
 `;
+
 const EditButton = styled.div`
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
@@ -158,7 +161,7 @@ const EditButton = styled.div`
   background: #DA92AC;
   font-size: 25px;
   margin-bottom: 50px;
-  margin-left: 20px; /* Adjust the margin as needed */
+  margin-left: 20px;
   cursor: pointer;
 `;
 
@@ -176,7 +179,5 @@ const LogoutButton = styled.button`
   font-size: 25px;
   border: none;
 `;
-
-
 
 export default Dashboard;
