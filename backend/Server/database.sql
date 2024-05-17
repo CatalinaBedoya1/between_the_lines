@@ -8,7 +8,7 @@ CREATE TABLE users(
     user_password VARCHAR(255) NOT NULL
 );
 
---ignore this table for now 
+
 
 CREATE TABLE todo(
     todo_id SERIAL,
@@ -37,3 +37,14 @@ VALUES
     (2, 0), 
     (3, 0), 
     (4, 0); 
+
+
+
+
+--modified users_profiles for dash 
+CREATE TABLE user_profiles (
+    user_id UUID PRIMARY KEY,
+    bio TEXT,
+    profile_picture BYTEA,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);

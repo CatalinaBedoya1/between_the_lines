@@ -24,7 +24,7 @@
 }
 .bio{
     color: #3E2D70;
-    margin-left: -100px;
+    margin-right: 650px;
     
 }
 
@@ -32,7 +32,7 @@
     font-family: "Agbalumo", system-ui;
     font-style: normal;
     font-weight: 400;
-
+    margin-left: 0px;
     margin-top: -165px;
     margin-bottom: 10px;
     font-size: 50px;

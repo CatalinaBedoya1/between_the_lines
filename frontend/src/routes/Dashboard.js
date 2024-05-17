@@ -5,15 +5,18 @@ import QuizRecs from "../components/QuizResults";
 import DashIcon from "../assets/dashboardicon.png";
 import CurrentReading from "../assets/Dashprofile.png";
 import './Dashboard.css';
-import Sidebar from "../components/Sidebar"; // Import Sidebar component
+import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
-
-
+import EditProfileForm from "../components/EditProfileForm";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+  const [bio, setBio] = useState("");
+  const [profilePic, setProfilePic] = useState("");
+  const [userId, setUserId] = useState("");
 
   const getProfile = async () => {
     try {
@@ -23,7 +26,11 @@ const Dashboard = ({ setAuth }) => {
       });
 
       const parseData = await res.json();
+      console.log("Parsed Data:", parseData);
       setName(parseData.user_name);
+      setBio(parseData.bio);
+      setProfilePic(parseData.profile_pic);
+      setUserId(parseData.user_id);
     } catch (err) {
       console.error(err.message);
     }
@@ -31,7 +38,7 @@ const Dashboard = ({ setAuth }) => {
 
   const navigate = useNavigate();
 
-  const logout = async e => {
+  const logout = async (e) => {
     e.preventDefault();
     try {
       localStorage.removeItem("token");
@@ -47,6 +54,37 @@ const Dashboard = ({ setAuth }) => {
     getProfile();
   }, []);
 
+  const handleSaveProfile = async (newBio, newProfilePic) => {
+    try {
+      console.log("User ID:", userId);
+
+      const formData = new FormData();
+      formData.append("bio", newBio);
+      if (newProfilePic) formData.append("profile_pic", newProfilePic);
+
+      const res = await fetch(`http://localhost:4000/user-profiles/${userId}`, {
+        method: "PUT",
+        headers: {
+          jwt_token: localStorage.token,
+        },
+        body: formData,
+      });
+
+      if (res.ok) {
+        const parseRes = await res.json();
+        setBio(parseRes.bio);
+        setProfilePic(parseRes.profile_pic);
+        toast.success("Profile updated successfully");
+        setIsEditing(false);
+      } else {
+        throw new Error("Failed to update profile");
+      }
+    } catch (err) {
+      console.error(err.message);
+      toast.error("Failed to update profile");
+    }
+  };
+
   return (
     <>
       <Sidebar /> 
@@ -56,15 +94,27 @@ const Dashboard = ({ setAuth }) => {
           <div>
             <h1 className="mt-5">Dashboard</h1>
             <h2>Welcome {name}</h2>
-           
           </div>
           <h2>Joined March 2024</h2>
-          <p>24 | Constantly lost in fictional worlds | Avid Romance Reader</p>
+          <p>{bio}</p>
         </div>
+
         <ButtonGroup>
-      <LogoutButton onClick={e => logout(e)}>Logout</LogoutButton>
-      <EditButton>Edit Profile</EditButton>
-    </ButtonGroup>
+          <LogoutButton onClick={logout}>Logout</LogoutButton>
+          <EditButton onClick={() => setIsEditing(true)}>Edit Profile</EditButton>
+        </ButtonGroup>
+
+        {isEditing && (
+          <EditProfileForm
+            initialBio={bio}
+            initialProfilePic={profilePic}
+            onSave={handleSaveProfile}
+            onClose={() => setIsEditing(false)}
+            bio={bio}
+            setBio={setBio}
+          />
+        )}
+
         <div className="currentreading">
           <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
           <div className="updateprogressbtn">Update Progress</div>
@@ -93,6 +143,7 @@ const Dashboard = ({ setAuth }) => {
     </>
   );
 };
+
 const ButtonGroup = styled.div`
   display: flex;
   align-items: center;
@@ -110,7 +161,8 @@ const EditButton = styled.div`
   background: #DA92AC;
   font-size: 25px;
   margin-bottom: 50px;
-  margin-left: 20px; /* Adjust the margin as needed */
+  margin-left: 20px;
+  cursor: pointer;
 `;
 
 const LogoutButton = styled.button`

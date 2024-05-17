@@ -18,6 +18,7 @@
     "node-fetch": "^2.7.0",
     "pg": "^8.11.5",
     "react-bootstrap": "^2.10.2",
-    "serpapi": "^2.1.0"
+    "serpapi": "^2.1.0",
+    "uuid": "^9.0.1"
   }
 }

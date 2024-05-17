@@ -5,7 +5,11 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 
+
 const cors = require("cors");
+
+app.use(cors());
+
 const pool = require("./Server/db");
 app.use(express.json());
 
@@ -13,7 +17,7 @@ app.use(express.json());
 const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
 const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont know why this seems commented out 
 
-app.use(cors());
+//app.use(cors());
 app.use(express.json()); //req.body
 
 
@@ -69,6 +73,12 @@ app.use("/authentication", require("./Server/routes/jwtAuth"));
 //dashboard routes
 app.use("/dashboard", require("./Server/routes/dashboard"));
 
+app.use("/user-profiles", require("./Server/routes/userProfileRoutes"));
+
+
+
+
+
 //book search APIS
 app.get('/api/books/:category', async (req, res) => {
   try {
@@ -108,57 +118,22 @@ app.post("/api/create/topic", async (req, res) => {
 });
 
 //audiobook API
-const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
-const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
+const AudioApiKey = process.env.SERPAPI_API_KEY;
 
-
-
-const getAccessToken = async () => {
-  const url = 'https://accounts.spotify.com/api/token';
-  const authString = Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64');
-
-  const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': `Basic ${authString}`
-      },
-      body: 'grant_type=client_credentials'
-  });
-
-  if (!response.ok) {
-      throw new Error(`Failed to obtain access token: ${response.status} - ${response.statusText}`);
-  }
-
-  const data = await response.json();
-  return data.access_token;
-};
-
-// API route to fetch audiobooks from Spotify
-app.get('/api/audiobooks', async (req, res) => {
+app.get("/api/audiobooks", async (req, res) => {
   try {
-      const accessToken = await getAccessToken();
-      const ids = req.query.ids; 
-      const market = req.query.market; 
-      const url = `https://api.spotify.com/v1/audiobooks?ids=${ids}&market=${market}`;
-
-      const response = await fetch(url, {
-          headers: {
-              'Authorization': `Bearer ${accessToken}`
-          }
-      });
-
-      if (!response.ok) {
-          throw new Error(`Failed to fetch audiobooks: ${response.status} - ${response.statusText}`);
-      }
-
-      const data = await response.json();
-      res.status(200).json(data);
+    const response = await fetch(
+      `https://serpapi.com/search.json?engine=google_play_product&store=audiobooks&product_id=AQAAAAB4yxbLfM&api_key=${AudioApiKey}`
+    );
+    const data = await response.json();
+    res.json(data);
   } catch (error) {
-      console.error('Error fetching audiobooks:', error);
-      res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ error: error.message });
   }
 });
+
+
+
 
 
 
