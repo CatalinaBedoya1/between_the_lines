@@ -102,7 +102,7 @@ font-style: normal;
 const Title = styled.h2`
   font-size: 24px;
   font-weight: bold;
-  color: #A08786;
+  color: #3E2D70;
   margin-bottom: 10px;
 `;
 
@@ -119,7 +119,7 @@ const Rating = styled.div`
 
 const Description = styled.p`
   font-size: 16px;
-  color: #A08786;
+  color: #3E2D70;
   margin-bottom: 10px;
   line-height: 1.5; 
 `;
