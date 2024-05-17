@@ -34,8 +34,8 @@ const rotateAnimation = keyframes`
 
   const Audiobooks = () => {
     const containerRef = useRef();
-    const [audiobooks, setAudiobooks] = useState([]);
-    
+    //const [audiobooks, setAudiobooks] = useState([]);
+    /*
     useEffect(() => {
         const fetchAudiobooks = async () => {
           try {
@@ -53,7 +53,7 @@ const rotateAnimation = keyframes`
         fetchAudiobooks();
       }, []);
 
-
+*/
 
 
 
@@ -145,7 +145,7 @@ const rotateAnimation = keyframes`
         <AudioSectionText>Trending Audiobooks ...</AudioSectionText>
         <div>
       <h1>Audiobooks</h1>
-      <ul>
+      {/*<ul>
         {audiobooks.map((audiobook) => (
           <li key={audiobook.id}>
             <h2>{audiobook.title}</h2>
@@ -153,7 +153,7 @@ const rotateAnimation = keyframes`
             <img src={audiobook.image} alt={audiobook.title} />
           </li>
         ))}
-      </ul>
+      </ul>*/}
     </div>
 
 

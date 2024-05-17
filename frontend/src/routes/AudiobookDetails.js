@@ -63,7 +63,7 @@ const AudiobookDetails = () => {
                     Add to library  
                     <Headphoneimg src={headphones} alt="white headphones"/>
                 </AddButton>
-
+            {/*
                 <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>Introduction</Accordion.Header>
@@ -78,7 +78,7 @@ const AudiobookDetails = () => {
                     </Accordion.Body>
                 </Accordion.Item>
                 </Accordion>
-
+    */}
             </LeftContainer>
 
             <RightContainer>
