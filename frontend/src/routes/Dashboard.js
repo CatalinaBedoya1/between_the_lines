@@ -15,7 +15,6 @@ const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [bio, setBio] = useState("");
-  const [profilePic, setProfilePic] = useState("");
   const [userId, setUserId] = useState("");
 
   const getProfile = async () => {
@@ -26,16 +25,14 @@ const Dashboard = ({ setAuth }) => {
       });
 
       const parseData = await res.json();
-      console.log("Parsed Data:", parseData);
-      setName(parseData.user_name);
-      setBio(parseData.bio);
-      setProfilePic(parseData.profile_pic);
-      setUserId(parseData.user_id);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
-
+    console.log("Parsed Data:", parseData);
+    setName(parseData.user_name);
+    setBio(parseData.bio); // Ensure bio is set correctly
+    setUserId(parseData.user_id);
+  } catch (err) {
+    console.error(err.message);
+  }
+};
   const navigate = useNavigate();
 
   const logout = async (e) => {
@@ -54,26 +51,22 @@ const Dashboard = ({ setAuth }) => {
     getProfile();
   }, []);
 
-  const handleSaveProfile = async (newBio, newProfilePic) => {
+  const handleSaveProfile = async (newBio) => {
     try {
       console.log("User ID:", userId);
-
-      const formData = new FormData();
-      formData.append("bio", newBio);
-      if (newProfilePic) formData.append("profile_pic", newProfilePic);
 
       const res = await fetch(`http://localhost:4000/user-profiles/${userId}`, {
         method: "PUT",
         headers: {
           jwt_token: localStorage.token,
+          "Content-Type": "application/json"
         },
-        body: formData,
+        body: JSON.stringify({ bio: newBio })
       });
 
       if (res.ok) {
         const parseRes = await res.json();
         setBio(parseRes.bio);
-        setProfilePic(parseRes.profile_pic);
         toast.success("Profile updated successfully");
         setIsEditing(false);
       } else {
@@ -83,6 +76,9 @@ const Dashboard = ({ setAuth }) => {
       console.error(err.message);
       toast.error("Failed to update profile");
     }
+  };
+  const handleEditClick = () => {
+    setIsEditing(true);
   };
 
   return (
@@ -96,24 +92,24 @@ const Dashboard = ({ setAuth }) => {
             <h2>Welcome {name}</h2>
           </div>
           <h2>Joined March 2024</h2>
+          
           <p>{bio}</p>
         </div>
 
         <ButtonGroup>
           <LogoutButton onClick={logout}>Logout</LogoutButton>
-          <EditButton onClick={() => setIsEditing(true)}>Edit Profile</EditButton>
+          {!isEditing && (
+            <EditButton onClick={handleEditClick}>Edit Profile</EditButton>
+          )}
         </ButtonGroup>
 
         {isEditing && (
-          <EditProfileForm
-            initialBio={bio}
-            initialProfilePic={profilePic}
-            onSave={handleSaveProfile}
-            onClose={() => setIsEditing(false)}
-            bio={bio}
-            setBio={setBio}
-          />
-        )}
+  <EditProfileForm
+    initialBio={bio} // Pass current bio as initial value
+    onSave={handleSaveProfile} // Handle save action
+    onClose={() => setIsEditing(false)} // Handle close action
+  />
+)}
 
         <div className="currentreading">
           <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
