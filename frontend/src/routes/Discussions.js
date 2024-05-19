@@ -23,6 +23,7 @@ import BOTMAward from '../assets/award.png';
 const DiscussionHeaderContainer = styled.div`
     position: relative;
     height: 450px;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center; 

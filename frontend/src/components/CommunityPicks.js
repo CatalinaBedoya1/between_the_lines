@@ -79,32 +79,26 @@ const NewSection = ({ category }) => {
         }
     };
 
+   
     return (
         <>
             <NewQuizResult>
-                <p>{title}</p> {/* Display custom title */}
+                <p>{title}</p>
             </NewQuizResult>
-
-
             <ScrollContainer ref={containerRef}>
                 <ContentBox>
                     {books.map((book, index) => (
                         <CPcard key={index}>
                             <BookCover src={book.book_image} alt={book.title} />
-                            
                             <HoverOverlay>
                                 <HoverText>
-                                {book.title}
-                                <br></br>
-                                {book.author}
-                                <br></br>
-                                <br></br>
-                                {truncateSummary(book.description)}
-
-                                <HoverLink to="/routes/Discussions.js">
-                                    <CardHoverButton>View Details</CardHoverButton>
-                                </HoverLink>
-
+                                    {book.title}
+                                    <br />
+                                    {book.author}
+                                    <br />
+                                    <br />
+                                    {truncateSummary(book.description)}
+                                    <RetailerLinks amazonUrl={book.amazon_product_url} />
                                 </HoverText>
                             </HoverOverlay>
                         </CPcard>
@@ -112,6 +106,22 @@ const NewSection = ({ category }) => {
                 </ContentBox>
             </ScrollContainer>
         </>
+    );
+};
+
+const RetailerLinks = ({ amazonUrl }) => {
+    return (
+        <RetailerContainer>
+            <HoverLink href={amazonUrl} target="_blank" rel="noopener noreferrer">
+                <CardHoverButton>View Details</CardHoverButton>
+            </HoverLink>
+            <HoverLink href={amazonUrl} target="_blank" rel="noopener noreferrer">
+                Amazon
+            </HoverLink>
+            <HoverLink href="https://www.audible.com/" target="_blank" rel="noopener noreferrer">
+                Audible
+            </HoverLink>
+        </RetailerContainer>
     );
 };
 
@@ -278,4 +288,16 @@ padding: 10px 40px;
       background-color: #CD6F90;
     }
 `;
-    
+const RetailerContainer = styled.div`
+    margin-top: 10px;
+
+    a {
+        margin-right: 10px;
+        color: #007185;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+`;
