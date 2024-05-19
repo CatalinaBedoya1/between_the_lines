@@ -4,38 +4,59 @@ import styled from 'styled-components';
 
 
 const CreatePost = () => {
-  const [thread, setThread] = useState("");
+  const [forum, setForum] = useState("");
+  const [threadList, setThreadList] = useState([]);
 
+  const createTopic = () =>  {
+    fetch("http://localhost:4000/api/create/topic", {
+        method: "POST",
+        body: JSON.stringify({
+            topic: forum,
+            userID: localStorage.getItem("_id"),
+        }),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            alert(data.message);
+            setThreadList(data.topics);
+        })
+        .catch((err) =>  console.error(err));
+  };
+        
   const handleThreadSubmit = (e) => {
     e.preventDefault();
-    console.log({ thread });
-    setThread("");
-  }
+    console.log({ forum });
+    createTopic();
+    setForum("");
+  };
 
   return (
     <div className='createPostContainerOutside'>    
-
-    <div className='createPostContainerInside'>    
-      <select className='createPostText' name="cars" id="cars">
-      <option value="general">General</option>
-      <option value="bookOfTheMonth">Book Of The Month</option>
-      <option value="recommendations">Recommendations</option>
-      <option value="feedback">Feedback</option>
-      </select>
-      <br></br>
-      <input  className="createPostText"  placeholder="Create a title"/>
-      <br></br>
-      <input  className="createPostBodyText"  placeholder="Begin typing . . ."/>
-      <br></br>
-      <CheckboxContainer>
-            <CheckSquare type="checkbox" />
-            <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
-      </CheckboxContainer>
-      <div className="addImageBtn">Add image</div>
-      <div className="publishBtn">Publish</div>
-
-  </div>
-</div>
+    <div className='createPostContainerInside'>
+      <form onSubmit = {handleThreadSubmit}>
+        <select className='createPostText' name="cars" id="cars">
+          <option value="general">General</option>
+          <option value="bookOfTheMonth">Book Of The Month</option>
+          <option value="recommendations">Recommendations</option>
+          <option value="feedback">Feedback</option>
+        </select>
+        <br></br>
+        <input  className="createPostText"  placeholder="Create a title" value={forum} onChange={(e) => setForum(e.target.value)}/>
+        <br></br>
+        <input  className="createPostBodyText"  placeholder="Begin typing . . ."/>
+        <br></br>
+        <CheckboxContainer>
+          <CheckSquare type="checkbox" />
+          <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
+        </CheckboxContainer>
+        <div className="addImageBtn">Add image</div>
+        <div type='submit' className="publishBtn">Publish</div>
+      </form>
+    </div>
+    </div>
   );
 };
 
@@ -63,5 +84,3 @@ const CheckboxLabel = styled.div`
 `;
 
 export default CreatePost;
-
-
