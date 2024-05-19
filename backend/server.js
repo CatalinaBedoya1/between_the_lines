@@ -110,11 +110,26 @@ app.get('/api/book-cover', async (req, res) => {
 });
 
 // Api to create for the forums
+const topicList = [];
+
+function generateID() {return Math.random().toString(36).substr(2, 9);}
 app.post("/api/create/topic", async (req, res) => {
     const { topic, userId } = req.body;
     const topicId = generateID();
 
-    console.log({ topic, userId, topicId });
+    console.log({ topicId, topic, userId });
+    topicList.unshift({
+    id: topicId,
+    topic: topic,
+    replies: [],
+    views: [],
+    userId: userId,
+    date: new Date(),
+  });
+    res.json({
+    message: "Topic created successfully!",
+    topics: topicList,
+  });
 });
 
 //audiobook API
