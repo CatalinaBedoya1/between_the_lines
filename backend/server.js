@@ -21,6 +21,7 @@ const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont
 app.use(express.json()); //req.body
 
 
+
 //voting api routes
 app.post('/api/vote', async (req, res) => {
   const { cover_id } = req.body;
@@ -62,6 +63,7 @@ const getVoteCounts = async () => {
     client.release();
   }
 };
+
 
 
 //ROUTES
@@ -110,49 +112,72 @@ app.get('/api/book-cover', async (req, res) => {
 });
 
 // Api to create for the forums
-const topicList = [];
 
-function generateID() {return Math.random().toString(36).substr(2, 9);}
-app.post("/api/create/topic", async (req, res) => {
-    const { topic, userId } = req.body;
-    const topicId = generateID();
+const topicList = []; // Mock in-memory topic list
 
-    console.log({ topicId, topic, userId });
-    topicList.unshift({
-    id: topicId,
-    topic: topic,
-    replies: [],
-    views: [],
-    userId: userId,
-    date: new Date(),
-  });
-    res.json({
-    message: "Topic created successfully!",
-    topics: topicList,
-  });
-});
+function generateID() {
+  return Math.random().toString(36).substr(2, 9);
+}
 
-//audiobook API
-/*
-const AudioApiKey = process.env.SERPAPI_API_KEY;
-
-app.get("/api/audiobooks", async (req, res) => {
+// Create a forum topic
+app.post("/api/create/topic", (req, res) => {
   try {
-    const response = await fetch(
-      `https://serpapi.com/search.json?engine=google_play_product&store=audiobooks&product_id=AQAAAAB4yxbLfM&api_key=${AudioApiKey}`
-    );
-    const data = await response.json();
-    res.json(data);
+    const { topic, userId } = req.body;
+    if (!topic || !userId) {
+      throw new Error("Topic and userId are required fields.");
+    }
+    const topicId = generateID();
+  
+    const newTopic = {
+      id: topicId,
+      topic: topic,
+      replies: [],
+      views: [],
+      userId: userId,
+      date: new Date(),
+    };
+  
+    topicList.unshift(newTopic);
+  
+    res.status(201).json({
+      message: "Topic created successfully!",
+      topic: newTopic,
+    });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("Error creating topic:", error);
+    res.status(400).json({ error: error.message });
   }
 });
 
-*/
-
-
-
-
+// Get paginated list of topics
+app.get("/api/topics", (req, res) => {
+  try {
+    const { page = 1, limit = 5 } = req.query;
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+  
+    const results = {};
+    if (endIndex < topicList.length) {
+      results.next = {
+        page: parseInt(page) + 1,
+        limit: parseInt(limit)
+      };
+    }
+    
+    if (startIndex > 0) {
+      results.previous = {
+        page: parseInt(page) - 1,
+        limit: parseInt(limit)
+      };
+    }
+  
+    results.results = topicList.slice(startIndex, endIndex);
+    res.json(results);
+  } catch (error) {
+    console.error("Error fetching topics:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 app.listen(4000, () => {
   console.log('Server is running on port 4000');
