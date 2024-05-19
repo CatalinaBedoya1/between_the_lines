@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const ModalOverlay = styled.div`
@@ -45,11 +45,6 @@ const TextArea = styled.textarea`
   margin-bottom: 1rem;
 `;
 
-const Input = styled.input`
-  width: 100%;
-  margin-bottom: 1rem;
-`;
-
 const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
@@ -74,14 +69,18 @@ const CancelButton = styled(Button)`
   color: white;
 `;
 
-const EditProfileForm = ({ onSave, onClose, initialBio, initialProfilePic }) => {
+const EditProfileForm = ({ initialBio, onSave, onClose }) => {
   const [bio, setBio] = useState(initialBio);
-  const [profilePic, setProfilePic] = useState(initialProfilePic);
+
+  const handleChange = (e) => {
+    setBio(e.target.value); // Update local state
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave(bio, profilePic);
+    onSave(bio); // Pass updated bio to parent component
   };
+
 
   return (
     <ModalOverlay>
@@ -92,15 +91,9 @@ const EditProfileForm = ({ onSave, onClose, initialBio, initialProfilePic }) => 
           <TextArea
             id="bio"
             value={bio}
-            onChange={(e) => setBio(e.target.value)}
+            onChange={handleChange} // Update local state on change
             rows="4"
           ></TextArea>
-          <Label htmlFor="profilePic">Profile Picture:</Label>
-          <Input
-            type="file"
-            id="profilePic"
-            onChange={(e) => setProfilePic(e.target.files[0])}
-          />
           <ButtonGroup>
             <SaveButton type="submit">Save</SaveButton>
             <CancelButton type="button" onClick={onClose}>Cancel</CancelButton>
@@ -112,6 +105,7 @@ const EditProfileForm = ({ onSave, onClose, initialBio, initialProfilePic }) => 
 };
 
 export default EditProfileForm;
+
 
 
 
