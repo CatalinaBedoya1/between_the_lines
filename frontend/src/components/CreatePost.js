@@ -53,7 +53,7 @@ const CreatePost = () => {
           <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
         </CheckboxContainer>
         <div className="addImageBtn">Add image</div>
-        <div type='submit' className="publishBtn">Publish</div>
+        <button type='submit' className="publishBtn">Publish</button>
       </form>
     </div>
     </div>
