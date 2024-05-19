@@ -117,7 +117,7 @@ const DiscussionTitle = styled.h1`
   font-weight: bold;
   color: white; 
   z-index: 2;
-  margin-top: 50px;
+  margin-top: 110px;
   position: relative; 
   overflow: hidden;
   display: flex; 
