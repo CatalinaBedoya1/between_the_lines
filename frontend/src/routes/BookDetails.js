@@ -9,6 +9,14 @@ import BandNImg from '../assets/BarnesAndNobleIcon.png';
 import ChromeImg from '../assets/ChromeIcon.png'; 
 import WTRIcon from '../assets/WTRIcon.png';
 import WTLIcon from '../assets/WTLIcon.png';
+import bookforumimg1 from '../assets/ifyoucouldseethesun.png';
+import profile1 from '../assets/profile1.png';
+import profile4 from '../assets/profile4.png';
+import profile3 from '../assets/profile3.png';
+import profile2 from '../assets/profile2.png';
+import instagram from '../assets/Vector.png';
+import twitter from '../assets/Vector (1).png';
+import BOTMAward from '../assets/award.png';
 
 const BookDetails =() => {
     return(
@@ -50,6 +58,79 @@ const BookDetails =() => {
                 <p4>In this genre-bending YA debut, a Chinese American girl monetizes her strange new invisibility powers by discovering and selling her wealthy classmates’ most scandalous secrets.</p4>
             </BookSummary>
             </IfYouCouldSeeTheSunContainer>
+
+            <BFContainerRow>
+                <BookCard>
+                    <BookForumImg1>
+                        <img src= {bookforumimg1} alt="Book Cover for Forum 1" />
+                    </BookForumImg1>
+                    <Award>
+                        <img src= {BOTMAward} alt="Award Icon for Book of the Month" />
+                    </Award>
+                </BookCard>
+                <BookForumContainer>
+                <HeaderContent>
+                    <BookInfo>
+                    <h2>If You Could See The Sun</h2>
+                    <h3>Ann Liang</h3>
+                    <GenreButtons>
+                        <Genre1>Fiction</Genre1>
+                        <Genre2>Fantasy</Genre2>
+                    </GenreButtons>
+                    </BookInfo>
+                    <Share>
+                        <h2>Share:</h2>
+                        <img src= {instagram} alt="Instagram Icon" />
+                        <img src= {twitter} alt="Award Icon for Book of the Month" />
+                    </Share>
+                </HeaderContent>
+                <Forum>
+                <ForumHeadings>
+                    <FH1>Topic</FH1>
+                    <FH2>Replies</FH2>
+                    <FH3>Views</FH3>
+                    <FH4>User</FH4>
+                    <FH5>Date</FH5>
+                </ForumHeadings>
+                <ForumDivider></ForumDivider>
+                <User1>
+                    <Topic1>Ann Liang's Best Work</Topic1>
+                    <Replies1>3,599</Replies1>
+                    <Views1>4,023</Views1>
+                    <img src = {profile1} alt="Profile Img 1" />
+                    <Date1>15 seconds ago</Date1>
+                </User1>
+
+                <User2>
+                    <Topic2>Let's talk about that ending...</Topic2>
+                    <Replies2>3,758</Replies2>
+                    <Views2>5,135</Views2>
+                    <img src = {profile2} alt="Profile Img 1" />
+                    <Date2>25 seconds ago</Date2>
+                </User2>
+
+                <User3>
+                    <Topic3>Chapter 7</Topic3>
+                    <Replies3>2,134</Replies3>
+                    <Views3>3,952</Views3>
+                    <img src = {profile3} alt="Profile Img 3" />
+                    <Date3>40 seconds ago</Date3>
+                </User3>
+
+                <User4>
+                    <Topic4>Favorite Character</Topic4>
+                    <Replies4>5,719</Replies4>
+                    <Views4>6,085</Views4>
+                    <img src = {profile4} alt="Profile Img 3" />
+                    <Date4>55 seconds ago</Date4>
+                </User4>
+
+                <p>Load More...</p>
+
+                </Forum>
+            </BookForumContainer>
+            </BFContainerRow>
+        
             <CreatePost />
             </BookDetailsContainer>
     )
@@ -274,4 +355,258 @@ p3{
 p4{
     margin-top: 20px;
 }
+`;
+
+const BFContainerRow= styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+const BookForumContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 30px;
+  margin-bottom: 50px;
+`;
+
+const BookCard = styled.div`
+display: flex;
+flex-direction: column;
+margin-top: 120px;
+margin-left: 100px;
+`;
+
+const BookForumImg1 = styled.div`
+    img{
+        width: auto;
+        height: 500px;
+        margin-bottom:40px;
+        }
+`;
+
+const BookForumImg2 = styled(BookForumImg1)`
+    img{
+        margin-top:-50px;
+        }
+`;
+const Award = styled.div`
+    img{
+        z-index: 1;
+        margin-top: -120px;
+        margin-left: -20px;
+}        
+`;
+
+const HeaderContent = styled.div`
+display: flex;
+flex-direction: row;
+`;
+
+const BookInfo = styled.div`
+margin-left: 50px;
+font-family: "Manrope", sans-serif;
+font-weight: 700;
+font-size: 25px;
+color: #3E2D70;
+display: flex;
+flex-direction: column;
+margin-top: 100px;
+`;
+
+const GenreButtons = styled.div`
+display: flex;
+flex-direction: row;
+margin-top: 10px;
+gap: 15px;
+`;
+
+const BaseGenreButton = styled.div`
+font-family: "Manrope", sans-serif;
+font-weight: 700;
+padding: 12px 30px;
+border-radius: 50px;
+font-size: 18px;
+color: white;
+cursor: pointer;
+border: none;
+`;
+
+const Genre2 = styled(BaseGenreButton)`
+background-color: #88C3E4;
+`;
+
+const Genre1 = styled(BaseGenreButton)`
+background-color: #897AD5;
+`;
+
+const Share = styled.div`
+font-family: "Manrope", sans-serif;
+font-weight: 700;
+font-size: 18px;
+color: #3E2D70;
+margin-left: 200px;
+margin-top: 100px;
+
+img{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+`;
+
+const Share2 = styled(Share)`
+margin-left: 250px;
+`;
+
+const Forum = styled.div`
+display: flex;
+flex-direction: column;
+margin-top: 170px;
+
+p{
+    text-align: center;
+    font-size: 20px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    color: gray;
+    margin-top: 20px;
+
+}
+`;
+
+const ForumHeadings = styled.div`
+display: flex;
+flex-direction: row;
+font-size: 20px;
+font-family: "Manrope", sans-serif;
+font-weight: 600;
+color: #3E2D70;
+margin-top: -80px;
+margin-left: 60px;
+`;
+
+const FH1 = styled(ForumHeadings)`
+margin-left: -10px;
+`;
+
+const FH2 = styled(ForumHeadings)`
+margin-left: 300px;
+`;
+
+const FH3 = styled(ForumHeadings)`
+`;
+
+const FH4 = styled(ForumHeadings)`
+`;
+
+const FH5 = styled(ForumHeadings)`
+margin-left: 70px;
+`;
+
+const ForumDivider = styled.div`
+height: 2px;
+width: 820px;
+background-color: #ccc; 
+margin-top: -40px;
+margin-left: 50px;
+`;
+
+const User1 = styled.div`
+display: flex;
+flex-direction: row;
+margin-top: 10px;
+font-size: 20px;
+font-family: "Manrope", sans-serif;
+font-weight: 600;
+color: #3E2D70;
+
+img{
+    width: 45px;
+    height: auto;
+    margin-left: 60px;
+}
+`;
+
+const Topic1 = styled(User1)`
+margin-left: 50px;
+margin-right: 110px;
+`;
+
+const Replies1 = styled(User1)`
+margin-left: 40px;
+`;
+
+const Views1 = styled(User1)`
+margin-left: 70px;
+`;
+
+const Date1 = styled(User1)`
+margin-left: 30px;
+`;
+
+const User2 = styled.div`
+display: flex;
+flex-direction: row;
+margin-top: 10px;
+font-size: 20px;
+font-family: "Manrope", sans-serif;
+font-weight: 600;
+color: #3E2D70;
+
+img{
+    width: 45px;
+    height: auto;
+    margin-left: 60px;
+}
+`;
+
+const Topic2 = styled(User2)`
+margin-left: 50px;
+margin-right: 80px;
+`;
+
+const Replies2 = styled(User1)`
+
+`;
+
+const Views2 = styled(Views1)`
+margin-left: 79px;
+`;
+
+const Date2 = styled(Date1)`
+`;
+
+const User3 = styled(User1)`
+`;
+
+const Topic3 = styled(User1)`
+margin-left: 50px;
+margin-right: 265px;
+`;
+
+const Replies3 = styled(User1)`
+`;
+
+const Views3 = styled(Views1)`
+margin-left: 76px;
+`;
+
+const Date3 = styled(Date1)`
+`;
+
+const User4 = styled(User1)`
+`;
+
+const Topic4 = styled(User1)`
+margin-left: 50px;
+margin-right: 180px;
+`;
+
+const Replies4 = styled(User1)`
+`;
+
+const Views4 = styled(Views1)`
+margin-left: 73px;
+`;
+
+const Date4 = styled(Date1)`
 `;

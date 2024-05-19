@@ -738,17 +738,17 @@ const Quiz = () => {
   };
 
   
-
   const getBookRecommendations = () => {
     let filteredBooks = books;
-
-    // this is the filter function but might need to ask Prof for a better way
+  
+    // Filter books based on genre preference
+    const selectedGenre = answers[0]; // Assuming the genre question is the first one
+    filteredBooks = filteredBooks.filter(book => book.genre === selectedGenre);
+  
+    // Apply additional filters based on other quiz answers if needed
     for (let questionId in answers) {
       const answer = answers[questionId];
       switch (parseInt(questionId)) {
-        case 0: // Genre
-          filteredBooks = filteredBooks.filter(book => book.genre === answer);
-          break;
         case 1: // Length
           filteredBooks = filteredBooks.filter(book => book.length === answer);
           break;
@@ -770,13 +770,12 @@ const Quiz = () => {
         default:
           break;
       }
-      console.log(`Filtered books after question ${questionId}:`, filteredBooks);
     }
-
+  
     // Return filtered books, or return a random book if no match found
     return filteredBooks.length > 0 ? filteredBooks : [books[Math.floor(Math.random() * books.length)]];
   };
-
+  
   const renderQuestion = () => {
     const questionText = [
       "What genre of books do you prefer?",
