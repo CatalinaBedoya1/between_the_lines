@@ -83,7 +83,7 @@
     border-radius: 50px;
     font-size: 18px;
     color: #ffffff;
-    background: #DA92AC;
+    background: #F68AAF;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -103,7 +103,7 @@
     border-radius: 50px;
     font-size: 18px;
     color: #ffffff;
-    background: #DA92AC;
+    background: #F68AAF;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -124,7 +124,7 @@
     border-radius: 50px;
     font-size: 18px;
     color: #ffffff;
-    background: #DA92AC;
+    background: #F68AAF;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -144,7 +144,7 @@
     border-radius: 50px;
     font-size: 18px;
     color: #ffffff;
-    background: #DA92AC;
+    background: #F68AAF;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -157,6 +157,7 @@
     font-family: "Agbalumo", system-ui;
     font-weight: 400;
     font-style: normal;
+    font-size: 40px;
     margin-top: 30px;
     color: #3E2D70;
 }
@@ -167,7 +168,7 @@
 .topgenre4,
 .topgenre5{
     display: inline-block;
-    padding: 10px 60px;
+    padding: 12px 50px;
     font-size: 25px;
     text-align: center;
     text-decoration: none;
@@ -176,52 +177,49 @@
     color: #fff; /* white */
     margin-right: 40px;
     margin-top: 30px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    transition: 0.3s ease;
 }
 
 .topgenre1 {
-    background-color: #EAD2AC; /*yellow */
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
+    background-color: #897AD5; /*yellow */
 }
 
+.topgenre1:hover{
+    background-color: #6c54df;
+}
 .topgenre2 {
-    background-color: #DA92AC; /*pink */
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
+    background-color: #F68AAF; /*pink */
+}
+.topgenre2:hover{
+    background-color: #ef749f;
 }
 
 .topgenre3 {
     background-color: #88C3E4; /*pink */
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
+}
+.topgenre3:hover{
+    background-color: #58b7ee;
 }
 
 .topgenre4{
-    background-color: #9DBEBD; /*yellow */
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
+    background-color: #95B9B4; /*green */
 }
-
+.topgenre4:hover{
+    background-color: #50b1a4;
+}
 .topgenre5{
-    background-color: #4281A4; /*blue */
+    background-color: #B0507F; /*blue */
     flex-direction: column;
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
 }
-
+.topgenre5:hover{
+    background-color: #da3c88;
+}
 
 .quizresultheader{
     font-family: "Agbalumo", system-ui;
+    font-size: 40px;
     font-weight: 400;
     font-style: normal;
     text-align: left;

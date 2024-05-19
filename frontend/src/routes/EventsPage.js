@@ -67,9 +67,9 @@ const EventsPage = () => {
             </EventProfileText>
           </EventProfile>
           <br></br>
-          <h2>Webinar with Author, Stephan King</h2>
+          <h2>Webinar with Author, Ana Huang!</h2>
           <br></br>
-          <p>Join us as one of the best American authors discusses the process of writing one of his best time selling books, “The Shining”.</p>
+          <p>Join us as we talk with #1 New York Times Bestselling Author of the “Twisted” series about her upcoming release of “King of Sloth”.</p>
 
           <br></br>
           <OnlineDivider></OnlineDivider>
@@ -93,14 +93,14 @@ const EventsPage = () => {
             <EventProfile>
             <img src= {eventprofile2} alt="Event Profile 2" />
               <EventProfileText>
-                <h4>Henry M.</h4>
+                <h4>Laila M.</h4>
                 <p>April 29, 2024 | Live on Zoom</p>
               </EventProfileText>
             </EventProfile>
           <br></br>
-          <h2>Literary Analysis: The World of Fiction</h2>
+          <h2>The World of Contemporary Fiction Panel</h2>
           <br></br>
-          <p>Join a group of talented literary professionals, as they discuss the process it takes to writing a fictional novel. </p>
+          <p>Join a group of talented literary professionals, as they discuss the process it takes to writing a contemporary fiction novel.</p>
           <br></br>
           <OnlineDivider></OnlineDivider>
           <br></br>
@@ -126,15 +126,15 @@ const EventsPage = () => {
           <h2>Upcoming Events</h2>
           <br></br>
           <h4>Book Signing & Brunch with Suzanne Collins</h4>
-          <p>May 5, 2023 | New York City, New York</p>
+          <p>May 5, 2024 | New York City, New York</p>
           <p>Come meet Suzanne Collins and get ...</p>
           <br></br>
           <h4>Classic Novel Spotlight: Jane Austen</h4>
-          <p>May 17, 2023 | Live on Zoom</p>
+          <p>May 17, 2024 | Live on Zoom</p>
           <p>This month's classic novel spotlight ... </p>
           <br></br>
           <h4>Book Launch with John Greene</h4>
-          <p>May 23, 2023 | Boston, Philadelphia</p>
+          <p>May 23, 2024 | Boston, Philadelphia</p>
           <p>Calling all John Green fans for ...</p>
 
           </CalendarContent>
@@ -177,8 +177,8 @@ const EventsPage = () => {
       <img src= {localevent2} alt="LocalEvent1" />
 
       <LocalContent>
-      <h2>Poetry Reading: The Hill We Climb</h2>
-      <p>San Fransisco, California</p>
+      <h2>Advanced Poetry Reading Meet-Up</h2>
+      <p>Los Angeles, California</p>
       <p>April 16, 2024</p>
 
       <br></br>
@@ -305,14 +305,14 @@ const EHDescription = styled.p`
 font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
 font-weight: 700;
-font-style: normal;
   margin-top: 0px; /* Add margin top to create spacing */
   font-size: 20px;
   color: #3e2d70;
 `;
 const EHSignup = styled.p`
-font-size: 14px;
-margin-top: 30px;
+font-size: 18px;
+margin-top: 20px;
+margin-bottom: 10px;
 font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
 font-weight: 700;
@@ -343,7 +343,7 @@ font-style: normal;
   color: white;
   border: none;
   border-radius: 50px;
-  font-size: 18px;
+  font-size: 20px;
 
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -356,10 +356,11 @@ font-style: normal;
 
 const EventName = styled.div`
 font-family: "Agbalumo", system-ui;
-font-weight: 400;
+font-size: 25px;
 font-style: normal;
 color: #3E2D70;
-  padding-left: 40px;
+  margin-left: 65px;
+  margin-bottom: 10px;
   padding-top: 20px;
 `;
 

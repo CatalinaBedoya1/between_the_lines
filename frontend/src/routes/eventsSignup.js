@@ -92,7 +92,7 @@ const EHTitle = styled.h1`
 
    /* Add margin bottom to create spacing */
   font-size: 83px;
-  font-family: "Pacifico", cursive;
+  font-family: "Agbalumo";
   font-weight: 400;
   color: #897ad5;
   margin-top: 30px;
@@ -101,18 +101,17 @@ const EHTitle = styled.h1`
 const EHDescription = styled.p`
   margin-top: 0px; /* Add margin top to create spacing */
   font-size: 20px;
-  font-family: "Roboto Mono", monospace;
-  font-weight: <weight>;
-  font-style: normal;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
   color: #3e2d70;
 `;
 const EHSignup = styled.p`
-font-size: 14px;
-margin-top: 30px;
-font-family: "Inconsolata", monospace;
-font-weight: <weight>;
-font-style: lighter;
+font-size: 18px;
+margin-top: 20px;
+font-family: "Manrope", sans-serif;
+font-weight: 700;
 color: #3e2d70;
+margin-bottom: 10px;
 `;
 
 const EventsContent = styled.div`
@@ -131,8 +130,9 @@ const EventsButton = styled.button`
   color: white;
   border: none;
   border-radius: 50px;
-  font-size: 18px;
-  font-family: Kaisei Opti;
+  font-size: 20px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -255,7 +255,7 @@ font-style: normal;
   border-radius: 50px;
   background-color: #F68AAF;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
 
   transition: background-color 0.3s ease;
@@ -299,8 +299,8 @@ const EventText = styled.div`
 const ShareText = styled.h1`
   font-size: 30px;
   margin-top: 10px;
-  margin-left: 170px;
-  font-weight: normal;
+  margin-left: 155px;
+  font-weight: 600;
   color: #3E2D70;
 `;
 

@@ -210,7 +210,7 @@
   font-optical-sizing: auto;
   font-weight: 600;
   display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 40px;
     font-size: 23px;
     text-align: center;
     text-decoration: none;
@@ -218,13 +218,12 @@
     border-radius: 50px;
     background-color: #88C3E4; 
     color: #fff;
-    margin-right: 10px;
     margin-top: 20px;
-    margin-left: 280px;
+    margin-left: 250px;
 }
 
 .btn-3{
-    background-color: #4281A4; 
+    background-color: #897AD5; 
     margin-left: 30px;
     
 }
