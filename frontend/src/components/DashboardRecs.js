@@ -149,10 +149,11 @@ const RecommendationSection = styled.div`
     font-family: "Agbalumo", system-ui;
     font-weight: 400;
     font-style: normal;
+    font-size: 40px;
 `;
 
 const DashContainer = styled.div`
-    background-color: #9DBEBD;
+    background-color: #64A3C6;
     padding-left: 150px;
     padding-right: 150px;
     padding-top: 20px;
@@ -186,13 +187,13 @@ const ScrollContainer = styled.div`
 
     /* Handle */
     &::-webkit-scrollbar-thumb {
-        background: #5397AC;
+        background: #29739B;
         border-radius: 10px;
     }
 
     /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        background: #5AC9EB;
     }
 `;
 
@@ -226,7 +227,7 @@ const DashCard = styled.div`
 const HoverOverlay = styled.div`
 font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
-font-weight: 200;
+font-weight: 400;
 font-style: normal;
     position: absolute;
     top: 0;

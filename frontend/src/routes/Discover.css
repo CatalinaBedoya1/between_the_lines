@@ -62,7 +62,7 @@ font-style: normal;
     text-decoration: none;
     cursor: pointer;
     border-radius: 50px;
-    background-color: #DA92AC; /* pink */
+    background-color: #F68AAF; /* pink */
     color: #fff; /* white */
     margin-top: 20px;
     margin-right: 30px;
@@ -139,7 +139,7 @@ font-style: normal;
   .btn-mystery{
       padding: 10px 60px;
       background-color: #897AD5; /* purple */
-      margin-left: 70px;
+      margin-left: 60px;
   }
 
   .btn-dystopian{
