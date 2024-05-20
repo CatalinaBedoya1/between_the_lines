@@ -8,7 +8,7 @@ import './Dashboard.css';
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import EditProfileForm from "../components/EditProfileForm";
 
 const Dashboard = ({ setAuth }) => {
@@ -25,14 +25,15 @@ const Dashboard = ({ setAuth }) => {
       });
 
       const parseData = await res.json();
-    console.log("Parsed Data:", parseData);
-    setName(parseData.user_name);
-    setBio(parseData.bio); // Ensure bio is set correctly
-    setUserId(parseData.user_id);
-  } catch (err) {
-    console.error(err.message);
-  }
-};
+      console.log("Parsed Data:", parseData);
+      setName(parseData.user_name);
+      setBio(parseData.bio);
+      setUserId(parseData.user_id);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   const navigate = useNavigate();
 
   const logout = async (e) => {
@@ -53,8 +54,6 @@ const Dashboard = ({ setAuth }) => {
 
   const handleSaveProfile = async (newBio) => {
     try {
-      console.log("User ID:", userId);
-
       const res = await fetch(`http://localhost:4000/user-profiles/${userId}`, {
         method: "PUT",
         headers: {
@@ -77,6 +76,7 @@ const Dashboard = ({ setAuth }) => {
       toast.error("Failed to update profile");
     }
   };
+
   const handleEditClick = () => {
     setIsEditing(true);
   };
@@ -92,7 +92,6 @@ const Dashboard = ({ setAuth }) => {
             <h2>Welcome {name}</h2>
           </div>
           <h2>Joined March 2024</h2>
-          
           <p>{bio}</p>
         </div>
 
@@ -104,12 +103,12 @@ const Dashboard = ({ setAuth }) => {
         </ButtonGroup>
 
         {isEditing && (
-  <EditProfileForm
-    initialBio={bio} // Pass current bio as initial value
-    onSave={handleSaveProfile} // Handle save action
-    onClose={() => setIsEditing(false)} // Handle close action
-  />
-)}
+          <EditProfileForm
+            initialBio={bio}
+            onSave={handleSaveProfile}
+            onClose={() => setIsEditing(false)}
+          />
+        )}
 
         <div className="currentreading">
           <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
