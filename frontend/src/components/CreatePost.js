@@ -180,8 +180,8 @@ const ForumsTitle = styled.div`
   font-style: normal;
   color: #3E2D70;
   font-size: 32px;
-  border-bottom: 2px solid #3E2D70; /* Add horizontal line */
-  padding-bottom: 10px; /* Space between text and line */
+  
+  padding-bottom: 10px; 
   width: 100%;
   text-align: left;
 `;
