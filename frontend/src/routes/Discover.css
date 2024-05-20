@@ -5,7 +5,9 @@
     background-image: url('../assets/AbstractImg.png');
     background-size: cover;
     background-attachment: fixed;
-    
+    width: 100%; 
+    height: auto;
+
   }
 
 .btns-genre {
@@ -168,6 +170,8 @@ font-style: normal;
   .BOTM-container {
     background-color: #fff;
     margin-top: 20px;
+    width: 100%;
+    height: auto;
   }
 
   .BOTM-content{

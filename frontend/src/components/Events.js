@@ -31,14 +31,16 @@ const EventsData = () => {
 
       <div className="event-carousel">
         {event.map((event, index) => (
+          <Link to="/community/EventsSignup" style={{textDecoration: 'none'}}>
           <Card
             key={index}
             imageUrl={event.imageUrl}
             description={event.description}
           />
+          </Link>
         ))}
       </div>
-      <Link to="/community"><SeemorebuttonHome>See More</SeemorebuttonHome></Link>
+      <Link to="/community/eventsPage"><SeemorebuttonHome>See More</SeemorebuttonHome></Link>
     </>
   );
 };

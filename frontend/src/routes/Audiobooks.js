@@ -17,6 +17,18 @@ import pic9 from "../assets/AudioAnimation/pic9.png";
 import pic10 from "../assets/AudioAnimation/pic10.png";
 import pic11 from "../assets/AudioAnimation/pic11.png";
 import pic12 from "../assets/AudioAnimation/pic12.png";
+import pic13 from "../assets/KingOfSloth.png"
+import pic14 from "../assets/AudioAnimation/pic14.png";
+import pic15 from "../assets/AudioAnimation/pic15.png";
+import pic16 from "../assets/AudioAnimation/pic16.png";
+import pic17 from "../assets/AudioAnimation/pic17.png";
+import pic18 from "../assets/AudioAnimation/pic18.png";
+import pic19 from "../assets/AudioAnimation/pic19.png";
+import pic20 from "../assets/AudioAnimation/pic20.png";
+import pic21 from "../assets/AudioAnimation/pic21.png";
+import pic22 from "../assets/AudioAnimation/pic22.png";
+import myImage3 from '../assets/BOTM_GROUP2.png';
+import myImage2 from '../assets/ifyoucouldseethesun.png';
 
 
 const translateAnimation = keyframes`
@@ -85,16 +97,16 @@ const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
 
     // New Releases
     const RELEASES_DATA = [
-        { id: "01", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "02", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "03", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "04", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "05", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "06", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "07", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "08", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "09", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
-        { id: "10", cover: sample, title: "Tess of the Road", author: "Rachel Hartman", time: "9 hours", rating: "4/5 stars" },
+        { id: "01", cover: pic13, title: "King of Sloth", author: "Ana Huang", time: "9 hours", rating: "4/5 stars" },
+        { id: "02", cover: pic14, title: "Wild Love", author: "Elsie Silver", time: "9 hours", rating: "4/5 stars" },
+        { id: "03", cover: pic15, title: "Powerful", author: "Lauren Roberts", time: "9 hours", rating: "4/5 stars" },
+        { id: "04", cover: pic16, title: "The Dixon Rule", author: "Elle Kennedy", time: "9 hours", rating: "4/5 stars" },
+        { id: "05", cover: pic17, title: "The Endurance of Wildflowers", author: "Micalea Smeltzer", time: "9 hours", rating: "4/5 stars" },
+        { id: "06", cover: pic18, title: "If Only I Had Told Her", author: "Laura Nowlin", time: "9 hours", rating: "4/5 stars" },
+        { id: "07", cover: pic19, title: "How To Solve Your Own Murder", author: "Kristen Perrin", time: "9 hours", rating: "4/5 stars" },
+        { id: "08", cover: pic20, title: "Love Redesigned", author: "Lauren Asher", time: "9 hours", rating: "4/5 stars" },
+        { id: "09", cover: pic21, title: "I Hope This Finds You Well", author: "Natalie Sue", time: "9 hours", rating: "4/5 stars" },
+        { id: "10", cover: pic22, title: "Matching All The Way", author: "Veronica Eden", time: "9 hours", rating: "4/5 stars" },
    
         
     ];
@@ -147,7 +159,28 @@ const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
 
        
        
-        {/* insert BOTM */}
+        <div className="BOTM-container">
+          
+          <img src={myImage3} alt="Book of the month cover" className="BOTM-imageZoom" />
+          <div className="BOTM-content">
+            <h1>BOOK OF THE MONTH</h1>
+            <h2>If You Could See the Sun</h2>
+            <h3>Ann Liang</h3>
+            <hr className="BOTM-divider"/>
+            <p>In this genre-bending, speculative YA debut, a </p>
+              <p> Chinese American girl monetizes her strange </p>
+              <p>new invisibility powers by discovering and </p>
+              <p> selling her wealthy classmates' most </p> 
+              <p>scandalous secrets.</p>
+    
+            <div className="BOTM-buttons">
+              <Link to="/discover/fantasy" className="btn-2">fantasy</Link>
+             <Link to="/discover/fiction" className="btn-3">fiction</Link>
+            </div>
+            
+            <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
+          </div>
+        </div>
 
 
 
@@ -332,7 +365,9 @@ const Author =styled.div`
 //titles
 const AudioSectionText = styled.div`  
     font-size:30px;
-    font-family: Manrope;
+    font-family: "Agbalumo";
+    font-size: 50px;
+    color: #3E2D70;
     padding-left:100px;
     padding-top:30px;
 
@@ -386,7 +421,7 @@ const ScrollContainer = styled.div`
 
     /* Handle on hover */
     &::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        background: #4BB5D6;
     }
 `;
 const NewReleaseContentBox = styled.div`
@@ -428,11 +463,17 @@ const RTitle = styled.div`
     width: 200px;
     margin-top:10px;
     text-align:center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    color: #3E2D70;
 `;
 const RAuthor =styled.div`
     width: 200px;
     margin-top:5px;
     text-align:center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    color: #3E2D70;
 `;
 
 
@@ -488,7 +529,10 @@ const TrendingCardContent = styled.div`
     //background-color:blue;
 `;
 const GreyText = styled.div`
-    color: #D9D9D9;
+    color: #A2A0A0;
+    margin-bottom: 10px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
     
     img{
         width:15px;
@@ -496,8 +540,14 @@ const GreyText = styled.div`
     }
 `;
 const TTitle = styled.div`
+font-family: "Manrope", sans-serif;
+font-weight: 700;
+color: #3E2D70;
 `;
 const TAuthor = styled.div` 
+font-family: "Manrope", sans-serif;
+font-weight: 600;
+color: #3E2D70;
 `;
 const TTime = styled.div`   
 `;
@@ -519,33 +569,41 @@ const RetailerLinks = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    margin-bottom: 10px;
 
     a {
         text-decoration: none;
-        color: #333;
-        padding: 5px 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        background-color: #88C3E4;
+        padding: 10px 15px;
+        color: white;
+        font-weight: 600;
+        border: none;
+        border-radius: 50px;
         transition: all 0.3s ease;
 
         &:hover {
-            background-color: #f0f0f0;
+            background-color: #58b7ee;
         }
     }
 `;
 
-const SeeMoreButton = styled.div`
-    text-align:center;
-    width:200px;
-    height:40px;
-    border-radius:50px;
-    font-size: 25px;
-    font-family: Manrope;
-    margin: auto;
-    margin-top:50px;
-    margin-bottom:50px;
-    background-color: #F68AAF;
-    color:white;
+const SeeMoreButton = styled.button`
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
+margin-bottom: 30px;
+margin-left: 650px;
+padding: 10px 40px;
+    background: #F68AAF;
+    color: white;
+    border: 3px solid #FFF;
+    border-radius: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #CD6F90;
+    }
 `;
-
-

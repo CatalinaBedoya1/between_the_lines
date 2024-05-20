@@ -157,6 +157,7 @@ const Discussions = () => {
                 </DiscussionContentContainer>
             </DiscussionHeaderContainer>
             
+            <EntireDiscussion>
             <BtnsLine1>
                 <ViewAllbtn>View All</ViewAllbtn>
                 <Trendingbtn>Trending</Trendingbtn>
@@ -450,9 +451,15 @@ const Discussions = () => {
                 </Forum>
             </BookForumContainer>
             </BFContainerRow>
+            </EntireDiscussion>
              </div> 
     );
 };
+
+const EntireDiscussion = styled.div`
+width: 100%;
+height: auto;
+`;
 
 const BtnsLine1 = styled.div`
     display: flex;
@@ -605,6 +612,9 @@ color: #3E2D70;
 const BFContainerRow= styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
+  height: auto;
+  
 `;
 const BookForumContainer = styled.div`
   display: flex;
@@ -612,6 +622,8 @@ const BookForumContainer = styled.div`
   justify-content: space-around;
   margin-left: 30px;
   margin-bottom: 50px;
+  width: 100%;
+  height: auto;
 `;
 
 const BookCard = styled.div`
@@ -619,6 +631,7 @@ display: flex;
 flex-direction: column;
 margin-top: 120px;
 margin-left: 100px;
+
 `;
 
 const BookForumImg1 = styled.div`
