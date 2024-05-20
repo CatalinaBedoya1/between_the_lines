@@ -48,3 +48,25 @@ CREATE TABLE user_profiles (
     profile_picture BYTEA,
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
+
+
+
+--to store the history of the forums
+CREATE TABLE topics (
+  id SERIAL PRIMARY KEY,
+  topic VARCHAR(255) NOT NULL,
+  user_id UUID NOT NULL,
+  date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+--table for replies
+CREATE TABLE replies (
+  id SERIAL PRIMARY KEY,
+  content TEXT NOT NULL,
+  user_id UUID NOT NULL,
+  topic_id INT NOT NULL,
+  date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (topic_id) REFERENCES topics(id)
+);
