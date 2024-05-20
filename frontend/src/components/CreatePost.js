@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import "./CreatePost.css";
 
 const CreatePost = () => {
   const [forum, setForum] = useState("");
@@ -113,10 +114,11 @@ const CreatePost = () => {
           />
           <TextArea className="createPostBodyText" placeholder="Begin typing . . ." />
           <CheckboxContainer>
-            <CheckSquare type="checkbox" />
-            <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
+          <CheckSquare type="checkbox" />
+          <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
           </CheckboxContainer>
-          <Button type='submit' className="publishBtn">Publish</Button>
+          <div className="addImageBtn">Add image</div>
+          <Button type='submit'>Publish</Button>
         </Form>
       </FormContainer>
     </Container>
@@ -164,13 +166,17 @@ const Container = styled.div`
 `;
 
 const FormContainer = styled.div`
-  background-color: #ffffff;
+  background-color: #4281A4;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  text-align: center; /*card*/
 `;
 
 const Form = styled.form`
@@ -204,6 +210,8 @@ const TextArea = styled.textarea`
 const CheckboxContainer = styled.div`
   display: flex;
   align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
 `;
 
 const CheckSquare = styled.input`
@@ -217,19 +225,27 @@ const CheckSquare = styled.input`
 
 const CheckboxLabel = styled.div`
   font-size: 18px;
-  color: #333;
+  color: white;
   font-family: "Manrope", sans-serif;
   font-weight: 600;
 `;
 
 const Button = styled.button`
-  padding: 10px 20px;
-  background-color: #f68aaf;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+    width: 200px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #F8A2C0;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+    margin-left: 350px;
+    margin-top: -60px;
 
   &:hover {
     background-color: #d75a8b;
@@ -261,93 +277,3 @@ const ThreadItem = styled.li`
 `;
 
 export default CreatePost;
-
-
-/*import React, {useState} from 'react';
-import "./CreatePost.css";
-import styled from 'styled-components';
-
-
-const CreatePost = () => {
-  const [forum, setForum] = useState("");
-  const [threadList, setThreadList] = useState([]);
-
-  const createTopic = () =>  {
-    fetch("http://localhost:4000/api/create/topic", {
-        method: "POST",
-        body: JSON.stringify({
-            topic: forum,
-            userID: localStorage.getItem("_id"),
-        }),
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
-        .then((res) => res.json())
-        .then((data) => {
-            alert(data.message);
-            setThreadList(data.topics);
-        })
-        .catch((err) =>  console.error(err));
-  };
-        
-  const handleThreadSubmit = (e) => {
-    e.preventDefault();
-    console.log({ forum });
-    createTopic();
-    setForum("");
-  };
-
-  return (
-    <div className='createPostContainerOutside'>    
-    <div className='createPostContainerInside'>
-      <form onSubmit = {handleThreadSubmit}>
-        <select className='createPostText' name="cars" id="cars">
-          <option value="general">General</option>
-          <option value="bookOfTheMonth">Book Of The Month</option>
-          <option value="recommendations">Recommendations</option>
-          <option value="feedback">Feedback</option>
-        </select>
-        <br></br>
-        <input  className="createPostText"  placeholder="Create a title" value={forum} onChange={(e) => setForum(e.target.value)}/>
-        <br></br>
-        <input  className="createPostBodyText"  placeholder="Begin typing . . ."/>
-        <br></br>
-        <CheckboxContainer>
-          <CheckSquare type="checkbox" />
-          <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
-        </CheckboxContainer>
-        <div className="addImageBtn">Add image</div>
-        <button type='submit' className="publishBtn">Publish</button>
-      </form>
-    </div>
-    </div>
-  );
-};
-
-const CheckboxContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-  margin-bottom: 20px;
-`;
-
-const CheckSquare = styled.input`
-  margin-right: 10px;
-  
-  &:checked {
-    accent-color: #F68AAF;
-    border-color: #F68AAF;
-  }
-`;
-
-const CheckboxLabel = styled.div`
-  font-size: 18px;
-  color: white;
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
-`;
-
-export default CreatePost;
-
-*/
