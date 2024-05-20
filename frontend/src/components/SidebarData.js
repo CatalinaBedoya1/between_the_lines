@@ -62,6 +62,12 @@ export const SidebarData = [
         title: 'Events',
         path: '/community/eventsPage',
         
+      },
+      {
+        title: 'Game',
+        path: '/community/game',
+        
+        cName: 'sub-nav'
       }
     ]
   },
