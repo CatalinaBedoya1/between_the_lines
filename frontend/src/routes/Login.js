@@ -43,6 +43,7 @@ const Login = ({ setAuth }) => {
         localStorage.setItem("_id", parseRes.userId); //added this for forums to work -Cat
         localStorage.setItem("token", parseRes.jwtToken);
         setAuth(true);
+        console.log("User ID set in localStorage:", parseRes.userId);
         toast.success("Logged in Successfully");
         navigate("/dashboard");
       } else {

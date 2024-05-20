@@ -78,7 +78,7 @@ const CreatePost = () => {
   };
 
   return (
-    <Container>
+    <ForumsThreadContainer>
     <ThreadListContainer>
       <ForumsTitle>Forums:</ForumsTitle>
       <ThreadList>
@@ -131,7 +131,7 @@ const CreatePost = () => {
           <img src={publishicon} alt="Publish Icon" className='publishicon' />
         </Form>
       </FormContainer>
-    </Container>
+    </ForumsThreadContainer>
   );
 };
 
@@ -166,7 +166,7 @@ const Pagination = styled.div`
   }
 `;
 
-const Container = styled.div`
+const ForumsThreadContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,7 +180,7 @@ const ForumsTitle = styled.div`
   font-style: normal;
   color: #3E2D70;
   font-size: 32px;
-  
+  border-bottom: 2px solid #3E2D70; 
   padding-bottom: 10px; 
   width: 100%;
   text-align: left;
@@ -193,7 +193,7 @@ const FormContainer = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
-  margin-bottom: 40px; /* Add more margin for space */
+  margin-bottom: 40px; 
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -247,10 +247,7 @@ const CheckSquare = styled.input`
 const CheckboxLabel = styled.div`
   font-size: 18px;
   color: white;
-  font-family: "Manrope", sans-serif
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
+  font-family: "Manrope", sans-serif;
   font-weight: 600;
 `;
 
@@ -259,7 +256,6 @@ const Button = styled.button`
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-font-weight: 600;
   width: 200px;
   padding: 10px 30px;
   border-radius: 50px;
@@ -311,4 +307,4 @@ const ThreadItem = styled.li`
   }
 `;
 
-export default CreatePost; 
+export default CreatePost;
