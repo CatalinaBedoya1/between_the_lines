@@ -19,6 +19,8 @@ import twitter from '../assets/Vector (1).png';
 import BOTMAward from '../assets/award.png';
 
 const BookDetails =() => {
+    const amazonUrl = 'https://a.co/d/ccrjH7x'; 
+    const barnesAndNobleUrl = 'https://www.barnesandnoble.com/w/if-you-could-see-the-sun-ann-liang/1140845015?ean=9781335005984'; 
     return(
         <BookDetailsContainer>
         <BOTMHeaderContainer>
@@ -45,10 +47,14 @@ const BookDetails =() => {
                 <p>Published: Oct. 11, 2022</p>
                 <p>ISBN: 9781335915849</p>
                 <BookLinks>
-                <Amazon src = {AmazonIcon} alt = "Amazon icon" />
-                <BandN src = {BandNImg} alt = "Barnes and Noble Icon" />
-                <Chrome src = {ChromeImg} alt = "Chrome Icon" />
-                </BookLinks>
+                        <a href={amazonUrl} target="_blank" rel="noopener noreferrer">
+                            <Amazon src={AmazonIcon} alt="Amazon icon" />
+                        </a>
+                        <a href={barnesAndNobleUrl} target="_blank" rel="noopener noreferrer">
+                            <BandN src={BandNImg} alt="Barnes and Noble Icon" />
+                        </a>
+                        <Chrome src={ChromeImg} alt="Chrome Icon" />
+                    </BookLinks>
             </SpecificDetailsContainer>
 
             <BookSummary>
@@ -132,6 +138,8 @@ const BookDetails =() => {
             </BFContainerRow>
         
             <CreatePost />
+
+            
             </BookDetailsContainer>
     )
 }

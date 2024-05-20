@@ -66,6 +66,15 @@ const getVoteCounts = async () => {
 
 
 
+//WORDLE endpoint
+app.get('/wordle-data', (req,res) => {
+  const wordleData = require('./wordledata.json');   //read data
+  res.json(wordleData);     //send data
+})
+
+
+
+
 //ROUTES
 
 
@@ -112,7 +121,6 @@ app.get('/api/book-cover', async (req, res) => {
 });
 
 // Api to create for the forums
-
 const topicList = []; // Mock in-memory topic list
 
 function generateID() {
@@ -120,71 +128,55 @@ function generateID() {
 }
 
 // Create a forum topic
-app.post("/api/create/topic", (req, res) => {
+app.post("/api/create/topic", async (req, res) => {
+  const { topic, userId } = req.body;
+  if (!topic || !userId) {
+    return res.status(400).json({ error: "Topic and userId are required fields." });
+  }
+
   try {
-    const { topic, userId } = req.body;
-    if (!topic || !userId) {
-      throw new Error("Topic and userId are required fields.");
-    }
-    const topicId = generateID();
-  
-    const newTopic = {
-      id: topicId,
-      topic: topic,
-      replies: [],
-      views: [],
-      userId: userId,
-      date: new Date(),
-    };
-  
-    topicList.unshift(newTopic);
-  
-    res.status(201).json({
-      message: "Topic created successfully!",
-      topic: newTopic,
-    });
+    const result = await pool.query(
+      "INSERT INTO topics (topic, user_id, date) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
+      [topic, userId]
+    );
+    const newTopic = result.rows[0];
+    res.status(201).json({ message: "Topic created successfully!", topic: newTopic });
   } catch (error) {
     console.error("Error creating topic:", error);
-    res.status(400).json({ error: error.message });
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 
 // Get paginated list of topics
-app.get("/api/topics", (req, res) => {
+app.get("/api/topics", async (req, res) => {
+  const page = parseInt(req.query.page, 10) || 1;
+  const limit = parseInt(req.query.limit, 10) || 5;
+  const offset = (page - 1) * limit;
+
   try {
-    const { page = 1, limit = 5 } = req.query;
-    const startIndex = (page - 1) * limit;
-    const endIndex = page * limit;
-  
-    const results = {};
-    if (endIndex < topicList.length) {
-      results.next = {
-        page: parseInt(page) + 1,
-        limit: parseInt(limit)
-      };
-    }
-    
-    if (startIndex > 0) {
-      results.previous = {
-        page: parseInt(page) - 1,
-        limit: parseInt(limit)
-      };
-    }
-  
-    results.results = topicList.slice(startIndex, endIndex);
-    res.json(results);
+    const result = await pool.query(
+      "SELECT * FROM topics ORDER BY date DESC LIMIT $1 OFFSET $2",
+      [limit, offset]
+    );
+    const totalResult = await pool.query("SELECT COUNT(*) FROM topics");
+    const totalCount = parseInt(totalResult.rows[0].count, 10);
+
+    const response = {
+      results: result.rows,
+      total: totalCount,
+      totalPages: Math.ceil(totalCount / limit),
+      currentPage: page,
+    };
+
+    res.json(response);
   } catch (error) {
     console.error("Error fetching topics:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 });
 
-//
+//app.use("/api/thread/replies", require("./Server/routes/threadRoutes"));
 
 app.listen(4000, () => {
   console.log('Server is running on port 4000');
 });
-
-
-
-

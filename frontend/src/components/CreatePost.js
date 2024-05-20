@@ -12,6 +12,12 @@ const CreatePost = () => {
 
   const createTopic = async () => {
     try {
+      const userId = localStorage.getItem("_id");
+      console.log("User ID:", userId); // Debug statement
+      if (!userId) {
+        throw new Error("User ID is not available");
+      }
+
       const response = await fetch("http://localhost:4000/api/create/topic", {
         method: "POST",
         headers: {
@@ -19,7 +25,7 @@ const CreatePost = () => {
         },
         body: JSON.stringify({
           topic: forum,
-          userId: localStorage.getItem("_id"),
+          userId: userId,
         }),
       });
       const data = await response.json();
@@ -45,13 +51,13 @@ const CreatePost = () => {
       const data = await response.json();
       setThreadList(data.results || []);
       setCurrentPage(page);
-      setTotalPages(data.next ? data.next.page - 1 : 1);
+      setTotalPages(data.totalPages || 1);
     } catch (error) {
       console.error("Error fetching topics:", error);
       alert("An error occurred while fetching topics.");
     }
   };
-  
+
   useEffect(() => {
     fetchTopics(); // Fetch topics when the component mounts
   }, []);
@@ -73,17 +79,17 @@ const CreatePost = () => {
 
   return (
     <Container>
-      <ThreadListContainer>
-        <h2>Forum Topics</h2>
-        <ul>
-          {threadList.map((thread) => (
-            <ThreadItem key={thread.id}>
-              <h3>{thread.topic}</h3>
-              <p>Created by: {thread.userId}</p>
-              <p>{new Date(thread.date).toLocaleString()}</p>
-            </ThreadItem>
-          ))}
-        </ul>
+    <ThreadListContainer>
+      <ForumsTitle>Forums:</ForumsTitle>
+      <ThreadList>
+        {threadList.map((thread) => (
+          <ThreadItem key={thread.id}>
+            <h3>{thread.topic}</h3>
+            <p>Created by: {thread.userId}</p>
+            <p>{new Date(thread.date).toLocaleString()}</p>
+          </ThreadItem>
+        ))}
+      </ThreadList>
         <Pagination>
           <button
             onClick={() => handlePageChange(currentPage - 1)}
@@ -116,14 +122,13 @@ const CreatePost = () => {
           />
           <TextArea className="createPostBodyText" placeholder="Begin typing . . ." />
           <CheckboxContainer>
-          <CheckSquare type="checkbox" />
-          <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
+            <CheckSquare type="checkbox" />
+            <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
           </CheckboxContainer>
           <div className="addImageBtn">Add Photo</div>
-          <img src = {addimage} alt="Add Image Icon" className='imageicon'/>
+          <img src={addimage} alt="Add Image Icon" className='imageicon' />
           <Button type='submit'>Publish</Button>
-          <img src = {publishicon} alt="Publish Icon" className='publishicon'/>
-
+          <img src={publishicon} alt="Publish Icon" className='publishicon' />
         </Form>
       </FormContainer>
     </Container>
@@ -161,13 +166,24 @@ const Pagination = styled.div`
   }
 `;
 
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f9f9f9;
+  background-color: #FFF;
   padding: 10px;
+`;
+
+const ForumsTitle = styled.div`
+  font-family: "Agbalumo", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #3E2D70;
+  font-size: 32px;
+  border-bottom: 2px solid #3E2D70; /* Add horizontal line */
+  padding-bottom: 10px; /* Space between text and line */
+  width: 100%;
+  text-align: left;
 `;
 
 const FormContainer = styled.div`
@@ -177,7 +193,7 @@ const FormContainer = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
-  margin-bottom: 20px;
+  margin-bottom: 40px; /* Add more margin for space */
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -239,21 +255,21 @@ font-style: normal;
 `;
 
 const Button = styled.button`
-font-family: "Manrope", sans-serif;
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 font-weight: 600;
-    width: 200px;
-    padding: 10px 30px;
-    border-radius: 50px;
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #F8A2C0;
-    cursor: pointer;
-    box-shadow: 0 0 0 4px #ffffff;
-    margin-left: 320px;
-    margin-top: -55px;
+  width: 200px;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #F8A2C0;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px #ffffff;
+  margin-left: 320px;
+  margin-top: -55px;
 
   &:hover {
     background-color: #d75a8b;
@@ -262,7 +278,13 @@ font-weight: 600;
 
 const ThreadListContainer = styled.div`
   width: 100%;
-  max-width: 600px;
+  max-width: 800px; /* Expand the width */
+  margin-bottom: 40px; /* Add more space between the form and threads */
+`;
+
+const ThreadList = styled.ul`
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
 `;
 
 const ThreadItem = styled.li`
@@ -275,11 +297,16 @@ const ThreadItem = styled.li`
   h3 {
     margin: 0 0 10px 0;
     font-size: 18px;
+    color: #3E2D70; /* Change color to 3E2D70 */
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
   }
 
   p {
     margin: 0;
-    color: #666;
+    color: #3E2D70; /* Change color to 3E2D70 */
     font-size: 14px;
   }
 `;

@@ -1,36 +1,4 @@
 
-.createPostText{  
-    font-family: "Manrope", sans-serif;
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
-    border-radius: 10px;
-
-    justify-content: top;
-    width: 100%;
-    border: 1px solid #ccc;
-    padding: 20px;
-    height: 50px;
-  
-}
-
-
-.createPostBodyText{  
-    font-family: "Manrope", sans-serif;
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
-    border-radius: 10px;
-
-    justify-content: top;
-    width: 100%;
-    height: 50px;
-    border: 1px solid #ccc;
-    padding: 10px 30px 175px 20px;
-  
-}
- 
-
 .addImageBtn{
     font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;

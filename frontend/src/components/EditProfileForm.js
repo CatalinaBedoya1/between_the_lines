@@ -73,14 +73,13 @@ const EditProfileForm = ({ initialBio, onSave, onClose }) => {
   const [bio, setBio] = useState(initialBio);
 
   const handleChange = (e) => {
-    setBio(e.target.value); // Update local state
+    setBio(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave(bio); // Pass updated bio to parent component
+    onSave(bio);
   };
-
 
   return (
     <ModalOverlay>
@@ -91,7 +90,7 @@ const EditProfileForm = ({ initialBio, onSave, onClose }) => {
           <TextArea
             id="bio"
             value={bio}
-            onChange={handleChange} // Update local state on change
+            onChange={handleChange}
             rows="4"
           ></TextArea>
           <ButtonGroup>
@@ -105,7 +104,6 @@ const EditProfileForm = ({ initialBio, onSave, onClose }) => {
 };
 
 export default EditProfileForm;
-
 
 
 
