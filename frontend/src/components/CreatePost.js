@@ -167,12 +167,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #f9f9f9;
-  padding: 20px;
+  padding: 10px;
 `;
 
 const FormContainer = styled.div`
   background-color: #4281A4;
-  padding: 20px;
+  padding: 40px;
   border-radius: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -248,7 +248,7 @@ font-style: normal;
     background-color: #F8A2C0;
     cursor: pointer;
     box-shadow: 0 0 0 4px #ffffff;
-    margin-left: 350px;
+    margin-left: 320px;
     margin-top: -55px;
 
   &:hover {
