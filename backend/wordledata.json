@@ -1,0 +1,40 @@
+{
+    "solutions": [
+        {"id": 1, "word": "books"},
+        {"id": 2, "word": "story"},
+        {"id": 3, "word": "genre"},
+        {"id": 4, "word": "pages"},
+        {"id": 5, "word": "novel"},
+        {"id": 6, "word": "cover"},
+        {"id": 7, "word": "poems"},
+        {"id": 8, "word": "title"}
+    ],
+    "letters": [
+        {"key": "a"},
+        {"key": "b"},
+        {"key": "c"},
+        {"key": "d"},
+        {"key": "e"},
+        {"key": "f"},
+        {"key": "g"},
+        {"key": "h"},
+        {"key": "i"},
+        {"key": "j"},
+        {"key": "k"},
+        {"key": "l"},
+        {"key": "m"},
+        {"key": "n"},
+        {"key": "o"},
+        {"key": "p"},
+        {"key": "q"},
+        {"key": "r"},
+        {"key": "s"},
+        {"key": "t"},
+        {"key": "u"},
+        {"key": "v"},
+        {"key": "w"},
+        {"key": "x"},
+        {"key": "y"},
+        {"key": "z"}
+    ]
+}

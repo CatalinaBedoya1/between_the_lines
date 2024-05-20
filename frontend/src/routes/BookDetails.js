@@ -137,7 +137,7 @@ const BookDetails =() => {
             </BookForumContainer>
             </BFContainerRow>
         
-            <CreatePost />
+           
 
             
             </BookDetailsContainer>
