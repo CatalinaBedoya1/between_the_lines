@@ -166,7 +166,7 @@ const Discussions = () => {
                 <UserFeedbackbtn>User Feedback</UserFeedbackbtn>
             </BtnsLine1>
 
-            <OnlineDivider></OnlineDivider>
+            <FilterDivider></FilterDivider>
             <FilterLine2Container>
                 <Filter>
                     <h3>Filter:</h3>
@@ -512,7 +512,7 @@ const Recommendationsbtn = styled(Line1BaseButton)`
 const UserFeedbackbtn = styled(Line1BaseButton)`
 `;
 
-const OnlineDivider = styled.div`
+const FilterDivider = styled.div`
   width: 76%;
   background-color: #ccc; 
   margin-left: 150px;

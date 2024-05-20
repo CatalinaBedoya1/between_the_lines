@@ -66,6 +66,15 @@ const getVoteCounts = async () => {
 
 
 
+//WORDLE endpoint
+app.get('/wordle-data', (req,res) => {
+  const wordleData = require('./wordledata.json');   //read data
+  res.json(wordleData);     //send data
+})
+
+
+
+
 //ROUTES
 
 

@@ -15,6 +15,7 @@ import EventsPage from './routes/EventsPage';
 import EventsComplete from './routes/EventsComplete';
 import EventsSignup from './routes/eventsSignup';
 import BookDetails from './routes/BookDetails';
+import Wordle from './routes/Wordle';
 import Dashboard from './routes/Dashboard';
 import AboutUs from './routes/AboutUs';
 import Login from './routes/Login';
@@ -97,6 +98,7 @@ function App() {
               <Route path="/community/eventsComplete" element={<EventsComplete />} />
               <Route path="/community/EventsSignup" element={<EventsSignup />} />
               <Route path="/community/BookDetails" element={<BookDetails />} />
+              <Route path="/community/Game" element={<Wordle />} />
               <Route path="/aboutus" element={<AboutUs />} />
               <Route path="/quiz" element={<Quiz />} />
             </Route>
