@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../routes/Wordle.css';
 import WordleComponent from '../components/WordleComponent';
 
 const Wordle = () => {

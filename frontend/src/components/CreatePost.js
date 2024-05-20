@@ -311,4 +311,4 @@ const ThreadItem = styled.li`
   }
 `;
 
-export default CreatePost;
+export default CreatePost; 
