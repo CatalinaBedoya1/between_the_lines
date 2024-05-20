@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import "./CreatePost.css";
+import publishicon from '../assets/PublishIcon.png';
+import addimage from '../assets/AddPhotoIcon.png';
 
 const CreatePost = () => {
   const [forum, setForum] = useState("");
@@ -117,8 +119,11 @@ const CreatePost = () => {
           <CheckSquare type="checkbox" />
           <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
           </CheckboxContainer>
-          <div className="addImageBtn">Add image</div>
+          <div className="addImageBtn">Add Photo</div>
+          <img src = {addimage} alt="Add Image Icon" className='imageicon'/>
           <Button type='submit'>Publish</Button>
+          <img src = {publishicon} alt="Publish Icon" className='publishicon'/>
+
         </Form>
       </FormContainer>
     </Container>
@@ -168,7 +173,7 @@ const Container = styled.div`
 const FormContainer = styled.div`
   background-color: #4281A4;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
@@ -241,11 +246,10 @@ font-style: normal;
     font-size: 18px;
     color: #ffffff;
     background-color: #F8A2C0;
-    text-align: center;
     cursor: pointer;
     box-shadow: 0 0 0 4px #ffffff;
     margin-left: 350px;
-    margin-top: -60px;
+    margin-top: -55px;
 
   &:hover {
     background-color: #d75a8b;
