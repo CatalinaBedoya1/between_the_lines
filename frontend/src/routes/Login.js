@@ -40,6 +40,7 @@ const Login = ({ setAuth }) => {
       const parseRes = await response.json();
 
       if (parseRes.jwtToken) {
+        localStorage.setItem("_id", parseRes.userId); //added this for forums to work -Cat
         localStorage.setItem("token", parseRes.jwtToken);
         setAuth(true);
         toast.success("Logged in Successfully");

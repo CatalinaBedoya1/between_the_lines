@@ -169,7 +169,10 @@ const HoverOverlay = styled.div`
 
 
 const HoverText =styled.div`
-    font-size: 15px;
+    font-size: 13px;
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 `;
 
 

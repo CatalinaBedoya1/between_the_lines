@@ -93,10 +93,10 @@ const FlipCard = ({ image, name, founder, jobtitle, description}) => {
               onMouseLeave={handleMouseLeave}
             >
               <AboutUsCardContent2>
-              <AboutUsName>
+              <AboutUsName2>
                 <h2>{name}</h2>
                 <br></br>
-                </AboutUsName>
+                </AboutUsName2>
                 <Quote>{description}</Quote>
               </AboutUsCardContent2>
             </BackAboutUsCard> 
@@ -272,7 +272,7 @@ const AboutUsHeroContent = styled.div`
   font-weight: 200;
   font-style: normal;
   font-size: 15px;
-    border: 5px solid #9DBEBD;
+    border: 5px solid #4281A4;
     padding-top: 40px;
     padding-left: 50px;
     padding-right: 40px;
@@ -280,7 +280,7 @@ const AboutUsHeroContent = styled.div`
     height: 455px;
     color: white;    // font-color
 
-    background-color:  #9DBEBD;
+    background-color:  #4281A4;
   `;
 
   const IntroCardArrow =styled.div`
@@ -305,7 +305,7 @@ const AboutUsHeroContent = styled.div`
 
 
   const AboutUsCard = styled.div`
-    border: 5px solid #9DBEBD;  // doesnt show ;-;
+    border: 5px solid #4281A4;  // doesnt show ;-;
     margin-bottom: 50px;
 
   `;
@@ -330,11 +330,12 @@ const AboutUsHeroContent = styled.div`
   font-weight: 100;
   font-style: normal;
   color: #3E2D70;
+  font-size: 20px;
   `;
 
   const AboutUsCardContent =styled.div `
 
-    color: #9DBEBD;    
+    color: #4281A4;    
     //background-color: green;
 
   `;
@@ -356,7 +357,7 @@ const AboutUsHeroContent = styled.div`
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
-    font-size: 15px;
+    font-size: 20px;
     padding-bottom:10px;
     //background-color:red;
   `;
@@ -366,7 +367,7 @@ const AboutUsHeroContent = styled.div`
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  font-size: 15px;
+  font-size: 18px;
   `;
 
 
@@ -377,18 +378,27 @@ const AboutUsHeroContent = styled.div`
     text-align: center;
     padding-top: 20px;
 
-    background-color: #9DBEBD;
+    background-color: #4281A4;
     font-color: white;
   `;
 
+  const AboutUsName2 =styled.div `
+  font-family: "Agbalumo", system-ui;
+  font-weight: 100;
+  font-style: normal;
+  color: white
+  margin-top: 30px;
+  margin-bottom: -20px;
+  font-size: 20px;
+  `;
   const Quote = styled.div`
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  color:#3E2D70;
+  color: white;
     padding: 25px;
-    font-size: 20px;
+    font-size: 18px;
   `;
 
 

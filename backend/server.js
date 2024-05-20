@@ -21,6 +21,7 @@ const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont
 app.use(express.json()); //req.body
 
 
+
 //voting api routes
 app.post('/api/vote', async (req, res) => {
   const { cover_id } = req.body;
@@ -119,27 +120,62 @@ app.get('/api/book-cover', async (req, res) => {
   }
 });
 
-//audiobook API
-/*
-const AudioApiKey = process.env.SERPAPI_API_KEY;
+// Api to create for the forums
 
-app.get("/api/audiobooks", async (req, res) => {
+const topicList = []; // Mock in-memory topic list
+
+function generateID() {
+  return Math.random().toString(36).substr(2, 9);
+}
+
+// Create a forum topic
+app.post("/api/create/topic", async (req, res) => {
+  const { topic, userId } = req.body;
+  if (!topic || !userId) {
+    return res.status(400).json({ error: "Topic and userId are required fields." });
+  }
+
   try {
-    const response = await fetch(
-      `https://serpapi.com/search.json?engine=google_play_product&store=audiobooks&product_id=AQAAAAB4yxbLfM&api_key=${AudioApiKey}`
+    const result = await pool.query(
+      "INSERT INTO topics (topic, user_id) VALUES ($1, $2) RETURNING *",
+      [topic, userId]
     );
-    const data = await response.json();
-    res.json(data);
+    const newTopic = result.rows[0];
+    res.status(201).json({ message: "Topic created successfully!", topic: newTopic });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("Error creating topic:", error);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 
-*/
+// Get paginated list of topics
+app.get("/api/topics", async (req, res) => {
+  const { page = 1, limit = 5 } = req.query;
+  const offset = (page - 1) * limit;
 
+  try {
+    const result = await pool.query(
+      "SELECT * FROM topics ORDER BY date DESC LIMIT $1 OFFSET $2",
+      [limit, offset]
+    );
+    const totalResult = await pool.query("SELECT COUNT(*) FROM topics");
+    const totalCount = parseInt(totalResult.rows[0].count, 10);
 
+    const response = {
+      results: result.rows,
+      total: totalCount,
+      totalPages: Math.ceil(totalCount / limit),
+      currentPage: parseInt(page, 10)
+    };
 
+    res.json(response);
+  } catch (error) {
+    console.error("Error fetching topics:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
 
+//
 
 app.listen(4000, () => {
   console.log('Server is running on port 4000');

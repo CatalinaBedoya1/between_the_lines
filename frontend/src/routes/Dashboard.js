@@ -8,14 +8,13 @@ import './Dashboard.css';
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
-import { styled } from "styled-components";
+import styled from "styled-components";
 import EditProfileForm from "../components/EditProfileForm";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [bio, setBio] = useState("");
-  const [profilePic, setProfilePic] = useState("");
   const [userId, setUserId] = useState("");
 
   const getProfile = async () => {
@@ -29,7 +28,6 @@ const Dashboard = ({ setAuth }) => {
       console.log("Parsed Data:", parseData);
       setName(parseData.user_name);
       setBio(parseData.bio);
-      setProfilePic(parseData.profile_pic);
       setUserId(parseData.user_id);
     } catch (err) {
       console.error(err.message);
@@ -54,26 +52,20 @@ const Dashboard = ({ setAuth }) => {
     getProfile();
   }, []);
 
-  const handleSaveProfile = async (newBio, newProfilePic) => {
+  const handleSaveProfile = async (newBio) => {
     try {
-      console.log("User ID:", userId);
-
-      const formData = new FormData();
-      formData.append("bio", newBio);
-      if (newProfilePic) formData.append("profile_pic", newProfilePic);
-
       const res = await fetch(`http://localhost:4000/user-profiles/${userId}`, {
         method: "PUT",
         headers: {
           jwt_token: localStorage.token,
+          "Content-Type": "application/json"
         },
-        body: formData,
+        body: JSON.stringify({ bio: newBio })
       });
 
       if (res.ok) {
         const parseRes = await res.json();
         setBio(parseRes.bio);
-        setProfilePic(parseRes.profile_pic);
         toast.success("Profile updated successfully");
         setIsEditing(false);
       } else {
@@ -83,6 +75,10 @@ const Dashboard = ({ setAuth }) => {
       console.error(err.message);
       toast.error("Failed to update profile");
     }
+  };
+
+  const handleEditClick = () => {
+    setIsEditing(true);
   };
 
   return (
@@ -101,17 +97,16 @@ const Dashboard = ({ setAuth }) => {
 
         <ButtonGroup>
           <LogoutButton onClick={logout}>Logout</LogoutButton>
-          <EditButton onClick={() => setIsEditing(true)}>Edit Profile</EditButton>
+          {!isEditing && (
+            <EditButton onClick={handleEditClick}>Edit Profile</EditButton>
+          )}
         </ButtonGroup>
 
         {isEditing && (
           <EditProfileForm
             initialBio={bio}
-            initialProfilePic={profilePic}
             onSave={handleSaveProfile}
             onClose={() => setIsEditing(false)}
-            bio={bio}
-            setBio={setBio}
           />
         )}
 
