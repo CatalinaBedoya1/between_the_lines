@@ -34,7 +34,7 @@ font-style: normal;
 .addImageBtn{
     font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
-font-weight: 700;
+font-weight: 600;
 font-style: normal;
     width: 200px;
     padding: 10px 30px;
@@ -52,13 +52,15 @@ font-style: normal;
 .imageicon {
     width: 25px;
     height: 25px;
-    margin-top: -46px;
+    position: absolute;
+    margin-top: 315px;
     margin-left: 20px;
 }
 .publishicon {
     width: 25px;
     height: 25px;
+    position: absolute;
     margin-left: 350px;
-    margin-top: -54px;
+    margin-top: 320px;
 }
 

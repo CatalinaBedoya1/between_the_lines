@@ -231,7 +231,10 @@ const CheckSquare = styled.input`
 const CheckboxLabel = styled.div`
   font-size: 18px;
   color: white;
-  font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
   font-weight: 600;
 `;
 
@@ -240,6 +243,7 @@ font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
 font-weight: 700;
 font-style: normal;
+font-weight: 600;
     width: 200px;
     padding: 10px 30px;
     border-radius: 50px;
