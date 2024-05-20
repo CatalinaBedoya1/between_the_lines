@@ -121,7 +121,6 @@ app.get('/api/book-cover', async (req, res) => {
 });
 
 // Api to create for the forums
-
 const topicList = []; // Mock in-memory topic list
 
 function generateID() {
@@ -137,7 +136,7 @@ app.post("/api/create/topic", async (req, res) => {
 
   try {
     const result = await pool.query(
-      "INSERT INTO topics (topic, user_id) VALUES ($1, $2) RETURNING *",
+      "INSERT INTO topics (topic, user_id, date) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
       [topic, userId]
     );
     const newTopic = result.rows[0];
@@ -150,7 +149,8 @@ app.post("/api/create/topic", async (req, res) => {
 
 // Get paginated list of topics
 app.get("/api/topics", async (req, res) => {
-  const { page = 1, limit = 5 } = req.query;
+  const page = parseInt(req.query.page, 10) || 1;
+  const limit = parseInt(req.query.limit, 10) || 5;
   const offset = (page - 1) * limit;
 
   try {
@@ -165,7 +165,7 @@ app.get("/api/topics", async (req, res) => {
       results: result.rows,
       total: totalCount,
       totalPages: Math.ceil(totalCount / limit),
-      currentPage: parseInt(page, 10)
+      currentPage: page,
     };
 
     res.json(response);
@@ -175,12 +175,8 @@ app.get("/api/topics", async (req, res) => {
   }
 });
 
-//
+//app.use("/api/thread/replies", require("./Server/routes/threadRoutes"));
 
 app.listen(4000, () => {
   console.log('Server is running on port 4000');
 });
-
-
-
-
