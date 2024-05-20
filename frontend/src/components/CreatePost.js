@@ -9,6 +9,12 @@ const CreatePost = () => {
 
   const createTopic = async () => {
     try {
+      const userId = localStorage.getItem("_id");
+      console.log("User ID:", userId); // Debug statement
+      if (!userId) {
+        throw new Error("User ID is not available");
+      }
+  
       const response = await fetch("http://localhost:4000/api/create/topic", {
         method: "POST",
         headers: {
@@ -16,7 +22,7 @@ const CreatePost = () => {
         },
         body: JSON.stringify({
           topic: forum,
-          userId: localStorage.getItem("_id"),
+          userId: userId,
         }),
       });
       const data = await response.json();
@@ -32,6 +38,7 @@ const CreatePost = () => {
       alert("An error occurred while creating the topic.");
     }
   };
+  
 
   const fetchTopics = async (page = 1) => {
     try {
@@ -72,6 +79,7 @@ const CreatePost = () => {
     <Container>
       <ThreadListContainer>
         <h2>Forum Topics</h2>
+        
         <ul>
           {threadList.map((thread) => (
             <ThreadItem key={thread.id}>
