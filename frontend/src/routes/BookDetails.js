@@ -138,6 +138,8 @@ const BookDetails =() => {
             </BFContainerRow>
         
             <CreatePost />
+
+            
             </BookDetailsContainer>
     )
 }
