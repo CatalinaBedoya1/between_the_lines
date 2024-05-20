@@ -72,9 +72,9 @@ function App() {
   }, []);
   return (
     <div className="container">
-      {loading ? (
+     {loading ? (
         <LoadingScreen />
-      ) : (
+      ) : ( 
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login setAuth={setAuth} />} />

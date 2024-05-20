@@ -153,7 +153,7 @@ const EditButton = styled.div`
   padding: 10px 30px;
   border-radius: 50px;
   color: #ffffff;
-  background: #DA92AC;
+  background: #F68AAF;
   font-size: 25px;
   margin-bottom: 50px;
   margin-left: 20px;
@@ -168,7 +168,7 @@ const LogoutButton = styled.button`
   padding: 10px 30px;
   border-radius: 50px;
   color: #ffffff;
-  background-color: #DA92AC;
+  background-color: #F68AAF;
   margin-bottom: 50px;
   cursor: pointer;
   font-size: 25px;

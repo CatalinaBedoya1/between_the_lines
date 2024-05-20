@@ -23,4 +23,22 @@ router.get("/", authorize, async (req, res) => {
   }
 });
 
+
+// Update user profile (including bio)
+router.put("/", authorize, async (req, res) => {
+  const { bio } = req.body;
+
+  try {
+    await pool.query(
+      "UPDATE users SET bio = $1 WHERE user_id = $2",
+      [bio, req.user.id]
+    );
+
+    res.json({ message: "Bio updated successfully" });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
+
 module.exports = router;

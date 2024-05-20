@@ -51,7 +51,7 @@ export const Community = () => {
           <img src={myImage2} alt="BOTM cover" className="BOTM-image"/>
         </div>
       </div>
-              
+
       <Forum2ArtSection/>
       
       <Voting />

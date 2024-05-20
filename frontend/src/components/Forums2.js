@@ -60,20 +60,24 @@ const Forum2ArtSection = () => {
       </h4>
       <div className="forums2artsection">
         {forums.map((forum, index) => (
+          <Link to="/community/BookDetails" style={{textDecoration: 'none'}}>
           <Card
             key={index}
             imageUrl={forum.imageUrl}
             description={forum.description}
           />
+          </Link>
         ))}
       </div>
       <div className="forums2artsection">
         {forums2ndrow.map((forum, index) => (
+          <Link to="/community/BookDetails" style={{textDecoration: 'none'}}>
           <Card
             key={index}
             imageUrl={forum.imageUrl}
             description={forum.description}
           />
+          </Link>
         ))}
       </div>
       <Link to="/community"><SeemorebuttonForum>See More</SeemorebuttonForum></Link>
