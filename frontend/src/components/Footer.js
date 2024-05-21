@@ -24,7 +24,7 @@ const Footer = () => {
           <p><StyledLink to="/AboutUs">About Us</StyledLink></p>
           <p><StyledLink to="/Discover">Discover</StyledLink></p>
           <p><StyledLink to="/Community">Community</StyledLink></p>
-          <p>Join a Book Club</p>
+          <p><StyledLink to="/Community/Discussions">Join a Book Club</StyledLink></p>
           <div className="social-icons">
           <a href="https://www.instagram.com/betweenthelines_botm/">
             <img src={InstagramIcon} alt="Instagram" className="social-icon" />

@@ -14,8 +14,8 @@ const pool = require("./Server/db");
 app.use(express.json());
 
 
-const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
-const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont know why this seems commented out 
+// const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
+// const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont know why this seems commented out 
 
 //app.use(cors());
 app.use(express.json()); //req.body
