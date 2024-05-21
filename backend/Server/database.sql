@@ -65,6 +65,9 @@ CREATE TABLE topics (
   date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE topics ADD COLUMN content TEXT;
+ALTER TABLE topics ADD COLUMN user_name VARCHAR(255);
+
 
 
 --table for replies
