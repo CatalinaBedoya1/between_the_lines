@@ -133,12 +133,14 @@ const BookDetails =() => {
 
                 <p>Load More...</p>
 
+                
+
                 </Forum>
             </BookForumContainer>
             </BFContainerRow>
         
            
-
+            <CreatePost />
             
             </BookDetailsContainer>
     )

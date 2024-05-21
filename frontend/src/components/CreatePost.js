@@ -10,7 +10,21 @@ const CreatePost = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const createTopic = async () => {
+  const fetchUserName = async (userId) => {
+    try {
+      const response = await fetch(`http://localhost:4000/api/users/${userId}`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch user details");
+      }
+      const data = await response.json();
+      return data.user_name || ""; // Return username or empty string if not found
+    } catch (error) {
+      console.error("Error fetching user details:", error);
+      return ""; // Return empty string on error
+    }
+  };
+
+  const createTopic = async (userName) => {
     try {
       const userId = localStorage.getItem("_id");
       console.log("User ID:", userId); // Debug statement
@@ -26,6 +40,7 @@ const CreatePost = () => {
         body: JSON.stringify({
           topic: forum,
           userId: userId,
+          userName: userName, // Pass username to backend
         }),
       });
       const data = await response.json();
@@ -62,10 +77,16 @@ const CreatePost = () => {
     fetchTopics(); // Fetch topics when the component mounts
   }, []);
 
-  const handleThreadSubmit = (e) => {
+  const handleThreadSubmit = async (e) => {
     e.preventDefault();
     if (forum.trim() !== "") {
-      createTopic();
+      try {
+        const userId = localStorage.getItem("_id");
+        const userName = await fetchUserName(userId); // Fetch username
+        createTopic(userName); // Pass username to createTopic function
+      } catch (error) {
+        alert("An error occurred while fetching user details.");
+      }
     } else {
       alert("Please enter a title for the forum topic.");
     }
@@ -75,19 +96,28 @@ const CreatePost = () => {
     if (page > 0 && page <= totalPages) {
       fetchTopics(page);
     }
-  };
-
+  }
   return (
     <Container>
     <ThreadListContainer>
-      <ForumsTitle>Forums:</ForumsTitle>
+    <ForumsTitle>
+      Forums:
+      <div className="subtitles">
+        <span>Topics</span>
+        <span className="date">Date</span> {/* Apply the date class here */}
+      </div>
+    </ForumsTitle>
+
       <ThreadList>
         {threadList.map((thread) => (
           <ThreadItem key={thread.id}>
-            <h3>{thread.topic}</h3>
+          <h3>{thread.topic}</h3>
+          <div className="thread-details">
             <p>Created by: {thread.userId}</p>
             <p>{new Date(thread.date).toLocaleString()}</p>
-          </ThreadItem>
+          </div>
+        </ThreadItem>
+        
         ))}
       </ThreadList>
         <Pagination>
@@ -180,10 +210,21 @@ const ForumsTitle = styled.div`
   font-style: normal;
   color: #3E2D70;
   font-size: 32px;
-  
+  border-bottom: 2px solid #3E2D70; 
   padding-bottom: 10px; 
   width: 100%;
   text-align: left;
+
+  .subtitles {
+    font-size: 14px;
+    color: #3E2D70;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .date {
+    margin-right: 120px; /* Adjust the margin as needed */
+  }
 `;
 
 const FormContainer = styled.div`
@@ -247,10 +288,7 @@ const CheckSquare = styled.input`
 const CheckboxLabel = styled.div`
   font-size: 18px;
   color: white;
-  font-family: "Manrope", sans-serif
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
+  font-family: "Manrope", sans-serif;
   font-weight: 600;
 `;
 
@@ -259,7 +297,6 @@ const Button = styled.button`
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-font-weight: 600;
   width: 200px;
   padding: 10px 30px;
   border-radius: 50px;
@@ -304,11 +341,14 @@ const ThreadItem = styled.li`
     font-style: normal;
   }
 
-  p {
-    margin: 0;
-    color: #3E2D70; /* Change color to 3E2D70 */
+  .thread-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
     font-size: 14px;
+    color: #3E2D70;
   }
 `;
 
-export default CreatePost; 
+export default CreatePost;
