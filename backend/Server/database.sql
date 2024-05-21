@@ -40,6 +40,12 @@ VALUES
 
 
 
+CREATE TABLE topics (
+  id SERIAL PRIMARY KEY,
+  topic VARCHAR(255) NOT NULL,
+  user_id UUID NOT NULL,
+  date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 --modified users_profiles for dash 
 CREATE TABLE user_profiles (
@@ -58,6 +64,9 @@ CREATE TABLE topics (
   user_id UUID NOT NULL,
   date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE topics ADD COLUMN content TEXT;
+ALTER TABLE topics ADD COLUMN user_name VARCHAR(255);
 
 
 

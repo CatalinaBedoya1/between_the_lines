@@ -10,14 +10,29 @@ const CreatePost = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const createTopic = async () => {
+  const fetchUserName = async (userId) => {
+    try {
+      const response = await fetch(`http://localhost:4000/api/users/${userId}`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch user details");
+      }
+      const data = await response.json();
+      return data.user_name || ""; // Check if user_name exists in the response
+    } catch (error) {
+      console.error("Error fetching user details:", error);
+      return ""; // Return empty string on error
+    }
+  };
+  
+
+  const createTopic = async (userName, content) => { // Modify the function signature to accept content
     try {
       const userId = localStorage.getItem("_id");
       console.log("User ID:", userId); // Debug statement
       if (!userId) {
         throw new Error("User ID is not available");
       }
-
+  
       const response = await fetch("http://localhost:4000/api/create/topic", {
         method: "POST",
         headers: {
@@ -26,6 +41,8 @@ const CreatePost = () => {
         body: JSON.stringify({
           topic: forum,
           userId: userId,
+          userName: userName,
+          content: content, // Pass the content to the backend
         }),
       });
       const data = await response.json();
@@ -49,7 +66,8 @@ const CreatePost = () => {
         throw new Error("Failed to fetch topics");
       }
       const data = await response.json();
-      setThreadList(data.results || []);
+      const topicsWithShowContent = data.results.map((topic) => ({ ...topic, showContent: false }));
+      setThreadList(topicsWithShowContent || []);
       setCurrentPage(page);
       setTotalPages(data.totalPages || 1);
     } catch (error) {
@@ -57,19 +75,29 @@ const CreatePost = () => {
       alert("An error occurred while fetching topics.");
     }
   };
+  
+  
 
   useEffect(() => {
     fetchTopics(); // Fetch topics when the component mounts
   }, []);
 
-  const handleThreadSubmit = (e) => {
+  const handleThreadSubmit = async (e) => {
     e.preventDefault();
+    const content = document.getElementById("contentTextarea").value; // Capture content from textarea
     if (forum.trim() !== "") {
-      createTopic();
+      try {
+        const userId = localStorage.getItem("_id");
+        const userName = await fetchUserName(userId); // Fetch username
+        createTopic(userName, content); // Pass content to createTopic function
+      } catch (error) {
+        alert("An error occurred while fetching user details.");
+      }
     } else {
       alert("Please enter a title for the forum topic.");
     }
   };
+  
 
   const handlePageChange = (page) => {
     if (page > 0 && page <= totalPages) {
@@ -77,19 +105,42 @@ const CreatePost = () => {
     }
   };
 
+  const toggleThreadContent = (threadId) => {
+    setThreadList((prevThreadList) =>
+      prevThreadList.map((thread) =>
+        thread.id === threadId ? { ...thread, showContent: !thread.showContent } : thread
+      )
+    );
+  };
+
   return (
-    <ForumsThreadContainer>
-    <ThreadListContainer>
-      <ForumsTitle>Forums:</ForumsTitle>
-      <ThreadList>
-        {threadList.map((thread) => (
-          <ThreadItem key={thread.id}>
-            <h3>{thread.topic}</h3>
-            <p>Created by: {thread.userId}</p>
-            <p>{new Date(thread.date).toLocaleString()}</p>
-          </ThreadItem>
-        ))}
-      </ThreadList>
+    <Container>
+      <ThreadListContainer>
+        <ForumsTitle>
+          Forums:
+          <div className="subtitles">
+            <span>Topics</span>
+            <span className="date">Date</span> {/* Apply the date class here */}
+          </div>
+        </ForumsTitle>
+
+        <ThreadList>
+          {threadList.map((thread) => (
+            <ThreadItem key={thread.id}>
+              <h3 onClick={() => toggleThreadContent(thread.id)}>{thread.topic}</h3>
+              <div className="thread-details">
+              <p>Created by: {thread.user_name}</p>
+                <p>{new Date(thread.date).toLocaleString()}</p>
+              </div>
+              {thread.showContent && (
+                <ThreadContent>
+                  <p>{thread.content}</p>
+                </ThreadContent>
+              )}
+            </ThreadItem>
+          ))}
+        </ThreadList>
+
         <Pagination>
           <button
             onClick={() => handlePageChange(currentPage - 1)}
@@ -120,10 +171,15 @@ const CreatePost = () => {
             value={forum}
             onChange={(e) => setForum(e.target.value)}
           />
-          <TextArea className="createPostBodyText" placeholder="Begin typing . . ." />
+         <TextArea
+            id="contentTextarea" // Add id to textarea
+            className="createPostBodyText"
+            placeholder="Begin typing . . ."
+          />
+
           <CheckboxContainer>
             <CheckSquare type="checkbox" />
-            <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
+            <CheckboxLabel>Does this message</CheckboxLabel>
           </CheckboxContainer>
           <div className="addImageBtn">Add Photo</div>
           <img src={addimage} alt="Add Image Icon" className='imageicon' />
@@ -131,7 +187,7 @@ const CreatePost = () => {
           <img src={publishicon} alt="Publish Icon" className='publishicon' />
         </Form>
       </FormContainer>
-    </ForumsThreadContainer>
+    </Container>
   );
 };
 
@@ -166,7 +222,7 @@ const Pagination = styled.div`
   }
 `;
 
-const ForumsThreadContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -184,6 +240,17 @@ const ForumsTitle = styled.div`
   padding-bottom: 10px; 
   width: 100%;
   text-align: left;
+
+  .subtitles {
+    font-size: 14px;
+    color: #3E2D70;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .date {
+    margin-right: 120px; /* Adjust the margin as needed */
+  }
 `;
 
 const FormContainer = styled.div`
@@ -193,7 +260,7 @@ const FormContainer = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
-  margin-bottom: 40px; 
+  margin-bottom: 40px; /* Add more margin for space */
   display: flex;
   flex-direction: column;
   font-size: 20px;
@@ -296,18 +363,28 @@ const ThreadItem = styled.li`
   h3 {
     margin: 0 0 10px 0;
     font-size: 18px;
-    color: #3E2D70; /* Change color to 3E2D70 */
+    color: #3E2D70;
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    cursor: pointer;
   }
 
-  p {
-    margin: 0;
-    color: #3E2D70; /* Change color to 3E2D70 */
+  .thread-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
     font-size: 14px;
+    color: #3E2D70;
   }
+`;
+const ThreadContent = styled.div`
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
 `;
 
 export default CreatePost;

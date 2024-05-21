@@ -7,7 +7,7 @@ import MaddyGroup from '../assets/AboutUs/maddygroup.png';
 import JustineGroup from '../assets/AboutUs/justinegroup.png';
 import ReyaGroup from '../assets/AboutUs/reyagroup.png';
 import RightArrow from '../assets/AboutUs/whitearrow.png';
-import LogoStair from '../assets/AboutUs/logostair.png';
+import LogoStair from '../assets/AboutUs/aboutusicon.png';
 import styled from 'styled-components';
 
 
@@ -216,9 +216,9 @@ const AboutUsHeroContent = styled.div`
     height: 500px;
     padding-top: 100px;
     padding-left: 100px;
+    justify-content:center;
+    text-align:center;
     
-    //background-color: blue;
-
   `;
 
   const FeaturesCard = styled.div`

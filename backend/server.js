@@ -129,15 +129,16 @@ function generateID() {
 
 // Create a forum topic
 app.post("/api/create/topic", async (req, res) => {
-  const { topic, userId } = req.body;
-  if (!topic || !userId) {
-    return res.status(400).json({ error: "Topic and userId are required fields." });
+  const { topic, userId, userName, content } = req.body;
+
+  if (!topic || !userId || !userName) {
+    return res.status(400).json({ error: "Topic, userId, and userName are required fields." });
   }
 
   try {
     const result = await pool.query(
-      "INSERT INTO topics (topic, user_id, date) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
-      [topic, userId]
+      "INSERT INTO topics (topic, user_id, user_name, date, content) VALUES ($1, $2, $3, CURRENT_TIMESTAMP, $4) RETURNING *",
+      [topic, userId, userName, content]
     );
     const newTopic = result.rows[0];
     res.status(201).json({ message: "Topic created successfully!", topic: newTopic });
@@ -146,6 +147,7 @@ app.post("/api/create/topic", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+
 
 // Get paginated list of topics
 app.get("/api/topics", async (req, res) => {
@@ -175,7 +177,22 @@ app.get("/api/topics", async (req, res) => {
   }
 });
 
-//app.use("/api/thread/replies", require("./Server/routes/threadRoutes"));
+
+// Get user details by ID
+app.get('/api/users/:id', async (req, res) => {
+  const userId = req.params.id;
+  try {
+    const result = await pool.query('SELECT user_id, user_name FROM users WHERE user_id = $1', [userId]);
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.json(result.rows[0]);
+  } catch (error) {
+    console.error('Error fetching user details:', error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
 
 app.listen(4000, () => {
   console.log('Server is running on port 4000');
