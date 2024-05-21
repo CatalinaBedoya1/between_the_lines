@@ -33,9 +33,9 @@ export default function WordleComponent({ solution }) {
 
   return (
     <div>
-      solution = {solution}
+      {/* solution = {solution}
       <br></br>
-      current guess = {currentGuess}
+      current guess = {currentGuess} */}
       <WordleGrid currentGuess={currentGuess} guesses={guesses} turn={turn}/>
       <WordleKeypad usedKeys={usedKeys}/>
       {showModal && <WordleModal isCorrect={isCorrect} turn={turn} solution={solution}/>}

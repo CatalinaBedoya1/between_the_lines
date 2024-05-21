@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import './Wordle.css';
 import WordleComponent from '../components/WordleComponent';
+import leaderboard from '../assets/UpdatedLeaderboard.png';
+import bookdle from '../assets/bookle.png';
 
 const Wordle = () => {
     const [solutions, setSolutions] = useState([]);
@@ -30,10 +33,48 @@ const Wordle = () => {
 
     return (
         <div>
-            <br></br>
-            <h1>wordle</h1>
-            {solution && <WordleComponent solution={solution} />}
+
+        <img className='bookdle-img' src={bookdle} alt='header' />
+
+        <div className='game-container'>
+            <div className='wordle-container'>            
+                <div className='wtitle'>Bookdle</div>
+                <div className='wbody'>
+                    Guess the word of the day!
+                </div>
+
+                {solution && <WordleComponent solution={solution} />}
+            </div>
+
+            <div className='side-container'>
+            <div className='wtitle'>Bookdle History</div>
+            <div className='wbody'>
+                    Yesterday's Bookdle: 
+                    <div className='wtitle2'>Novel</div>
+                    <br></br>
+                    1% of users guessed in 1 turn
+                    <br></br>
+                    5% of users guessed in 2 turns
+                    <br></br>
+                    8% of users guessed in 3 turns
+                    <br></br>
+                    17% of users guessed in 4 turn
+                    <br></br>
+                    20% of users guessed in 5 turns
+                    <br></br>
+                    33% of users guessed in 6 turns
+                    <br></br>
+                    
+                </div>
+            </div>
+
+
         </div>
+
+        <img className='leaderboard-img' src={leaderboard} alt='leaderboard' />
+        </div>
+
+
     );
 };
 
