@@ -26,8 +26,12 @@ const Footer = () => {
           <p><StyledLink to="/Community">Community</StyledLink></p>
           <p>Join a Book Club</p>
           <div className="social-icons">
-          <img src={InstagramIcon} alt="Instagram" className="social-icon" />
-          <img src={TwitterIcon} alt="Twitter" className="social-icon" />
+          <a href="https://www.instagram.com/betweenthelines_botm/">
+            <img src={InstagramIcon} alt="Instagram" className="social-icon" />
+          </a>
+          <a href="https://x.com/BTL_BOTM">
+            <img src={TwitterIcon} alt="Twitter" className="social-icon" />
+          </a>
         </div>
         </div>
         <div className="Left-vertical-line"></div>
