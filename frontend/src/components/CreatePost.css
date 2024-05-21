@@ -27,12 +27,20 @@ font-style: normal;
 
     justify-content: top;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 2px solid #F8A2C0;
     padding: 20px;
     height: 50px;
-
 }
 
+.createPostText option {
+    background-color: #F8A2C0;
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+
+}
 
 .createPostBodyText{  
     font-family: "Manrope", sans-serif;
@@ -44,7 +52,7 @@ font-style: normal;
     justify-content: top;
     width: 100%;
     height: 50px;
-    border: 1px solid #ccc;
+    border: #ccc;
     padding: 10px 30px 175px 20px;
 
 }
@@ -52,7 +60,7 @@ font-style: normal;
     width: 25px;
     height: 25px;
     position: absolute;
-    margin-top: 300px;
+    margin-top: 315px;
     margin-left: 20px;
 }
 .publishicon {
@@ -60,6 +68,6 @@ font-style: normal;
     height: 25px;
     position: absolute;
     margin-left: 350px;
-    margin-top: 300px;
+    margin-top: 320px;
 }
 

@@ -254,16 +254,19 @@ const CheckboxLabel = styled.div`
 const Button = styled.button`
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   width: 200px;
   padding: 10px 30px;
   border-radius: 50px;
   font-size: 18px;
+  text-align: center;
   color: #ffffff;
   background-color: #F8A2C0;
   cursor: pointer;
   box-shadow: 0 0 0 4px #ffffff;
+  outline: none;
+  postion: absolute;
   margin-left: 320px;
   margin-top: -55px;
 
