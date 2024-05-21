@@ -4,7 +4,7 @@
         {"id": 2, "word": "story"},
         {"id": 3, "word": "genre"},
         {"id": 4, "word": "pages"},
-        {"id": 5, "word": "novel"},
+        {"id": 5, "word": "fable"},
         {"id": 6, "word": "cover"},
         {"id": 7, "word": "poems"},
         {"id": 8, "word": "title"}
