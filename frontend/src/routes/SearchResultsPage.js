@@ -5,6 +5,7 @@ import SearchRPPicks from '../components/SearchRPPicks';
 import gridIcon from '../assets/gridIcon.png';
 import AbstractImg from '../assets/AbstractImg.png';
 import Card from "../components/Card";
+import { Link } from 'react-router-dom';
 
 // Import forum images
 import forumSquare1 from '../assets/bookforum1.png';
@@ -431,20 +432,24 @@ const Forum2ArtSection = () => {
         </SectionTitle>
         <div className="forums2artsection">
           {forums.map((forum, index) => (
+            <Link to="/community/BookDetails" style={{textDecoration: 'none'}}>
             <Card
               key={index}
               imageUrl={forum.imageUrl}
               description={forum.description}
             />
+            </Link>
           ))}
         </div>
         <div className="forums2artsection">
           {forums2ndrow.map((forum, index) => (
+            <Link to="/community/BookDetails" style={{textDecoration: 'none'}}>
             <Card
               key={index}
               imageUrl={forum.imageUrl}
               description={forum.description}
             />
+            </Link>
           ))}
         </div>
         <SeeMoreButton to="/community">See More</SeeMoreButton>
