@@ -2,20 +2,24 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import DashboardRecs from "../components/DashboardRecs";
 import QuizRecs from "../components/QuizResults";
-import DashIcon from "../assets/dashboardicon.png";
 import CurrentReading from "../assets/Dashprofile.png";
 import './Dashboard.css';
+import DashIcon from "../assets/dashboardicon.png";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import EditProfileForm from "../components/EditProfileForm";
+import ProfilePicOptions from "../components/ProfilePicOptions"; // Import ProfilePicOptions component
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [bio, setBio] = useState("");
   const [userId, setUserId] = useState("");
+  const [profilePicUrl, setProfilePicUrl] = useState("");
+  const [profilePics, setProfilePics] = useState([]);
+  const [selectedProfilePic, setSelectedProfilePic] = useState(null);
 
   const getProfile = async () => {
     try {
@@ -26,9 +30,13 @@ const Dashboard = ({ setAuth }) => {
 
       const parseData = await res.json();
       console.log("Parsed Data:", parseData);
-      setName(parseData.user_name);
-      setBio(parseData.bio);
-      setUserId(parseData.user_id);
+      if (parseData) {
+        setName(parseData.user_name);
+        setBio(parseData.bio);
+        setUserId(parseData.user_id);
+        setProfilePicUrl(parseData.profile_pic_url);
+        console.log(profilePicUrl);
+      }
     } catch (err) {
       console.error(err.message);
     }
@@ -54,13 +62,13 @@ const Dashboard = ({ setAuth }) => {
 
   const handleSaveProfile = async (newBio) => {
     try {
-      const res = await fetch(`http://localhost:4000/user-profiles/${userId}`, {
+      const res = await fetch("http://localhost:4000/update-bio", {
         method: "PUT",
         headers: {
           jwt_token: localStorage.token,
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ bio: newBio })
+        body: JSON.stringify({ userId, bio: newBio })
       });
 
       if (res.ok) {
@@ -77,13 +85,25 @@ const Dashboard = ({ setAuth }) => {
     }
   };
 
-  const handleEditClick = () => {
+  const handleEditClick = async () => {
     setIsEditing(true);
+    try {
+      // Fetch profile picture options
+      const res = await fetch("http://localhost:4000/profile-pics", {
+        method: "GET"
+      });
+      const data = await res.json();
+      if (data) {
+        setProfilePics(data.profilePics);
+      }
+    } catch (error) {
+      console.error("Error fetching profile pictures:", error);
+    }
   };
 
   return (
     <>
-      <Sidebar /> 
+      <Sidebar />
       <div className="dashboard">
         <img src={DashIcon} alt="DashboardIcon" className="Dashboard-Icon" />
         <div className="bio">
@@ -102,40 +122,42 @@ const Dashboard = ({ setAuth }) => {
           )}
         </ButtonGroup>
 
-        {isEditing && (
+       {isEditing && (
           <EditProfileForm
             initialBio={bio}
             onSave={handleSaveProfile}
             onClose={() => setIsEditing(false)}
+            userId={userId}
+            profilePics={profilePics}
           />
         )}
 
-        <div className="currentreading">
-          <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
-          <div className="updateprogressbtn">Update Progress</div>
-          <div className="chat1">Chat</div>
-          <div className="chat2">Chat</div>
-          <div className="chat3">Chat</div>
-        </div>
-        <DashboardRecs />
-        <div className="topgenres">
-          <p>My Top Genres:</p>
-          <div className="topgenre1">Fiction</div>
-          <div className="topgenre2">Romance</div>
-          <div className="topgenre3">Thriller</div>
-          <div className="topgenre4">Historical Fiction</div>
-          <div className="topgenre5">Fantasy</div>
-        </div>
-        <div className="quizResult">
-          <br />
-          <div className="quizresultheader">
-            <p>My Recommended Books:</p>
-          </div>
-          <QuizRecs />
-        </div>
+      <div className="currentreading">
+        <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
+        <div className="updateprogressbtn">Update Progress</div>
+        <div className="chat1">Chat</div>
+        <div className="chat2">Chat</div>
+        <div className="chat3">Chat</div>
       </div>
-      <Footer /> 
-    </>
+      <DashboardRecs />
+      <div className="topgenres">
+        <p>My Top Genres:</p>
+        <div className="topgenre1">Fiction</div>
+        <div className="topgenre2">Romance</div>
+        <div className="topgenre3">Thriller</div>
+        <div className="topgenre4">Historical Fiction</div>
+        <div className="topgenre5">Fantasy</div>
+      </div>
+      <div className="quizResult">
+        <br />
+        <div className="quizresultheader">
+          <p>My Recommended Books:</p>
+        </div>
+        <QuizRecs />
+      </div>
+    </div>
+    <Footer />
+  </>
   );
 };
 

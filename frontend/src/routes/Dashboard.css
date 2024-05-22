@@ -5,14 +5,12 @@
     font-weight: 400;
     font-style: normal;
   }
-
-.manrope-1 {
+  .manrope-1 {
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
   }
-
 .dashboard{
     padding-top: 80px;
     display: flex;
@@ -36,6 +34,7 @@
     margin-top: -165px;
     margin-bottom: 10px;
     font-size: 50px;
+    margin-left: 200px;
 }
 
 .bio h2{
@@ -45,6 +44,7 @@
     font-style: normal;
     margin-bottom: 20px;
     font-size: 30px;
+    margin-left: 200px;
 }
 .bio p{
     font-family: "Manrope", sans-serif;
@@ -54,6 +54,7 @@
     text-align: left;
     margin-bottom: 80px; 
     font-size: 30px;
+    margin-left: 200px;
 }
 
 .currentreading{

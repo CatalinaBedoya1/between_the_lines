@@ -1,112 +1,132 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const ModalOverlay = styled.div`
+const ProfileForm = styled.form`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-`;
-
-const ModalContent = styled.div`
-  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
   padding: 2rem;
-  border-radius: 8px;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 5px solid #F68AAF; /* Added pink border */
 `;
 
-const Title = styled.h2`
+const ProfileTitle = styled.h2`
   margin-bottom: 1rem;
+  text-align: center;
+  font-family: "Agbalumo", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #3E2D70;
+  font-size: 35px;
 `;
 
-const FormContainer = styled.form`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const ProfileTextInput = styled.input`
+  margin-top: 5px;
+  width: calc(100% - 1rem);
+  padding: 0.5rem;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #3E2D70;
+  border: none; /* Removed border */
 `;
 
-const Label = styled.label`
-  width: 100%;
-  margin-bottom: 0.5rem;
+const ProfileSubtitle = styled.span`
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
+font-size: 24px;
+margin-left: 10px;
 `;
 
-const TextArea = styled.textarea`
-  width: 100%;
+const ProfilePicContainer = styled.div`
   margin-bottom: 1rem;
+  font-size: 16px;
+  font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+color: #3E2D70;
+margin-left: 10px;
 `;
 
-const ButtonGroup = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`;
-
-const Button = styled.button`
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
+const ProfileButton = styled.button`
+  background-color: #B0507F;
+  color: white;
   border: none;
-  border-radius: 4px;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+  display: block;
+  margin: 0 auto; /* Centered the button */
+`;
+const ErrorText = styled.p`
+  color: red;
 `;
 
-const SaveButton = styled(Button)`
-  background-color: #4caf50;
-  color: white;
-`;
-
-const CancelButton = styled(Button)`
-  background-color: #f44336;
-  color: white;
+const SuccessText = styled.p`
+  color: green;
 `;
 
 const EditProfileForm = ({ initialBio, onSave, onClose }) => {
   const [bio, setBio] = useState(initialBio);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
-  const handleChange = (e) => {
+  const handleBioChange = (e) => {
     setBio(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSave(bio);
+
+    if (!bio.trim()) {
+      setError("Bio cannot be empty");
+      return;
+    }
+
+    try {
+      await onSave(bio);
+      // Simulating profile picture upload
+      setTimeout(() => {
+        setSuccess("Profile updated successfully");
+      }, 2000);
+      onClose();
+    } catch (error) {
+      console.error("Error updating bio:", error);
+      setError("Error updating bio");
+    }
   };
 
   return (
-    <ModalOverlay>
-      <ModalContent>
-        <Title>Edit Profile</Title>
-        <FormContainer onSubmit={handleSubmit}>
-          <Label htmlFor="bio">Bio:</Label>
-          <TextArea
-            id="bio"
-            value={bio}
-            onChange={handleChange}
-            rows="4"
-          ></TextArea>
-          <ButtonGroup>
-            <SaveButton type="submit">Save</SaveButton>
-            <CancelButton type="button" onClick={onClose}>Cancel</CancelButton>
-          </ButtonGroup>
-        </FormContainer>
-      </ModalContent>
-    </ModalOverlay>
+    <ProfileForm onSubmit={handleSubmit}>
+      <ProfileTitle>Edit Profile</ProfileTitle>
+      <div>
+        <ProfileSubtitle>Bio:</ProfileSubtitle>
+        <ProfileTextInput
+          type="text"
+          value={bio}
+          onChange={handleBioChange}
+          placeholder="Enter your bio..."
+        />
+      </div>
+      <div>
+        <ProfileSubtitle>Profile Pic:</ProfileSubtitle>
+        <ProfilePicContainer>
+          <p>Sorry, this feature is under development.</p>
+        </ProfilePicContainer>
+      </div>
+      <ProfileButton type="submit">Save</ProfileButton>
+      {error && <ErrorText>{error}</ErrorText>}
+      {success && <SuccessText>{success}</SuccessText>}
+    </ProfileForm>
   );
 };
 
 export default EditProfileForm;
-
-
-
-
-
-

@@ -2,20 +2,18 @@ const router = require("express").Router();
 const authorize = require("../middleware/authorize");
 const pool = require("../db");
 
+// In your dashboard endpoint
 router.get("/", authorize, async (req, res) => {
   try {
     const user = await pool.query(
-      "SELECT user_id, user_name FROM users WHERE user_id = $1",
-      [req.user.id] 
+      "SELECT user_id, user_name, profile_pic_url, bio FROM users WHERE user_id = $1",
+      [req.user.id]
     ); 
-    
-  //if would be req.user if you change your payload to this:
-    
-  //   function jwtGenerator(user_id) {
-  //   const payload = {
-  //     user: user_id
-  //   };
-    
+
+    if (user.rows.length === 0) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
     res.json(user.rows[0]);
   } catch (err) {
     console.error(err.message);
@@ -23,22 +21,5 @@ router.get("/", authorize, async (req, res) => {
   }
 });
 
-
-// Update user profile (including bio)
-router.put("/", authorize, async (req, res) => {
-  const { bio } = req.body;
-
-  try {
-    await pool.query(
-      "UPDATE users SET bio = $1 WHERE user_id = $2",
-      [bio, req.user.id]
-    );
-
-    res.json({ message: "Bio updated successfully" });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
-  }
-});
 
 module.exports = router;

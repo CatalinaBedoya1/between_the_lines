@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { toast } from "react-toastify";
 
 const NewsletterContainer = styled.div`
   max-width: 400px;
@@ -70,6 +71,7 @@ const Newsletter = ({ onClose }) => {
     try {
       
       setSuccessMessage('You have successfully subscribed!');
+      toast.success("Successfully subscribed to BTL!")
       setErrorMessage('');
       setEmail('');
       setName('');

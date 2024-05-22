@@ -4,6 +4,9 @@ const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
+const path = require('path');
+const fs = require('fs'); 
+const authorize = require('./Server/middleware/authorize');
 
 
 const cors = require("cors");
@@ -12,6 +15,7 @@ app.use(cors());
 
 const pool = require("./Server/db");
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "uploads")));
 
 
 const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
@@ -84,7 +88,7 @@ app.use("/authentication", require("./Server/routes/jwtAuth"));
 //dashboard routes
 app.use("/dashboard", require("./Server/routes/dashboard"));
 
-app.use("/user-profiles", require("./Server/routes/userProfileRoutes"));
+
 
 
 
@@ -193,6 +197,47 @@ app.get('/api/users/:id', async (req, res) => {
   }
 });
 
+
+
+
+
+// Route to handle profile picture upload
+app.get("/profile-pics", async (req, res) => {
+  try {
+    // Assume you have an array of profile picture URLs stored in your database
+    const profilePics = [
+      "/profile-pics/pic1.jpg",
+      "/profile-pics/pic2.jpg",
+      "/profile-pics/pic3.jpg"
+    ];
+    res.json({ profilePics });
+  } catch (error) {
+    console.error("Error fetching profile pictures:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+
+// Route to handle updating user's bio
+app.put('/update-bio', authorize, async (req, res) => {
+  try {
+    const { userId, bio } = req.body;
+
+    const updateBio = await pool.query(
+      "UPDATE users SET bio = $1 WHERE user_id = $2 RETURNING bio",
+      [bio, userId]
+    );
+
+    if (updateBio.rows.length === 0) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.json(updateBio.rows[0]);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error");
+  }
+});
 
 app.listen(4000, () => {
   console.log('Server is running on port 4000');
