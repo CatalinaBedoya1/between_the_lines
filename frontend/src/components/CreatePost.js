@@ -166,7 +166,7 @@ const CreatePost = () => {
             <option value="feedback">Feedback</option>
           </Select>
           <Input
-            className="createPostText"
+            className="createPostTitle"
             placeholder="Create a title"
             value={forum}
             onChange={(e) => setForum(e.target.value)}
@@ -179,11 +179,11 @@ const CreatePost = () => {
 
           <CheckboxContainer>
             <CheckSquare type="checkbox" />
-            <CheckboxLabel>Does this message</CheckboxLabel>
+            <CheckboxLabel>Does your message contain spoilers?</CheckboxLabel>
           </CheckboxContainer>
           <div className="addImageBtn">Add Photo</div>
-          <img src={addimage} alt="Add Image Icon" className='imageicon' />
-          <Button type='submit'>Publish</Button>
+          <img src={addimage} alt="Add Icon" className='imageicon' />
+          <Button type='submit' className="addImageBtn">Publish</Button>
           <img src={publishicon} alt="Publish Icon" className='publishicon' />
         </Form>
       </FormContainer>
@@ -278,6 +278,11 @@ const Select = styled.select`
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ddd;
+
+  &:hover {
+    background-color: #F8A2C0;
+  }
+
 `;
 
 const Input = styled.input`
@@ -320,19 +325,23 @@ const CheckboxLabel = styled.div`
 
 const Button = styled.button`
   font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  width: 200px;
-  padding: 10px 30px;
-  border-radius: 50px;
-  font-size: 18px;
-  color: #ffffff;
-  background-color: #F8A2C0;
-  cursor: pointer;
-  box-shadow: 0 0 0 4px #ffffff;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
+    width: 200px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border-width: 0px;
+    border-style: none;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #F8A2C0;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+  postion: absolute;
   margin-left: 320px;
-  margin-top: -55px;
+  margin-top: -58px;
 
   &:hover {
     background-color: #d75a8b;
