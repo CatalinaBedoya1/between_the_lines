@@ -24,20 +24,20 @@ const NewSection = ({ category }) => {
     const [books, setBooks] = useState([]);
     const [title, setTitle] = useState("");
 
-    // useEffect(() => {
-    //     const fetchBooks = async () => {
-    //         try {
-    //             const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${category}.json?api-key=${NYT_API_KEY}`);
-    //             const data = await response.json();
-    //             setBooks(data.results.books || []);
-    //             setTitle(mapTitle(category));
-    //         } catch (error) {
-    //             console.error(`Error fetching ${category} books:`, error);
-    //         }
-    //     };
+     useEffect(() => {
+         const fetchBooks = async () => {
+             try {
+                 const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${category}.json?api-key=${NYT_API_KEY}`);
+                 const data = await response.json();
+                 setBooks(data.results.books || []);
+                 setTitle(mapTitle(category));
+             } catch (error) {
+                 console.error(`Error fetching ${category} books:`, error);
+             }
+         };
 
-    //     fetchBooks();
-    // }, [category]);
+         fetchBooks();
+     }, [category]);
 
     const mapTitle = (category) => {
         switch (category) {
