@@ -50,24 +50,24 @@ const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
     const [title, setTitle] = useState("");
     const category = "hardcover-fiction";
   
-    // useEffect(() => {
-    //     const fetchBooks = async () => {
-    //       try {
-    //         const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${category}.json?api-key=${NYT_API_KEY}`);
-    //         const data = await response.json();
-    //         console.log("Fetched data:", data);
+     useEffect(() => {
+         const fetchBooks = async () => {
+           try {
+             const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${category}.json?api-key=${NYT_API_KEY}`);
+             const data = await response.json();
+             console.log("Fetched data:", data);
 
-    //         const booksData = data.results.books || [];
-    //         setBooks(booksData);
-    //         setTitle(mapTitle(category)); // Mapping function to get custom title
+             const booksData = data.results.books || [];
+             setBooks(booksData);
+             setTitle(mapTitle(category)); // Mapping function to get custom title
                 
-    //       } catch (error) {
-    //         console.error(`Error fetching ${category} books:`, error);
-    //       }
-    //     };
+           } catch (error) {
+             console.error(`Error fetching ${category} books:`, error);
+           }
+         };
 
-    //     fetchBooks();
-    // }, [category]);
+         fetchBooks();
+     }, [category]);
 
     // Mapping function to get custom title
     const mapTitle = (category) => {
