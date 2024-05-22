@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const NewsletterContainer = styled.div`
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   z-index: 20;
+  background-color: #fff;
 `;
 
-const Title = styled.h2`
+const NewsletterTitle = styled.h2`
   font-size: 24px;
   margin-bottom: 20px;
+  font-family: "Manrope", sans-serif;
+font-optical-sizing: auto;
+font-weight: 700;
+font-style: normal;
+color: #3E2D70;
 `;
 
 const Form = styled.form`
@@ -29,10 +35,10 @@ const Input = styled.input`
 
 const Button = styled.button`
   padding: 10px;
-  background-color: #007bff;
+  background-color: #F676A5;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 `;
 
@@ -77,9 +83,9 @@ const Newsletter = ({ onClose }) => {
   };
 
   return (
-    <Container>
+    <NewsletterContainer>
       <CloseButton onClick={onClose}>X</CloseButton>
-      <Title>Subscribe to Our Newsletter</Title>
+      <NewsletterTitle>Subscribe to Our Newsletter</NewsletterTitle>
       <Form onSubmit={handleSubmit}>
         <Input
           type="email"
@@ -98,7 +104,7 @@ const Newsletter = ({ onClose }) => {
       </Form>
       {successMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-    </Container>
+    </NewsletterContainer>
   );
 };
 

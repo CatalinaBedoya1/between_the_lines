@@ -91,19 +91,19 @@ app.use("/user-profiles", require("./Server/routes/userProfileRoutes"));
 
 
 //book search APIS
-app.get('/api/books/:category', async (req, res) => {
+ app.get('/api/books/:category', async (req, res) => {
   try {
-    const category = req.params.category;
+   const category = req.params.category;
     const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/current/${category}.json?api-key=${NYT_API_KEY}`);
     const data = await response.json();
     res.json(data.results.books || []);
   } catch (error) {
     console.error(`Error fetching ${category} books:`, error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+   res.status(500).json({ error: 'Internal server error' });
+  } 
+ }); 
 
-app.get('/api/book-cover', async (req, res) => {
+ app.get('/api/book-cover', async (req, res) => {
   const { bookTitle } = req.query;
   try {
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(bookTitle)}`);
@@ -118,7 +118,7 @@ app.get('/api/book-cover', async (req, res) => {
     console.error('Error fetching book cover:', error);
     res.status(500).json({ success: false, message: 'Internal server error' });
   }
-});
+  });
 
 // Api to create for the forums
 const topicList = []; // Mock in-memory topic list
@@ -129,15 +129,16 @@ function generateID() {
 
 // Create a forum topic
 app.post("/api/create/topic", async (req, res) => {
-  const { topic, userId } = req.body;
-  if (!topic || !userId) {
-    return res.status(400).json({ error: "Topic and userId are required fields." });
+  const { topic, userId, userName, content } = req.body;
+
+  if (!topic || !userId || !userName) {
+    return res.status(400).json({ error: "Topic, userId, and userName are required fields." });
   }
 
   try {
     const result = await pool.query(
-      "INSERT INTO topics (topic, user_id, date) VALUES ($1, $2, CURRENT_TIMESTAMP) RETURNING *",
-      [topic, userId]
+      "INSERT INTO topics (topic, user_id, user_name, date, content) VALUES ($1, $2, $3, CURRENT_TIMESTAMP, $4) RETURNING *",
+      [topic, userId, userName, content]
     );
     const newTopic = result.rows[0];
     res.status(201).json({ message: "Topic created successfully!", topic: newTopic });
@@ -146,6 +147,7 @@ app.post("/api/create/topic", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+
 
 // Get paginated list of topics
 app.get("/api/topics", async (req, res) => {
@@ -176,10 +178,11 @@ app.get("/api/topics", async (req, res) => {
 });
 
 
-app.get('/api/user/:id', async (req, res) => {
+// Get user details by ID
+app.get('/api/users/:id', async (req, res) => {
   const userId = req.params.id;
   try {
-    const result = await pool.query('SELECT id, username FROM users WHERE id = $1', [userId]);
+    const result = await pool.query('SELECT user_id, user_name FROM users WHERE user_id = $1', [userId]);
     if (result.rows.length === 0) {
       return res.status(404).json({ error: 'User not found' });
     }
@@ -189,7 +192,7 @@ app.get('/api/user/:id', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
-//app.use("/api/thread/replies", require("./Server/routes/threadRoutes"));
+
 
 app.listen(4000, () => {
   console.log('Server is running on port 4000');

@@ -17,21 +17,22 @@ const CreatePost = () => {
         throw new Error("Failed to fetch user details");
       }
       const data = await response.json();
-      return data.user_name || ""; // Return username or empty string if not found
+      return data.user_name || ""; // Check if user_name exists in the response
     } catch (error) {
       console.error("Error fetching user details:", error);
       return ""; // Return empty string on error
     }
   };
+  
 
-  const createTopic = async (userName) => {
+  const createTopic = async (userName, content) => { // Modify the function signature to accept content
     try {
       const userId = localStorage.getItem("_id");
       console.log("User ID:", userId); // Debug statement
       if (!userId) {
         throw new Error("User ID is not available");
       }
-
+  
       const response = await fetch("http://localhost:4000/api/create/topic", {
         method: "POST",
         headers: {
@@ -40,7 +41,8 @@ const CreatePost = () => {
         body: JSON.stringify({
           topic: forum,
           userId: userId,
-          userName: userName, // Pass username to backend
+          userName: userName,
+          content: content, // Pass the content to the backend
         }),
       });
       const data = await response.json();
@@ -64,7 +66,8 @@ const CreatePost = () => {
         throw new Error("Failed to fetch topics");
       }
       const data = await response.json();
-      setThreadList(data.results || []);
+      const topicsWithShowContent = data.results.map((topic) => ({ ...topic, showContent: false }));
+      setThreadList(topicsWithShowContent || []);
       setCurrentPage(page);
       setTotalPages(data.totalPages || 1);
     } catch (error) {
@@ -72,6 +75,8 @@ const CreatePost = () => {
       alert("An error occurred while fetching topics.");
     }
   };
+  
+  
 
   useEffect(() => {
     fetchTopics(); // Fetch topics when the component mounts
@@ -79,11 +84,12 @@ const CreatePost = () => {
 
   const handleThreadSubmit = async (e) => {
     e.preventDefault();
+    const content = document.getElementById("contentTextarea").value; // Capture content from textarea
     if (forum.trim() !== "") {
       try {
         const userId = localStorage.getItem("_id");
         const userName = await fetchUserName(userId); // Fetch username
-        createTopic(userName); // Pass username to createTopic function
+        createTopic(userName, content); // Pass content to createTopic function
       } catch (error) {
         alert("An error occurred while fetching user details.");
       }
@@ -91,35 +97,50 @@ const CreatePost = () => {
       alert("Please enter a title for the forum topic.");
     }
   };
+  
 
   const handlePageChange = (page) => {
     if (page > 0 && page <= totalPages) {
       fetchTopics(page);
     }
-  }
+  };
+
+  const toggleThreadContent = (threadId) => {
+    setThreadList((prevThreadList) =>
+      prevThreadList.map((thread) =>
+        thread.id === threadId ? { ...thread, showContent: !thread.showContent } : thread
+      )
+    );
+  };
+
   return (
     <Container>
-    <ThreadListContainer>
-    <ForumsTitle>
-      Forums:
-      <div className="subtitles">
-        <span>Topics</span>
-        <span className="date">Date</span> {/* Apply the date class here */}
-      </div>
-    </ForumsTitle>
-
-      <ThreadList>
-        {threadList.map((thread) => (
-          <ThreadItem key={thread.id}>
-          <h3>{thread.topic}</h3>
-          <div className="thread-details">
-            <p>Created by: {thread.userId}</p>
-            <p>{new Date(thread.date).toLocaleString()}</p>
+      <ThreadListContainer>
+        <ForumsTitle>
+          Forums:
+          <div className="subtitles">
+            <span>Topics</span>
+            <span className="date">Date</span> {/* Apply the date class here */}
           </div>
-        </ThreadItem>
-        
-        ))}
-      </ThreadList>
+        </ForumsTitle>
+
+        <ThreadList>
+          {threadList.map((thread) => (
+            <ThreadItem key={thread.id}>
+              <h3 onClick={() => toggleThreadContent(thread.id)}>{thread.topic}</h3>
+              <div className="thread-details">
+              <p>Created by: {thread.user_name}</p>
+                <p>{new Date(thread.date).toLocaleString()}</p>
+              </div>
+              {thread.showContent && (
+                <ThreadContent>
+                  <p>{thread.content}</p>
+                </ThreadContent>
+              )}
+            </ThreadItem>
+          ))}
+        </ThreadList>
+
         <Pagination>
           <button
             onClick={() => handlePageChange(currentPage - 1)}
@@ -145,19 +166,24 @@ const CreatePost = () => {
             <option value="feedback">Feedback</option>
           </Select>
           <Input
-            className="createPostText"
+            className="createPostTitle"
             placeholder="Create a title"
             value={forum}
             onChange={(e) => setForum(e.target.value)}
           />
-          <TextArea className="createPostBodyText" placeholder="Begin typing . . ." />
+         <TextArea
+            id="contentTextarea" // Add id to textarea
+            className="createPostBodyText"
+            placeholder="Begin typing . . ."
+          />
+
           <CheckboxContainer>
             <CheckSquare type="checkbox" />
-            <CheckboxLabel>Does this message contain spoilers?</CheckboxLabel>
+            <CheckboxLabel>Does your message contain spoilers?</CheckboxLabel>
           </CheckboxContainer>
           <div className="addImageBtn">Add Photo</div>
-          <img src={addimage} alt="Add Image Icon" className='imageicon' />
-          <Button type='submit'>Publish</Button>
+          <img src={addimage} alt="Add Icon" className='imageicon' />
+          <Button type='submit' className="addImageBtn">Publish</Button>
           <img src={publishicon} alt="Publish Icon" className='publishicon' />
         </Form>
       </FormContainer>
@@ -252,6 +278,11 @@ const Select = styled.select`
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ddd;
+
+  &:hover {
+    background-color: #F8A2C0;
+  }
+
 `;
 
 const Input = styled.input`
@@ -294,19 +325,23 @@ const CheckboxLabel = styled.div`
 
 const Button = styled.button`
   font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  width: 200px;
-  padding: 10px 30px;
-  border-radius: 50px;
-  font-size: 18px;
-  color: #ffffff;
-  background-color: #F8A2C0;
-  cursor: pointer;
-  box-shadow: 0 0 0 4px #ffffff;
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
+    width: 200px;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border-width: 0px;
+    border-style: none;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #F8A2C0;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #ffffff;
+  postion: absolute;
   margin-left: 320px;
-  margin-top: -55px;
+  margin-top: -58px;
 
   &:hover {
     background-color: #d75a8b;
@@ -334,11 +369,12 @@ const ThreadItem = styled.li`
   h3 {
     margin: 0 0 10px 0;
     font-size: 18px;
-    color: #3E2D70; /* Change color to 3E2D70 */
+    color: #3E2D70;
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    cursor: pointer;
   }
 
   .thread-details {
@@ -349,6 +385,12 @@ const ThreadItem = styled.li`
     font-size: 14px;
     color: #3E2D70;
   }
+`;
+const ThreadContent = styled.div`
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
 `;
 
 export default CreatePost;
