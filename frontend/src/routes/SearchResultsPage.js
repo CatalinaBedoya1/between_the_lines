@@ -5,6 +5,7 @@ import SearchRPPicks from '../components/SearchRPPicks';
 import gridIcon from '../assets/gridIcon.png';
 import AbstractImg from '../assets/AbstractImg.png';
 import Card from "../components/Card";
+import { Link } from 'react-router-dom';
 
 // Import forum images
 import forumSquare1 from '../assets/bookforum1.png';
@@ -431,20 +432,24 @@ const Forum2ArtSection = () => {
         </SectionTitle>
         <div className="forums2artsection">
           {forums.map((forum, index) => (
+            <Link to="/community/BookDetails" style={{textDecoration: 'none'}}>
             <Card
               key={index}
               imageUrl={forum.imageUrl}
               description={forum.description}
             />
+            </Link>
           ))}
         </div>
         <div className="forums2artsection">
           {forums2ndrow.map((forum, index) => (
+            <Link to="/community/BookDetails" style={{textDecoration: 'none'}}>
             <Card
               key={index}
               imageUrl={forum.imageUrl}
               description={forum.description}
             />
+            </Link>
           ))}
         </div>
         <SeeMoreButton to="/community">See More</SeeMoreButton>
@@ -497,37 +502,37 @@ const SearchResultsPage = () => {
 
 
 
-  useEffect(() => {
-    // Function to fetch books based on the user's search query 
-    const fetchBooks = async () => {
-      try {
+  // useEffect(() => {
+  //   // Function to fetch books based on the user's search query 
+  //   const fetchBooks = async () => {
+  //     try {
         
-        const response = await fetch(
-          `https://www.googleapis.com/books/v1/volumes?q=genre:${searchQuery}&startIndex=${startIndex}&maxResults=${maxResults}`
-        );
-        const data = await response.json();
+  //       const response = await fetch(
+  //         `https://www.googleapis.com/books/v1/volumes?q=genre:${searchQuery}&startIndex=${startIndex}&maxResults=${maxResults}`
+  //       );
+  //       const data = await response.json();
 
-            //use get request, and post request to submit data 
-        // Process API response and update state with book data
-        if (data.items) {
-          const booksData = data.items.map(item => ({
-            id: item.id,
-            title: item.volumeInfo.title,
-            author: item.volumeInfo.authors ? item.volumeInfo.authors[0] : 'Unknown Author',
-            image: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : '',
-          }));
-          setBooks(booksData);
-        }
-      } catch (error) {
-        console.error('Error searching:', error);
-      }
-    };
+  //           //use get request, and post request to submit data 
+  //       // Process API response and update state with book data
+  //       if (data.items) {
+  //         const booksData = data.items.map(item => ({
+  //           id: item.id,
+  //           title: item.volumeInfo.title,
+  //           author: item.volumeInfo.authors ? item.volumeInfo.authors[0] : 'Unknown Author',
+  //           image: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : '',
+  //         }));
+  //         setBooks(booksData);
+  //       }
+  //     } catch (error) {
+  //       console.error('Error searching:', error);
+  //     }
+  //   };
 
-    // Call the fetchBooks function when searchQuery or startIndex changes
-    if (searchQuery.trim() !== '') {
-      fetchBooks();
-    }
-  }, [searchQuery, startIndex]);
+  //   // Call the fetchBooks function when searchQuery or startIndex changes
+  //   if (searchQuery.trim() !== '') {
+  //     fetchBooks();
+  //   }
+  // }, [searchQuery, startIndex]);
 
   const handleNextPage = () => {
     setStartIndex(prevIndex => prevIndex + maxResults);

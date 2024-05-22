@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import EditProfileForm from "../components/EditProfileForm";
-import ProfilePicOptions from "../components/ProfilePicOptions"; // Import ProfilePicOptions component
+import { Link } from 'react-router-dom';
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
@@ -132,34 +132,37 @@ const Dashboard = ({ setAuth }) => {
           />
         )}
 
-      <div className="currentreading">
-        <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
-        <div className="updateprogressbtn">Update Progress</div>
-        <div className="chat1">Chat</div>
-        <div className="chat2">Chat</div>
-        <div className="chat3">Chat</div>
-      </div>
-      <DashboardRecs />
-      <div className="topgenres">
-        <p>My Top Genres:</p>
-        <div className="topgenre1">Fiction</div>
-        <div className="topgenre2">Romance</div>
-        <div className="topgenre3">Thriller</div>
-        <div className="topgenre4">Historical Fiction</div>
-        <div className="topgenre5">Fantasy</div>
-      </div>
-      <div className="quizResult">
-        <br />
-        <div className="quizresultheader">
-          <p>My Recommended Books:</p>
+        <div className="currentreading">
+          <img src={CurrentReading} alt="currentreading" className="currentreading-static" />
+          <Link to="/community/game" style={{textDecoration: 'none'}}><div className="playgamebtn">Play!</div></Link>
+          <Link to="/community/BookDetails" style={{textDecoration: 'none'}}>
+          <div className="chat1">Chat</div>
+          <div className="chat2">Chat</div>
+          <div className="chat3">Chat</div>
+          </Link>
         </div>
-        <QuizRecs />
+        <DashboardRecs />
+        <div className="topgenres">
+          <p>My Top Genres:</p>
+          <div className="topgenre1">Fiction</div>
+          <div className="topgenre2">Romance</div>
+          <div className="topgenre3">Thriller</div>
+          <div className="topgenre4">Historical Fiction</div>
+          <div className="topgenre5">Fantasy</div>
+        </div>
+        <div className="quizResult">
+          <br />
+          <div className="quizresultheader">
+            <p>My Recommended Books:</p>
+          </div>
+          <QuizRecs />
+        </div>
       </div>
-    </div>
-    <Footer />
-  </>
+      <Footer /> 
+    </>
   );
 };
+
 
 const ButtonGroup = styled.div`
   display: flex;
@@ -180,6 +183,10 @@ const EditButton = styled.div`
   margin-bottom: 50px;
   margin-left: 20px;
   cursor: pointer;
+
+  &:hover{
+    background-color:#ef749f;
+  }
 `;
 
 const LogoutButton = styled.button`
@@ -195,6 +202,10 @@ const LogoutButton = styled.button`
   cursor: pointer;
   font-size: 25px;
   border: none;
+
+  &:hover{
+    background-color:#ef749f;
+  }
 `;
 
 export default Dashboard;

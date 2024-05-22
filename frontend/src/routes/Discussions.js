@@ -53,7 +53,7 @@ const DiscussionContentContainer = styled.div`
 const DiscussionTopContent = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 0px;
+    margin-top: -90px;
 `;
 
 const DisLeftImageContainer = styled.div`
@@ -105,19 +105,19 @@ const SearchIcon = styled.div`
 
 const PopularTopicsText = styled.div`
     font-size: 16px;
-    font-family: Roboto;
+    font-family: Manrope;
     color: white;
     z-index: 1;
     margin-top: -100px;
     margin-right: 30px;
 `;
-const DiscussionTitle = styled.h1`
+const DiscussionTitle1 = styled.div`
   font-size: 40px;
-  font-family: Roboto;
+  font-family: Manrope;
   font-weight: bold;
   color: white; 
-  z-index: 2;
-  margin-top: 60px;
+  z-index: 3;
+  margin-top: 100px;
   position: relative; 
   overflow: hidden;
   display: flex; 
@@ -127,8 +127,7 @@ const DiscussionTitle = styled.h1`
 const Text = styled.span`
   margin-right: 10px; 
   font-size: 40px;
-  font-family: Roboto;
-  
+  font-family: Manrope;
 `;
 
 const Discussions = () => {
@@ -137,7 +136,7 @@ const Discussions = () => {
             <DiscussionHeaderContainer>
             <DiscussionBackgroundImage src={DiscussionsImg} alt="Discussions-img2" />
                 <DiscussionContentContainer>
-                <DiscussionTitle><Text>Find what you're looking for: </Text> <WordLoopAnimation /></DiscussionTitle>
+                <DiscussionTitle1><Text>Find what you're looking for: </Text> <WordLoopAnimation /></DiscussionTitle1>
                 
                     <DiscussionTopContent>
                         <DisLeftImageContainer>

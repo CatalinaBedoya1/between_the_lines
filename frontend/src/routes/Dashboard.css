@@ -70,90 +70,55 @@
     text-align: left;
 }
 
-
- 
   
-.updateprogressbtn{
+.playgamebtn{
+    margin-top: -85px;
+    margin-left: 140px;
+}
+
+.playgamebtn,
+.chat1,
+.chat2,
+.chat3{
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     position: absolute;
     display: inline-block;
-    padding: 10px 30px;
+    padding: 10px 25px;
     border-radius: 50px;
-    font-size: 18px;
+    font-size: 20px;
     color: #ffffff;
     background: #F68AAF;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     box-shadow: 0 0 0 4px #ffffff;
-    margin-top: -110px;
-    margin-left: 25px;
+    transition: 0.3s ease;
 }
 
 .chat1{
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    position: absolute;
-    display: inline-block;
-    padding: 10px 30px;
-    border-radius: 50px;
-    font-size: 18px;
-    color: #ffffff;
-    background: #F68AAF;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: 0 0 0 4px #ffffff;
     margin-left: 810px;
     margin-top: -70px;
-
 }
 
 .chat2{
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    position: absolute;
-    display: inline-block;
-    padding: 10px 30px;
-    border-radius: 50px;
-    font-size: 18px;
-    color: #ffffff;
-    background: #F68AAF;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: 0 0 0 4px #ffffff;
     margin-left: 560px;
     margin-top: -70px;
 }
 
 .chat3{
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    position: absolute;
-    display: inline-block;
-    padding: 10px 30px;
-    border-radius: 50px;
-    font-size: 18px;
-    color: #ffffff;
-    background: #F68AAF;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: 0 0 0 4px #ffffff;
     margin-left: 1070px;
     margin-top: -70px;
 }
 
+.playgamebtn:hover,
+.chat1:hover,
+.chat2:hover,
+.chat3:hover{
+    background-color:#ef749f;
+}
 .topgenres p{
     font-family: "Agbalumo", system-ui;
     font-weight: 400;
