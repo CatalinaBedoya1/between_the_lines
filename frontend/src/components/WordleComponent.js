@@ -7,21 +7,19 @@ import WordleModal from './WordleModal';
 export default function WordleComponent({ solution }) {
     const {currentGuess, handleKeyup, guesses, isCorrect, turn, usedKeys} = wordleHook(solution);
     const [showModal, setShowModal] = useState(false);
+    const [modalShown, setModalShown] = useState(false);
 
     useEffect(() => {
       window.addEventListener('keyup', handleKeyup);
 
-      if (isCorrect){
-        // console.log('congrats, you won!');
-        setTimeout(() => setShowModal(true), 2000);
-        window.removeEventListener('keyup',handleKeyup);
-      }
-
-      if (turn > 5) {
-        // console.log('unlucky, out of guesses :(');
-        setTimeout(() => setShowModal(true), 2000);
-        window.removeEventListener('keyup',handleKeyup);
-      }
+      if (!modalShown && (isCorrect || turn > 5)) { 
+            setShowModal(true);
+            setTimeout(() => {
+                setShowModal(false);
+                setModalShown(true); 
+            }, 3000);
+            window.removeEventListener('keyup', handleKeyup);
+        }
 
       return () => window.removeEventListener('keyup',handleKeyup);
     },[handleKeyup, isCorrect])
