@@ -25,6 +25,19 @@ const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont
 app.use(express.json()); //req.body
 
 
+if (process.env.NODE_ENV === "production") {
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+
+  app.get("*", (req, res) =>
+  res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html")));
+
+}else {
+  app.get("/", (req, res) => {
+    res.send("API is running.....");
+  });
+}
+
 
 //voting api routes
 app.post('/api/vote', async (req, res) => {
