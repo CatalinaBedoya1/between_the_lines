@@ -19,6 +19,7 @@ import similar12 from "../assets/AudioDetails/similar12.png";
 import playButton from "../assets/playbutton.png";
 import playerLeft from "../assets/playerleft.png";
 import playerRight from "../assets/playerright.png";
+import player from "../assets/player.png";
 
 
 import { Accordion } from 'react-bootstrap';
@@ -90,13 +91,10 @@ const AudiobookDetails = () => {
                     <Time>9 hours 2 minutes</Time>
                 </HeaderContent>
 
-                
-         
-                
-                
-                
+            
 
                 <HeaderBody>
+                    <Styledimg src={player} alt="audio player bar"/>
                     <PlayerButtons>
                         <img src={playerLeft} alt="left side of play button"/>
                         <img src={playButton} alt="play button"/>
@@ -173,7 +171,7 @@ const DetailsContainer =styled.div`
     display:flex;
     flex-direction:row;
     width:100%;
-    height:autox;
+    height:auto;
     justify-content:center;
 
 
@@ -290,6 +288,10 @@ const HeaderBody = styled.div`
     height: auto;
     margin: 0 auto; 
     //background-color: green;
+`;
+const Styledimg = styled.img`
+    width:600px;
+    height:auto;
 `;
 
 const BodyP = styled.div`
