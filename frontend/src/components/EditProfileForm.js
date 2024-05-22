@@ -24,9 +24,25 @@ const ProfileTitle = styled.h2`
   font-size: 35px;
 `;
 
+const FlexContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+`;
+
+const ProfileSubtitle = styled.span`
+  font-weight: bold;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #3E2D70;
+  font-size: 24px;
+  margin-right: 10px;
+`;
+
 const ProfileTextInput = styled.input`
   margin-top: 5px;
-  width: calc(100% - 1rem);
   padding: 0.5rem;
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
@@ -34,38 +50,36 @@ const ProfileTextInput = styled.input`
   font-style: normal;
   color: #3E2D70;
   border: none; /* Removed border */
-`;
-
-const ProfileSubtitle = styled.span`
-  font-weight: bold;
-  font-family: "Manrope", sans-serif;
-font-optical-sizing: auto;
-font-weight: 700;
-font-style: normal;
-color: #3E2D70;
-font-size: 24px;
-margin-left: 10px;
+  flex-grow: 1;
 `;
 
 const ProfilePicContainer = styled.div`
-  margin-bottom: 1rem;
   font-size: 16px;
   font-optical-sizing: auto;
-font-weight: 400;
-font-style: normal;
-color: #3E2D70;
-margin-left: 10px;
+  font-weight: 400;
+  font-style: normal;
+  color: #3E2D70;
+  margin-left: 10px;
 `;
 
 const ProfileButton = styled.button`
-  background-color: #B0507F;
+  background-color: #F676A5;
   color: white;
   border: none;
+  border-radius: 5px;
   padding: 0.5rem 1rem;
   cursor: pointer;
   display: block;
   margin: 0 auto; /* Centered the button */
+  margin-top: 20px;
+  cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #B0507F;
+    }
 `;
+
 const ErrorText = styled.p`
   color: red;
 `;
@@ -107,7 +121,7 @@ const EditProfileForm = ({ initialBio, onSave, onClose }) => {
   return (
     <ProfileForm onSubmit={handleSubmit}>
       <ProfileTitle>Edit Profile</ProfileTitle>
-      <div>
+      <FlexContainer>
         <ProfileSubtitle>Bio:</ProfileSubtitle>
         <ProfileTextInput
           type="text"
@@ -115,7 +129,7 @@ const EditProfileForm = ({ initialBio, onSave, onClose }) => {
           onChange={handleBioChange}
           placeholder="Enter your bio..."
         />
-      </div>
+      </FlexContainer>
       <div>
         <ProfileSubtitle>Profile Pic:</ProfileSubtitle>
         <ProfilePicContainer>
