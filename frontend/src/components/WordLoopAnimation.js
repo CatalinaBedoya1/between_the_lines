@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const WordDiscussionTitle = styled.h1`
   font-size: 40px;
-  font-family: Roboto;
+  font-family: Manrope;
   color: white;
   align-items: center;
   position: relative; 
