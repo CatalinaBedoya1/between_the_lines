@@ -14,8 +14,8 @@ const pool = require("./Server/db");
 app.use(express.json());
 
 
-// const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
-// const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont know why this seems commented out 
+const NYT_API_KEY = 've27qt7otDqwAHzuCuLsr9M3inbBinNe';
+const GOOGLE_BOOKS_API_KEY = 'AIzaSyCSGZabU9B0s_HlH9cmg7BBCjxFQZl0x3g'; //i dont know why this seems commented out 
 
 //app.use(cors());
 app.use(express.json()); //req.body
@@ -101,9 +101,9 @@ app.use("/user-profiles", require("./Server/routes/userProfileRoutes"));
     console.error(`Error fetching ${category} books:`, error);
    res.status(500).json({ error: 'Internal server error' });
   } 
-// }); 
+ }); 
 
-// app.get('/api/book-cover', async (req, res) => {
+ app.get('/api/book-cover', async (req, res) => {
   const { bookTitle } = req.query;
   try {
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(bookTitle)}`);
@@ -118,7 +118,7 @@ app.use("/user-profiles", require("./Server/routes/userProfileRoutes"));
     console.error('Error fetching book cover:', error);
     res.status(500).json({ success: false, message: 'Internal server error' });
   }
- // });
+  });
 
 // Api to create for the forums
 const topicList = []; // Mock in-memory topic list

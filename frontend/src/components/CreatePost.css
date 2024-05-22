@@ -19,12 +19,11 @@ font-style: normal;
 }
 
 .createPostText{  
-    font-family: "Manrope", sans-serif;
+font-family: "Manrope", sans-serif;
 font-optical-sizing: auto;
 font-weight: 700;
 font-style: normal;
-    border-radius: 10px;
-
+border-radius: 10px;
     justify-content: top;
     width: 100%;
     border: 2px solid #F8A2C0;
@@ -32,14 +31,24 @@ font-style: normal;
     height: 50px;
 }
 
-.createPostText option {
-    background-color: #F8A2C0;
-    color: #ffffff;
+.createPostText option{
+    background-color: #d75a8b;
+}
+
+.createPostTitle {
     font-family: "Manrope", sans-serif;
         font-optical-sizing: auto;
         font-weight: 700;
         font-style: normal;
-
+        border-radius: 10px;
+        justify-content: top;
+        width: 100%;
+        border: 2px solid #F8A2C0;
+        padding: 20px;
+        height: 50px;
+}
+.general {
+    background-color: #d75a8b;
 }
 
 .createPostBodyText{  
